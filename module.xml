@@ -1,0 +1,126 @@
+<module>
+<!--TODO: Sync set as disabled, no password-->
+<!--TODO: Tracklog-->
+<!--TODO: Filter by Type, User, Date (when the record was created)-->
+
+<Login f="nodata">
+  <Login f="noscroll">
+    <Login t="list" f="nolabel user" l="Start"/>
+  </Login>
+</Login>
+
+<Start f="nodata">
+  <Tracklog>
+    <Start_Tracklog t="button"/>
+    <Stop_Tracklog t="button"/>
+    <GPS_Status t="gpsdiag"/>
+  </Tracklog>
+  <Main>
+    <Setting_up_Trap       l="Setup_Trap"/>
+    <Checking_Trap         l="Check_Trap"/>
+    <Animal_outside_Trap   l="Animal_outside"/>
+    <DNA_Sample            t="button"/>
+    <Plant_Survey          l="Plant_Survey"/>
+    <Cultural_Knowledge    l="Cultural_Knowledge"/>
+    <Notes                 l="Notes"/>
+  </Main>
+  <Map f="noscroll">
+    <Map t="map" f="nolabel"/>
+  </Map>
+  <search/>
+</Start>
+
+<Setup_Trap>
+  <fmt>{{Place_name}} {{What_type_of_trap}} {{timestamp}}</fmt>
+  <Setting_up>
+    <timestamp/>
+    <author>Who is putting out traps?</author>
+    <Other_people/>
+    <Place_name/>
+    <What_type_of_trap>
+      What type of trap?
+      <!--@SOURCE: vocab/trap-type.xml-->
+    </What_type_of_trap>
+    <gps/>
+  </Setting_up>
+</Setup_Trap>
+
+<Check_Trap>
+  <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{timestamp}}</fmt>
+  <Checking>
+    <timestamp/>
+    <author>Who is checking?</author>
+    <What_trap_are_you_checking>
+      What trap are you checking?
+      <!--@SOURCE: vocab/trap-type.xml-->
+    </What_trap_are_you_checking>
+    <What_did_you_find_in_trap>
+      What did you find in trap?
+      <!--@SOURCE: vocab/animal-type.xml-->
+    </What_did_you_find_in_trap>
+    <Species_Name/>
+    <Take_Photo t="camera"/>
+    <Talk_about_animal t="audio"/>
+    <YMR_Tissue_Number b="decimal"/>
+    <Snout_to_vent_length_mm b="decimal">
+      Snout to vent length (mm)
+    </Snout_to_vent_length_mm>
+    <Found_something_else/>
+    <gps/>
+    <How_many_Cane_toads b="decimal">
+      How many Cane toads?
+    </How_many_Cane_toads>
+  </Checking>
+</Check_Trap>
+
+<Animal_outside>
+  <fmt>{{Animal_outside_trap}} {{timestamp}}</fmt>
+  <Animal>
+    <timestamp/>
+    <author>Who is recording?</author>
+    <Animal_outside_trap>
+      <!--@SOURCE: vocab/animal-type.xml-->
+    </Animal_outside_trap>
+    <Type_Name/>
+    <Take_Photo t="camera"/>
+    <Talk_about_animal t="audio"/>
+    <gps/>
+  </Animal>
+</Animal_outside>
+
+<Plant_Survey>
+  <fmt>{{Type_plant_name}} {{timestamp}}</fmt>
+  <Plant>
+    <timestamp/>
+    <author>Who is recording?</author>
+    <Type_plant_name/>
+    <Take_Photo t="camera"/>
+    <gps/>
+  </Plant>
+</Plant_Survey>
+
+<Cultural_Knowledge>
+  <fmt>{{Who_is_talking}} {{timestamp}}</fmt>
+  <Cultural_Knowledge>
+    <timestamp/>
+    <author>Who is recording?</author>
+    <Who_is_talking>Who is talking?</Who_is_talking>
+    <What_is_being_talked_about>What is being talked about?</What_is_being_talked_about>
+    <Record_knowledge_now t="audio"/>
+    <gps/>
+    <Write_down_notes_here/>
+  </Cultural_Knowledge>
+</Cultural_Knowledge>
+
+<Notes>
+  <fmt>{{author}} {{timestamp}}</fmt>
+  <Notes>
+    <timestamp/>
+    <author>Who is recording?</author>
+    <Notes/>
+    <Take_Photo t="camera"/>
+    <gps/>
+  </Notes>
+</Notes>
+
+</module>

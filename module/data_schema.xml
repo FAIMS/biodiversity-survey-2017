@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dataSchema>
+  <ArchaeologicalElement name="Setup Trap">
+    <description></description>
+    <property name="Place name" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>$2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="What type of trap" type="vocab" isIdentifier="true">
+      <description></description>
+      <formatString> $1</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Pit_fall_trap}
+<description></description></term>
+        <term>{Funnel_trap}
+<description></description></term>
+        <term>{Elliot_trap}
+<description></description></term>
+        <term>{Cage_trap}
+<description></description></term>
+        <term>{Camera_trap}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Setup Trap timestamp" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString> $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Setup Trap author" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Other people" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="Check Trap">
+    <description></description>
+    <property name="What trap are you checking" type="vocab" isIdentifier="true">
+      <description></description>
+      <formatString>$1</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Pit_fall_trap}
+<description></description></term>
+        <term>{Funnel_trap}
+<description></description></term>
+        <term>{Elliot_trap}
+<description></description></term>
+        <term>{Cage_trap}
+<description></description></term>
+        <term>{Camera_trap}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="What did you find in trap" type="vocab" isIdentifier="true">
+      <description></description>
+      <formatString> $1</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Skink}
+<description></description><term>{Shaded_litter_Rainbow_Skink}
+<description></description></term><term>{Bauxite_Rainbow_Skink}
+<description></description></term><term>{Dessert_Rainbow_Skink}
+<description></description></term><term>{Slender_Rainbow_Skink}
+<description></description></term><term>{Lined_Fire_tail_Skink}
+<description></description></term><term>{Stor_s_Snake_eyed_Skink}
+<description></description></term><term>{Northen_Dwarf_Skink}
+<description></description></term><term>{Ornate_Soil_crevice_Skink}
+<description></description></term><term>{Metallic_Snake_eyed_Skink}
+<description></description></term><term>{Northern_Soil_crevice_Skink}
+<description></description></term><term>{Spalding_Ctenotus}
+<description></description></term><term>{Northern_Bar_lipped_Skink}
+<description></description></term><term>{Northern_Mulch_Skink}
+<description></description></term><term>{Bar_tailed_bar_lipped_Skink}
+<description></description></term><term>{Bar_shouldered_Sctenotus}
+<description></description></term><term>{Robust_Ctenotus}
+<description></description></term><term>{Port_Essignton_Ctenotus}
+<description></description></term><term>{Blue_tongued_Lizzard}
+<description></description></term></term>
+        <term>{Dragon}
+<description></description><term>{Two_lined_Dragon}
+<description></description></term><term>{Lally_s_Two_lined_Dragon}
+<description></description></term><term>{Robust_Two_lined_Dragon}
+<description></description></term><term>{Yellow_sided_Two_lined_Dragon}
+<description></description></term><term>{Chameleon_Dragon}
+<description></description></term><term>{Ring_tailed_Dragon}
+<description></description></term><term>{Swamplands_lashtail}
+<description></description></term><term>{Gilberts_Dragon}
+<description></description></term><term>{Frilled_neck_Lizzard}
+<description></description></term></term>
+        <term>{Gecko}
+<description></description><term>{Spiny_tailed_Gecko}
+<description></description></term><term>{Zigzag_Velvet_Gecko}
+<description></description></term><term>{Pale_striped_Ground_Gecko}
+<description></description></term><term>{Crowned_Gecko}
+<description></description></term><term>{Fat_tailed_Diplodactylus}
+<description></description></term><term>{Northern_Dtella}
+<description></description></term><term>{Northern_Spotted_Dtella}
+<description></description></term><term>{Marbled_Velvet_Gecko}
+<description></description></term><term>{Bynoe_s_Gecko}
+<description></description></term></term>
+        <term>{Goanna}
+<description></description></term>
+        <term>{Snake}
+<description></description></term>
+        <term>{Turtle}
+<description></description></term>
+        <term>{Frog}
+<description></description><term>{Roth_s_Tree_frog}
+<description></description></term><term>{Desert_Tree_Frog}
+<description></description></term><term>{Northern_Dwarf_Tree_Frog}
+<description></description></term><term>{Green_Tree_Frog}
+<description></description></term><term>{Rockhole_Frog}
+<description></description></term><term>{Coplands_Rock_Frog}
+<description></description></term><term>{Masked_Frog}
+<description></description></term><term>{Wotjulum_Frog}
+<description></description></term><term>{Pale_Frog}
+<description></description></term><term>{Rocket_Frog}
+<description></description></term><term>{Peter_s_Frog}
+<description></description></term><term>{Tornier_s_Frog}
+<description></description></term><term>{Dahl_s_Aquatic_Frog}
+<description></description></term><term>{Marbled_Frog}
+<description></description></term><term>{Woodworker_Frog}
+<description></description></term><term>{Ornate_Burrowing_Frog}
+<description></description></term><term>{Floodplain_Toadlet}
+<description></description></term><term>{Stonemason_Toadlet}
+<description></description></term><term>{Remote_Froglet}
+<description></description></term><term>{Bilingual_Froglet}
+<description></description></term><term>{Northern_Spadefoot_Toad}
+<description></description></term><term>{Giant_Burrowing_Frog}
+<description></description></term><term>{Cane_Toad}
+<description></description></term></term>
+        <term>{Cane_Toad}
+<description></description></term>
+        <term>{Mammal}
+<description></description></term>
+        <term>{Something_else}
+<description></description></term>
+        <term>{Nothing_in_trap}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Check Trap timestamp" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString> $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Check Trap author" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Species Name" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Take Photo" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Talk about animal" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="YMR Tissue Number" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Snout to vent length mm" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Found something else" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="How many Cane toads" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="Animal outside">
+    <description></description>
+    <property name="Animal outside trap" type="vocab" isIdentifier="true">
+      <description></description>
+      <formatString>$1</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Skink}
+<description></description><term>{Shaded_litter_Rainbow_Skink}
+<description></description></term><term>{Bauxite_Rainbow_Skink}
+<description></description></term><term>{Dessert_Rainbow_Skink}
+<description></description></term><term>{Slender_Rainbow_Skink}
+<description></description></term><term>{Lined_Fire_tail_Skink}
+<description></description></term><term>{Stor_s_Snake_eyed_Skink}
+<description></description></term><term>{Northen_Dwarf_Skink}
+<description></description></term><term>{Ornate_Soil_crevice_Skink}
+<description></description></term><term>{Metallic_Snake_eyed_Skink}
+<description></description></term><term>{Northern_Soil_crevice_Skink}
+<description></description></term><term>{Spalding_Ctenotus}
+<description></description></term><term>{Northern_Bar_lipped_Skink}
+<description></description></term><term>{Northern_Mulch_Skink}
+<description></description></term><term>{Bar_tailed_bar_lipped_Skink}
+<description></description></term><term>{Bar_shouldered_Sctenotus}
+<description></description></term><term>{Robust_Ctenotus}
+<description></description></term><term>{Port_Essignton_Ctenotus}
+<description></description></term><term>{Blue_tongued_Lizzard}
+<description></description></term></term>
+        <term>{Dragon}
+<description></description><term>{Two_lined_Dragon}
+<description></description></term><term>{Lally_s_Two_lined_Dragon}
+<description></description></term><term>{Robust_Two_lined_Dragon}
+<description></description></term><term>{Yellow_sided_Two_lined_Dragon}
+<description></description></term><term>{Chameleon_Dragon}
+<description></description></term><term>{Ring_tailed_Dragon}
+<description></description></term><term>{Swamplands_lashtail}
+<description></description></term><term>{Gilberts_Dragon}
+<description></description></term><term>{Frilled_neck_Lizzard}
+<description></description></term></term>
+        <term>{Gecko}
+<description></description><term>{Spiny_tailed_Gecko}
+<description></description></term><term>{Zigzag_Velvet_Gecko}
+<description></description></term><term>{Pale_striped_Ground_Gecko}
+<description></description></term><term>{Crowned_Gecko}
+<description></description></term><term>{Fat_tailed_Diplodactylus}
+<description></description></term><term>{Northern_Dtella}
+<description></description></term><term>{Northern_Spotted_Dtella}
+<description></description></term><term>{Marbled_Velvet_Gecko}
+<description></description></term><term>{Bynoe_s_Gecko}
+<description></description></term></term>
+        <term>{Goanna}
+<description></description></term>
+        <term>{Snake}
+<description></description></term>
+        <term>{Turtle}
+<description></description></term>
+        <term>{Frog}
+<description></description><term>{Roth_s_Tree_frog}
+<description></description></term><term>{Desert_Tree_Frog}
+<description></description></term><term>{Northern_Dwarf_Tree_Frog}
+<description></description></term><term>{Green_Tree_Frog}
+<description></description></term><term>{Rockhole_Frog}
+<description></description></term><term>{Coplands_Rock_Frog}
+<description></description></term><term>{Masked_Frog}
+<description></description></term><term>{Wotjulum_Frog}
+<description></description></term><term>{Pale_Frog}
+<description></description></term><term>{Rocket_Frog}
+<description></description></term><term>{Peter_s_Frog}
+<description></description></term><term>{Tornier_s_Frog}
+<description></description></term><term>{Dahl_s_Aquatic_Frog}
+<description></description></term><term>{Marbled_Frog}
+<description></description></term><term>{Woodworker_Frog}
+<description></description></term><term>{Ornate_Burrowing_Frog}
+<description></description></term><term>{Floodplain_Toadlet}
+<description></description></term><term>{Stonemason_Toadlet}
+<description></description></term><term>{Remote_Froglet}
+<description></description></term><term>{Bilingual_Froglet}
+<description></description></term><term>{Northern_Spadefoot_Toad}
+<description></description></term><term>{Giant_Burrowing_Frog}
+<description></description></term><term>{Cane_Toad}
+<description></description></term></term>
+        <term>{Cane_Toad}
+<description></description></term>
+        <term>{Mammal}
+<description></description></term>
+        <term>{Something_else}
+<description></description></term>
+        <term>{Nothing_in_trap}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Animal outside timestamp" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString> $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Animal outside author" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Type Name" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Take Photo" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Talk about animal" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="Plant Survey">
+    <description></description>
+    <property name="Type plant name" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>$2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Plant Survey timestamp" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString> $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Plant Survey author" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Take Photo" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="Cultural Knowledge">
+    <description></description>
+    <property name="Who is talking" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>$2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Cultural Knowledge timestamp" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString> $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Cultural Knowledge author" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="What is being talked about" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Record knowledge now" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Write down notes here" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+  <ArchaeologicalElement name="Notes">
+    <description></description>
+    <property name="Notes author" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>$2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Notes timestamp" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString> $2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Notes" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Take Photo" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+</dataSchema>
