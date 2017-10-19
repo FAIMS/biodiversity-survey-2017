@@ -1,7 +1,10 @@
 <module>
+<!--TODO: Sort dropdowns alphabetically-->
 <!--TODO: Sync set as disabled, no password-->
 <!--TODO: Tracklog-->
+  <!--TODO: Tracklog needs to be on second tab, place reminder on first tab-->
 <!--TODO: Filter by Type, User, Date (when the record was created)-->
+  <!--TODO: Date will be dropdown of -->
 
 <Login f="nodata">
   <Login f="noscroll">

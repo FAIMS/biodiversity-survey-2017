@@ -1,80 +1,80 @@
 <opts>
-  <opt>
-    Skink
-    <opt>Shaded-litter Rainbow Skink</opt>
-    <opt>Bauxite Rainbow Skink</opt>
-    <opt>Dessert Rainbow Skink</opt>
-    <opt>Slender Rainbow Skink</opt>
-    <opt>Lined Fire-tail Skink</opt>
-    <opt>Stor's Snake-eyed Skink</opt>
-    <opt>Northen Dwarf Skink</opt>
-    <opt>Ornate Soil-crevice Skink</opt>
-    <opt>Metallic Snake-eyed Skink</opt>
-    <opt>Northern Soil-crevice Skink</opt>
-    <opt>Spalding Ctenotus</opt>
-    <opt>Northern Bar-lipped Skink</opt>
-    <opt>Northern Mulch Skink</opt>
-    <opt>Bar-tailed bar-lipped Skink</opt>
-    <opt>Bar-shouldered Sctenotus</opt>
-    <opt>Robust Ctenotus</opt>
-    <opt>Port Essignton Ctenotus</opt>
-    <opt>Blue-tongued Lizzard</opt>
-  </opt>
+  <opt>Cane Toad</opt>
   <opt>
     Dragon
-    <opt>Two-lined Dragon</opt>
-    <opt>Lally's Two-lined Dragon</opt>
-    <opt>Robust Two-lined Dragon</opt>
-    <opt>Yellow-sided Two-lined Dragon</opt>
     <opt>Chameleon Dragon</opt>
-    <opt>Ring-tailed Dragon</opt>
-    <opt>Swamplands lashtail</opt>
-    <opt>Gilberts Dragon</opt>
     <opt>Frilled-neck Lizzard</opt>
+    <opt>Gilberts Dragon</opt>
+    <opt>Lally's Two-lined Dragon</opt>
+    <opt>Ring-tailed Dragon</opt>
+    <opt>Robust Two-lined Dragon</opt>
+    <opt>Swamplands lashtail</opt>
+    <opt>Two-lined Dragon</opt>
+    <opt>Yellow-sided Two-lined Dragon</opt>
+  </opt>
+  <opt>
+    Frog
+    <opt>Bilingual Froglet</opt>
+    <opt>Cane Toad</opt>
+    <opt>Coplands Rock Frog</opt>
+    <opt>Dahl's Aquatic Frog</opt>
+    <opt>Desert Tree Frog</opt>
+    <opt>Floodplain Toadlet</opt>
+    <opt>Giant Burrowing Frog</opt>
+    <opt>Green Tree Frog</opt>
+    <opt>Marbled Frog</opt>
+    <opt>Masked Frog</opt>
+    <opt>Northern Dwarf Tree Frog</opt>
+    <opt>Northern Spadefoot Toad</opt>
+    <opt>Ornate Burrowing Frog</opt>
+    <opt>Pale Frog</opt>
+    <opt>Peter's Frog</opt>
+    <opt>Remote Froglet</opt>
+    <opt>Rocket Frog</opt>
+    <opt>Rockhole Frog</opt>
+    <opt>Roth's Tree frog</opt>
+    <opt>Stonemason Toadlet</opt>
+    <opt>Tornier's Frog</opt>
+    <opt>Woodworker Frog</opt>
+    <opt>Wotjulum Frog</opt>
   </opt>
   <opt>
     Gecko
-    <opt>Spiny-tailed Gecko</opt>
-    <opt>Zigzag Velvet Gecko</opt>
-    <opt>Pale-striped Ground Gecko</opt>
+    <opt>Bynoe's Gecko</opt>
     <opt>Crowned Gecko</opt>
     <opt>Fat-tailed Diplodactylus</opt>
+    <opt>Marbled Velvet Gecko</opt>
     <opt>Northern Dtella</opt>
     <opt>Northern Spotted Dtella</opt>
-    <opt>Marbled Velvet Gecko</opt>
-    <opt>Bynoe's Gecko</opt>
+    <opt>Pale-striped Ground Gecko</opt>
+    <opt>Spiny-tailed Gecko</opt>
+    <opt>Zigzag Velvet Gecko</opt>
   </opt>
   <opt>Goanna</opt>
-  <opt>Snake</opt>
-  <opt>Turtle</opt>
-  <opt>
-    Frog
-    <opt>Roth's Tree frog</opt>
-    <opt>Desert Tree Frog</opt>
-    <opt>Northern Dwarf Tree Frog</opt>
-    <opt>Green Tree Frog</opt>
-    <opt>Rockhole Frog</opt>
-    <opt>Coplands Rock Frog</opt>
-    <opt>Masked Frog</opt>
-    <opt>Wotjulum Frog</opt>
-    <opt>Pale Frog</opt>
-    <opt>Rocket Frog</opt>
-    <opt>Peter's Frog</opt>
-    <opt>Tornier's Frog</opt>
-    <opt>Dahl's Aquatic Frog</opt>
-    <opt>Marbled Frog</opt>
-    <opt>Woodworker Frog</opt>
-    <opt>Ornate Burrowing Frog</opt>
-    <opt>Floodplain Toadlet</opt>
-    <opt>Stonemason Toadlet</opt>
-    <opt>Remote Froglet</opt>
-    <opt>Bilingual Froglet</opt>
-    <opt>Northern Spadefoot Toad</opt>
-    <opt>Giant Burrowing Frog</opt>
-    <opt>Cane Toad</opt>
-  </opt>
-  <opt>Cane Toad</opt>
   <opt>Mammal</opt>
-  <opt>Something else</opt>
   <opt>Nothing in trap</opt>
+  <opt>
+    Skink
+    <opt>Bar-shouldered Sctenotus</opt>
+    <opt>Bar-tailed bar-lipped Skink</opt>
+    <opt>Bauxite Rainbow Skink</opt>
+    <opt>Blue-tongued Lizzard</opt>
+    <opt>Dessert Rainbow Skink</opt>
+    <opt>Lined Fire-tail Skink</opt>
+    <opt>Metallic Snake-eyed Skink</opt>
+    <opt>Northen Dwarf Skink</opt>
+    <opt>Northern Bar-lipped Skink</opt>
+    <opt>Northern Mulch Skink</opt>
+    <opt>Northern Soil-crevice Skink</opt>
+    <opt>Ornate Soil-crevice Skink</opt>
+    <opt>Port Essignton Ctenotus</opt>
+    <opt>Robust Ctenotus</opt>
+    <opt>Shaded-litter Rainbow Skink</opt>
+    <opt>Slender Rainbow Skink</opt>
+    <opt>Spalding Ctenotus</opt>
+    <opt>Stor's Snake-eyed Skink</opt>
+  </opt>
+  <opt>Snake</opt>
+  <opt>Something else</opt>
+  <opt>Turtle</opt>
 </opts>

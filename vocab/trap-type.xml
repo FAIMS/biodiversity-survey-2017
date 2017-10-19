@@ -1,1 +1,7 @@
-<opts> <opt>Pit fall trap</opt> <opt>Funnel trap</opt> <opt>Elliot trap</opt> <opt>Cage trap</opt> <opt>Camera trap</opt> </opts>
+<opts>
+  <opt>Cage trap</opt>
+  <opt>Camera trap</opt>
+  <opt>Elliot trap</opt>
+  <opt>Funnel trap</opt>
+  <opt>Pit fall trap</opt>
+</opts>
