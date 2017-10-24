@@ -1,0 +1,15 @@
+/******************************** SYNC DISABLE ********************************/
+addOnEvent("Start/Tracklog/SyncOff", "click", "stopSync()");
+addOnEvent("Start/Tracklog/SyncOn", "click", "startSync()");
+
+startSync() {
+    setSyncEnabled(true);
+    setFileSyncEnabled(true);
+}
+
+stopSync() {
+    setSyncEnabled(false);
+    setFileSyncEnabled(false);
+}
+
+stopSync();

@@ -1,0 +1,9 @@
+/*********************************** SHARED ***********************************/
+
+int parseInt(String s) {
+  try {
+    return Integer.parseInt(s);
+  } catch (Exception e) {
+    return 0;
+  }
+}

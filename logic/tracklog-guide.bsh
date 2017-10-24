@@ -1,0 +1,31 @@
+/******************************* TRACKLOG GUIDE *******************************/
+final String TRACKLOG_GUIDE_REF = "Start/Main/Guide";
+
+addOnEvent(getTabRef(TRACKLOG_GUIDE_REF), "show", "updateTracklogGuide()");
+
+
+String getTracklogGuideString(String color, String state) {
+  String msg =
+    "<p>" +
+        "<b>Tracklog is: <span style='color: %s'>%s</span></b>" +
+    "</p>" +
+
+    "<p style='color:blue'>" +
+        "The tracklog can be toggled on and off from the 'TRACKLOG' tab." +
+    "</p>" +
+
+    "<hr/>";
+
+  msg = replaceFirst(msg, color);
+  msg = replaceFirst(msg, state);
+
+  return msg;
+}
+
+void updateTracklogGuide() {
+  String msgOn  = getTracklogGuideString("green", "Enabled");
+  String msgOff = getTracklogGuideString("red",   "Disabled");
+
+  if (isTrackingGPS()) populateWebViewHtml(TRACKLOG_GUIDE_REF, msgOn);
+  else                 populateWebViewHtml(TRACKLOG_GUIDE_REF, msgOff);
+}

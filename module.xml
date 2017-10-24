@@ -1,10 +1,14 @@
 <module>
-<!--TODO: Sort dropdowns alphabetically-->
-<!--TODO: Sync set as disabled, no password-->
-<!--TODO: Tracklog-->
-  <!--TODO: Tracklog needs to be on second tab, place reminder on first tab-->
-<!--TODO: Filter by Type, User, Date (when the record was created)-->
-  <!--TODO: Date will be dropdown of -->
+  <!--TODO: Test tracklog-->
+  <!--TODO: Filter by Type, User, Date (when the record was created)-->
+    <!--TODO: Date will be dropdown -->
+  <!--TODO: Implement map-->
+
+<rels>
+  <RelationshipElement name="TransectSUI">
+    <description>Defines relationship between Transect and Survey Unit</description>
+  </RelationshipElement>
+</rels>
 
 <Login f="nodata">
   <Login f="noscroll">
@@ -13,20 +17,48 @@
 </Login>
 
 <Start f="nodata">
-  <Tracklog>
-    <Start_Tracklog t="button"/>
-    <Stop_Tracklog t="button"/>
-    <GPS_Status t="gpsdiag"/>
-  </Tracklog>
   <Main>
+    <Guide t="webview" f="nolabel"/>
     <Setting_up_Trap       l="Setup_Trap"/>
     <Checking_Trap         l="Check_Trap"/>
     <Animal_outside_Trap   l="Animal_outside"/>
-    <DNA_Sample            t="button"/>
+    <DNA_Sample            l="DNA_Sample"/>
     <Plant_Survey          l="Plant_Survey"/>
     <Cultural_Knowledge    l="Cultural_Knowledge"/>
     <Notes                 l="Notes"/>
   </Main>
+  <Tracklog>
+    <internalExternalGPS t="radio">
+      Choose which GPS to connect to:
+      <opts>
+        <opt>Internal</opt>
+        <opt>External</opt>
+      </opts>
+    </internalExternalGPS>
+    <cols>
+      <col>
+        <refreshText b="decimal">
+          GPS Refresh Rate (s)
+        </refreshText>
+      </col>
+      <col>
+        <startGPSButton t="button">Start GPS</startGPSButton>
+        <stopGPSButton  t="button"> Stop GPS </stopGPSButton>
+      </col>
+    </cols>
+    <cols>
+      <trackdistText b="decimal">Tracklog Distance Interval (m)</trackdistText>
+      <trackdistButton t="button">Set Tracklog Distance Interval</trackdistButton>
+    </cols>
+    <cols>
+      <tracktimeText b="decimal">Tracklog Time interval (s)</tracktimeText>
+      <tracktimeButton t="button">Set Tracklog Time Interval</tracktimeButton>
+    </cols>
+    <trackOffButton t="button">Tracklog Off</trackOffButton>
+    <trackStatus f="readonly" b="string">Tracklog Status</trackStatus>
+    <SyncOn t="button">Sync On</SyncOn>
+    <SyncOff t="button">Sync Off</SyncOff>
+  </Tracklog>
   <Map f="noscroll">
     <Map t="map" f="nolabel"/>
   </Map>
@@ -34,9 +66,10 @@
 </Start>
 
 <Setup_Trap>
-  <fmt>{{Place_name}} {{What_type_of_trap}} {{timestamp}}</fmt>
+  <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
-    <timestamp/>
+    <Date/>
+    <Time/>
     <author>Who is putting out traps?</author>
     <Other_people/>
     <Place_name/>
@@ -49,9 +82,10 @@
 </Setup_Trap>
 
 <Check_Trap>
-  <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{timestamp}}</fmt>
+  <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{Date}} {{Time}}</fmt>
   <Checking>
-    <timestamp/>
+    <Date/>
+    <Time/>
     <author>Who is checking?</author>
     <What_trap_are_you_checking>
       What trap are you checking?
@@ -77,9 +111,10 @@
 </Check_Trap>
 
 <Animal_outside>
-  <fmt>{{Animal_outside_trap}} {{timestamp}}</fmt>
+  <fmt>{{Animal_outside_trap}} {{Date}} {{Time}}</fmt>
   <Animal>
-    <timestamp/>
+    <Date/>
+    <Time/>
     <author>Who is recording?</author>
     <Animal_outside_trap>
       <!--@SOURCE: vocab/animal-type.xml-->
@@ -91,10 +126,25 @@
   </Animal>
 </Animal_outside>
 
+<DNA_Sample>
+  <fmt>{{YMR_number}} {{Type_Name}} {{Date}} {{Time}}</fmt>
+  <DNA_Sample>
+    <Date/>
+    <Time/>
+    <Who_is_recording>Who is recording?</Who_is_recording>
+    <YMR_number b="decimal"/>
+    <Type_Name/>
+    <Snout_to_vent_length_mm>Snout to vent length (mm)</Snout_to_vent_length_mm>
+    <Take_Photo t="camera"/>
+    <gps/>
+  </DNA_Sample>
+</DNA_Sample>
+
 <Plant_Survey>
-  <fmt>{{Type_plant_name}} {{timestamp}}</fmt>
+  <fmt>{{Type_plant_name}} {{Date}} {{Time}}</fmt>
   <Plant>
-    <timestamp/>
+    <Date/>
+    <Time/>
     <author>Who is recording?</author>
     <Type_plant_name/>
     <Take_Photo t="camera"/>
@@ -103,9 +153,10 @@
 </Plant_Survey>
 
 <Cultural_Knowledge>
-  <fmt>{{Who_is_talking}} {{timestamp}}</fmt>
+  <fmt>{{Who_is_talking}} {{Date}} {{Time}}</fmt>
   <Cultural_Knowledge>
-    <timestamp/>
+    <Date/>
+    <Time/>
     <author>Who is recording?</author>
     <Who_is_talking>Who is talking?</Who_is_talking>
     <What_is_being_talked_about>What is being talked about?</What_is_being_talked_about>
@@ -116,14 +167,50 @@
 </Cultural_Knowledge>
 
 <Notes>
-  <fmt>{{author}} {{timestamp}}</fmt>
+  <fmt>{{author}} {{Date}} {{Time}}</fmt>
   <Notes>
-    <timestamp/>
+    <Date/>
+    <Time/>
     <author>Who is recording?</author>
     <Notes/>
     <Take_Photo t="camera"/>
     <gps/>
   </Notes>
 </Notes>
+
+
+<Tracklog f="noui">
+  <fmt>{{TracklogTeam}} {{Timestamp}}</fmt>
+  <Tracklog>
+    <Timestamp/>
+    <TracklogTeam/>
+    <Latitude/>
+    <Longitude/>
+    <Heading/>
+    <Accuracy/>
+  </Tracklog>
+</Tracklog>
+
+<Transect_Point f="noui">
+  <fmt>{{TracklogTeam}} {{Timestamp}}</fmt>
+  <Transect_Point>
+    <Timestamp/>
+    <TracklogTeam/>
+    <State/>
+    <Latitude/>
+    <Longitude/>
+    <Heading/>
+    <Accuracy/>
+  </Transect_Point>
+</Transect_Point>
+
+<logic><![CDATA[
+<!--@SOURCE: logic/shared.bsh-->
+<!--@SOURCE: logic/sync-disable.bsh-->
+<!--@SOURCE: logic/tracklog-guide.bsh-->
+<!--@SOURCE: logic/tracklog.bsh-->
+<!--@SOURCE: logic/date-time-population.bsh-->
+<!--@SOURCE: logic/map.bsh-->
+]]></logic>
 
 </module>

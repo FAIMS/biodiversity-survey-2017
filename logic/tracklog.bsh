@@ -1,0 +1,327 @@
+/********************************** TRACKLOG **********************************/
+import java.util.concurrent.Callable;
+
+String tracklogStatus = "Tracklog is Stopped";
+String tracklogState = "Stop";
+Boolean transectEnabled = false;
+
+numTracklogPoints = 0;
+tracklogCurrentStatus = "";
+numTransectPoints = 0;
+
+void setGpsInternalExternal() {
+  setFieldValue("Start/Tracklog/internalExternalGPS", "{Internal}");
+}
+
+void  enableTransect() { transectEnabled = true;  }
+void disableTransect() { transectEnabled = false; }
+
+saveEntitiesToRel(String type, String entity1, String entity2, Callable callback) {
+    if (isNull(entity1) || isNull(entity2)) return;
+    saveRel(null, type, null, null, new SaveCallback() {
+        onSave(rel_id, newRecord) {
+            addReln(entity1, rel_id, null);
+            addReln(entity2, rel_id, null);
+            callback.call();
+        }
+    });
+}
+
+List getTransectTabGroups() {
+  List transectTabGroups = new ArrayList();
+
+  for (tabGroup : getTabGroups())
+    if (!isFlaggedNodata(tabGroup))
+      transectTabGroups.add(tabGroup);
+
+  return transectTabGroups;
+}
+
+List getTransectButtons() {
+  List btns = new ArrayList();
+  List refs = getRefsMatching("Start/Main/*");
+
+  for (ref : refs)
+    if ("button".equals(getType(ref)))
+      btns.add(ref);
+
+  return btns;
+}
+
+String getSurveyUnitId() {
+  Log.d("getSurveyUnitId()", "" + getUuid(getDisplayedTabGroup()));
+  return getUuid(getDisplayedTabGroup());
+}
+
+boolean canMakeTransectPoint() {
+  if (!isTrackingGPS()) {
+    String head = "Cannot Continue";
+    String body = "You must enable the tracklog to continue.";
+
+    showWarning(head, body);
+  }
+
+  return isTrackingGPS();
+}
+
+startTimeTrack() {
+    stopTrack();
+
+    String trackText = getFieldValue("Start/Tracklog/tracktimeText");
+    int    trackInt  = parseInt(trackText);
+
+    if (trackInt <= 0) {
+      showToast("Please enter a positive number in the 'Tracking Distance Interval' field");
+    } else if(isInternalGPSOn() || isExternalGPSOn()) {
+        tracklogState = "Time";
+        showToast("Tracklog enabled. Tracklog time interval set to " + trackText + " seconds.");
+        startTrackingGPS("time", trackInt, "saveGPSTrack(\"Start\")");
+        updateTrackStatus();
+    } else {
+        showToast("GPS is not turned on.");
+    }
+}
+
+startDistTrack() {
+    stopTrack();
+
+    String trackText = getFieldValue("Start/Tracklog/trackdistText");
+    int    trackInt  = parseInt(trackText);
+
+    if(isInternalGPSOn() || isExternalGPSOn()) {
+        tracklogState = "Distance";
+        showToast("Tracklog enabled. Tracklog distance interval set to " + trackText + " metres.");
+        startTrackingGPS("distance", trackInt, "saveGPSTrack(\"Start\")");
+        updateTrackStatus();
+    } else {
+        showToast("GPS is not turned on.");
+    }
+}
+
+stopTrack() {
+    stopTrackingGPS();
+    numTracklogPoints = 0;
+    numTransectPoints = 0;
+    tracklogState = "Stopped";
+    showToast("Tracklog disabled.");
+    updateTrackStatus();
+    saveGPSTrack("End");
+}
+
+updateTrackStatus() {
+    if (tracklogState.equals("Time"))    
+            tracklogStatus = "Tracklog Started - Time: "+getFieldValue("Start/Tracklog/tracktimeText")+"s";
+    else if (tracklogState.equals("Distance"))
+            tracklogStatus = "Tracklog Started - Distance: "+getFieldValue("Start/Tracklog/trackdistText")+"m";
+    else
+            tracklogStatus = "Tracklog is "+tracklogState;
+    
+    if (numTracklogPoints > 0)
+        tracklogStatus += "\nNumber Tracklog Points collected: "+numTracklogPoints;
+    if (numTransectPoints > 0)
+        tracklogStatus += "\nNumber current transect Points collected: "+numTransectPoints;
+
+    tracklogStatus += "\nCurrent GPS Estimated Accuracy: "+ getGPSEstimatedAccuracy();
+    
+
+    setFieldValue("Start/Tracklog/trackStatus", tracklogStatus);
+}
+
+isGPSOn() {
+    return isInternalGPSOn() || isExternalGPSOn();
+}
+
+saveGPSTrack(String stateAppend) {
+    if (isInUnitTestTime()) {
+      // This function uses the Nutiteq `Point` class, which is difficult to
+      // mock.
+      return;
+    }
+
+    position = getGPSPosition();
+    if (!isGPSOn() || position == null) {
+        tracklogState = "Bad GPS Fix";
+        return;
+    }
+    numTracklogPoints++;
+
+    List attributes = createAttributeList();
+
+    String date = new java.text.SimpleDateFormat("d-MMM-yy HH:MM:ss z").format(new Date());
+    attributes.add(createEntityAttribute("Longitude"    , null , null , "" + position.getLongitude()   , null));
+    attributes.add(createEntityAttribute("Latitude"     , null , null , "" + position.getLatitude()    , null));
+    attributes.add(createEntityAttribute("Heading"      , null , null , "" + getGPSHeading()           , null));
+    attributes.add(createEntityAttribute("Accuracy"     , null , null , "" + getGPSEstimatedAccuracy() , null));
+    attributes.add(createEntityAttribute("Timestamp"    , null , null , "" + date                      , null));
+    attributes.add(createEntityAttribute("TracklogTeam" , null , null , username                       , null));
+
+    positionProj = getGPSPositionProjected();
+    Point p = new Point(new MapPos(positionProj.getLongitude(), positionProj.getLatitude()), null, (PointStyle) null, null);
+    ArrayList l = new ArrayList();
+    l.add(p);
+    
+    saveArchEnt(null, "Tracklog", l, attributes, new SaveCallback() {
+        onSave(uuid, newRecord) {
+            if (transectEnabled) {
+                numTransectPoints++;
+                Boolean end = false;
+                if(stateAppend.equals("End")) {
+                    end = true;
+                    transectEnabled = false;
+                }
+                if (!stateAppend.equals("")) {
+                    attributes.add(createEntityAttribute("State", null, null, stateAppend, null));
+                    stateAppend = "";
+                }
+
+                p = new Point(new MapPos(positionProj.getLongitude(), positionProj.getLatitude()), null, (PointStyle) null, null);
+                l = new ArrayList();
+                l.add(p);
+                
+                saveArchEnt(null, "Transect Point", l, attributes, new SaveCallback() {
+                    onSave(uuid, newRecord) {
+                        transect_id = uuid;
+                        Callable callback = new Callable() {
+                            call() {
+                                if(end) updateCurrentTransect();
+                            }
+                        };
+                        saveEntitiesToRel("TransectSUI", transect_id, getSurveyUnitId(), callback);
+                    }
+                });
+            }
+            updateTrackStatus();
+        }
+    });
+}
+
+addActionBarItem("time_tracklog", new ToggleActionButtonCallback() {
+    actionOnLabel() {
+        "Disable Time Tracklog";
+    }
+    actionOn() {
+        stopTrack();
+        showToast("Tracklog disabled.");
+    }
+    isActionOff() {
+        tracklogState.equals("Time");
+    }
+    actionOffLabel() {
+        "Enable Time Tracklog";
+    }
+    actionOff() {
+        if(isInternalGPSOn() || isInternalGPSOn()) {
+            startTimeTrack();
+            showToast("Tracklog enabled. Tracklog time interval set to " + getFieldValue("Start/Tracklog/tracktimeText") + " seconds. You can change it in the Tracklog tab.");    
+        } else {
+            showToast("GPS is not turned on.");
+            this.isActionOff();
+        }
+        
+    }
+});
+
+addActionBarItem("distance_tracklog", new ToggleActionButtonCallback() {
+    actionOnLabel() {
+        "Disable Distance Tracklog";
+    }
+    actionOn() {
+        stopTrack();
+        showToast("Tracklog disabled.");
+    }
+    isActionOff() {
+        tracklogState.equals("Distance");
+    }
+    actionOffLabel() {
+        "Enable Distance Tracklog";
+    }
+    actionOff() {
+        if(isInternalGPSOn() || isInternalGPSOn()) {
+            startDistTrack();
+        showToast("Tracklog enabled. Tracklog distance interval set to " + getFieldValue("Start/Tracklog/trackdistText") + " metres. You can change it in the Tracklog tab.");
+        } else {
+            showToast("GPS is not turned on.");
+            this.isActionOff();
+        }
+    }
+});
+
+startGPS() {
+    Object intext = getFieldValue("Start/Tracklog/internalExternalGPS");
+    if(isNull(intext)) {
+        showWarning("Warning", "Please choose whether you would like to connect to internal or external GPS.");
+        return;
+    }
+    setGPSUpdateInterval(Integer.parseInt(getFieldValue("Start/Tracklog/refreshText")));
+    showToast("GPS enabled. GPS refresh rate set to " + getFieldValue("Start/Tracklog/refreshText") + ".");
+    if(intext.equals("Internal")) { 
+        if(isExternalGPSOn()) stopGPS();
+        startInternalGPS();
+    }
+    if(intext.equals("External")) {
+        if(isInternalGPSOn()) stopGPS();
+        startExternalGPS();
+    }
+}
+
+stopGPSLogic() {
+    if(!isInternalGPSOn() && !isExternalGPSOn()) {
+        showToast("GPS disabled.");
+        stopGPS();
+    } else {
+        showToast("GPS is not turned on.");
+    }
+}
+
+reallyDeleteTransectUnit(String tabGroup) {
+    fetchAll("select transect.uuid " +
+            "from " +
+            "(select uuid, relationshipid " +
+            "from (select aenttypeid from aenttype where aenttypename = '" + getArchEntType(tabGroup) + "')  " +
+                    "join latestnondeletedarchent using (aenttypeid) " +
+                    "join latestnondeletedaentreln using (uuid)) surveyUnit  " +
+            "join ((select aenttypeid from aenttype where aenttypename = 'Transect Point')  " +
+                    "join latestnondeletedarchent using (aenttypeid) " +
+                    "join latestnondeletedaentreln using (uuid)) transect using (relationshipid) " +
+            "where surveyUnit.uuid = " + getUuid(tabGroup) + ";", new FetchCallback() {
+                onFetch(transects) {
+                    if(!isNull(transects)) {
+                        for(transect:transects) {
+                            deleteArchEnt(transect.get(0));
+                        }
+                    }
+                }
+            });
+    deleteArchEnt(getUuid(tabGroup), new DeleteCallback() {
+        onDelete(uuid) {
+            cancelTabGroup(tabGroup, false);
+            transectEnabled = false;
+            showTab("control/Start");        
+        }
+    });
+}
+
+
+addOnEvent("Start/Tracklog", "show", "setGpsInternalExternal()");
+addOnEvent("Start/Tracklog/startGPSButton", "click", "startGPS();");
+addOnEvent("Start/Tracklog/stopGPSButton", "click", "stopGPSLogic();");
+addOnEvent("Start/Tracklog/trackOffButton", "click", "stopTrack()");
+addOnEvent("Start/Tracklog/trackdistButton", "click", "startDistTrack()");
+addOnEvent("Start/Tracklog/tracktimeButton", "click", "startTimeTrack()");
+
+persistOverSessions("Start/Tracklog/refreshText",   "10");
+persistOverSessions("Start/Tracklog/trackdistText", "20");
+persistOverSessions("Start/Tracklog/tracktimeText", "30");
+
+addOnEvent("Start/Tracklog/trackOffButton", "click", "disableTransect()");
+for (ref : getTransectTabGroups()) {
+  addOnEvent(ref, "create", "triggerAutoSave()", PRECEDENCE_MID+1);
+  addOnEvent(ref, "create", "enableTransect()");
+  addOnEvent(ref, "create", "saveGPSTrack(\"\")");
+  addOnEvent(ref, "delete", "disableTransect()");
+  addOnEvent(ref, "delete", "reallyDeleteTransectUnit", new Object[] {ref});
+}
+
+for (ref : getTransectButtons()) {
+  addOnEventCond(ref, "click", "canMakeTransectPoint()");
+}

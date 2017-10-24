@@ -1,0 +1,39 @@
+/**************************** DATE/TIME POPULATION ****************************/
+
+List getDateTimeTabGroups() {
+  // Construct list of Tab groups
+  tabGroupList = getRefsMatching("*/((Date)|(Time))");
+  for (int i = 0; i < tabGroupList.size(); i++) {
+    // Convert full ref to tab group ref
+    String ref;
+    ref = tabGroupList.get(i);
+    ref = getTabGroupRef(ref);
+
+    tabGroupList.set(i, ref);
+  }
+
+  // `tabGroupList` might contain duplicates. Remove them here.
+  Set tabGroupSet = new HashSet();
+  tabGroupSet.addAll(tabGroupList);
+  tabGroupList = new ArrayList(tabGroupSet);
+
+  return tabGroupList;
+}
+
+String getTimeNow() { return getTimestampNow("HH:mm:ssZ",  true); }
+String getDateNow() { return getTimestampNow("yyyy-MM-dd", false); }
+
+void setDate() {
+  List refs = getRefsMatching(getDisplayedTabGroup() + "/*/Date");
+  for (ref : refs)
+    setFieldValue(ref, getDateNow());
+}
+
+void setTime() {
+  List refs = getRefsMatching(getDisplayedTabGroup() + "/*/Time");
+  for (ref : refs)
+    setFieldValue(ref, getTimeNow());
+}
+
+for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setDate()");
+for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setTime()");

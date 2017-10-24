@@ -1,0 +1,110 @@
+final Map WEBVIEW_CONTENTS = new HashMap();
+
+void populateWebViewHtml(String ref, String html) {
+  WEBVIEW_CONTENTS.put(ref, html);
+}
+
+String getWebViewHtml(String ref) {
+  return WEBVIEW_CONTENTS.get(ref);
+}
+
+// TRACKLOG GUIDE WEBVIEW UPDATES TO SHOW 'ENABLED'
+{
+  boolean isTrackingGPS() { return true; }
+
+  executeOnEvent(
+      getTabRef(TRACKLOG_GUIDE_REF),
+      "show"
+  );
+
+  assert(getWebViewHtml(TRACKLOG_GUIDE_REF).equals("<p><b>Tracklog is: <span style='color: green'>Enabled</span></b></p><p style='color:blue'>The tracklog can be toggled on and off from the 'TRACKLOG' tab.</p><hr/>"));
+}
+
+// TRACKLOG GUIDE WEBVIEW UPDATES TO SHOW 'DISABLED'
+{
+  boolean isTrackingGPS() { return false; }
+
+  executeOnEvent(
+      getTabRef(TRACKLOG_GUIDE_REF),
+      "show"
+  );
+
+  assert(getWebViewHtml(TRACKLOG_GUIDE_REF).equals("<p><b>Tracklog is: <span style='color: red'>Disabled</span></b></p><p style='color:blue'>The tracklog can be toggled on and off from the 'TRACKLOG' tab.</p><hr/>"));
+}
+
+// MODIFYING THE LIST RETURNED FROM `getRefsMatching` DOESN'T BREAK MEMOISATION
+{
+  String pattern = "*";
+
+  List l1 = getRefsMatching(pattern);
+  List l2 = new ArrayList(l1);
+  l1.remove(l1.size() - 1);
+  List l3 = getRefsMatching(pattern);
+
+  assert(!l1.equals(l2));
+  assert( l2.equals(l3));
+}
+
+// DATE AND TIME FIELDS GET SET FOR A TAB GROUP UPON CREATION
+{
+  String date;  String refDate = "Setup_Trap/Setting_up/Date";
+  String time;  String refTime = "Setup_Trap/Setting_up/Time";
+
+  date = getFieldValue(refDate);  assert(isNull(date));
+  time = getFieldValue(refTime);  assert(isNull(time));
+
+  String tabGroup = "Setup_Trap";
+  updateDisplayedTabGroup(tabGroup);
+  executeOnEvent(tabGroup, "create");
+
+  date = getFieldValue(refDate);  assert(!isNull(date));
+  time = getFieldValue(refTime);  assert(!isNull(time));
+}
+
+// WHEN `isTrackingGPS` IS FALSE, CLICKING 'Setting up Trap' SHOWS A WARNING
+// AND DOES NOT NAVIGATE TO NEXT TAB GROUP
+{
+  boolean isTrackingGPS() { return false; }
+  executeOnEvent("Start", "show");
+
+  Runnable() {
+    run() {
+      executeOnEvent("Start/Main/Setting_up_Trap", "click");
+    }
+    return this;
+  }
+
+  String tabGroupBefore = getDisplayedTabGroup();
+  String msgExpected    = "showWarning: Cannot Continue | You must enable the tracklog to continue.\n";
+  String msgActual      = getStdout(Runnable());
+  String tabGroupAfter  = getDisplayedTabGroup();
+
+  assert(msgExpected.equals(msgActual));
+
+  assert("Start".equals(tabGroupBefore));
+  assert("Start".equals(tabGroupAfter ));
+}
+
+// WHEN `isTrackingGPS` IS TRUE, CLICKING 'Setting up Trap' SHOWS NO WARNING
+// AND DOES NAVIGATE TO NEXT TAB GROUP
+{
+  boolean isTrackingGPS() { return true; }
+  executeOnEvent("Start", "show");
+
+
+  Runnable() {
+    run() {
+      executeOnEvent("Start/Main/Setting_up_Trap", "click");
+    }
+    return this;
+  }
+
+  String tabGroupBefore = getDisplayedTabGroup();
+  String msgExpected = "";
+  String msgActual   = getStdout(Runnable());
+  String tabGroupAfter  = getDisplayedTabGroup();
+
+  assert(msgExpected.equals(msgActual));
+  assert("Start"     .equals(tabGroupBefore));
+  assert("Setup_Trap".equals(tabGroupAfter ));
+}

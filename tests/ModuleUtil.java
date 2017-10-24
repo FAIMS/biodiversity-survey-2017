@@ -35,6 +35,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: tab group
+        Ref:  DNA_Sample
+     */
+    public static View get_DNASample(Solo solo) {
+        String ref = "DNA_Sample";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: tab group
         Ref:  Login
      */
     public static View get_Login(Solo solo) {
@@ -101,6 +110,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_CulturalKnowledge_CulturalKnowledge(Solo solo) {
         String ref = "Cultural_Knowledge/Cultural_Knowledge";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: tab
+        Ref:  DNA_Sample/DNA_Sample
+     */
+    public static View get_DNASample_DNASample(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -267,6 +285,24 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  DNA_Sample/DNA_Sample/Take_From_GPS_1
+     */
+    public static View get_DNASample_DNASample_TakeFromGPS1(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Take_From_GPS_1";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  DNA_Sample/DNA_Sample/Take_Photo_Button_1
+     */
+    public static View get_DNASample_DNASample_TakePhotoButton1(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Take_Photo_Button_1";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Notes/Notes/Take_From_GPS_1
      */
     public static View get_Notes_Notes_TakeFromGPS1(Solo solo) {
@@ -402,19 +438,64 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  Start/Tracklog/Start_Tracklog
+        Ref:  Start/Tracklog/SyncOff
      */
-    public static View get_Start_Tracklog_StartTracklog(Solo solo) {
-        String ref = "Start/Tracklog/Start_Tracklog";
+    public static View get_Start_Tracklog_SyncOff(Solo solo) {
+        String ref = "Start/Tracklog/SyncOff";
         return (android.view.View) solo.getView((Object) ref);
     }
 
     /*
         Type: button
-        Ref:  Start/Tracklog/Stop_Tracklog
+        Ref:  Start/Tracklog/SyncOn
      */
-    public static View get_Start_Tracklog_StopTracklog(Solo solo) {
-        String ref = "Start/Tracklog/Stop_Tracklog";
+    public static View get_Start_Tracklog_SyncOn(Solo solo) {
+        String ref = "Start/Tracklog/SyncOn";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Start/Tracklog/startGPSButton
+     */
+    public static View get_Start_Tracklog_startGPSButton(Solo solo) {
+        String ref = "Start/Tracklog/startGPSButton";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Start/Tracklog/stopGPSButton
+     */
+    public static View get_Start_Tracklog_stopGPSButton(Solo solo) {
+        String ref = "Start/Tracklog/stopGPSButton";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Start/Tracklog/trackOffButton
+     */
+    public static View get_Start_Tracklog_trackOffButton(Solo solo) {
+        String ref = "Start/Tracklog/trackOffButton";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Start/Tracklog/trackdistButton
+     */
+    public static View get_Start_Tracklog_trackdistButton(Solo solo) {
+        String ref = "Start/Tracklog/trackdistButton";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Start/Tracklog/tracktimeButton
+     */
+    public static View get_Start_Tracklog_tracktimeButton(Solo solo) {
+        String ref = "Start/Tracklog/tracktimeButton";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -433,6 +514,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_CheckTrap_Checking_TakePhoto(Solo solo) {
         String ref = "Check_Trap/Checking/Take_Photo";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: camera
+        Ref:  DNA_Sample/DNA_Sample/Take_Photo
+     */
+    public static View get_DNASample_DNASample_TakePhoto(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Take_Photo";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -500,21 +590,21 @@ public class ModuleUtil extends ModuleHelper {
     }
 
     /*
-        Type: gpsdiag
-        Ref:  Start/Tracklog/GPS_Status
-     */
-    public static View get_Start_Tracklog_GPSStatus(Solo solo) {
-        String ref = "Start/Tracklog/GPS_Status";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
         Type: input
         Ref:  Animal_outside/Animal/Accuracy
      */
     public static View get_Animaloutside_Animal_Accuracy(Solo solo) {
         String ref = "Animal_outside/Animal/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Animal_outside/Animal/Date
+     */
+    public static EditText get_Animaloutside_Animal_Date(Solo solo) {
+        String ref = "Animal_outside/Animal/Date";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -555,6 +645,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Animal_outside/Animal/Time
+     */
+    public static EditText get_Animaloutside_Animal_Time(Solo solo) {
+        String ref = "Animal_outside/Animal/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Animal_outside/Animal/Type_Name
      */
     public static EditText get_Animaloutside_Animal_TypeName(Solo solo) {
@@ -569,6 +668,15 @@ public class ModuleUtil extends ModuleHelper {
     public static View get_CheckTrap_Checking_Accuracy(Solo solo) {
         String ref = "Check_Trap/Checking/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Check_Trap/Checking/Date
+     */
+    public static EditText get_CheckTrap_Checking_Date(Solo solo) {
+        String ref = "Check_Trap/Checking/Date";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -645,6 +753,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Check_Trap/Checking/Time
+     */
+    public static EditText get_CheckTrap_Checking_Time(Solo solo) {
+        String ref = "Check_Trap/Checking/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Check_Trap/Checking/YMR_Tissue_Number
      */
     public static EditText get_CheckTrap_Checking_YMRTissueNumber(Solo solo) {
@@ -659,6 +776,15 @@ public class ModuleUtil extends ModuleHelper {
     public static View get_CulturalKnowledge_CulturalKnowledge_Accuracy(Solo solo) {
         String ref = "Cultural_Knowledge/Cultural_Knowledge/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Date
+     */
+    public static EditText get_CulturalKnowledge_CulturalKnowledge_Date(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Date";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -699,6 +825,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Time
+     */
+    public static EditText get_CulturalKnowledge_CulturalKnowledge_Time(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Cultural_Knowledge/Cultural_Knowledge/What_is_being_talked_about
      */
     public static EditText get_CulturalKnowledge_CulturalKnowledge_Whatisbeingtalkedabout(Solo solo) {
@@ -726,11 +861,119 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  DNA_Sample/DNA_Sample/Accuracy
+     */
+    public static View get_DNASample_DNASample_Accuracy(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Accuracy";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Date
+     */
+    public static EditText get_DNASample_DNASample_Date(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Date";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Easting
+     */
+    public static View get_DNASample_DNASample_Easting(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Easting";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Latitude
+     */
+    public static View get_DNASample_DNASample_Latitude(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Latitude";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Longitude
+     */
+    public static View get_DNASample_DNASample_Longitude(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Longitude";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Northing
+     */
+    public static View get_DNASample_DNASample_Northing(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Northing";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Snout_to_vent_length_mm
+     */
+    public static EditText get_DNASample_DNASample_Snouttoventlengthmm(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Snout_to_vent_length_mm";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Time
+     */
+    public static EditText get_DNASample_DNASample_Time(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Type_Name
+     */
+    public static EditText get_DNASample_DNASample_TypeName(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Type_Name";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/Who_is_recording
+     */
+    public static EditText get_DNASample_DNASample_Whoisrecording(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/Who_is_recording";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  DNA_Sample/DNA_Sample/YMR_number
+     */
+    public static EditText get_DNASample_DNASample_YMRnumber(Solo solo) {
+        String ref = "DNA_Sample/DNA_Sample/YMR_number";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Notes/Notes/Accuracy
      */
     public static View get_Notes_Notes_Accuracy(Solo solo) {
         String ref = "Notes/Notes/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Notes/Notes/Date
+     */
+    public static EditText get_Notes_Notes_Date(Solo solo) {
+        String ref = "Notes/Notes/Date";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -780,11 +1023,29 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Notes/Notes/Time
+     */
+    public static EditText get_Notes_Notes_Time(Solo solo) {
+        String ref = "Notes/Notes/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Plant_Survey/Plant/Accuracy
      */
     public static View get_PlantSurvey_Plant_Accuracy(Solo solo) {
         String ref = "Plant_Survey/Plant/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Plant_Survey/Plant/Date
+     */
+    public static EditText get_PlantSurvey_Plant_Date(Solo solo) {
+        String ref = "Plant_Survey/Plant/Date";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -825,6 +1086,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Plant_Survey/Plant/Time
+     */
+    public static EditText get_PlantSurvey_Plant_Time(Solo solo) {
+        String ref = "Plant_Survey/Plant/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Plant_Survey/Plant/Type_plant_name
      */
     public static EditText get_PlantSurvey_Plant_Typeplantname(Solo solo) {
@@ -839,6 +1109,15 @@ public class ModuleUtil extends ModuleHelper {
     public static View get_SetupTrap_Settingup_Accuracy(Solo solo) {
         String ref = "Setup_Trap/Setting_up/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Setup_Trap/Setting_up/Date
+     */
+    public static EditText get_SetupTrap_Settingup_Date(Solo solo) {
+        String ref = "Setup_Trap/Setting_up/Date";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -897,10 +1176,55 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Setup_Trap/Setting_up/Time
+     */
+    public static EditText get_SetupTrap_Settingup_Time(Solo solo) {
+        String ref = "Setup_Trap/Setting_up/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Start/Search/Search_Term
      */
     public static EditText get_Start_Search_SearchTerm(Solo solo) {
         String ref = "Start/Search/Search_Term";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Start/Tracklog/refreshText
+     */
+    public static EditText get_Start_Tracklog_refreshText(Solo solo) {
+        String ref = "Start/Tracklog/refreshText";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Start/Tracklog/trackStatus
+     */
+    public static View get_Start_Tracklog_trackStatus(Solo solo) {
+        String ref = "Start/Tracklog/trackStatus";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Start/Tracklog/trackdistText
+     */
+    public static EditText get_Start_Tracklog_trackdistText(Solo solo) {
+        String ref = "Start/Tracklog/trackdistText";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Start/Tracklog/tracktimeText
+     */
+    public static EditText get_Start_Tracklog_tracktimeText(Solo solo) {
+        String ref = "Start/Tracklog/tracktimeText";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 
@@ -928,6 +1252,24 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Start_Map_Map(Solo solo) {
         String ref = "Start/Map/Map";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: radio
+        Ref:  Start/Tracklog/internalExternalGPS
+     */
+    public static View get_Start_Tracklog_internalExternalGPS(Solo solo) {
+        String ref = "Start/Tracklog/internalExternalGPS";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Start/Main/Guide
+     */
+    public static View get_Start_Main_Guide(Solo solo) {
+        String ref = "Start/Main/Guide";
         return (android.view.View) solo.getView((Object) ref);
     }
 }
