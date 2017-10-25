@@ -108,3 +108,41 @@ String getWebViewHtml(String ref) {
   assert("Start"     .equals(tabGroupBefore));
   assert("Setup_Trap".equals(tabGroupAfter ));
 }
+
+{
+  assert(getAttribsMatchingRef("*/*/*Date").size() == 7);
+}
+
+// `listToSqlString`
+{
+  List a = new ArrayList();
+  List b = new ArrayList();
+  List c = new ArrayList();
+
+  // Populate a (0 elements)
+
+  // Populate b (1 element)
+  b.add(1);
+
+  // Populate b (2 elements)
+  c.add(1);
+  c.add("3");
+
+  assert("()"        .equals(listToSqlString(a)));
+  assert("('1')"     .equals(listToSqlString(b)));
+  assert("('1', '3')".equals(listToSqlString(c)));
+}
+
+// CUSTOM SEARCH FUNCTIONS CAN BE CALLED WITHOUT ERROR
+{
+  Search() {
+    // We'll run `search()` in `getStdout` to stop from `Log.d` cluttering test output
+    void run() { search(); }
+    return this;
+  }
+
+  clearSearchResults();
+  populateSelectUser();
+  populateSelectDate();
+  getStdout(Search());
+}

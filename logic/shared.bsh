@@ -7,3 +7,25 @@ int parseInt(String s) {
     return 0;
   }
 }
+
+List getTransectTabGroups() {
+  List transectTabGroups = new ArrayList();
+
+  for (tabGroup : getTabGroups()) {
+    if (hasNoUi        (tabGroup)) continue;
+    if (isFlaggedNodata(tabGroup)) continue;
+
+    transectTabGroups.add(tabGroup);
+  }
+
+  return transectTabGroups;
+}
+
+List getTransectArchEntTypes() {
+  List archEntTypes = new ArrayList();
+
+  for (tabGroup : getTransectTabGroups())
+    archEntTypes.add(getArchEntType(tabGroup));
+
+  return archEntTypes;
+}

@@ -1,0 +1,107 @@
+/******************************* CUSTOM SEARCH ********************************/
+addOnEvent("Start/Search", "show", "populateSelectDate()");
+addOnEvent("Start/Search", "show", "populateSelectUser()");
+delOnEvent("Start/Search", "show", "search()");
+delOnEvent("Start/Search/Entity_Types"  , "click" , "search()");
+addOnEvent("module", "load", "clearSearchResults()");
+
+final String ATTRIBS_DATE = listToSqlString(getAttribsMatchingRef("*/*/*Date"));
+final String TRANSECT_TYPES = listToSqlString(getTransectArchEntTypes());
+
+void clearSearchResults() {
+  populateCursorList(
+      "Start/Search/Entity_List",
+      "SELECT 0 WHERE 0 = 1 LIMIT ? OFFSET ?",
+      25
+  );
+}
+
+void populateSelectUser(){
+  String refSearchUsers = "Start/Search/Select_User";
+  String getNonDeletedUsersQuery = "SELECT userid, fname || ' ' || lname "+
+                                   "  FROM user "+
+                                   " WHERE userdeleted is null "+
+                                   " UNION " +
+                                   "SELECT -1, '{All}'";
+
+  fetchAll(getNonDeletedUsersQuery, new FetchCallback() {
+    onFetch(result) {
+      populateDropDown(refSearchUsers, result, false);
+    }
+  });
+}
+
+void populateSelectDate() {
+  String ref = "Start/Search/Select_Date";
+  String q =
+      " SELECT DISTINCT measure, measure" +
+      "            FROM latestnondeletedaentvalue" +
+      "            JOIN attributekey USING (attributeid)" +
+      "           WHERE attributename IN " + ATTRIBS_DATE +
+      "        ORDER BY measure";
+
+  FetchCallback populate = new FetchCallback() {
+    onFetch(result) {
+      if (isNull(result))
+        result = new ArrayList();
+
+      // Add the option 'All' at the top of the list
+      List all = new ArrayList();
+      all.add("\\0");
+      all.add("{All}");
+
+      result.add(0, all);
+
+      // Populate dropdown
+      populateDropDown(ref, result, false);
+    }
+  };
+
+  fetchAll(q, populate);
+}
+
+void search(){
+  String refEntityList  = "Start/Search/Entity_List";
+  String refSearchTerm  = "Start/Search/Search_Term";
+  String refEntityTypes = "Start/Search/Entity_Types";
+  String refSelectUser  = "Start/Search/Select_User";
+  String refSelectDate  = "Start/Search/Select_Date";
+
+  String type = getFieldValue(refEntityTypes);
+  String term = getFieldValue(refSearchTerm);
+  String user = getFieldValue(refSelectUser);
+  String date = getFieldValue(refSelectDate);
+  String searchQuery = "SELECT uuid, response "+
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
+                       " WHERE uuid in (SELECT uuid "+
+                       "                  FROM latestNonDeletedArchEntIdentifiers "+
+                       "                 WHERE measure LIKE {term}||'%'  "+
+                       "                   AND ( aenttypename = {type} OR ('' = {type} AND aenttypename IN " + TRANSECT_TYPES + ")) "+
+                       "                   AND ( userid = {user} OR '-1' = {user}) " +
+                       "                )  "+
+                       "  AND  ( " +
+                       "           {date} = '\\0' OR" +
+                       "           uuid IN (" +
+                       "            SELECT uuid" +
+                       "              FROM latestnondeletedaentvalue" +
+                       "              JOIN attributekey USING (attributeid)" +
+                       "             WHERE attributename IN " + ATTRIBS_DATE +
+                       "               AND measure = {date}" +
+                       "           )" +
+                       "       )" +
+                       " ORDER BY response "+
+                       " LIMIT ? "+
+                       "OFFSET ? ";
+  searchQuery = dbReplaceFirst(searchQuery, "{term}", term);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", user);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", user);
+  searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+  searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+
+  populateCursorList(refEntityList, searchQuery, 25);
+  refreshTabgroupCSS("Start");
+
+  Log.d("Module", "Search query: " + searchQuery);
+}

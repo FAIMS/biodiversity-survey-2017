@@ -27,16 +27,6 @@ saveEntitiesToRel(String type, String entity1, String entity2, Callable callback
     });
 }
 
-List getTransectTabGroups() {
-  List transectTabGroups = new ArrayList();
-
-  for (tabGroup : getTabGroups())
-    if (!isFlaggedNodata(tabGroup))
-      transectTabGroups.add(tabGroup);
-
-  return transectTabGroups;
-}
-
 List getTransectButtons() {
   List btns = new ArrayList();
   List refs = getRefsMatching("Start/Main/*");

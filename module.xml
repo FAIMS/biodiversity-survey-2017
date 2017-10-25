@@ -1,8 +1,10 @@
 <module>
-  <!--TODO: Test tracklog-->
-  <!--TODO: Filter by Type, User, Date (when the record was created)-->
-    <!--TODO: Date will be dropdown -->
-  <!--TODO: Implement map-->
+<!--@POSTPROC: ./postproc.sh-->
+<!--TODO: There's a bug in the tracklog. Possible replication steps:
+     1. Enable tracklog
+     2. Create 'Setting up Trap' record
+     3. Save   'Setting up Trap' record
+     4. ???-->
 
 <rels>
   <RelationshipElement name="TransectSUI">
@@ -19,13 +21,13 @@
 <Start f="nodata">
   <Main>
     <Guide t="webview" f="nolabel"/>
-    <Setting_up_Trap       l="Setup_Trap"/>
-    <Checking_Trap         l="Check_Trap"/>
-    <Animal_outside_Trap   l="Animal_outside"/>
-    <DNA_Sample            l="DNA_Sample"/>
-    <Plant_Survey          l="Plant_Survey"/>
-    <Cultural_Knowledge    l="Cultural_Knowledge"/>
-    <Notes                 l="Notes"/>
+    <Setting_up_Trap     l="Setup_Trap"/>
+    <Checking_Trap       l="Check_Trap"/>
+    <Animal_outside_Trap l="Animal_outside"/>
+    <DNA_Sample          l="DNA_Sample"/>
+    <Plant_Survey        l="Plant_Survey"/>
+    <Cultural_Knowledge  l="Cultural_Knowledge"/>
+    <Notes               l="Notes"/>
   </Main>
   <Tracklog>
     <internalExternalGPS t="radio">
@@ -211,6 +213,7 @@
 <!--@SOURCE: logic/tracklog.bsh-->
 <!--@SOURCE: logic/date-time-population.bsh-->
 <!--@SOURCE: logic/map.bsh-->
+<!--@SOURCE: logic/custom-search.bsh-->
 ]]></logic>
 
 </module>

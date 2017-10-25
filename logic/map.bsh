@@ -1,2 +1,108 @@
 /************************************ MAP *************************************/
 // TODO: 
+DATA_ENTRY_LAYER = "Data Entry Layer";
+DATA_ENTRY_LAYER_ID = 0;
+
+initMap() {
+    setMapZoom(MAP_REF, 15.0f);
+
+    DATA_ENTRY_LAYER_ID = createCanvasLayer(MAP_REF, DATA_ENTRY_LAYER);
+
+    //showBaseMap(MAP_REF, "Base Layer", "files/data/maps/RasterData.tif");
+
+    // Tracklog
+    isEntity = true;
+    queryName = "Tracklog";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.BLACK, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.BLACK, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.BLACK, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Tracklog Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+
+    // Transect Point
+    isEntity = true;
+    queryName = "Transect Point";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Transect Point Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+
+    // Setup Trap
+    isEntity = true;
+    queryName = "Setup Trap";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.YELLOW, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Setup Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Check Trap
+    isEntity = true;
+    queryName = "Check Trap";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.GREEN, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.GREEN, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Check Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Animal outside
+    isEntity = true;
+    queryName = "Animal outside";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.RED, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.RED, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Animal outside Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // DNA Sample
+    isEntity = true;
+    queryName = "DNA Sample";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.BLUE, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.BLUE, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "DNA Sample Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Plant Survey
+    queryName = "Plant Survey";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    notesQuerySql = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Note'";
+    notesps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
+    notesls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
+    notespos = createPolygonStyle(10, Color.YELLOW, createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    showDatabaseLayer(MAP_REF, "Plant Survey Layer", isEntity, queryName, notesQuerySql, notesps, notesls, notespos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Cultural Knowledge
+    queryName = "Cultural Knowledge";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    notesQuerySql = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Note'";
+    notesps = createPointStyle(10, Color.LTGRAY, 0.2f, 0.5f);
+    notesls = createLineStyle(10, Color.LTGRAY, 0.05f, 0.3f, null);
+    notespos = createPolygonStyle(10, Color.LTGRAY, createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    showDatabaseLayer(MAP_REF, "Cultural Knowledge Layer", isEntity, queryName, notesQuerySql, notesps, notesls, notespos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Notes
+    queryName = "Notes";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    notesQuerySql = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Note'";
+    notesps = createPointStyle(10, Color.WHITE, 0.2f, 0.5f);
+    notesls = createLineStyle(10, Color.WHITE, 0.05f, 0.3f, null);
+    notespos = createPolygonStyle(10, Color.WHITE, createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    showDatabaseLayer(MAP_REF, "Notes Layer", isEntity, queryName, notesQuerySql, notesps, notesls, notespos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+}
+
+initMap();

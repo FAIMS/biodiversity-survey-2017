@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: e6b2290a38f02e5c52b23e589e45eafff832c652
+ * GENERATED WITH FAIMS-TOOLS, SHA1: fe8f236266841728b7e4aeba43d1d94b9f3329a9
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -54,6 +54,22 @@ boolean any(List booleans) {
   for (b : booleans)
     if (b) return true;
   return false;
+}
+
+String listToSqlString(List l){
+  String sqlString = "(";
+  for (int i = 0; i < l.size() - 1; i++) {
+    element = l.get(i);
+    sqlString += "'" + element + "', ";
+  }
+  if (l.size() > 0) {
+    int lastIndex = l.size() - 1;
+    element = l.get(lastIndex);
+    sqlString += "'" + element + "'";
+  }
+  sqlString += ")";
+
+  return sqlString;
 }
 
 /******************************************************************************/
@@ -522,6 +538,8 @@ NO_UI_REFS.add("Transect_Point/Transect_Point/Latitude");
 NO_UI_REFS.add("Transect_Point/Transect_Point/Longitude");
 NO_UI_REFS.add("Transect_Point/Transect_Point/Heading");
 NO_UI_REFS.add("Transect_Point/Transect_Point/Accuracy");
+NO_UI_REFS.add("Tracklog");
+NO_UI_REFS.add("Transect_Point");
 
 
 
@@ -847,6 +865,19 @@ String getAttributeName(String ref) {
   return guiElementRef.replaceAll("_", " ");
 }
 
+List getAttribsMatchingRef(String pattern) {
+  Set attribsSet;
+
+  List attribsList = new ArrayList();
+  for (ref : getRefsMatching(pattern))
+    attribsList.add(getAttributeName(ref));
+
+  attribsSet  = new HashSet(attribsList);
+  attribsList = new ArrayList(attribsSet);
+
+  return attribsList;
+}
+
 String getArchEntType(String ref) {
   String tabGroupRef = getTabGroupRef(ref);
   if (isNull(tabGroupRef)) {
@@ -1029,6 +1060,8 @@ void addToOnEventPriorities(
   assert(precedence >= 0);
   assert(precedence <= Integer.MAX_VALUE);
 
+  validateRef(ref);
+
   String    key = getOnEventKey       (ref, event);
   ArrayList val = getOnEventPriorities(ref, event, map);
 
@@ -1079,6 +1112,8 @@ boolean hasOnEvent(String ref, String event, String statement) {
 }
 
 void delOnEvent(String ref, String event, String statement) {
+  validateRef(ref);
+
   String    key = getOnEventKey(ref, event);
   ArrayList val = (ArrayList) ON_EVT_STMTS.get(key);
 
@@ -1093,12 +1128,10 @@ void delOnEvent(String ref, String event, String statement) {
 }
 
 void addOnEvent(String ref, String event, String statement, int precedence) {
-  validateRef(ref);
   addToOnEventPriorities(ref, event, statement, precedence, ON_EVT_STMTS);
 }
 
 void addOnEventCond(String ref, String event, String check) {
-  validateRef    (ref);
   addToOnEventPriorities(ref, event, check, PRECEDENCE_MID, ON_EVT_CONDS);
 }
 
@@ -1591,22 +1624,22 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
-  //  - DNA Sample
-  //  - Animal outside
-  //  - Setup Trap
   //  - Check Trap
+  //  - Animal outside
+  //  - DNA Sample
+  //  - Plant Survey
+  //  - Setup Trap
   //  - Notes
   //  - Cultural Knowledge
-  //  - Plant Survey
 
   n0 = Tree("", 1);
-  n1 = Tree("DNA Sample", 1);
+  n1 = Tree("Check Trap", 1);
   n2 = Tree("Animal outside", 1);
-  n3 = Tree("Setup Trap", 1);
-  n4 = Tree("Check Trap", 1);
-  n5 = Tree("Notes", 1);
-  n6 = Tree("Cultural Knowledge", 1);
-  n7 = Tree("Plant Survey", 1);
+  n3 = Tree("DNA Sample", 1);
+  n4 = Tree("Plant Survey", 1);
+  n5 = Tree("Setup Trap", 1);
+  n6 = Tree("Notes", 1);
+  n7 = Tree("Cultural Knowledge", 1);
 
   n0.addChild(n1);
   n0.addChild(n2);
@@ -4655,6 +4688,28 @@ int parseInt(String s) {
     return 0;
   }
 }
+
+List getTransectTabGroups() {
+  List transectTabGroups = new ArrayList();
+
+  for (tabGroup : getTabGroups()) {
+    if (hasNoUi        (tabGroup)) continue;
+    if (isFlaggedNodata(tabGroup)) continue;
+
+    transectTabGroups.add(tabGroup);
+  }
+
+  return transectTabGroups;
+}
+
+List getTransectArchEntTypes() {
+  List archEntTypes = new ArrayList();
+
+  for (tabGroup : getTransectTabGroups())
+    archEntTypes.add(getArchEntType(tabGroup));
+
+  return archEntTypes;
+}
 /******************************** SYNC DISABLE ********************************/
 addOnEvent("Start/Tracklog/SyncOff", "click", "stopSync()");
 addOnEvent("Start/Tracklog/SyncOn", "click", "startSync()");
@@ -4702,10 +4757,6 @@ void updateTracklogGuide() {
   else                 populateWebViewHtml(TRACKLOG_GUIDE_REF, msgOff);
 }
 /********************************** TRACKLOG **********************************/
-// TODO: saveGPSTrack("Start") on startDistTrack & startTimeTrack
-// TODO: saveGPSTrack("") on "create" of each tab troup
-// TODO: saveGPSTrack("End") on ?? of each tab group
-// TODO: map
 import java.util.concurrent.Callable;
 
 String tracklogStatus = "Tracklog is Stopped";
@@ -4732,16 +4783,6 @@ saveEntitiesToRel(String type, String entity1, String entity2, Callable callback
             callback.call();
         }
     });
-}
-
-List getTransectTabGroups() {
-  List transectTabGroups = new ArrayList();
-
-  for (tabGroup : getTabGroups())
-    if (!isFlaggedNodata(tabGroup))
-      transectTabGroups.add(tabGroup);
-
-  return transectTabGroups;
 }
 
 List getTransectButtons() {
@@ -5073,6 +5114,219 @@ for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setDate()");
 for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setTime()");
 /************************************ MAP *************************************/
 // TODO: 
+DATA_ENTRY_LAYER = "Data Entry Layer";
+DATA_ENTRY_LAYER_ID = 0;
+
+initMap() {
+    setMapZoom(MAP_REF, 15.0f);
+
+    DATA_ENTRY_LAYER_ID = createCanvasLayer(MAP_REF, DATA_ENTRY_LAYER);
+
+    //showBaseMap(MAP_REF, "Base Layer", "files/data/maps/RasterData.tif");
+
+    // Tracklog
+    isEntity = true;
+    queryName = "Tracklog";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.BLACK, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.BLACK, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.BLACK, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Tracklog Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+
+    // Transect Point
+    isEntity = true;
+    queryName = "Transect Point";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Transect Point Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+
+    // Setup Trap
+    isEntity = true;
+    queryName = "Setup Trap";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.YELLOW, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Setup Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Check Trap
+    isEntity = true;
+    queryName = "Check Trap";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.GREEN, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.GREEN, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Check Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Animal outside
+    isEntity = true;
+    queryName = "Animal outside";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.RED, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.RED, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "Animal outside Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // DNA Sample
+    isEntity = true;
+    queryName = "DNA Sample";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
+    ls = createLineStyle(10, Color.BLUE, 0.05f, 0.3f, null);
+    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    ts = createTextStyle(10, Color.BLUE, 30, Typeface.SANS_SERIF);
+    showDatabaseLayer(MAP_REF, "DNA Sample Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Plant Survey
+    queryName = "Plant Survey";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    notesQuerySql = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Note'";
+    notesps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
+    notesls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
+    notespos = createPolygonStyle(10, Color.YELLOW, createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    showDatabaseLayer(MAP_REF, "Plant Survey Layer", isEntity, queryName, notesQuerySql, notesps, notesls, notespos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Cultural Knowledge
+    queryName = "Cultural Knowledge";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    notesQuerySql = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Note'";
+    notesps = createPointStyle(10, Color.LTGRAY, 0.2f, 0.5f);
+    notesls = createLineStyle(10, Color.LTGRAY, 0.05f, 0.3f, null);
+    notespos = createPolygonStyle(10, Color.LTGRAY, createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    showDatabaseLayer(MAP_REF, "Cultural Knowledge Layer", isEntity, queryName, notesQuerySql, notesps, notesls, notespos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+
+    // Notes
+    queryName = "Notes";
+    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
+    notesQuerySql = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = 'Note'";
+    notesps = createPointStyle(10, Color.WHITE, 0.2f, 0.5f);
+    notesls = createLineStyle(10, Color.WHITE, 0.05f, 0.3f, null);
+    notespos = createPolygonStyle(10, Color.WHITE, createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+    showDatabaseLayer(MAP_REF, "Notes Layer", isEntity, queryName, notesQuerySql, notesps, notesls, notespos, ts);
+    assert(getTransectArchEntTypes().contains(queryName));
+}
+
+initMap();
+/******************************* CUSTOM SEARCH ********************************/
+addOnEvent("Start/Search", "show", "populateSelectDate()");
+addOnEvent("Start/Search", "show", "populateSelectUser()");
+delOnEvent("Start/Search", "show", "search()");
+delOnEvent("Start/Search/Entity_Types"  , "click" , "search()");
+addOnEvent("module", "load", "clearSearchResults()");
+
+final String ATTRIBS_DATE = listToSqlString(getAttribsMatchingRef("*/*/*Date"));
+final String TRANSECT_TYPES = listToSqlString(getTransectArchEntTypes());
+
+void clearSearchResults() {
+  populateCursorList(
+      "Start/Search/Entity_List",
+      "SELECT 0 WHERE 0 = 1 LIMIT ? OFFSET ?",
+      25
+  );
+}
+
+void populateSelectUser(){
+  String refSearchUsers = "Start/Search/Select_User";
+  String getNonDeletedUsersQuery = "SELECT userid, fname || ' ' || lname "+
+                                   "  FROM user "+
+                                   " WHERE userdeleted is null "+
+                                   " UNION " +
+                                   "SELECT -1, '{All}'";
+
+  fetchAll(getNonDeletedUsersQuery, new FetchCallback() {
+    onFetch(result) {
+      populateDropDown(refSearchUsers, result, false);
+    }
+  });
+}
+
+void populateSelectDate() {
+  String ref = "Start/Search/Select_Date";
+  String q =
+      " SELECT DISTINCT measure, measure" +
+      "            FROM latestnondeletedaentvalue" +
+      "            JOIN attributekey USING (attributeid)" +
+      "           WHERE attributename IN " + ATTRIBS_DATE +
+      "        ORDER BY measure";
+
+  FetchCallback populate = new FetchCallback() {
+    onFetch(result) {
+      if (isNull(result))
+        result = new ArrayList();
+
+      // Add the option 'All' at the top of the list
+      List all = new ArrayList();
+      all.add("\\0");
+      all.add("{All}");
+
+      result.add(0, all);
+
+      // Populate dropdown
+      populateDropDown(ref, result, false);
+    }
+  };
+
+  fetchAll(q, populate);
+}
+
+void search(){
+  String refEntityList  = "Start/Search/Entity_List";
+  String refSearchTerm  = "Start/Search/Search_Term";
+  String refEntityTypes = "Start/Search/Entity_Types";
+  String refSelectUser  = "Start/Search/Select_User";
+  String refSelectDate  = "Start/Search/Select_Date";
+
+  String type = getFieldValue(refEntityTypes);
+  String term = getFieldValue(refSearchTerm);
+  String user = getFieldValue(refSelectUser);
+  String date = getFieldValue(refSelectDate);
+  String searchQuery = "SELECT uuid, response "+
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
+                       " WHERE uuid in (SELECT uuid "+
+                       "                  FROM latestNonDeletedArchEntIdentifiers "+
+                       "                 WHERE measure LIKE {term}||'%'  "+
+                       "                   AND ( aenttypename = {type} OR ('' = {type} AND aenttypename IN " + TRANSECT_TYPES + ")) "+
+                       "                   AND ( userid = {user} OR '-1' = {user}) " +
+                       "                )  "+
+                       "  AND  ( " +
+                       "           {date} = '\\0' OR" +
+                       "           uuid IN (" +
+                       "            SELECT uuid" +
+                       "              FROM latestnondeletedaentvalue" +
+                       "              JOIN attributekey USING (attributeid)" +
+                       "             WHERE attributename IN " + ATTRIBS_DATE +
+                       "               AND measure = {date}" +
+                       "           )" +
+                       "       )" +
+                       " ORDER BY response "+
+                       " LIMIT ? "+
+                       "OFFSET ? ";
+  searchQuery = dbReplaceFirst(searchQuery, "{term}", term);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", user);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", user);
+  searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+  searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+
+  populateCursorList(refEntityList, searchQuery, 25);
+  refreshTabgroupCSS("Start");
+
+  Log.d("Module", "Search query: " + searchQuery);
+}
 
 
 /******************************************************************************/
