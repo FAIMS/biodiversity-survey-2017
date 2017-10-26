@@ -942,15 +942,6 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
-        Ref:  DNA_Sample/DNA_Sample/Who_is_recording
-     */
-    public static EditText get_DNASample_DNASample_Whoisrecording(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Who_is_recording";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
         Ref:  DNA_Sample/DNA_Sample/YMR_number
      */
     public static EditText get_DNASample_DNASample_YMRnumber(Solo solo) {

@@ -70,8 +70,10 @@
 <Setup_Trap>
   <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
-    <Date/>
-    <Time/>
+    <cols>
+      <Date/>
+      <Time/>
+    </cols>
     <author>Who is putting out traps?</author>
     <Other_people/>
     <Place_name/>
@@ -86,8 +88,10 @@
 <Check_Trap>
   <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{Date}} {{Time}}</fmt>
   <Checking>
-    <Date/>
-    <Time/>
+    <cols>
+      <Date/>
+      <Time/>
+    </cols>
     <author>Who is checking?</author>
     <What_trap_are_you_checking>
       What trap are you checking?
@@ -105,18 +109,20 @@
       Snout to vent length (mm)
     </Snout_to_vent_length_mm>
     <Found_something_else/>
-    <gps/>
     <How_many_Cane_toads b="decimal">
       How many Cane toads?
     </How_many_Cane_toads>
+    <gps/>
   </Checking>
 </Check_Trap>
 
 <Animal_outside>
   <fmt>{{Animal_outside_trap}} {{Date}} {{Time}}</fmt>
   <Animal>
-    <Date/>
-    <Time/>
+    <cols>
+      <Date/>
+      <Time/>
+    </cols>
     <author>Who is recording?</author>
     <Animal_outside_trap>
       <!--@SOURCE: vocab/animal-type.xml-->
@@ -131,12 +137,16 @@
 <DNA_Sample>
   <fmt>{{YMR_number}} {{Type_Name}} {{Date}} {{Time}}</fmt>
   <DNA_Sample>
-    <Date/>
-    <Time/>
-    <Who_is_recording>Who is recording?</Who_is_recording>
+    <cols>
+      <Date/>
+      <Time/>
+    </cols>
+    <author>Who is recording?</author>
     <YMR_number b="decimal"/>
     <Type_Name/>
-    <Snout_to_vent_length_mm>Snout to vent length (mm)</Snout_to_vent_length_mm>
+    <Snout_to_vent_length_mm b="decimal">
+      Snout to vent length (mm)
+    </Snout_to_vent_length_mm>
     <Take_Photo t="camera"/>
     <gps/>
   </DNA_Sample>
@@ -145,8 +155,10 @@
 <Plant_Survey>
   <fmt>{{Type_plant_name}} {{Date}} {{Time}}</fmt>
   <Plant>
-    <Date/>
-    <Time/>
+    <cols>
+      <Date/>
+      <Time/>
+    </cols>
     <author>Who is recording?</author>
     <Type_plant_name/>
     <Take_Photo t="camera"/>
@@ -157,22 +169,26 @@
 <Cultural_Knowledge>
   <fmt>{{Who_is_talking}} {{Date}} {{Time}}</fmt>
   <Cultural_Knowledge>
-    <Date/>
-    <Time/>
+    <cols>
+      <Date/>
+      <Time/>
+    </cols>
     <author>Who is recording?</author>
     <Who_is_talking>Who is talking?</Who_is_talking>
     <What_is_being_talked_about>What is being talked about?</What_is_being_talked_about>
     <Record_knowledge_now t="audio"/>
-    <gps/>
     <Write_down_notes_here/>
+    <gps/>
   </Cultural_Knowledge>
 </Cultural_Knowledge>
 
 <Notes>
   <fmt>{{author}} {{Date}} {{Time}}</fmt>
   <Notes>
-    <Date/>
-    <Time/>
+    <cols>
+      <Date/>
+      <Time/>
+    </cols>
     <author>Who is recording?</author>
     <Notes/>
     <Take_Photo t="camera"/>

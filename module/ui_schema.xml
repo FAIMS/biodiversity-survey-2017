@@ -102,21 +102,27 @@
           </Start>
           <Setup_Trap>
             <Setting_up>
-              <Date/>
-              <Time/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
               <Setup_Trap_author/>
               <Other_people/>
               <Place_name/>
               <What_type_of_trap/>
-              <Colgroup_1>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -126,14 +132,20 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
             </Setting_up>
           </Setup_Trap>
           <Check_Trap>
             <Checking>
-              <Date/>
-              <Time/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
               <Check_Trap_author/>
               <What_trap_are_you_checking/>
               <What_did_you_find_in_trap/>
@@ -145,15 +157,16 @@
               <YMR_Tissue_Number/>
               <Snout_to_vent_length_mm/>
               <Found_something_else/>
-              <Colgroup_1>
+              <How_many_Cane_toads/>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -163,15 +176,20 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
-              <How_many_Cane_toads/>
             </Checking>
           </Check_Trap>
           <Animal_outside>
             <Animal>
-              <Date/>
-              <Time/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
               <Animal_outside_author/>
               <Animal_outside_trap/>
               <Type_Name/>
@@ -179,15 +197,15 @@
               <Take_Photo_Button_1/>
               <Talk_about_animal/>
               <Talk_about_animal_Button_1/>
-              <Colgroup_1>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -197,29 +215,35 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
             </Animal>
           </Animal_outside>
           <DNA_Sample>
             <DNA_Sample>
-              <Date/>
-              <Time/>
-              <Who_is_recording/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
+              <DNA_Sample_author/>
               <YMR_number/>
               <Type_Name/>
               <Snout_to_vent_length_mm/>
               <Take_Photo/>
               <Take_Photo_Button_1/>
-              <Colgroup_1>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -229,27 +253,33 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
             </DNA_Sample>
           </DNA_Sample>
           <Plant_Survey>
             <Plant>
-              <Date/>
-              <Time/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
               <Plant_Survey_author/>
               <Type_plant_name/>
               <Take_Photo/>
               <Take_Photo_Button_1/>
-              <Colgroup_1>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -259,28 +289,35 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
             </Plant>
           </Plant_Survey>
           <Cultural_Knowledge>
             <Cultural_Knowledge>
-              <Date/>
-              <Time/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
               <Cultural_Knowledge_author/>
               <Who_is_talking/>
               <What_is_being_talked_about/>
               <Record_knowledge_now/>
               <Record_knowledge_now_Button_1/>
-              <Colgroup_1>
+              <Write_down_notes_here/>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -290,28 +327,33 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
-              <Write_down_notes_here/>
             </Cultural_Knowledge>
           </Cultural_Knowledge>
           <Notes>
             <Notes>
-              <Date/>
-              <Time/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
               <Notes_author/>
               <Notes/>
               <Take_Photo/>
               <Take_Photo_Button_1/>
-              <Colgroup_1>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -321,7 +363,7 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
             </Notes>
           </Notes>
@@ -341,6 +383,7 @@
       <bind nodeset="/faims/Check_Trap/Checking/Snout_to_vent_length_mm" type="decimal"/>
       <bind nodeset="/faims/Check_Trap/Checking/How_many_Cane_toads" type="decimal"/>
       <bind nodeset="/faims/DNA_Sample/DNA_Sample/YMR_number" type="decimal"/>
+      <bind nodeset="/faims/DNA_Sample/DNA_Sample/Snout_to_vent_length_mm" type="decimal"/>
     </model>
   </h:head>
   <h:body>
@@ -563,12 +606,21 @@
       <label>{Setup_Trap}</label>
       <group ref="Setting_up">
         <label>{Setting_up}</label>
-        <input faims_attribute_name="Setup Trap Date" faims_attribute_type="measure" ref="Date">
-          <label>{Date}</label>
-        </input>
-        <input faims_attribute_name="Setup Trap Time" faims_attribute_type="measure" ref="Time">
-          <label>{Time}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Setup Trap Date" faims_attribute_type="measure" ref="Date">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Setup Trap Time" faims_attribute_type="measure" ref="Time">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Setup Trap author" faims_attribute_type="measure" ref="Setup_Trap_author" faims_read_only="true">
           <label>{Who_is_putting_out_traps_}</label>
         </input>
@@ -585,7 +637,7 @@
             <value>Options not loaded</value>
           </item>
         </select1>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -600,7 +652,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -630,12 +682,21 @@
       <label>{Check_Trap}</label>
       <group ref="Checking">
         <label>{Checking}</label>
-        <input faims_attribute_name="Check Trap Date" faims_attribute_type="measure" ref="Date">
-          <label>{Date}</label>
-        </input>
-        <input faims_attribute_name="Check Trap Time" faims_attribute_type="measure" ref="Time">
-          <label>{Time}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Check Trap Date" faims_attribute_type="measure" ref="Date">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Check Trap Time" faims_attribute_type="measure" ref="Time">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Check Trap author" faims_attribute_type="measure" ref="Check_Trap_author" faims_read_only="true">
           <label>{Who_is_checking_}</label>
         </input>
@@ -685,7 +746,10 @@
         <input faims_attribute_name="Found something else" faims_attribute_type="measure" ref="Found_something_else">
           <label>{Found_something_else}</label>
         </input>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <input faims_attribute_name="How many Cane toads" faims_attribute_type="measure" ref="How_many_Cane_toads">
+          <label>{How_many_Cane_toads_}</label>
+        </input>
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -700,7 +764,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -724,21 +788,27 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <input faims_attribute_name="How many Cane toads" faims_attribute_type="measure" ref="How_many_Cane_toads">
-          <label>{How_many_Cane_toads_}</label>
-        </input>
       </group>
     </group>
     <group ref="Animal_outside" faims_archent_type="Animal outside">
       <label>{Animal_outside}</label>
       <group ref="Animal">
         <label>{Animal}</label>
-        <input faims_attribute_name="Animal outside Date" faims_attribute_type="measure" ref="Date">
-          <label>{Date}</label>
-        </input>
-        <input faims_attribute_name="Animal outside Time" faims_attribute_type="measure" ref="Time">
-          <label>{Time}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Animal outside Date" faims_attribute_type="measure" ref="Date">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Animal outside Time" faims_attribute_type="measure" ref="Time">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Animal outside author" faims_attribute_type="measure" ref="Animal_outside_author" faims_read_only="true">
           <label>{Who_is_recording_}</label>
         </input>
@@ -772,7 +842,7 @@
         <trigger ref="Talk_about_animal_Button_1">
           <label>{Talk_about_animal}</label>
         </trigger>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -787,7 +857,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -817,13 +887,22 @@
       <label>{DNA_Sample}</label>
       <group ref="DNA_Sample">
         <label>{DNA_Sample}</label>
-        <input faims_attribute_name="DNA Sample Date" faims_attribute_type="measure" ref="Date">
-          <label>{Date}</label>
-        </input>
-        <input faims_attribute_name="DNA Sample Time" faims_attribute_type="measure" ref="Time">
-          <label>{Time}</label>
-        </input>
-        <input faims_attribute_name="Who is recording" faims_attribute_type="measure" ref="Who_is_recording">
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="DNA Sample Date" faims_attribute_type="measure" ref="Date">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="DNA Sample Time" faims_attribute_type="measure" ref="Time">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
+        <input faims_attribute_name="DNA Sample author" faims_attribute_type="measure" ref="DNA_Sample_author" faims_read_only="true">
           <label>{Who_is_recording_}</label>
         </input>
         <input faims_attribute_name="YMR number" faims_attribute_type="measure" ref="YMR_number">
@@ -845,7 +924,7 @@
         <trigger ref="Take_Photo_Button_1">
           <label>{Take_Photo}</label>
         </trigger>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -860,7 +939,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -890,12 +969,21 @@
       <label>{Plant_Survey}</label>
       <group ref="Plant">
         <label>{Plant}</label>
-        <input faims_attribute_name="Plant Survey Date" faims_attribute_type="measure" ref="Date">
-          <label>{Date}</label>
-        </input>
-        <input faims_attribute_name="Plant Survey Time" faims_attribute_type="measure" ref="Time">
-          <label>{Time}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Plant Survey Date" faims_attribute_type="measure" ref="Date">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Plant Survey Time" faims_attribute_type="measure" ref="Time">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Plant Survey author" faims_attribute_type="measure" ref="Plant_Survey_author" faims_read_only="true">
           <label>{Who_is_recording_}</label>
         </input>
@@ -912,7 +1000,7 @@
         <trigger ref="Take_Photo_Button_1">
           <label>{Take_Photo}</label>
         </trigger>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -927,7 +1015,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -957,12 +1045,21 @@
       <label>{Cultural_Knowledge}</label>
       <group ref="Cultural_Knowledge">
         <label>{Cultural_Knowledge}</label>
-        <input faims_attribute_name="Cultural Knowledge Date" faims_attribute_type="measure" ref="Date">
-          <label>{Date}</label>
-        </input>
-        <input faims_attribute_name="Cultural Knowledge Time" faims_attribute_type="measure" ref="Time">
-          <label>{Time}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Cultural Knowledge Date" faims_attribute_type="measure" ref="Date">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Cultural Knowledge Time" faims_attribute_type="measure" ref="Time">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Cultural Knowledge author" faims_attribute_type="measure" ref="Cultural_Knowledge_author" faims_read_only="true">
           <label>{Who_is_recording_}</label>
         </input>
@@ -982,7 +1079,10 @@
         <trigger ref="Record_knowledge_now_Button_1">
           <label>{Record_knowledge_now}</label>
         </trigger>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <input faims_attribute_name="Write down notes here" faims_attribute_type="measure" ref="Write_down_notes_here">
+          <label>{Write_down_notes_here}</label>
+        </input>
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -997,7 +1097,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -1021,21 +1121,27 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <input faims_attribute_name="Write down notes here" faims_attribute_type="measure" ref="Write_down_notes_here">
-          <label>{Write_down_notes_here}</label>
-        </input>
       </group>
     </group>
     <group ref="Notes" faims_archent_type="Notes">
       <label>{Notes}</label>
       <group ref="Notes">
         <label>{Notes}</label>
-        <input faims_attribute_name="Notes Date" faims_attribute_type="measure" ref="Date">
-          <label>{Date}</label>
-        </input>
-        <input faims_attribute_name="Notes Time" faims_attribute_type="measure" ref="Time">
-          <label>{Time}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Notes Date" faims_attribute_type="measure" ref="Date">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Notes Time" faims_attribute_type="measure" ref="Time">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Notes author" faims_attribute_type="measure" ref="Notes_author" faims_read_only="true">
           <label>{Who_is_recording_}</label>
         </input>
@@ -1052,7 +1158,7 @@
         <trigger ref="Take_Photo_Button_1">
           <label>{Take_Photo}</label>
         </trigger>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -1067,7 +1173,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>

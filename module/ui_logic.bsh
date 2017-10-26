@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: fe8f236266841728b7e4aeba43d1d94b9f3329a9
+ * GENERATED WITH FAIMS-TOOLS, SHA1: a167cae74048a5e5c4f3ea07c8b17acf5d4609ea
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -325,13 +325,13 @@ REF_TO_TYPE.put("Check_Trap/Checking/Talk_about_animal_Button_1", "button");
 REF_TO_TYPE.put("Check_Trap/Checking/YMR_Tissue_Number", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Snout_to_vent_length_mm", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Found_something_else", "input");
+REF_TO_TYPE.put("Check_Trap/Checking/How_many_Cane_toads", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Latitude", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Longitude", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Northing", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Easting", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Accuracy", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Check_Trap/Checking/How_many_Cane_toads", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Date", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Time", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Animal_outside_author", "input");
@@ -349,7 +349,7 @@ REF_TO_TYPE.put("Animal_outside/Animal/Accuracy", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Take_From_GPS_1", "button");
 REF_TO_TYPE.put("DNA_Sample/DNA_Sample/Date", "input");
 REF_TO_TYPE.put("DNA_Sample/DNA_Sample/Time", "input");
-REF_TO_TYPE.put("DNA_Sample/DNA_Sample/Who_is_recording", "input");
+REF_TO_TYPE.put("DNA_Sample/DNA_Sample/DNA_Sample_author", "input");
 REF_TO_TYPE.put("DNA_Sample/DNA_Sample/YMR_number", "input");
 REF_TO_TYPE.put("DNA_Sample/DNA_Sample/Type_Name", "input");
 REF_TO_TYPE.put("DNA_Sample/DNA_Sample/Snout_to_vent_length_mm", "input");
@@ -380,13 +380,13 @@ REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Who_is_talking", "input")
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/What_is_being_talked_about", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Record_knowledge_now", "audio");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Record_knowledge_now_Button_1", "button");
+REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Write_down_notes_here", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Latitude", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Longitude", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Northing", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Easting", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Accuracy", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Write_down_notes_here", "input");
 REF_TO_TYPE.put("Notes/Notes/Date", "input");
 REF_TO_TYPE.put("Notes/Notes/Time", "input");
 REF_TO_TYPE.put("Notes/Notes/Notes_author", "input");
@@ -449,12 +449,12 @@ DATA_REFS.add("Check_Trap/Checking/Talk_about_animal");
 DATA_REFS.add("Check_Trap/Checking/YMR_Tissue_Number");
 DATA_REFS.add("Check_Trap/Checking/Snout_to_vent_length_mm");
 DATA_REFS.add("Check_Trap/Checking/Found_something_else");
+DATA_REFS.add("Check_Trap/Checking/How_many_Cane_toads");
 DATA_REFS.add("Check_Trap/Checking/Latitude");
 DATA_REFS.add("Check_Trap/Checking/Longitude");
 DATA_REFS.add("Check_Trap/Checking/Northing");
 DATA_REFS.add("Check_Trap/Checking/Easting");
 DATA_REFS.add("Check_Trap/Checking/Accuracy");
-DATA_REFS.add("Check_Trap/Checking/How_many_Cane_toads");
 DATA_REFS.add("Animal_outside/Animal/Date");
 DATA_REFS.add("Animal_outside/Animal/Time");
 DATA_REFS.add("Animal_outside/Animal/Animal_outside_author");
@@ -469,7 +469,7 @@ DATA_REFS.add("Animal_outside/Animal/Easting");
 DATA_REFS.add("Animal_outside/Animal/Accuracy");
 DATA_REFS.add("DNA_Sample/DNA_Sample/Date");
 DATA_REFS.add("DNA_Sample/DNA_Sample/Time");
-DATA_REFS.add("DNA_Sample/DNA_Sample/Who_is_recording");
+DATA_REFS.add("DNA_Sample/DNA_Sample/DNA_Sample_author");
 DATA_REFS.add("DNA_Sample/DNA_Sample/YMR_number");
 DATA_REFS.add("DNA_Sample/DNA_Sample/Type_Name");
 DATA_REFS.add("DNA_Sample/DNA_Sample/Snout_to_vent_length_mm");
@@ -495,12 +495,12 @@ DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Cultural_Knowledge_author")
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Who_is_talking");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/What_is_being_talked_about");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Record_knowledge_now");
+DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Write_down_notes_here");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Latitude");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Longitude");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Northing");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Easting");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Accuracy");
-DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Write_down_notes_here");
 DATA_REFS.add("Notes/Notes/Date");
 DATA_REFS.add("Notes/Notes/Time");
 DATA_REFS.add("Notes/Notes/Notes_author");
@@ -1624,22 +1624,22 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
-  //  - Check Trap
-  //  - Animal outside
-  //  - DNA Sample
-  //  - Plant Survey
-  //  - Setup Trap
-  //  - Notes
   //  - Cultural Knowledge
+  //  - Animal outside
+  //  - Plant Survey
+  //  - Check Trap
+  //  - Notes
+  //  - DNA Sample
+  //  - Setup Trap
 
   n0 = Tree("", 1);
-  n1 = Tree("Check Trap", 1);
+  n1 = Tree("Cultural Knowledge", 1);
   n2 = Tree("Animal outside", 1);
-  n3 = Tree("DNA Sample", 1);
-  n4 = Tree("Plant Survey", 1);
-  n5 = Tree("Setup Trap", 1);
-  n6 = Tree("Notes", 1);
-  n7 = Tree("Cultural Knowledge", 1);
+  n3 = Tree("Plant Survey", 1);
+  n4 = Tree("Check Trap", 1);
+  n5 = Tree("Notes", 1);
+  n6 = Tree("DNA Sample", 1);
+  n7 = Tree("Setup Trap", 1);
 
   n0.addChild(n1);
   n0.addChild(n2);
@@ -3253,6 +3253,7 @@ void populateAuthorAndTimestamp(String tabgroup) {
   tabgroupToAuthor.put("Setup_Trap", "Setup_Trap/Setting_up/Setup_Trap_author");
   tabgroupToAuthor.put("Check_Trap", "Check_Trap/Checking/Check_Trap_author");
   tabgroupToAuthor.put("Animal_outside", "Animal_outside/Animal/Animal_outside_author");
+  tabgroupToAuthor.put("DNA_Sample", "DNA_Sample/DNA_Sample/DNA_Sample_author");
   tabgroupToAuthor.put("Plant_Survey", "Plant_Survey/Plant/Plant_Survey_author");
   tabgroupToAuthor.put("Cultural_Knowledge", "Cultural_Knowledge/Cultural_Knowledge/Cultural_Knowledge_author");
   tabgroupToAuthor.put("Notes", "Notes/Notes/Notes_author");
