@@ -25,6 +25,7 @@ The module can be downloaded from this GitHub repository.
 * controlled vocabularies
 * coordinates from internal GPS
 * tracklog
+* audio and photo capture on device
 
 ## This module can be used with no or minor modification for:
 * monitoring species diversity and spatial distribution over time
