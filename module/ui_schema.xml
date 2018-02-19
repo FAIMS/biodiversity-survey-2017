@@ -26,6 +26,8 @@
           <Start>
             <Main>
               <Guide/>
+              <Start_Tracklog/>
+              <BR_1/>
               <Setting_up_Trap/>
               <Checking_Trap/>
               <Animal_outside_Trap/>
@@ -33,39 +35,9 @@
               <Plant_Survey/>
               <Cultural_Knowledge/>
               <Notes/>
+              <BR_2/>
+              <Stop_Tracklog/>
             </Main>
-            <Tracklog>
-              <internalExternalGPS/>
-              <Colgroup_1>
-                <Col_1>
-                  <refreshText/>
-                </Col_1>
-                <Col_2>
-                  <startGPSButton/>
-                  <stopGPSButton/>
-                </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
-                <Col_1>
-                  <trackdistText/>
-                </Col_1>
-                <Col_2>
-                  <trackdistButton/>
-                </Col_2>
-              </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <tracktimeText/>
-                </Col_1>
-                <Col_2>
-                  <tracktimeButton/>
-                </Col_2>
-              </Colgroup_3>
-              <trackOffButton/>
-              <trackStatus/>
-              <SyncOn/>
-              <SyncOff/>
-            </Tracklog>
             <Map>
               <Map/>
               <Colgroup_1>
@@ -99,6 +71,38 @@
               </Colgroup_1>
               <Entity_List/>
             </Search>
+            <Tracklog>
+              <internalExternalGPS/>
+              <Colgroup_1>
+                <Col_1>
+                  <refreshText/>
+                </Col_1>
+                <Col_2>
+                  <startGPSButton/>
+                  <stopGPSButton/>
+                </Col_2>
+              </Colgroup_1>
+              <Colgroup_2>
+                <Col_1>
+                  <trackdistText/>
+                </Col_1>
+                <Col_2>
+                  <trackdistButton/>
+                </Col_2>
+              </Colgroup_2>
+              <Colgroup_3>
+                <Col_1>
+                  <tracktimeText/>
+                </Col_1>
+                <Col_2>
+                  <tracktimeButton/>
+                </Col_2>
+              </Colgroup_3>
+              <trackOffButton/>
+              <trackStatus/>
+              <SyncOn/>
+              <SyncOff/>
+            </Tracklog>
           </Start>
           <Setup_Trap>
             <Setting_up>
@@ -111,7 +115,6 @@
                 </Col_2>
               </Colgroup_1>
               <Setup_Trap_author/>
-              <Other_people/>
               <Place_name/>
               <What_type_of_trap/>
               <Colgroup_2>
@@ -122,17 +125,6 @@
                   <Longitude/>
                 </Col_2>
               </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <Northing/>
-                </Col_1>
-                <Col_2>
-                  <Easting/>
-                </Col_2>
-                <Col_3>
-                  <Accuracy/>
-                </Col_3>
-              </Colgroup_3>
               <Take_From_GPS_1/>
             </Setting_up>
           </Setup_Trap>
@@ -149,14 +141,13 @@
               <Check_Trap_author/>
               <What_trap_are_you_checking/>
               <What_did_you_find_in_trap/>
-              <Species_Name/>
+              <Notes/>
               <Take_Photo/>
               <Take_Photo_Button_1/>
               <Talk_about_animal/>
               <Talk_about_animal_Button_1/>
-              <YMR_Tissue_Number/>
+              <Tissue_number/>
               <Snout_to_vent_length_mm/>
-              <Found_something_else/>
               <How_many_Cane_toads/>
               <Colgroup_2>
                 <Col_1>
@@ -166,17 +157,6 @@
                   <Longitude/>
                 </Col_2>
               </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <Northing/>
-                </Col_1>
-                <Col_2>
-                  <Easting/>
-                </Col_2>
-                <Col_3>
-                  <Accuracy/>
-                </Col_3>
-              </Colgroup_3>
               <Take_From_GPS_1/>
             </Checking>
           </Check_Trap>
@@ -192,7 +172,7 @@
               </Colgroup_1>
               <Animal_outside_author/>
               <Animal_outside_trap/>
-              <Type_Name/>
+              <Notes/>
               <Take_Photo/>
               <Take_Photo_Button_1/>
               <Talk_about_animal/>
@@ -205,17 +185,6 @@
                   <Longitude/>
                 </Col_2>
               </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <Northing/>
-                </Col_1>
-                <Col_2>
-                  <Easting/>
-                </Col_2>
-                <Col_3>
-                  <Accuracy/>
-                </Col_3>
-              </Colgroup_3>
               <Take_From_GPS_1/>
             </Animal>
           </Animal_outside>
@@ -230,8 +199,8 @@
                 </Col_2>
               </Colgroup_1>
               <DNA_Sample_author/>
-              <YMR_number/>
-              <Type_Name/>
+              <Tissue_number/>
+              <Type_Species_And_Notes/>
               <Snout_to_vent_length_mm/>
               <Take_Photo/>
               <Take_Photo_Button_1/>
@@ -243,17 +212,6 @@
                   <Longitude/>
                 </Col_2>
               </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <Northing/>
-                </Col_1>
-                <Col_2>
-                  <Easting/>
-                </Col_2>
-                <Col_3>
-                  <Accuracy/>
-                </Col_3>
-              </Colgroup_3>
               <Take_From_GPS_1/>
             </DNA_Sample>
           </DNA_Sample>
@@ -279,17 +237,6 @@
                   <Longitude/>
                 </Col_2>
               </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <Northing/>
-                </Col_1>
-                <Col_2>
-                  <Easting/>
-                </Col_2>
-                <Col_3>
-                  <Accuracy/>
-                </Col_3>
-              </Colgroup_3>
               <Take_From_GPS_1/>
             </Plant>
           </Plant_Survey>
@@ -317,17 +264,6 @@
                   <Longitude/>
                 </Col_2>
               </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <Northing/>
-                </Col_1>
-                <Col_2>
-                  <Easting/>
-                </Col_2>
-                <Col_3>
-                  <Accuracy/>
-                </Col_3>
-              </Colgroup_3>
               <Take_From_GPS_1/>
             </Cultural_Knowledge>
           </Cultural_Knowledge>
@@ -353,17 +289,6 @@
                   <Longitude/>
                 </Col_2>
               </Colgroup_2>
-              <Colgroup_3>
-                <Col_1>
-                  <Northing/>
-                </Col_1>
-                <Col_2>
-                  <Easting/>
-                </Col_2>
-                <Col_3>
-                  <Accuracy/>
-                </Col_3>
-              </Colgroup_3>
               <Take_From_GPS_1/>
             </Notes>
           </Notes>
@@ -379,10 +304,10 @@
       <bind nodeset="/faims/Start/Tracklog/Colgroup_2/Col_1/trackdistText" type="decimal"/>
       <bind nodeset="/faims/Start/Tracklog/Colgroup_3/Col_1/tracktimeText" type="decimal"/>
       <bind nodeset="/faims/Start/Tracklog/trackStatus" type="string"/>
-      <bind nodeset="/faims/Check_Trap/Checking/YMR_Tissue_Number" type="decimal"/>
+      <bind nodeset="/faims/Check_Trap/Checking/Tissue_number" type="decimal"/>
       <bind nodeset="/faims/Check_Trap/Checking/Snout_to_vent_length_mm" type="decimal"/>
       <bind nodeset="/faims/Check_Trap/Checking/How_many_Cane_toads" type="decimal"/>
-      <bind nodeset="/faims/DNA_Sample/DNA_Sample/YMR_number" type="decimal"/>
+      <bind nodeset="/faims/DNA_Sample/DNA_Sample/Tissue_number" type="decimal"/>
       <bind nodeset="/faims/DNA_Sample/DNA_Sample/Snout_to_vent_length_mm" type="decimal"/>
     </model>
   </h:head>
@@ -430,6 +355,12 @@
         <input faims_web="true" ref="Guide">
           <label/>
         </input>
+        <trigger ref="Start_Tracklog">
+          <label>{Start_Tracklog}</label>
+        </trigger>
+        <input faims_web="true" ref="BR_1">
+          <label/>
+        </input>
         <trigger ref="Setting_up_Trap">
           <label>{Setting_up_Trap}</label>
         </trigger>
@@ -451,75 +382,11 @@
         <trigger ref="Notes">
           <label>{Notes}</label>
         </trigger>
-      </group>
-      <group ref="Tracklog">
-        <label>{Tracklog}</label>
-        <select1 appearance="full" ref="internalExternalGPS">
-          <label>{Choose_which_GPS_to_connect_to_}</label>
-          <item>
-            <label>Options not loaded</label>
-            <value>Options not loaded</value>
-          </item>
-        </select1>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <input faims_web="true" ref="BR_2">
           <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input ref="refreshText">
-              <label>{GPS_Refresh_Rate__s_}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <trigger ref="startGPSButton">
-              <label>{Start_GPS}</label>
-            </trigger>
-            <trigger ref="stopGPSButton">
-              <label>{Stop_GPS}</label>
-            </trigger>
-          </group>
-        </group>
-        <group ref="Colgroup_2" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input ref="trackdistText">
-              <label>{Tracklog_Distance_Interval__m_}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <trigger ref="trackdistButton">
-              <label>{Set_Tracklog_Distance_Interval}</label>
-            </trigger>
-          </group>
-        </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input ref="tracktimeText">
-              <label>{Tracklog_Time_interval__s_}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <trigger ref="tracktimeButton">
-              <label>{Set_Tracklog_Time_Interval}</label>
-            </trigger>
-          </group>
-        </group>
-        <trigger ref="trackOffButton">
-          <label>{Tracklog_Off}</label>
-        </trigger>
-        <input ref="trackStatus" faims_read_only="true">
-          <label>{Tracklog_Status}</label>
         </input>
-        <trigger ref="SyncOn">
-          <label>{Sync_On}</label>
-        </trigger>
-        <trigger ref="SyncOff">
-          <label>{Sync_Off}</label>
+        <trigger ref="Stop_Tracklog">
+          <label>{Stop_Tracklog}</label>
         </trigger>
       </group>
       <group ref="Map" faims_scrollable="false">
@@ -601,6 +468,76 @@
           </item>
         </select1>
       </group>
+      <group ref="Tracklog">
+        <label>{Tracklog__Advanced_}</label>
+        <select1 appearance="full" ref="internalExternalGPS">
+          <label>{Choose_which_GPS_to_connect_to_}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input ref="refreshText">
+              <label>{GPS_Refresh_Rate__s_}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <trigger ref="startGPSButton">
+              <label>{Enable_GPS}</label>
+            </trigger>
+            <trigger ref="stopGPSButton">
+              <label>{Disable_GPS}</label>
+            </trigger>
+          </group>
+        </group>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input ref="trackdistText">
+              <label>{Tracklog_Distance_Interval__m_}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <trigger ref="trackdistButton">
+              <label>{Set_Tracklog_Distance_Interval}</label>
+            </trigger>
+          </group>
+        </group>
+        <group ref="Colgroup_3" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input ref="tracktimeText">
+              <label>{Tracklog_Time_interval__s_}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <trigger ref="tracktimeButton">
+              <label>{Set_Tracklog_Time_Interval}</label>
+            </trigger>
+          </group>
+        </group>
+        <trigger ref="trackOffButton">
+          <label>{Tracklog_Off}</label>
+        </trigger>
+        <input ref="trackStatus" faims_read_only="true">
+          <label>{Tracklog_Status}</label>
+        </input>
+        <trigger ref="SyncOn">
+          <label>{Sync_On}</label>
+        </trigger>
+        <trigger ref="SyncOff">
+          <label>{Sync_Off}</label>
+        </trigger>
+      </group>
     </group>
     <group ref="Setup_Trap" faims_archent_type="Setup Trap">
       <label>{Setup_Trap}</label>
@@ -610,27 +547,24 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Setup Trap Date" faims_attribute_type="measure" ref="Date">
+            <input faims_attribute_name="Setup Trap Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
               <label>{Date}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Setup Trap Time" faims_attribute_type="measure" ref="Time">
+            <input faims_attribute_name="Setup Trap Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
               <label>{Time}</label>
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Setup Trap author" faims_attribute_type="measure" ref="Setup_Trap_author" faims_read_only="true">
+        <input faims_attribute_name="Setup Trap author" faims_attribute_type="measure" ref="Setup_Trap_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_putting_out_traps_}</label>
         </input>
-        <input faims_attribute_name="Other people" faims_attribute_type="measure" ref="Other_people">
-          <label>{Other_people}</label>
-        </input>
-        <input faims_attribute_name="Place name" faims_attribute_type="measure" ref="Place_name">
+        <input faims_attribute_name="Place name" faims_attribute_type="measure" ref="Place_name" faims_annotation="false" faims_certainty="false">
           <label>{Place_name}</label>
         </input>
-        <select1 faims_attribute_name="What type of trap" faims_attribute_type="vocab" ref="What_type_of_trap">
+        <select1 faims_attribute_name="What type of trap" faims_attribute_type="vocab" ref="What_type_of_trap" faims_annotation="false" faims_certainty="false">
           <label>{What_type_of_trap_}</label>
           <item>
             <label>Options not loaded</label>
@@ -652,27 +586,6 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
-              <label>{Northing}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
-              <label>{Easting}</label>
-            </input>
-          </group>
-          <group ref="Col_3" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
-              <label>{Accuracy}</label>
-            </input>
-          </group>
-        </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
@@ -686,38 +599,38 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Check Trap Date" faims_attribute_type="measure" ref="Date">
+            <input faims_attribute_name="Check Trap Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
               <label>{Date}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Check Trap Time" faims_attribute_type="measure" ref="Time">
+            <input faims_attribute_name="Check Trap Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
               <label>{Time}</label>
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Check Trap author" faims_attribute_type="measure" ref="Check_Trap_author" faims_read_only="true">
+        <input faims_attribute_name="Check Trap author" faims_attribute_type="measure" ref="Check_Trap_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_checking_}</label>
         </input>
-        <select1 faims_attribute_name="What trap are you checking" faims_attribute_type="vocab" ref="What_trap_are_you_checking">
+        <select1 faims_attribute_name="What trap are you checking" faims_attribute_type="vocab" ref="What_trap_are_you_checking" faims_annotation="false" faims_certainty="false">
           <label>{What_trap_are_you_checking_}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select1>
-        <select1 faims_attribute_name="What did you find in trap" faims_attribute_type="vocab" ref="What_did_you_find_in_trap">
+        <select1 faims_attribute_name="What did you find in trap" faims_attribute_type="vocab" ref="What_did_you_find_in_trap" faims_annotation="false" faims_certainty="false">
           <label>{What_did_you_find_in_trap_}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select1>
-        <input faims_attribute_name="Species Name" faims_attribute_type="measure" ref="Species_Name">
-          <label>{Species_Name}</label>
+        <input faims_attribute_name="Notes" faims_attribute_type="measure" ref="Notes" faims_annotation="false" faims_certainty="false">
+          <label>{Notes}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo">
+        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo" faims_annotation="false" faims_certainty="false">
           <label>{Take_Photo}</label>
           <item>
             <label>Options not loaded</label>
@@ -727,7 +640,7 @@
         <trigger ref="Take_Photo_Button_1">
           <label>{Take_Photo}</label>
         </trigger>
-        <select faims_sync="true" type="file" faims_attribute_name="Talk about animal" faims_attribute_type="measure" ref="Talk_about_animal">
+        <select faims_sync="true" type="file" faims_attribute_name="Talk about animal" faims_attribute_type="measure" ref="Talk_about_animal" faims_annotation="false" faims_certainty="false">
           <label>{Talk_about_animal}</label>
           <item>
             <label>Options not loaded</label>
@@ -737,16 +650,13 @@
         <trigger ref="Talk_about_animal_Button_1">
           <label>{Talk_about_animal}</label>
         </trigger>
-        <input faims_attribute_name="YMR Tissue Number" faims_attribute_type="measure" ref="YMR_Tissue_Number">
-          <label>{YMR_Tissue_Number}</label>
+        <input faims_attribute_name="Check Trap Tissue number" faims_attribute_type="measure" ref="Tissue_number" faims_annotation="false" faims_certainty="false">
+          <label>{Tissue_number}</label>
         </input>
-        <input faims_attribute_name="Snout to vent length mm" faims_attribute_type="measure" ref="Snout_to_vent_length_mm">
+        <input faims_attribute_name="Snout to vent length mm" faims_attribute_type="measure" ref="Snout_to_vent_length_mm" faims_annotation="false" faims_certainty="false">
           <label>{Snout_to_vent_length__mm_}</label>
         </input>
-        <input faims_attribute_name="Found something else" faims_attribute_type="measure" ref="Found_something_else">
-          <label>{Found_something_else}</label>
-        </input>
-        <input faims_attribute_name="How many Cane toads" faims_attribute_type="measure" ref="How_many_Cane_toads">
+        <input faims_attribute_name="How many Cane toads" faims_attribute_type="measure" ref="How_many_Cane_toads" faims_annotation="false" faims_certainty="false">
           <label>{How_many_Cane_toads_}</label>
         </input>
         <group ref="Colgroup_2" faims_style="orientation">
@@ -764,27 +674,6 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
-              <label>{Northing}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
-              <label>{Easting}</label>
-            </input>
-          </group>
-          <group ref="Col_3" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
-              <label>{Accuracy}</label>
-            </input>
-          </group>
-        </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
@@ -798,31 +687,31 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Animal outside Date" faims_attribute_type="measure" ref="Date">
+            <input faims_attribute_name="Animal outside Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
               <label>{Date}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Animal outside Time" faims_attribute_type="measure" ref="Time">
+            <input faims_attribute_name="Animal outside Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
               <label>{Time}</label>
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Animal outside author" faims_attribute_type="measure" ref="Animal_outside_author" faims_read_only="true">
+        <input faims_attribute_name="Animal outside author" faims_attribute_type="measure" ref="Animal_outside_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
-        <select1 faims_attribute_name="Animal outside trap" faims_attribute_type="vocab" ref="Animal_outside_trap">
+        <select1 faims_attribute_name="Animal outside trap" faims_attribute_type="vocab" ref="Animal_outside_trap" faims_annotation="false" faims_certainty="false">
           <label>{Animal_outside_trap}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select1>
-        <input faims_attribute_name="Animal outside Type Name" faims_attribute_type="measure" ref="Type_Name">
-          <label>{Type_Name}</label>
+        <input faims_attribute_name="Notes" faims_attribute_type="measure" ref="Notes" faims_annotation="false" faims_certainty="false">
+          <label>{Notes}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo">
+        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo" faims_annotation="false" faims_certainty="false">
           <label>{Take_Photo}</label>
           <item>
             <label>Options not loaded</label>
@@ -832,7 +721,7 @@
         <trigger ref="Take_Photo_Button_1">
           <label>{Take_Photo}</label>
         </trigger>
-        <select faims_sync="true" type="file" faims_attribute_name="Talk about animal" faims_attribute_type="measure" ref="Talk_about_animal">
+        <select faims_sync="true" type="file" faims_attribute_name="Talk about animal" faims_attribute_type="measure" ref="Talk_about_animal" faims_annotation="false" faims_certainty="false">
           <label>{Talk_about_animal}</label>
           <item>
             <label>Options not loaded</label>
@@ -857,27 +746,6 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
-              <label>{Northing}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
-              <label>{Easting}</label>
-            </input>
-          </group>
-          <group ref="Col_3" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
-              <label>{Accuracy}</label>
-            </input>
-          </group>
-        </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
@@ -891,30 +759,30 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="DNA Sample Date" faims_attribute_type="measure" ref="Date">
+            <input faims_attribute_name="DNA Sample Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
               <label>{Date}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="DNA Sample Time" faims_attribute_type="measure" ref="Time">
+            <input faims_attribute_name="DNA Sample Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
               <label>{Time}</label>
             </input>
           </group>
         </group>
-        <input faims_attribute_name="DNA Sample author" faims_attribute_type="measure" ref="DNA_Sample_author" faims_read_only="true">
+        <input faims_attribute_name="DNA Sample author" faims_attribute_type="measure" ref="DNA_Sample_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
-        <input faims_attribute_name="YMR number" faims_attribute_type="measure" ref="YMR_number">
-          <label>{YMR_number}</label>
+        <input faims_attribute_name="DNA Sample Tissue number" faims_attribute_type="measure" ref="Tissue_number" faims_annotation="false" faims_certainty="false">
+          <label>{Tissue_number}</label>
         </input>
-        <input faims_attribute_name="DNA Sample Type Name" faims_attribute_type="measure" ref="Type_Name">
-          <label>{Type_Name}</label>
+        <input faims_attribute_name="Type Species And Notes" faims_attribute_type="measure" ref="Type_Species_And_Notes" faims_annotation="false" faims_certainty="false">
+          <label>{Type_Species___Notes}</label>
         </input>
-        <input faims_attribute_name="Snout to vent length mm" faims_attribute_type="measure" ref="Snout_to_vent_length_mm">
+        <input faims_attribute_name="Snout to vent length mm" faims_attribute_type="measure" ref="Snout_to_vent_length_mm" faims_annotation="false" faims_certainty="false">
           <label>{Snout_to_vent_length__mm_}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo">
+        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo" faims_annotation="false" faims_certainty="false">
           <label>{Take_Photo}</label>
           <item>
             <label>Options not loaded</label>
@@ -936,27 +804,6 @@
             <label/>
             <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
               <label>{Longitude}</label>
-            </input>
-          </group>
-        </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
-              <label>{Northing}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
-              <label>{Easting}</label>
-            </input>
-          </group>
-          <group ref="Col_3" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
-              <label>{Accuracy}</label>
             </input>
           </group>
         </group>
@@ -973,24 +820,24 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Plant Survey Date" faims_attribute_type="measure" ref="Date">
+            <input faims_attribute_name="Plant Survey Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
               <label>{Date}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Plant Survey Time" faims_attribute_type="measure" ref="Time">
+            <input faims_attribute_name="Plant Survey Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
               <label>{Time}</label>
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Plant Survey author" faims_attribute_type="measure" ref="Plant_Survey_author" faims_read_only="true">
+        <input faims_attribute_name="Plant Survey author" faims_attribute_type="measure" ref="Plant_Survey_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
-        <input faims_attribute_name="Type plant name" faims_attribute_type="measure" ref="Type_plant_name">
+        <input faims_attribute_name="Type plant name" faims_attribute_type="measure" ref="Type_plant_name" faims_annotation="false" faims_certainty="false">
           <label>{Type_plant_name}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo">
+        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo" faims_annotation="false" faims_certainty="false">
           <label>{Take_Photo}</label>
           <item>
             <label>Options not loaded</label>
@@ -1015,27 +862,6 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
-              <label>{Northing}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
-              <label>{Easting}</label>
-            </input>
-          </group>
-          <group ref="Col_3" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
-              <label>{Accuracy}</label>
-            </input>
-          </group>
-        </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
@@ -1049,27 +875,27 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Cultural Knowledge Date" faims_attribute_type="measure" ref="Date">
+            <input faims_attribute_name="Cultural Knowledge Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
               <label>{Date}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Cultural Knowledge Time" faims_attribute_type="measure" ref="Time">
+            <input faims_attribute_name="Cultural Knowledge Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
               <label>{Time}</label>
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Cultural Knowledge author" faims_attribute_type="measure" ref="Cultural_Knowledge_author" faims_read_only="true">
+        <input faims_attribute_name="Cultural Knowledge author" faims_attribute_type="measure" ref="Cultural_Knowledge_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
-        <input faims_attribute_name="Who is talking" faims_attribute_type="measure" ref="Who_is_talking">
+        <input faims_attribute_name="Who is talking" faims_attribute_type="measure" ref="Who_is_talking" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_talking_}</label>
         </input>
-        <input faims_attribute_name="What is being talked about" faims_attribute_type="measure" ref="What_is_being_talked_about">
+        <input faims_attribute_name="What is being talked about" faims_attribute_type="measure" ref="What_is_being_talked_about" faims_annotation="false" faims_certainty="false">
           <label>{What_is_being_talked_about_}</label>
         </input>
-        <select faims_sync="true" type="file" faims_attribute_name="Record knowledge now" faims_attribute_type="measure" ref="Record_knowledge_now">
+        <select faims_sync="true" type="file" faims_attribute_name="Record knowledge now" faims_attribute_type="measure" ref="Record_knowledge_now" faims_annotation="false" faims_certainty="false">
           <label>{Record_knowledge_now}</label>
           <item>
             <label>Options not loaded</label>
@@ -1079,7 +905,7 @@
         <trigger ref="Record_knowledge_now_Button_1">
           <label>{Record_knowledge_now}</label>
         </trigger>
-        <input faims_attribute_name="Write down notes here" faims_attribute_type="measure" ref="Write_down_notes_here">
+        <input faims_attribute_name="Write down notes here" faims_attribute_type="measure" ref="Write_down_notes_here" faims_annotation="false" faims_certainty="false">
           <label>{Write_down_notes_here}</label>
         </input>
         <group ref="Colgroup_2" faims_style="orientation">
@@ -1097,27 +923,6 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
-              <label>{Northing}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
-              <label>{Easting}</label>
-            </input>
-          </group>
-          <group ref="Col_3" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
-              <label>{Accuracy}</label>
-            </input>
-          </group>
-        </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
@@ -1131,24 +936,24 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Notes Date" faims_attribute_type="measure" ref="Date">
+            <input faims_attribute_name="Notes Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
               <label>{Date}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Notes Time" faims_attribute_type="measure" ref="Time">
+            <input faims_attribute_name="Notes Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
               <label>{Time}</label>
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Notes author" faims_attribute_type="measure" ref="Notes_author" faims_read_only="true">
+        <input faims_attribute_name="Notes author" faims_attribute_type="measure" ref="Notes_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
-        <input faims_attribute_name="Notes" faims_attribute_type="measure" ref="Notes">
+        <input faims_attribute_name="Notes" faims_attribute_type="measure" ref="Notes" faims_annotation="false" faims_certainty="false">
           <label>{Notes}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo">
+        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo" faims_annotation="false" faims_certainty="false">
           <label>{Take_Photo}</label>
           <item>
             <label>Options not loaded</label>
@@ -1170,27 +975,6 @@
             <label/>
             <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
               <label>{Longitude}</label>
-            </input>
-          </group>
-        </group>
-        <group ref="Colgroup_3" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
-              <label>{Northing}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
-              <label>{Easting}</label>
-            </input>
-          </group>
-          <group ref="Col_3" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
-              <label>{Accuracy}</label>
             </input>
           </group>
         </group>

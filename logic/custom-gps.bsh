@@ -1,0 +1,77 @@
+/********************************* CUSTOM GPS *********************************/
+void takePoint(String tabgroup) {
+  triggerAutoSave();
+  Map tabgroupToTabRef = getTakeFromGpsMappings();
+
+  String archEntType = tabgroup.replaceAll("_", " ");
+  String currentUuid = getUuid(tabgroup);
+  if (isNull(currentUuid)){
+    showToast("{Please_enter_data_first}");
+    return;
+  }
+
+  boolean isInternalGPSOff = !isInternalGPSOn();
+  boolean isExternalGPSOff = !isExternalGPSOn();
+  Object  position = getGPSPosition();
+  if (position == null || isInternalGPSOff && isExternalGPSOff) {
+    showToast("{GPS_Not_Initialised}");
+    return;
+  }
+
+  Object projPosition = getGPSPositionProjected();
+  Double latitude     = position.getLatitude();
+  Double longitude    = position.getLongitude();
+  Double northing     = projPosition.getLatitude();
+  Double easting      = projPosition.getLongitude();
+
+  samplePoint = new Point(new MapPos(easting, northing), null, (PointStyle) null, null);
+  ArrayList geolist = new ArrayList();
+  geolist.add(samplePoint);
+
+  String accuracy = "" + getGPSEstimatedAccuracy();
+  List attribs = createAttributeList();
+  attribs.add(createEntityAttribute("Accuracy", "", "", accuracy, "1.0"));
+
+  saveArchEnt(currentUuid, archEntType, geolist, attribs, new SaveCallback() {
+    onSave(uuid, newRecord) {
+      print("[takePoint()] Added geometry: " + geolist);
+      fillInGPS(tabgroup);
+    }
+  });
+}
+
+/* Sets the value of GPS views for the given tab ref. */
+void fillInGPS(String tabgroup) {
+  Map tabgroupToTabRef = getTakeFromGpsMappings();
+  String currentUuid = getUuid(tabgroup);
+  if (isNull(currentUuid)) {
+    return;
+  }
+
+  String query = "SELECT x(transform(geospatialcolumn,                4326)) as longtiude, " +
+                 "       y(transform(geospatialcolumn,                4326)) as latitude " +
+                 "  FROM latestnondeletedarchent " +
+                 " WHERE uuid = '" + currentUuid + "';";
+
+  fetchOne(query, new FetchCallback() {
+    onFetch(result) {
+      print("[fillInGPS()] Fetched DB transformed geometry: " + result);
+      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude" , result.get(0));
+      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude"  , result.get(1));
+    }
+  });
+}
+
+void clearGpsInTabGroup(String tabgroup) {
+  Map tabgroupToTabRef = getTakeFromGpsMappings();
+
+  String tabRef = tabgroupToTabRef.get(tabgroup);
+  if (isNull(tabRef)) return;
+
+  clearGpsInTab(tabRef);
+}
+
+void clearGpsInTab(String tabRef) {
+  setFieldValue(tabRef + "/Latitude"  , "");
+  setFieldValue(tabRef + "/Longitude" , "");
+}

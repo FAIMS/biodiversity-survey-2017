@@ -1,11 +1,5 @@
 <module>
 <!--@POSTPROC: ./postproc.sh-->
-<!--TODO: There's a bug in the tracklog. Possible replication steps:
-     1. Enable tracklog
-     2. Create 'Setting up Trap' record
-     3. Save   'Setting up Trap' record
-     4. ???-->
-
 <rels>
   <RelationshipElement name="TransectSUI">
     <description>Defines relationship between Transect and Survey Unit</description>
@@ -21,6 +15,8 @@
 <Start f="nodata">
   <Main>
     <Guide t="webview" f="nolabel"/>
+    <Start_Tracklog t="button"/>
+    <BR_1 t="webview" f="nolabel"><markdown>\ </markdown></BR_1>
     <Setting_up_Trap     l="Setup_Trap"/>
     <Checking_Trap       l="Check_Trap"/>
     <Animal_outside_Trap l="Animal_outside"/>
@@ -28,8 +24,15 @@
     <Plant_Survey        l="Plant_Survey"/>
     <Cultural_Knowledge  l="Cultural_Knowledge"/>
     <Notes               l="Notes"/>
+    <BR_2 t="webview" f="nolabel"><markdown>\ </markdown></BR_2>
+    <Stop_Tracklog  t="button"/>
   </Main>
+  <Map f="noscroll">
+    <Map t="map" f="nolabel"/>
+  </Map>
+  <search/>
   <Tracklog>
+    Tracklog (Advanced)
     <internalExternalGPS t="radio">
       Choose which GPS to connect to:
       <opts>
@@ -44,8 +47,8 @@
         </refreshText>
       </col>
       <col>
-        <startGPSButton t="button">Start GPS</startGPSButton>
-        <stopGPSButton  t="button"> Stop GPS </stopGPSButton>
+        <startGPSButton t="button">Enable GPS</startGPSButton>
+        <stopGPSButton  t="button">Disable GPS</stopGPSButton>
       </col>
     </cols>
     <cols>
@@ -61,23 +64,15 @@
     <SyncOn t="button">Sync On</SyncOn>
     <SyncOff t="button">Sync Off</SyncOff>
   </Tracklog>
-  <Map f="noscroll">
-    <Map t="map" f="nolabel"/>
-  </Map>
-  <search/>
 </Start>
 
 <Setup_Trap>
   <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
-    <cols>
-      <Date/>
-      <Time/>
-    </cols>
-    <author>Who is putting out traps?</author>
-    <Other_people/>
-    <Place_name/>
-    <What_type_of_trap>
+    <!--@SOURCE: xml/date-time.xml-->
+    <author f="noannotation nocertainty">Who is putting out traps?</author>
+    <Place_name f="noannotation nocertainty"/>
+    <What_type_of_trap f="noannotation nocertainty">
       What type of trap?
       <!--@SOURCE: vocab/trap-type.xml-->
     </What_type_of_trap>
@@ -88,28 +83,24 @@
 <Check_Trap>
   <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{Date}} {{Time}}</fmt>
   <Checking>
-    <cols>
-      <Date/>
-      <Time/>
-    </cols>
-    <author>Who is checking?</author>
-    <What_trap_are_you_checking>
+    <!--@SOURCE: xml/date-time.xml-->
+    <author f="noannotation nocertainty">Who is checking?</author>
+    <What_trap_are_you_checking f="noannotation nocertainty">
       What trap are you checking?
       <!--@SOURCE: vocab/trap-type.xml-->
     </What_trap_are_you_checking>
-    <What_did_you_find_in_trap>
+    <What_did_you_find_in_trap f="noannotation nocertainty">
       What did you find in trap?
       <!--@SOURCE: vocab/animal-type.xml-->
     </What_did_you_find_in_trap>
-    <Species_Name/>
-    <Take_Photo t="camera"/>
-    <Talk_about_animal t="audio"/>
-    <YMR_Tissue_Number b="decimal"/>
-    <Snout_to_vent_length_mm b="decimal">
+    <Notes f="noannotation nocertainty"/>
+    <Take_Photo t="camera" f="noannotation nocertainty"/>
+    <Talk_about_animal t="audio" f="noannotation nocertainty"/>
+    <Tissue_number b="decimal" f="noannotation nocertainty"/>
+    <Snout_to_vent_length_mm b="decimal" f="noannotation nocertainty">
       Snout to vent length (mm)
     </Snout_to_vent_length_mm>
-    <Found_something_else/>
-    <How_many_Cane_toads b="decimal">
+    <How_many_Cane_toads b="decimal" f="noannotation nocertainty">
       How many Cane toads?
     </How_many_Cane_toads>
     <gps/>
@@ -119,35 +110,31 @@
 <Animal_outside>
   <fmt>{{Animal_outside_trap}} {{Date}} {{Time}}</fmt>
   <Animal>
-    <cols>
-      <Date/>
-      <Time/>
-    </cols>
-    <author>Who is recording?</author>
-    <Animal_outside_trap>
+    <!--@SOURCE: xml/date-time.xml-->
+    <author f="noannotation nocertainty">Who is recording?</author>
+    <Animal_outside_trap f="noannotation nocertainty">
       <!--@SOURCE: vocab/animal-type.xml-->
     </Animal_outside_trap>
-    <Type_Name/>
-    <Take_Photo t="camera"/>
-    <Talk_about_animal t="audio"/>
+    <Notes f="noannotation nocertainty"/>
+    <Take_Photo t="camera" f="noannotation nocertainty"/>
+    <Talk_about_animal t="audio" f="noannotation nocertainty"/>
     <gps/>
   </Animal>
 </Animal_outside>
 
 <DNA_Sample>
-  <fmt>{{YMR_number}} {{Type_Name}} {{Date}} {{Time}}</fmt>
+  <fmt>{{Tissue_number}} {{Type_Species_And_Notes}} {{Date}} {{Time}}</fmt>
   <DNA_Sample>
-    <cols>
-      <Date/>
-      <Time/>
-    </cols>
-    <author>Who is recording?</author>
-    <YMR_number b="decimal"/>
-    <Type_Name/>
-    <Snout_to_vent_length_mm b="decimal">
+    <!--@SOURCE: xml/date-time.xml-->
+    <author f="noannotation nocertainty">Who is recording?</author>
+    <Tissue_number b="decimal" f="noannotation nocertainty"/>
+    <Type_Species_And_Notes f="noannotation nocertainty">
+      Type Species &amp; Notes
+    </Type_Species_And_Notes>
+    <Snout_to_vent_length_mm b="decimal" f="noannotation nocertainty">
       Snout to vent length (mm)
     </Snout_to_vent_length_mm>
-    <Take_Photo t="camera"/>
+    <Take_Photo t="camera" f="noannotation nocertainty"/>
     <gps/>
   </DNA_Sample>
 </DNA_Sample>
@@ -155,13 +142,10 @@
 <Plant_Survey>
   <fmt>{{Type_plant_name}} {{Date}} {{Time}}</fmt>
   <Plant>
-    <cols>
-      <Date/>
-      <Time/>
-    </cols>
-    <author>Who is recording?</author>
-    <Type_plant_name/>
-    <Take_Photo t="camera"/>
+    <!--@SOURCE: xml/date-time.xml-->
+    <author f="noannotation nocertainty">Who is recording?</author>
+    <Type_plant_name f="noannotation nocertainty"/>
+    <Take_Photo t="camera" f="noannotation nocertainty"/>
     <gps/>
   </Plant>
 </Plant_Survey>
@@ -169,15 +153,12 @@
 <Cultural_Knowledge>
   <fmt>{{Who_is_talking}} {{Date}} {{Time}}</fmt>
   <Cultural_Knowledge>
-    <cols>
-      <Date/>
-      <Time/>
-    </cols>
-    <author>Who is recording?</author>
-    <Who_is_talking>Who is talking?</Who_is_talking>
-    <What_is_being_talked_about>What is being talked about?</What_is_being_talked_about>
-    <Record_knowledge_now t="audio"/>
-    <Write_down_notes_here/>
+    <!--@SOURCE: xml/date-time.xml-->
+    <author f="noannotation nocertainty">Who is recording?</author>
+    <Who_is_talking f="noannotation nocertainty">Who is talking?</Who_is_talking>
+    <What_is_being_talked_about f="noannotation nocertainty">What is being talked about?</What_is_being_talked_about>
+    <Record_knowledge_now t="audio" f="noannotation nocertainty"/>
+    <Write_down_notes_here f="noannotation nocertainty"/>
     <gps/>
   </Cultural_Knowledge>
 </Cultural_Knowledge>
@@ -185,13 +166,10 @@
 <Notes>
   <fmt>{{author}} {{Date}} {{Time}}</fmt>
   <Notes>
-    <cols>
-      <Date/>
-      <Time/>
-    </cols>
-    <author>Who is recording?</author>
-    <Notes/>
-    <Take_Photo t="camera"/>
+    <!--@SOURCE: xml/date-time.xml-->
+    <author f="noannotation nocertainty">Who is recording?</author>
+    <Notes f="noannotation nocertainty"/>
+    <Take_Photo t="camera" f="noannotation nocertainty"/>
     <gps/>
   </Notes>
 </Notes>
@@ -230,6 +208,8 @@
 <!--@SOURCE: logic/date-time-population.bsh-->
 <!--@SOURCE: logic/map.bsh-->
 <!--@SOURCE: logic/custom-search.bsh-->
+<!--@SOURCE: logic/enable-gps.bsh-->
+<!--@SOURCE: logic/custom-gps.bsh-->
 ]]></logic>
 
 </module>

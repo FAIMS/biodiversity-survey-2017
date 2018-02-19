@@ -9,6 +9,12 @@ numTracklogPoints = 0;
 tracklogCurrentStatus = "";
 numTransectPoints = 0;
 
+void startTrackLog() {
+  setGpsInternalExternal();
+  if (startGPS())
+    startDistTrack();
+}
+
 void setGpsInternalExternal() {
   setFieldValue("Start/Tracklog/internalExternalGPS", "{Internal}");
 }
@@ -30,6 +36,8 @@ saveEntitiesToRel(String type, String entity1, String entity2, Callable callback
 List getTransectButtons() {
   List btns = new ArrayList();
   List refs = getRefsMatching("Start/Main/*");
+  refs.remove("Start/Main/Start_Tracklog");
+  refs.remove("Start/Main/Stop_Tracklog");
 
   for (ref : refs)
     if ("button".equals(getType(ref)))
@@ -70,6 +78,7 @@ startTimeTrack() {
     } else {
         showToast("GPS is not turned on.");
     }
+    updateTracklogGuide();
 }
 
 startDistTrack() {
@@ -86,6 +95,8 @@ startDistTrack() {
     } else {
         showToast("GPS is not turned on.");
     }
+
+    updateTracklogGuide();
 }
 
 stopTrack() {
@@ -96,6 +107,7 @@ stopTrack() {
     showToast("Tracklog disabled.");
     updateTrackStatus();
     saveGPSTrack("End");
+    updateTracklogGuide();
 }
 
 updateTrackStatus() {
@@ -185,62 +197,11 @@ saveGPSTrack(String stateAppend) {
     });
 }
 
-addActionBarItem("time_tracklog", new ToggleActionButtonCallback() {
-    actionOnLabel() {
-        "Disable Time Tracklog";
-    }
-    actionOn() {
-        stopTrack();
-        showToast("Tracklog disabled.");
-    }
-    isActionOff() {
-        tracklogState.equals("Time");
-    }
-    actionOffLabel() {
-        "Enable Time Tracklog";
-    }
-    actionOff() {
-        if(isInternalGPSOn() || isInternalGPSOn()) {
-            startTimeTrack();
-            showToast("Tracklog enabled. Tracklog time interval set to " + getFieldValue("Start/Tracklog/tracktimeText") + " seconds. You can change it in the Tracklog tab.");    
-        } else {
-            showToast("GPS is not turned on.");
-            this.isActionOff();
-        }
-        
-    }
-});
-
-addActionBarItem("distance_tracklog", new ToggleActionButtonCallback() {
-    actionOnLabel() {
-        "Disable Distance Tracklog";
-    }
-    actionOn() {
-        stopTrack();
-        showToast("Tracklog disabled.");
-    }
-    isActionOff() {
-        tracklogState.equals("Distance");
-    }
-    actionOffLabel() {
-        "Enable Distance Tracklog";
-    }
-    actionOff() {
-        if(isInternalGPSOn() || isInternalGPSOn()) {
-            startDistTrack();
-        showToast("Tracklog enabled. Tracklog distance interval set to " + getFieldValue("Start/Tracklog/trackdistText") + " metres. You can change it in the Tracklog tab.");
-        } else {
-            showToast("GPS is not turned on.");
-            this.isActionOff();
-        }
-    }
-});
-
-startGPS() {
+boolean startGPS() {
     Object intext = getFieldValue("Start/Tracklog/internalExternalGPS");
     if(isNull(intext)) {
         showWarning("Warning", "Please choose whether you would like to connect to internal or external GPS.");
-        return;
+        return false;
     }
     setGPSUpdateInterval(Integer.parseInt(getFieldValue("Start/Tracklog/refreshText")));
     showToast("GPS enabled. GPS refresh rate set to " + getFieldValue("Start/Tracklog/refreshText") + ".");
@@ -252,10 +213,12 @@ startGPS() {
         if(isInternalGPSOn()) stopGPS();
         startExternalGPS();
     }
+    updateGPSDiagnostics();
+    return true;
 }
 
 stopGPSLogic() {
-    if(!isInternalGPSOn() && !isExternalGPSOn()) {
+    if(isInternalGPSOn() || isExternalGPSOn()) {
         showToast("GPS disabled.");
         stopGPS();
     } else {
@@ -291,6 +254,30 @@ reallyDeleteTransectUnit(String tabGroup) {
     });
 }
 
+removeActionBarItem("internal_gps");
+removeActionBarItem("external_gps");
+addActionBarItem("gps", new ToggleActionButtonCallback() {
+    actionOnLabel() {
+        "{Disable_Internal_GPS}";
+    }
+    actionOn() {
+        stopGPS();
+        showToast("{Internal_GPS_Disabled}");
+        updateGPSDiagnostics();
+    }
+    isActionOff() {
+        isInternalGPSOn();
+    }
+    actionOffLabel() {
+        "{Enable_Internal_GPS}";
+    }
+    actionOff() {
+        if(isExternalGPSOn()) {
+            stopGPS();
+        }
+        startGPS();
+    }
+});
 
 addOnEvent("Start/Tracklog", "show", "setGpsInternalExternal()");
 addOnEvent("Start/Tracklog/startGPSButton", "click", "startGPS();");
@@ -298,6 +285,8 @@ addOnEvent("Start/Tracklog/stopGPSButton", "click", "stopGPSLogic();");
 addOnEvent("Start/Tracklog/trackOffButton", "click", "stopTrack()");
 addOnEvent("Start/Tracklog/trackdistButton", "click", "startDistTrack()");
 addOnEvent("Start/Tracklog/tracktimeButton", "click", "startTimeTrack()");
+addOnEvent("Start/Main/Stop_Tracklog",  "click", "stopTrack()");
+addOnEvent("Start/Main/Start_Tracklog", "click", "startTrackLog()");
 
 persistOverSessions("Start/Tracklog/refreshText",   "10");
 persistOverSessions("Start/Tracklog/trackdistText", "20");

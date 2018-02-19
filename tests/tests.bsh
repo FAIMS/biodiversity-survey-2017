@@ -17,7 +17,7 @@ String getWebViewHtml(String ref) {
       "show"
   );
 
-  assert(getWebViewHtml(TRACKLOG_GUIDE_REF).equals("<p><b>Tracklog is: <span style='color: green'>Enabled</span></b></p><p style='color:blue'>The tracklog can be toggled on and off from the 'TRACKLOG' tab.</p><hr/>"));
+  assert(getWebViewHtml(TRACKLOG_GUIDE_REF).equals("<p><b>Tracklog is: <span style='color: green'>Enabled</span></b></p><hr/>"));
 }
 
 // TRACKLOG GUIDE WEBVIEW UPDATES TO SHOW 'DISABLED'
@@ -29,7 +29,7 @@ String getWebViewHtml(String ref) {
       "show"
   );
 
-  assert(getWebViewHtml(TRACKLOG_GUIDE_REF).equals("<p><b>Tracklog is: <span style='color: red'>Disabled</span></b></p><p style='color:blue'>The tracklog can be toggled on and off from the 'TRACKLOG' tab.</p><hr/>"));
+  assert(getWebViewHtml(TRACKLOG_GUIDE_REF).equals("<p><b>Tracklog is: <span style='color: red'>Disabled</span></b></p><hr/>"));
 }
 
 // MODIFYING THE LIST RETURNED FROM `getRefsMatching` DOESN'T BREAK MEMOISATION

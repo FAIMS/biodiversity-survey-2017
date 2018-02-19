@@ -9,11 +9,6 @@ String getTracklogGuideString(String color, String state) {
     "<p>" +
         "<b>Tracklog is: <span style='color: %s'>%s</span></b>" +
     "</p>" +
-
-    "<p style='color:blue'>" +
-        "The tracklog can be toggled on and off from the 'TRACKLOG' tab." +
-    "</p>" +
-
     "<hr/>";
 
   msg = replaceFirst(msg, color);
