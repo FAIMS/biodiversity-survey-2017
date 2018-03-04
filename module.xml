@@ -15,7 +15,7 @@
 <Start f="nodata">
   <Main>
     <Guide t="webview" f="nolabel"/>
-    <Start_Tracklog t="button"/>
+    <Start_Tracklog t="button" c="tracklog-start"/>
     <BR_1 t="webview" f="nolabel"><markdown>\ </markdown></BR_1>
     <Setting_up_Trap     l="Setup_Trap"/>
     <Checking_Trap       l="Check_Trap"/>
@@ -25,7 +25,7 @@
     <Cultural_Knowledge  l="Cultural_Knowledge"/>
     <Notes               l="Notes"/>
     <BR_2 t="webview" f="nolabel"><markdown>\ </markdown></BR_2>
-    <Stop_Tracklog  t="button"/>
+    <Stop_Tracklog  t="button" c="tracklog-stop"/>
   </Main>
   <Map f="noscroll">
     <Map t="map" f="nolabel"/>

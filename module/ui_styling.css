@@ -4,3 +4,5 @@
 .required-label {
   color: red;
 }
+.tracklog-start { background-color: green;  }
+.tracklog-stop  { background-color: orange; }

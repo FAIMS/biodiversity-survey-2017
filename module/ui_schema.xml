@@ -355,7 +355,7 @@
         <input faims_web="true" ref="Guide">
           <label/>
         </input>
-        <trigger ref="Start_Tracklog">
+        <trigger ref="Start_Tracklog" faims_style_class="tracklog-start">
           <label>{Start_Tracklog}</label>
         </trigger>
         <input faims_web="true" ref="BR_1">
@@ -385,7 +385,7 @@
         <input faims_web="true" ref="BR_2">
           <label/>
         </input>
-        <trigger ref="Stop_Tracklog">
+        <trigger ref="Stop_Tracklog" faims_style_class="tracklog-stop">
           <label>{Stop_Tracklog}</label>
         </trigger>
       </group>

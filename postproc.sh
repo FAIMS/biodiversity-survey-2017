@@ -125,6 +125,11 @@ Select_User=Select User
 Select_Date=Select Date
 EOF
 
+cat << EOF >> ui_styling.css
+.tracklog-start { background-color: green;  }
+.tracklog-stop  { background-color: orange; }
+EOF
+
 rm   ui_schema.xml.original
 rm data_schema.xml.original
 
