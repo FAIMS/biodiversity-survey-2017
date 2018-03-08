@@ -620,7 +620,7 @@
             <value>Options not loaded</value>
           </item>
         </select1>
-        <select1 faims_attribute_name="What did you find in trap" faims_attribute_type="vocab" ref="What_did_you_find_in_trap" faims_annotation="false" faims_certainty="false">
+        <select1 type="image" faims_attribute_name="What did you find in trap" faims_attribute_type="vocab" ref="What_did_you_find_in_trap" faims_annotation="false" faims_certainty="false">
           <label>{What_did_you_find_in_trap_}</label>
           <item>
             <label>Options not loaded</label>
@@ -701,7 +701,7 @@
         <input faims_attribute_name="Animal outside author" faims_attribute_type="measure" ref="Animal_outside_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
-        <select1 faims_attribute_name="Animal outside trap" faims_attribute_type="vocab" ref="Animal_outside_trap" faims_annotation="false" faims_certainty="false">
+        <select1 type="image" faims_attribute_name="Animal outside trap" faims_attribute_type="vocab" ref="Animal_outside_trap" faims_annotation="false" faims_certainty="false">
           <label>{Animal_outside_trap}</label>
           <item>
             <label>Options not loaded</label>

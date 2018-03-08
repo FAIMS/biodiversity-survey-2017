@@ -82,86 +82,312 @@
       <formatString> $1</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{Cane_Toad}
-<description></description></term>
-        <term>{Dragon}
-<description></description><term>{Chameleon_Dragon}
-<description></description></term><term>{Frilled_neck_Lizzard}
-<description></description></term><term>{Gilberts_Dragon}
-<description></description></term><term>{Lally_s_Two_lined_Dragon}
-<description></description></term><term>{Ring_tailed_Dragon}
-<description></description></term><term>{Robust_Two_lined_Dragon}
-<description></description></term><term>{Swamplands_lashtail}
-<description></description></term><term>{Two_lined_Dragon}
-<description></description></term><term>{Yellow_sided_Two_lined_Dragon}
+        <term pictureURL="files/data/Species Photos/Birds/Apostlebird.jpg">{Birds}
+<description></description><term pictureURL="files/data/Species Photos/Birds/Apostlebird.jpg">{Apostlebird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Australasian Darter.jpg">{Australasian_Darter}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Australian Magpie.jpg">{Australian_Magpie}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Australian White Ibis.jpg">{Australian_White_Ibis}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Azure Kingfisher.jpg">{Azure_Kingfisher}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Bar-shouldered Dove.jpg">{Bar_shouldered_Dove}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Black Bittern.jpg">{Black_Bittern}
+<description>Black or dark brown body with yellow patch down the sides of the neck and chest; dark legs.</description></term><term pictureURL="files/data/Species Photos/Birds/Black Kite.jpg">{Black_Kite}
+<description>Similar to Whistling Kite.
+
+The Black Kite has V shape tail; the Whistling Kite has a rounded tail.</description></term><term pictureURL="files/data/Species Photos/Birds/Black-faced Cuckoo-shrike.jpg">{Black_faced_Cuckoo_shrike}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Blue-faced Honeyeater.jpg">{Blue_faced_Honeyeater}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Blue-winged Kookaburra.jpg">{Blue_winged_Kookaburra}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Brolga.jpg">{Brolga}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Brown Falcon.jpg">{Brown_Falcon}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Brown Goshawk.jpg">{Brown_Goshawk}
+<description>Similar to the Collared Sparrowhawk.
+
+Goshawk has feathers at the top of legs; the Sparrowhawks legs are bare to the body.
+
+Middle toe of the Sparrowhawk is longer than its other toes; the Goshawk toes are equal in length.</description></term><term pictureURL="files/data/Species Photos/Birds/Burdekin Duck.jpg">{Burdekin_Duck}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Bush Turkey.png">{Bush_Turkey}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Bush-stone Curlew.jpg">{Bush_stone_Curlew}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Collared Sparrowhawk.jpg">{Collared_Sparrowhawk}
+<description>Similar to the Brown Goshawk.
+
+Goshawk has feathers at the top of legs; the Sparrowhawks legs are bare to the body.
+
+Middle toe of the Sparrowhawk is longer than its other toes; the Goshawks toes are equal in length.</description></term><term pictureURL="files/data/Species Photos/Birds/Comb-crested Jacana.jpg">{Comb_crested_Jacana}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Common Bronze-wing Pigeon.jpg">{Common_Bronze_wing_Pigeon}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Crested Pigeon.jpg">{Crested_Pigeon}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Crimson Finch.jpg">{Crimson_Finch}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Dollarbird.jpg">{Dollarbird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Eastern Koel.png">{Eastern_Koel}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Emu.jpg">{Emu}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Galah.jpg">{Galah}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Glossy Ibis.jpg">{Glossy_Ibis}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Gouldian Finch.jpg">{Gouldian_Finch}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Great Bowerbird.jpg">{Great_Bowerbird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Intermediate Egret.jpg">{Intermediate_Egret}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Jabiru.jpg">{Jabiru}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Little Black Cormorant.jpg">{Little_Black_Cormorant}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Little Corella.jpg">{Little_Corella}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Little Pied Cormorant.jpg">{Little_Pied_Cormorant}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Magpie Goose.jpg">{Magpie_Goose}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Magpie Lark.jpg">{Magpie_Lark}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Masked Lapwing.jpg">{Masked_Lapwing}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Nankeen Night Heron.jpg">{Nankeen_Night_Heron}
+<description>Dark red-brown back and white-cream underside; back of head black; yellow legs and eyes.
+
+In breeding season, back of the head has long feathers.</description></term><term pictureURL="files/data/Species Photos/Birds/Northern Rosella.jpg">{Northern_Rosella}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Pacific Baza.jpg">{Pacific_Baza}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Pacific Black Duck.jpg">{Pacific_Black_Duck}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Pelican.jpg">{Pelican}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Rainbow Bee-eater.jpg">{Rainbow_Bee_eater}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Red-collared Lorikeet.jpg">{Red_collared_Lorikeet}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Red-tailed Black Cockatoo.jpg">{Red_tailed_Black_Cockatoo}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Royal Spoonbill.jpg">{Royal_Spoonbill}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Silver-crowned Friarbird.jpg">{Silver_crowned_Friarbird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Southern Boobook.jpg">{Southern_Boobook}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Straw-necked Ibis.jpg">{Straw_necked_Ibis}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Sulphur-crested Cockatoo.jpg">{Sulphur_crested_Cockatoo}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Tawny Frogmouth.jpg">{Tawny_Frogmouth}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Torresian Crow.jpg">{Torresian_Crow}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Varied Lorikeet.jpg">{Varied_Lorikeet}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Variegated Fairy-wren.jpg">{Variegated_Fairy_wren}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Wedge-tailed Eagle.jpg">{Wedge_tailed_Eagle}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Whistling Duck.jpg">{Whistling_Duck}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Whistling Kite.jpg">{Whistling_Kite}
+<description>Similar to the Black Kite.
+
+The Black Kite has V shape tail; the Whistling Kite has a rounded tail.</description></term><term pictureURL="files/data/Species Photos/Birds/White-bellied Sea Eagle.jpg">{White_bellied_Sea_Eagle}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/White-faced Heron.jpg">{White_faced_Heron}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/White-necked Heron.jpg">{White_necked_Heron}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Willie Wagtail.jpg">{Willie_Wagtail}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Yellow-billed Spoonbill.jpg">{Yellow_billed_Spoonbill}
 <description></description></term></term>
-        <term>{Frog}
-<description></description><term>{Bilingual_Froglet}
-<description></description></term><term>{Cane_Toad}
-<description></description></term><term>{Coplands_Rock_Frog}
-<description></description></term><term>{Dahl_s_Aquatic_Frog}
-<description></description></term><term>{Desert_Tree_Frog}
-<description></description></term><term>{Floodplain_Toadlet}
-<description></description></term><term>{Giant_Burrowing_Frog}
-<description></description></term><term>{Green_Tree_Frog}
-<description></description></term><term>{Marbled_Frog}
-<description></description></term><term>{Masked_Frog}
-<description></description></term><term>{Northern_Dwarf_Tree_Frog}
-<description></description></term><term>{Northern_Spadefoot_Toad}
-<description></description></term><term>{Ornate_Burrowing_Frog}
-<description></description></term><term>{Pale_Frog}
-<description></description></term><term>{Peter_s_Frog}
-<description></description></term><term>{Remote_Froglet}
-<description></description></term><term>{Rocket_Frog}
-<description></description></term><term>{Rockhole_Frog}
-<description></description></term><term>{Roth_s_Tree_frog}
-<description></description></term><term>{Stonemason_Toadlet}
-<description></description></term><term>{Tornier_s_Frog}
-<description></description></term><term>{Woodworker_Frog}
-<description></description></term><term>{Wotjulum_Frog}
+        <term pictureURL="files/data/Species Photos/Crocodiles/Freshwater Crocodile.jpg">{Crocodiles}
+<description></description><term pictureURL="files/data/Species Photos/Crocodiles/Freshwater Crocodile.jpg">{Freshwater_Crocodile}
+<description></description></term><term pictureURL="files/data/Species Photos/Crocodiles/Saltwater Crocodile.jpg">{Saltwater_Crocodile}
 <description></description></term></term>
-        <term>{Gecko}
-<description></description><term>{Bynoe_s_Gecko}
-<description></description></term><term>{Crowned_Gecko}
-<description></description></term><term>{Fat_tailed_Diplodactylus}
-<description></description></term><term>{Marbled_Velvet_Gecko}
-<description></description></term><term>{Northern_Dtella}
-<description></description></term><term>{Northern_Spotted_Dtella}
-<description></description></term><term>{Pale_striped_Ground_Gecko}
-<description></description></term><term>{Spiny_tailed_Gecko}
-<description></description></term><term>{Zigzag_Velvet_Gecko}
+        <term pictureURL="files/data/Species Photos/Dragons/Chameleon Dragon.jpg">{Dragons}
+<description></description><term pictureURL="files/data/Species Photos/Dragons/Chameleon Dragon.jpg">{Chameleon_Dragon}
+<description></description></term><term pictureURL="files/data/Species Photos/Dragons/Frilled-neck Lizard.jpg">{Frilled_neck_Lizard}
+<description></description></term><term pictureURL="files/data/Species Photos/Dragons/Gilbert_s Dragon.jpg">{Gilbert_s_Dragon}
+<description>Similar to Swamplands Lashtail.
+
+Lashtail’s back scales run alongside spine; Gilbert’s back scales run diagonally to spine.</description></term><term pictureURL="files/data/Species Photos/Dragons/Lally_s Two-lined Dragon.jpg">{Lally_s_Two_lined_Dragon}
+<description>Has gular fold (fold of skin underneath the neck).
+
+Snout-vent length 71mm; Tail 200-300% of snout-vent..</description></term><term pictureURL="files/data/Species Photos/Dragons/Ring-tailed Dragon.jpg">{Ring_tailed_Dragon}
+<description></description></term><term pictureURL="files/data/Species Photos/Dragons/Robust Two-lined Dragon.jpg">{Robust_Two_lined_Dragon}
+<description>Weak gular fold (fold of skin underneath the neck).
+
+Snout-vent length 73mm; Tail length 150-300% of snout-vent.</description></term><term pictureURL="files/data/Species Photos/Dragons/Swamplands Lashtail.jpg">{Swamplands_Lashtail}
+<description>Similar to Gilbert’s Dragon.
+
+Lashtails back scales run alongside spine; Gilbert’s back scales run diagonally to spine.</description></term><term pictureURL="files/data/Species Photos/Dragons/Two-lined Dragon.jpg">{Two_lined_Dragon}
+<description>No gular fold (fold of skin underneath the neck). Snout-vent length 55mm; Tail length 230% of snout-vent.</description></term><term pictureURL="files/data/Species Photos/Dragons/Yellow-sided Two-lined Dragon.jpg">{Yellow_sided_Two_lined_Dragon}
+<description>No gular fold (fold of skin underneath the neck).
+
+Snout-vent length 84mm; Tail length 200-300% of snout-vent..</description></term></term>
+        <term pictureURL="files/data/Species Photos/Fish/Archer Fish.jpg">{Fish}
+<description></description><term pictureURL="files/data/Species Photos/Fish/Archer Fish.jpg">{Archer_Fish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Barramundi.jpg">{Barramundi}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Black Bream.jpg">{Black_Bream}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Blue Salmon.JPG">{Blue_Salmon}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Bony Bream.jpg">{Bony_Bream}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Bull Shark.jpg">{Bull_Shark}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Eel-tailed Catfish.jpg">{Eel_tailed_Catfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Fork-tailed Catfish.jpg">{Fork_tailed_Catfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Freshwater Longtom.jpg">{Freshwater_Longtom}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Largetooth Sawfish.jpg">{Largetooth_Sawfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Mangrove Jack.png">{Mangrove_Jack}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Saratoga.jpg">{Saratoga}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Sleepy Cod.jpg">{Sleepy_Cod}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Spangled Perch.jpg">{Spangled_Perch}
 <description></description></term></term>
-        <term>{Goanna}
-<description></description></term>
-        <term>{Mammal}
-<description></description></term>
-        <term>{Nothing_in_trap}
-<description></description></term>
-        <term>{Skink}
-<description></description><term>{Bar_shouldered_Sctenotus}
-<description></description></term><term>{Bar_tailed_bar_lipped_Skink}
-<description></description></term><term>{Bauxite_Rainbow_Skink}
-<description></description></term><term>{Blue_tongued_Lizzard}
-<description></description></term><term>{Dessert_Rainbow_Skink}
-<description></description></term><term>{Lined_Fire_tail_Skink}
-<description></description></term><term>{Metallic_Snake_eyed_Skink}
-<description></description></term><term>{Northen_Dwarf_Skink}
-<description></description></term><term>{Northern_Bar_lipped_Skink}
-<description></description></term><term>{Northern_Mulch_Skink}
-<description></description></term><term>{Northern_Soil_crevice_Skink}
-<description></description></term><term>{Ornate_Soil_crevice_Skink}
-<description></description></term><term>{Port_Essignton_Ctenotus}
-<description></description></term><term>{Robust_Ctenotus}
-<description></description></term><term>{Shaded_litter_Rainbow_Skink}
-<description></description></term><term>{Slender_Rainbow_Skink}
-<description></description></term><term>{Spalding_Ctenotus}
-<description></description></term><term>{Stor_s_Snake_eyed_Skink}
+        <term pictureURL="files/data/Species Photos/Frogs/Bilingual Froglet.jpg">{Frogs}
+<description></description><term pictureURL="files/data/Species Photos/Frogs/Bilingual Froglet.jpg">{Bilingual_Froglet}
+<description>Similar the Remote Froglet without hearing call.
+
+Highly variable colour and pattern.
+
+Distinctive two toned call (see Frog ID App).</description></term><term pictureURL="files/data/Species Photos/Frogs/Cane Toad.jpg">{Cane_Toad}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Copland_s Rock Frog.jpg">{Copland_s_Rock_Frog}
+<description>Similar to Peter’s Frog. Peter’s Frog has slender digits with small discs; Copland’s Rock Frog has larger discs.</description></term><term pictureURL="files/data/Species Photos/Frogs/Dahl_s Aquatic Frog.jpg">{Dahl_s_Aquatic_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Desert Tree Frog.jpg">{Desert_Tree_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Floodplain Toadlet.jpg">{Floodplain_Toadlet}
+<description>Similar to Stonemason Toadlet.
+
+DOES NOT have raised line of markings over shoulders and side of body or pale pink colour under the back legs (both seen in Stonemason Toadlet).</description></term><term pictureURL="files/data/Species Photos/Frogs/Giant Burrowing Frog.png">{Giant_Burrowing_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Green Tree Frog.jpg">{Green_Tree_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Marbled Frog.jpg">{Marbled_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Masked Frog.jpg">{Masked_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Northern Dwarf Tree Frog.png">{Northern_Dwarf_Tree_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Northern Spadefoot Toad.jpg">{Northern_Spadefoot_Toad}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Ornate Burrowing Frog.jpg">{Ornate_Burrowing_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Pale Frog.jpg">{Pale_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Peter_s Frog.jpg">{Peter_s_Frog}
+<description>Can be confused with Copland’s Rock Frog.
+
+Peter’s Frog has slender digits with small discs; Copland’s Rock Frog has larger discs.</description></term><term pictureURL="files/data/Species Photos/Frogs/Remote Froglet.jpg">{Remote_Froglet}
+<description>Similar to the Bilingual Froglet. Highly variable colour and pattern.
+
+Call similar to longer note of Bilingual Froglet call (see Frog ID App)</description></term><term pictureURL="files/data/Species Photos/Frogs/Rocket Frog.jpg">{Rocket_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Rockhole Frog.jpg">{Rockhole_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Roth_s Tree Frog.jpg">{Roth_s_Tree_Frog}
+<description>Colour regularly changes, often grey, beige or light brown during the day, and darker grey or brown when active at night. Eye silver-grey in lower part, and dark to light rusty red in top section.</description></term><term pictureURL="files/data/Species Photos/Frogs/Stonemason Toadlet.jpg">{Stonemason_Toadlet}
+<description>Has raised line of markings over shoulders and side of body. Pale pink colour under the back legs. Similar to the Floodplain Toadlet.</description></term><term pictureURL="files/data/Species Photos/Frogs/Tornier_s Frog.jpg">{Tornier_s_Frog}
+<description>Black stripe starts at snout, narrows before eye, then widens behind eye and ends near arm.
+
+Toes half webbed. Similar to Wotjulum Frog.</description></term><term pictureURL="files/data/Species Photos/Frogs/Woodworker Frog.jpg">{Woodworker_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Wotjulum Frog.jpg">{Wotjulum_Frog}
+<description>Dark stripe starts at snout, narrows before the eye, then widens behind eye to half way along side of body. Toes fully webbed. Similar to Tornier’s Frog.</description></term></term>
+        <term pictureURL="files/data/Species Photos/Geckos/Bynoe_s Gecko.jpg">{Geckos}
+<description></description><term pictureURL="files/data/Species Photos/Geckos/Bynoe_s Gecko.jpg">{Bynoe_s_Gecko}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Crowned Gecko.jpg">{Crowned_Gecko}
+<description>The Crowned Gecko has large pale patches on its sides. Similar to Pale-striped Ground Gecko.</description></term><term pictureURL="files/data/Species Photos/Geckos/Fat-tailed Diplodactylus.jpg">{Fat_tailed_Diplodactylus}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Marbled Velvet Gecko.png">{Marbled_Velvet_Gecko}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Northern Dtella.jpg">{Northern_Dtella}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Northern Spotted Rock Dtella.jpg">{Northern_Spotted_Rock_Dtella}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Pale-striped Ground Gecko.jpg">{Pale_striped_Ground_Gecko}
+<description>Has small pale dots, sometimes forming narrow lines down the sides. Similar to Crowned Gecko.</description></term><term pictureURL="files/data/Species Photos/Geckos/Spiny-tailed Gecko.jpg">{Spiny_tailed_Gecko}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Zigzag Velvet Gecko.jpg">{Zigzag_Velvet_Gecko}
 <description></description></term></term>
-        <term>{Snake}
-<description></description></term>
-        <term>{Something_else}
-<description></description></term>
-        <term>{Turtle}
+        <term pictureURL="files/data/Species Photos/Goannas/Black-headed Monitor.jpg">{Goannas}
+<description></description><term pictureURL="files/data/Species Photos/Goannas/Black-headed Monitor.jpg">{Black_headed_Monitor}
+<description>Head scales: Supraoculars very small, sharply differentiated from large interoculars.</description></term><term pictureURL="files/data/Species Photos/Goannas/Black-palmed Monitor.jpg">{Black_palmed_Monitor}
+<description>First half of tail black, remainder a creamy yellow; palms and soles of feet are black.
+
+Tail more than twice as long as rest of body.</description></term><term pictureURL="files/data/Species Photos/Goannas/Merten_s Water Monitor.jpg">{Merten_s_Water_Monitor}
+<description>Nostrils directed upwards. Ridge along top of tail.</description></term><term pictureURL="files/data/Species Photos/Goannas/Ridge-tailed Monitor.jpg">{Ridge_tailed_Monitor}
+<description></description></term><term pictureURL="files/data/Species Photos/Goannas/Sand Ridge Goanna.jpg">{Sand_Ridge_Goanna}
+<description></description></term><term pictureURL="files/data/Species Photos/Goannas/Spotted Tree Monitor.jpg">{Spotted_Tree_Monitor}
+<description>Head scales: Supraoculars gradually merging with larger interoculars.</description></term></term>
+        <term pictureURL="files/data/Species Photos/Insects/Leichhardt_s Grasshopper.jpg">{Insects}
+<description></description><term pictureURL="files/data/Species Photos/Insects/Leichhardt_s Grasshopper.jpg">{Leichhardt_s_Grasshopper}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Burton_s Legless Lizard.jpg">{Legless_Lizards_and_Sliders}
+<description></description><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Burton_s Legless Lizard.jpg">{Burton_s_Legless_Lizard}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Excitable Delma.png">{Excitable_Delma}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Lesser Robust Fine-lined Slider.JPG">{Lesser_Robust_Fine_lined_Slider}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/North-eastern Orange-tailed Slider.JPG">{North_eastern_Orange_tailed_Slider}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Northern Hooded Scaly-foot.jpg">{Northern_Hooded_Scaly_foot}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Mammals/Agile Wallaby.jpg">{Mammals}
+<description></description><term pictureURL="files/data/Species Photos/Mammals/Agile Wallaby.jpg">{Agile_Wallaby}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Antilopine Wallaroo.jpg">{Antilopine_Wallaroo}
+<description>Males reddish to brown; females reddish but grey on head and shoulders, with pale cheeks.
+
+Ears pale inside and around edge.
+
+Tail is pale and the same thickness all the way along.
+
+Black paws.</description></term><term pictureURL="files/data/Species Photos/Mammals/Black Rat.jpg">{Black_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Brush-tailed Rabbit Rat.jpg">{Brush_tailed_Rabbit_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Common Planigale.jpg">{Common_Planigale}
+<description>Narrow, flattened head .
+
+Females have backward-facing pouch.
+
+Thin tail shorter than body length.</description></term><term pictureURL="files/data/Species Photos/Mammals/Common Rock Rat.jpg">{Common_Rock_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Common Wallaroo.jpg">{Common_Wallaroo}
+<description>Pale grey to brown, black hands and feet, white underneath.</description></term><term pictureURL="files/data/Species Photos/Mammals/Delicate Mouse.jpg">{Delicate_Mouse}
+<description>Narrow dark brown ring around large eye.
+
+Thin tail slightly longer than body.</description></term><term pictureURL="files/data/Species Photos/Mammals/Dingo.jpg">{Dingo}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Donkey.jpg">{Donkey}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Dugong.jpg">{Dugong}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Dusky Rat.jpg">{Dusky_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/European Cattle.jpg">{European_Cattle}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Fawn Antechinus.jpg">{Fawn_Antechinus}
+<description>Pale grey body; whitish feet and throat (yellow in males); pale ring around the eye.</description></term><term pictureURL="files/data/Species Photos/Mammals/Feral Cat.jpg">{Feral_Cat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Grassland Melomys.png">{Grassland_Melomys}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Horse.jpg">{Horse}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/House Mouse.jpg">{House_Mouse}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Brown Bandicoot.jpg">{Northern_Brown_Bandicoot}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Brush-tail Possum.jpg">{Northern_Brush_tail_Possum}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Hopping Mouse.jpg">{Northern_Hopping_Mouse}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Nailtail Wallaby.jpg">{Northern_Nailtail_Wallaby}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Quoll.jpg">{Northern_Quoll}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Pale Field-rat.jpg">{Pale_Field_rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Pig.jpg">{Pig}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Red-cheeked Dunnart.jpg">{Red_cheeked_Dunnart}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Rock Ring-tail Possum.jpg">{Rock_Ring_tail_Possum}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Short-beaked Echidna.jpg">{Short_beaked_Echidna}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Short-eared Rock Wallaby.jpg">{Short_eared_Rock_Wallaby}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Sugar Glider.jpg">{Sugar_Glider}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Swamp Buffalo.jpg">{Swamp_Buffalo}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Water Rat.jpg">{Water_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Western Chestnut Mouse.jpg">{Western_Chestnut_Mouse}
+<description>Pale chestnut eye ring.
+
+Tail usually shorter than body and has scales on whitish underside.</description></term></term>
+        <term pictureURL="files/data/Species Photos/Shellfish/Crayfish.jpg">{Shellfish}
+<description></description><term pictureURL="files/data/Species Photos/Shellfish/Crayfish.jpg">{Crayfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Freshwater Crab.jpg">{Freshwater_Crab}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Freshwater Prawn.jpg">{Freshwater_Prawn}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Green Mudcrab.png">{Green_Mudcrab}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Mussel.jpg">{Mussel}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Skinks/Bar-shouldered Ctenotus.jpg">{Skinks}
+<description></description><term pictureURL="files/data/Species Photos/Skinks/Bar-shouldered Ctenotus.jpg">{Bar_shouldered_Ctenotus}
+<description>Narrow blackish stripe with no pale edging down the back of juveniles. Stripe is usually is absent or incomplete in adults.</description></term><term pictureURL="files/data/Species Photos/Skinks/Bar-tailed Bar-lipped Skink.jpg">{Bar_tailed_Bar_lipped_Skink}
+<description>Distance between limbs when they are pressed against the body is no more than the length of the arm.</description></term><term pictureURL="files/data/Species Photos/Skinks/Bauxite Rainbow Skink.jpg">{Bauxite_Rainbow_Skink}
+<description>Two ridges on each scale in the middle of the back.</description></term><term pictureURL="files/data/Species Photos/Skinks/Common Dwarf Skink.png">{Common_Dwarf_Skink}
+<description>First scale above eye (supraciliary) much smaller than second and not touching first supraocular scale (see Guide to animals and plants in SE Arnhem Land). Similar to Northern Dwarf Skink.</description></term><term pictureURL="files/data/Species Photos/Skinks/Desert Rainbow Skink.jpg">{Desert_Rainbow_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Elegant Ctenotus.png">{Elegant_Ctenotus}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Leopard Ctenotus.jpg">{Leopard_Ctenotus}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Lined Fire-tail Skink.png">{Lined_Fire_tail_Skink}
+<description>Pale stripes on sides of the back end at the snout.
+
+Head scales: Supranasal distinct from nasal. Similar to Storr’s Snake-eyed Skink.</description></term><term pictureURL="files/data/Species Photos/Skinks/Metallic Snake-eyed Skink.jpg">{Metallic_Snake_eyed_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Bar-lipped Skink.jpg">{Northern_Bar_lipped_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Blue-tongued Lizard.jpg">{Northern_Blue_tongued_Lizard}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Dwarf Skink.jpg">{Northern_Dwarf_Skink}
+<description>First scale above eye (supraciliary) similar in size to the second and touching first supraocular scale (see Guide to animals and plants in SE Arnhem Land). Similar to Common Dwarf Skink.</description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Mulch Skink.jpg">{Northern_Mulch_Skink}
+<description>Limbs widely separated when pressed against the side of the body.</description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Soil-crevice Skink.jpg">{Northern_Soil_crevice_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Ornate Soil-crevice Skink.jpg">{Ornate_Soil_crevice_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Port Essington Ctenotus.png">{Port_Essington_Ctenotus}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Robust Ctenotus.jpg">{Robust_Ctenotus}
+<description>Dark stripe down spine has a thin pale edge. Light stripe from above eye down side of back to halfway down tail. Dark streaks on back legs.</description></term><term pictureURL="files/data/Species Photos/Skinks/Shaded-litter Rainbow Skink.jpg">{Shaded_litter_Rainbow_Skink}
+<description>White stripe on upper lip running under eye and past the arm.</description></term><term pictureURL="files/data/Species Photos/Skinks/Slender Rainbow Skink.jpg">{Slender_Rainbow_Skink}
+<description>No prominent white stripe from under eye to ear.
+
+Three moderate sized ridges on each scale of the back.</description></term><term pictureURL="files/data/Species Photos/Skinks/Spalding_s Ctenotus.png">{Spalding_s_Ctenotus}
+<description>Three supraocular scales.</description></term><term pictureURL="files/data/Species Photos/Skinks/Storr_s Snake-eyed Skink.png">{Storr_s_Snake_eyed_Skink}
+<description>Pale stripes on sides of back end above eye.
+
+Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-tail Skink</description></term></term>
+        <term pictureURL="files/data/Species Photos/Snakes/Black-headed Python.jpg">{Snakes}
+<description></description><term pictureURL="files/data/Species Photos/Snakes/Black-headed Python.jpg">{Black_headed_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Brown Tree Snake (Venomous).jpg">{Brown_Tree_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Carpet Python.jpg">{Carpet_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Children_s Python.jpg">{Children_s_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Death Adder (Venomous).jpg">{Death_Adder__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Eastern Bandy-bandy (Venomous).jpg">{Eastern_Bandy_bandy__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/File Snake.jpg">{File_Snake}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Greater Black Whipsnake (Venomous).jpg">{Greater_Black_Whipsnake__Venomous_}
+<description>It is larger (1.6m) than the Lesser Black Whipsnake (1.2m). Black or dark brown body with not many facial markings.</description></term><term pictureURL="files/data/Species Photos/Snakes/Green Tree Snake.jpg">{Green_Tree_Snake}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Keelback.jpg">{Keelback}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/King Brown Snake (Venomous).jpg">{King_Brown_Snake__Venomous_}
+<description>Each scale has a dark back edge. Eye reddish-brown.</description></term><term pictureURL="files/data/Species Photos/Snakes/Lesser Black Whipsnake (Venomous).jpg">{Lesser_Black_Whipsnake__Venomous_}
+<description>It is smaller (1.2m) than the Greater Black Whipsnake (1.6m). Each scale has a dark edge creating a spotted pattern.</description></term><term pictureURL="files/data/Species Photos/Snakes/Little Spotted Snake (Venomous).jpg">{Little_Spotted_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Macleay_s Water Snake (Mildly Venomous).jpg">{Macleay_s_Water_Snake__Mildly_Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Northern Blind Snake.jpg">{Northern_Blind_Snake}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Northern Brown Snake (Venomous).jpg">{Northern_Brown_Snake__Venomous_}
+<description>Large rostral (snout) scale. Blackish mouth lining. Eye dark with orange ring around pupil.</description></term><term pictureURL="files/data/Species Photos/Snakes/Northern Small-eyed Snake (Venomous).jpg">{Northern_Small_eyed_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Olive Python.jpg">{Olive_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Olive Whipsnake (Venomous).jpg">{Olive_Whipsnake__Venomous_}
+<description>Head has pale edged, dark blotches. Dark streak from corner of eye to back of mouth.</description></term><term pictureURL="files/data/Species Photos/Snakes/Orange-naped Snake (Venomous).jpg">{Orange_naped_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Roper Shovel-nosed Snake (Venomous).jpg">{Roper_Shovel_nosed_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Water Python.jpg">{Water_Python}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Turtles/Cann_s Snake-necked Turtle.jpg">{Turtles}
+<description></description><term pictureURL="files/data/Species Photos/Turtles/Cann_s Snake-necked Turtle.jpg">{Cann_s_Snake_necked_Turtle}
+<description>Bottom of shell wide near head; middle scale twice as long as connection between pectoral scales (see Guide to animals and plants in SE Arnhem Land).</description></term><term pictureURL="files/data/Species Photos/Turtles/Flatback Sea Turtle.jpg">{Flatback_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Green Sea Turtle.jpg">{Green_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Hawksbill Sea Turtle.jpg">{Hawksbill_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Northern Snake-necked Turtle.jpg">{Northern_Snake_necked_Turtle}
+<description>Bottom of shell narrow near head; middle scale the same length as connection between pectoral scales (see Guide to animals and plants in SE Arnhem Land).</description></term><term pictureURL="files/data/Species Photos/Turtles/Olive Ridley Sea Turtle.png">{Olive_Ridley_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Short-necked Snapping Turtle.jpg">{Short_necked_Snapping_Turtle}
+<description></description></term></term>
+        <term>{Something_Else___Describe_in_Notes}
 <description></description></term>
       </lookup>
     </property>
@@ -233,86 +459,312 @@
       <formatString>$1</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{Cane_Toad}
-<description></description></term>
-        <term>{Dragon}
-<description></description><term>{Chameleon_Dragon}
-<description></description></term><term>{Frilled_neck_Lizzard}
-<description></description></term><term>{Gilberts_Dragon}
-<description></description></term><term>{Lally_s_Two_lined_Dragon}
-<description></description></term><term>{Ring_tailed_Dragon}
-<description></description></term><term>{Robust_Two_lined_Dragon}
-<description></description></term><term>{Swamplands_lashtail}
-<description></description></term><term>{Two_lined_Dragon}
-<description></description></term><term>{Yellow_sided_Two_lined_Dragon}
+        <term pictureURL="files/data/Species Photos/Birds/Apostlebird.jpg">{Birds}
+<description></description><term pictureURL="files/data/Species Photos/Birds/Apostlebird.jpg">{Apostlebird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Australasian Darter.jpg">{Australasian_Darter}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Australian Magpie.jpg">{Australian_Magpie}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Australian White Ibis.jpg">{Australian_White_Ibis}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Azure Kingfisher.jpg">{Azure_Kingfisher}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Bar-shouldered Dove.jpg">{Bar_shouldered_Dove}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Black Bittern.jpg">{Black_Bittern}
+<description>Black or dark brown body with yellow patch down the sides of the neck and chest; dark legs.</description></term><term pictureURL="files/data/Species Photos/Birds/Black Kite.jpg">{Black_Kite}
+<description>Similar to Whistling Kite.
+
+The Black Kite has V shape tail; the Whistling Kite has a rounded tail.</description></term><term pictureURL="files/data/Species Photos/Birds/Black-faced Cuckoo-shrike.jpg">{Black_faced_Cuckoo_shrike}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Blue-faced Honeyeater.jpg">{Blue_faced_Honeyeater}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Blue-winged Kookaburra.jpg">{Blue_winged_Kookaburra}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Brolga.jpg">{Brolga}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Brown Falcon.jpg">{Brown_Falcon}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Brown Goshawk.jpg">{Brown_Goshawk}
+<description>Similar to the Collared Sparrowhawk.
+
+Goshawk has feathers at the top of legs; the Sparrowhawks legs are bare to the body.
+
+Middle toe of the Sparrowhawk is longer than its other toes; the Goshawk toes are equal in length.</description></term><term pictureURL="files/data/Species Photos/Birds/Burdekin Duck.jpg">{Burdekin_Duck}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Bush Turkey.png">{Bush_Turkey}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Bush-stone Curlew.jpg">{Bush_stone_Curlew}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Collared Sparrowhawk.jpg">{Collared_Sparrowhawk}
+<description>Similar to the Brown Goshawk.
+
+Goshawk has feathers at the top of legs; the Sparrowhawks legs are bare to the body.
+
+Middle toe of the Sparrowhawk is longer than its other toes; the Goshawks toes are equal in length.</description></term><term pictureURL="files/data/Species Photos/Birds/Comb-crested Jacana.jpg">{Comb_crested_Jacana}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Common Bronze-wing Pigeon.jpg">{Common_Bronze_wing_Pigeon}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Crested Pigeon.jpg">{Crested_Pigeon}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Crimson Finch.jpg">{Crimson_Finch}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Dollarbird.jpg">{Dollarbird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Eastern Koel.png">{Eastern_Koel}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Emu.jpg">{Emu}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Galah.jpg">{Galah}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Glossy Ibis.jpg">{Glossy_Ibis}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Gouldian Finch.jpg">{Gouldian_Finch}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Great Bowerbird.jpg">{Great_Bowerbird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Intermediate Egret.jpg">{Intermediate_Egret}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Jabiru.jpg">{Jabiru}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Little Black Cormorant.jpg">{Little_Black_Cormorant}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Little Corella.jpg">{Little_Corella}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Little Pied Cormorant.jpg">{Little_Pied_Cormorant}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Magpie Goose.jpg">{Magpie_Goose}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Magpie Lark.jpg">{Magpie_Lark}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Masked Lapwing.jpg">{Masked_Lapwing}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Nankeen Night Heron.jpg">{Nankeen_Night_Heron}
+<description>Dark red-brown back and white-cream underside; back of head black; yellow legs and eyes.
+
+In breeding season, back of the head has long feathers.</description></term><term pictureURL="files/data/Species Photos/Birds/Northern Rosella.jpg">{Northern_Rosella}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Pacific Baza.jpg">{Pacific_Baza}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Pacific Black Duck.jpg">{Pacific_Black_Duck}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Pelican.jpg">{Pelican}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Rainbow Bee-eater.jpg">{Rainbow_Bee_eater}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Red-collared Lorikeet.jpg">{Red_collared_Lorikeet}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Red-tailed Black Cockatoo.jpg">{Red_tailed_Black_Cockatoo}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Royal Spoonbill.jpg">{Royal_Spoonbill}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Silver-crowned Friarbird.jpg">{Silver_crowned_Friarbird}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Southern Boobook.jpg">{Southern_Boobook}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Straw-necked Ibis.jpg">{Straw_necked_Ibis}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Sulphur-crested Cockatoo.jpg">{Sulphur_crested_Cockatoo}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Tawny Frogmouth.jpg">{Tawny_Frogmouth}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Torresian Crow.jpg">{Torresian_Crow}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Varied Lorikeet.jpg">{Varied_Lorikeet}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Variegated Fairy-wren.jpg">{Variegated_Fairy_wren}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Wedge-tailed Eagle.jpg">{Wedge_tailed_Eagle}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Whistling Duck.jpg">{Whistling_Duck}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Whistling Kite.jpg">{Whistling_Kite}
+<description>Similar to the Black Kite.
+
+The Black Kite has V shape tail; the Whistling Kite has a rounded tail.</description></term><term pictureURL="files/data/Species Photos/Birds/White-bellied Sea Eagle.jpg">{White_bellied_Sea_Eagle}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/White-faced Heron.jpg">{White_faced_Heron}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/White-necked Heron.jpg">{White_necked_Heron}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Willie Wagtail.jpg">{Willie_Wagtail}
+<description></description></term><term pictureURL="files/data/Species Photos/Birds/Yellow-billed Spoonbill.jpg">{Yellow_billed_Spoonbill}
 <description></description></term></term>
-        <term>{Frog}
-<description></description><term>{Bilingual_Froglet}
-<description></description></term><term>{Cane_Toad}
-<description></description></term><term>{Coplands_Rock_Frog}
-<description></description></term><term>{Dahl_s_Aquatic_Frog}
-<description></description></term><term>{Desert_Tree_Frog}
-<description></description></term><term>{Floodplain_Toadlet}
-<description></description></term><term>{Giant_Burrowing_Frog}
-<description></description></term><term>{Green_Tree_Frog}
-<description></description></term><term>{Marbled_Frog}
-<description></description></term><term>{Masked_Frog}
-<description></description></term><term>{Northern_Dwarf_Tree_Frog}
-<description></description></term><term>{Northern_Spadefoot_Toad}
-<description></description></term><term>{Ornate_Burrowing_Frog}
-<description></description></term><term>{Pale_Frog}
-<description></description></term><term>{Peter_s_Frog}
-<description></description></term><term>{Remote_Froglet}
-<description></description></term><term>{Rocket_Frog}
-<description></description></term><term>{Rockhole_Frog}
-<description></description></term><term>{Roth_s_Tree_frog}
-<description></description></term><term>{Stonemason_Toadlet}
-<description></description></term><term>{Tornier_s_Frog}
-<description></description></term><term>{Woodworker_Frog}
-<description></description></term><term>{Wotjulum_Frog}
+        <term pictureURL="files/data/Species Photos/Crocodiles/Freshwater Crocodile.jpg">{Crocodiles}
+<description></description><term pictureURL="files/data/Species Photos/Crocodiles/Freshwater Crocodile.jpg">{Freshwater_Crocodile}
+<description></description></term><term pictureURL="files/data/Species Photos/Crocodiles/Saltwater Crocodile.jpg">{Saltwater_Crocodile}
 <description></description></term></term>
-        <term>{Gecko}
-<description></description><term>{Bynoe_s_Gecko}
-<description></description></term><term>{Crowned_Gecko}
-<description></description></term><term>{Fat_tailed_Diplodactylus}
-<description></description></term><term>{Marbled_Velvet_Gecko}
-<description></description></term><term>{Northern_Dtella}
-<description></description></term><term>{Northern_Spotted_Dtella}
-<description></description></term><term>{Pale_striped_Ground_Gecko}
-<description></description></term><term>{Spiny_tailed_Gecko}
-<description></description></term><term>{Zigzag_Velvet_Gecko}
+        <term pictureURL="files/data/Species Photos/Dragons/Chameleon Dragon.jpg">{Dragons}
+<description></description><term pictureURL="files/data/Species Photos/Dragons/Chameleon Dragon.jpg">{Chameleon_Dragon}
+<description></description></term><term pictureURL="files/data/Species Photos/Dragons/Frilled-neck Lizard.jpg">{Frilled_neck_Lizard}
+<description></description></term><term pictureURL="files/data/Species Photos/Dragons/Gilbert_s Dragon.jpg">{Gilbert_s_Dragon}
+<description>Similar to Swamplands Lashtail.
+
+Lashtail’s back scales run alongside spine; Gilbert’s back scales run diagonally to spine.</description></term><term pictureURL="files/data/Species Photos/Dragons/Lally_s Two-lined Dragon.jpg">{Lally_s_Two_lined_Dragon}
+<description>Has gular fold (fold of skin underneath the neck).
+
+Snout-vent length 71mm; Tail 200-300% of snout-vent..</description></term><term pictureURL="files/data/Species Photos/Dragons/Ring-tailed Dragon.jpg">{Ring_tailed_Dragon}
+<description></description></term><term pictureURL="files/data/Species Photos/Dragons/Robust Two-lined Dragon.jpg">{Robust_Two_lined_Dragon}
+<description>Weak gular fold (fold of skin underneath the neck).
+
+Snout-vent length 73mm; Tail length 150-300% of snout-vent.</description></term><term pictureURL="files/data/Species Photos/Dragons/Swamplands Lashtail.jpg">{Swamplands_Lashtail}
+<description>Similar to Gilbert’s Dragon.
+
+Lashtails back scales run alongside spine; Gilbert’s back scales run diagonally to spine.</description></term><term pictureURL="files/data/Species Photos/Dragons/Two-lined Dragon.jpg">{Two_lined_Dragon}
+<description>No gular fold (fold of skin underneath the neck). Snout-vent length 55mm; Tail length 230% of snout-vent.</description></term><term pictureURL="files/data/Species Photos/Dragons/Yellow-sided Two-lined Dragon.jpg">{Yellow_sided_Two_lined_Dragon}
+<description>No gular fold (fold of skin underneath the neck).
+
+Snout-vent length 84mm; Tail length 200-300% of snout-vent..</description></term></term>
+        <term pictureURL="files/data/Species Photos/Fish/Archer Fish.jpg">{Fish}
+<description></description><term pictureURL="files/data/Species Photos/Fish/Archer Fish.jpg">{Archer_Fish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Barramundi.jpg">{Barramundi}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Black Bream.jpg">{Black_Bream}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Blue Salmon.JPG">{Blue_Salmon}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Bony Bream.jpg">{Bony_Bream}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Bull Shark.jpg">{Bull_Shark}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Eel-tailed Catfish.jpg">{Eel_tailed_Catfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Fork-tailed Catfish.jpg">{Fork_tailed_Catfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Freshwater Longtom.jpg">{Freshwater_Longtom}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Largetooth Sawfish.jpg">{Largetooth_Sawfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Mangrove Jack.png">{Mangrove_Jack}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Saratoga.jpg">{Saratoga}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Sleepy Cod.jpg">{Sleepy_Cod}
+<description></description></term><term pictureURL="files/data/Species Photos/Fish/Spangled Perch.jpg">{Spangled_Perch}
 <description></description></term></term>
-        <term>{Goanna}
-<description></description></term>
-        <term>{Mammal}
-<description></description></term>
-        <term>{Nothing_in_trap}
-<description></description></term>
-        <term>{Skink}
-<description></description><term>{Bar_shouldered_Sctenotus}
-<description></description></term><term>{Bar_tailed_bar_lipped_Skink}
-<description></description></term><term>{Bauxite_Rainbow_Skink}
-<description></description></term><term>{Blue_tongued_Lizzard}
-<description></description></term><term>{Dessert_Rainbow_Skink}
-<description></description></term><term>{Lined_Fire_tail_Skink}
-<description></description></term><term>{Metallic_Snake_eyed_Skink}
-<description></description></term><term>{Northen_Dwarf_Skink}
-<description></description></term><term>{Northern_Bar_lipped_Skink}
-<description></description></term><term>{Northern_Mulch_Skink}
-<description></description></term><term>{Northern_Soil_crevice_Skink}
-<description></description></term><term>{Ornate_Soil_crevice_Skink}
-<description></description></term><term>{Port_Essignton_Ctenotus}
-<description></description></term><term>{Robust_Ctenotus}
-<description></description></term><term>{Shaded_litter_Rainbow_Skink}
-<description></description></term><term>{Slender_Rainbow_Skink}
-<description></description></term><term>{Spalding_Ctenotus}
-<description></description></term><term>{Stor_s_Snake_eyed_Skink}
+        <term pictureURL="files/data/Species Photos/Frogs/Bilingual Froglet.jpg">{Frogs}
+<description></description><term pictureURL="files/data/Species Photos/Frogs/Bilingual Froglet.jpg">{Bilingual_Froglet}
+<description>Similar the Remote Froglet without hearing call.
+
+Highly variable colour and pattern.
+
+Distinctive two toned call (see Frog ID App).</description></term><term pictureURL="files/data/Species Photos/Frogs/Cane Toad.jpg">{Cane_Toad}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Copland_s Rock Frog.jpg">{Copland_s_Rock_Frog}
+<description>Similar to Peter’s Frog. Peter’s Frog has slender digits with small discs; Copland’s Rock Frog has larger discs.</description></term><term pictureURL="files/data/Species Photos/Frogs/Dahl_s Aquatic Frog.jpg">{Dahl_s_Aquatic_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Desert Tree Frog.jpg">{Desert_Tree_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Floodplain Toadlet.jpg">{Floodplain_Toadlet}
+<description>Similar to Stonemason Toadlet.
+
+DOES NOT have raised line of markings over shoulders and side of body or pale pink colour under the back legs (both seen in Stonemason Toadlet).</description></term><term pictureURL="files/data/Species Photos/Frogs/Giant Burrowing Frog.png">{Giant_Burrowing_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Green Tree Frog.jpg">{Green_Tree_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Marbled Frog.jpg">{Marbled_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Masked Frog.jpg">{Masked_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Northern Dwarf Tree Frog.png">{Northern_Dwarf_Tree_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Northern Spadefoot Toad.jpg">{Northern_Spadefoot_Toad}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Ornate Burrowing Frog.jpg">{Ornate_Burrowing_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Pale Frog.jpg">{Pale_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Peter_s Frog.jpg">{Peter_s_Frog}
+<description>Can be confused with Copland’s Rock Frog.
+
+Peter’s Frog has slender digits with small discs; Copland’s Rock Frog has larger discs.</description></term><term pictureURL="files/data/Species Photos/Frogs/Remote Froglet.jpg">{Remote_Froglet}
+<description>Similar to the Bilingual Froglet. Highly variable colour and pattern.
+
+Call similar to longer note of Bilingual Froglet call (see Frog ID App)</description></term><term pictureURL="files/data/Species Photos/Frogs/Rocket Frog.jpg">{Rocket_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Rockhole Frog.jpg">{Rockhole_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Roth_s Tree Frog.jpg">{Roth_s_Tree_Frog}
+<description>Colour regularly changes, often grey, beige or light brown during the day, and darker grey or brown when active at night. Eye silver-grey in lower part, and dark to light rusty red in top section.</description></term><term pictureURL="files/data/Species Photos/Frogs/Stonemason Toadlet.jpg">{Stonemason_Toadlet}
+<description>Has raised line of markings over shoulders and side of body. Pale pink colour under the back legs. Similar to the Floodplain Toadlet.</description></term><term pictureURL="files/data/Species Photos/Frogs/Tornier_s Frog.jpg">{Tornier_s_Frog}
+<description>Black stripe starts at snout, narrows before eye, then widens behind eye and ends near arm.
+
+Toes half webbed. Similar to Wotjulum Frog.</description></term><term pictureURL="files/data/Species Photos/Frogs/Woodworker Frog.jpg">{Woodworker_Frog}
+<description></description></term><term pictureURL="files/data/Species Photos/Frogs/Wotjulum Frog.jpg">{Wotjulum_Frog}
+<description>Dark stripe starts at snout, narrows before the eye, then widens behind eye to half way along side of body. Toes fully webbed. Similar to Tornier’s Frog.</description></term></term>
+        <term pictureURL="files/data/Species Photos/Geckos/Bynoe_s Gecko.jpg">{Geckos}
+<description></description><term pictureURL="files/data/Species Photos/Geckos/Bynoe_s Gecko.jpg">{Bynoe_s_Gecko}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Crowned Gecko.jpg">{Crowned_Gecko}
+<description>The Crowned Gecko has large pale patches on its sides. Similar to Pale-striped Ground Gecko.</description></term><term pictureURL="files/data/Species Photos/Geckos/Fat-tailed Diplodactylus.jpg">{Fat_tailed_Diplodactylus}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Marbled Velvet Gecko.png">{Marbled_Velvet_Gecko}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Northern Dtella.jpg">{Northern_Dtella}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Northern Spotted Rock Dtella.jpg">{Northern_Spotted_Rock_Dtella}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Pale-striped Ground Gecko.jpg">{Pale_striped_Ground_Gecko}
+<description>Has small pale dots, sometimes forming narrow lines down the sides. Similar to Crowned Gecko.</description></term><term pictureURL="files/data/Species Photos/Geckos/Spiny-tailed Gecko.jpg">{Spiny_tailed_Gecko}
+<description></description></term><term pictureURL="files/data/Species Photos/Geckos/Zigzag Velvet Gecko.jpg">{Zigzag_Velvet_Gecko}
 <description></description></term></term>
-        <term>{Snake}
-<description></description></term>
-        <term>{Something_else}
-<description></description></term>
-        <term>{Turtle}
+        <term pictureURL="files/data/Species Photos/Goannas/Black-headed Monitor.jpg">{Goannas}
+<description></description><term pictureURL="files/data/Species Photos/Goannas/Black-headed Monitor.jpg">{Black_headed_Monitor}
+<description>Head scales: Supraoculars very small, sharply differentiated from large interoculars.</description></term><term pictureURL="files/data/Species Photos/Goannas/Black-palmed Monitor.jpg">{Black_palmed_Monitor}
+<description>First half of tail black, remainder a creamy yellow; palms and soles of feet are black.
+
+Tail more than twice as long as rest of body.</description></term><term pictureURL="files/data/Species Photos/Goannas/Merten_s Water Monitor.jpg">{Merten_s_Water_Monitor}
+<description>Nostrils directed upwards. Ridge along top of tail.</description></term><term pictureURL="files/data/Species Photos/Goannas/Ridge-tailed Monitor.jpg">{Ridge_tailed_Monitor}
+<description></description></term><term pictureURL="files/data/Species Photos/Goannas/Sand Ridge Goanna.jpg">{Sand_Ridge_Goanna}
+<description></description></term><term pictureURL="files/data/Species Photos/Goannas/Spotted Tree Monitor.jpg">{Spotted_Tree_Monitor}
+<description>Head scales: Supraoculars gradually merging with larger interoculars.</description></term></term>
+        <term pictureURL="files/data/Species Photos/Insects/Leichhardt_s Grasshopper.jpg">{Insects}
+<description></description><term pictureURL="files/data/Species Photos/Insects/Leichhardt_s Grasshopper.jpg">{Leichhardt_s_Grasshopper}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Burton_s Legless Lizard.jpg">{Legless_Lizards_and_Sliders}
+<description></description><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Burton_s Legless Lizard.jpg">{Burton_s_Legless_Lizard}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Excitable Delma.png">{Excitable_Delma}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Lesser Robust Fine-lined Slider.JPG">{Lesser_Robust_Fine_lined_Slider}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/North-eastern Orange-tailed Slider.JPG">{North_eastern_Orange_tailed_Slider}
+<description></description></term><term pictureURL="files/data/Species Photos/Legless Lizards and Sliders/Northern Hooded Scaly-foot.jpg">{Northern_Hooded_Scaly_foot}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Mammals/Agile Wallaby.jpg">{Mammals}
+<description></description><term pictureURL="files/data/Species Photos/Mammals/Agile Wallaby.jpg">{Agile_Wallaby}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Antilopine Wallaroo.jpg">{Antilopine_Wallaroo}
+<description>Males reddish to brown; females reddish but grey on head and shoulders, with pale cheeks.
+
+Ears pale inside and around edge.
+
+Tail is pale and the same thickness all the way along.
+
+Black paws.</description></term><term pictureURL="files/data/Species Photos/Mammals/Black Rat.jpg">{Black_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Brush-tailed Rabbit Rat.jpg">{Brush_tailed_Rabbit_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Common Planigale.jpg">{Common_Planigale}
+<description>Narrow, flattened head .
+
+Females have backward-facing pouch.
+
+Thin tail shorter than body length.</description></term><term pictureURL="files/data/Species Photos/Mammals/Common Rock Rat.jpg">{Common_Rock_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Common Wallaroo.jpg">{Common_Wallaroo}
+<description>Pale grey to brown, black hands and feet, white underneath.</description></term><term pictureURL="files/data/Species Photos/Mammals/Delicate Mouse.jpg">{Delicate_Mouse}
+<description>Narrow dark brown ring around large eye.
+
+Thin tail slightly longer than body.</description></term><term pictureURL="files/data/Species Photos/Mammals/Dingo.jpg">{Dingo}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Donkey.jpg">{Donkey}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Dugong.jpg">{Dugong}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Dusky Rat.jpg">{Dusky_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/European Cattle.jpg">{European_Cattle}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Fawn Antechinus.jpg">{Fawn_Antechinus}
+<description>Pale grey body; whitish feet and throat (yellow in males); pale ring around the eye.</description></term><term pictureURL="files/data/Species Photos/Mammals/Feral Cat.jpg">{Feral_Cat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Grassland Melomys.png">{Grassland_Melomys}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Horse.jpg">{Horse}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/House Mouse.jpg">{House_Mouse}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Brown Bandicoot.jpg">{Northern_Brown_Bandicoot}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Brush-tail Possum.jpg">{Northern_Brush_tail_Possum}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Hopping Mouse.jpg">{Northern_Hopping_Mouse}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Nailtail Wallaby.jpg">{Northern_Nailtail_Wallaby}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Northern Quoll.jpg">{Northern_Quoll}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Pale Field-rat.jpg">{Pale_Field_rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Pig.jpg">{Pig}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Red-cheeked Dunnart.jpg">{Red_cheeked_Dunnart}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Rock Ring-tail Possum.jpg">{Rock_Ring_tail_Possum}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Short-beaked Echidna.jpg">{Short_beaked_Echidna}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Short-eared Rock Wallaby.jpg">{Short_eared_Rock_Wallaby}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Sugar Glider.jpg">{Sugar_Glider}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Swamp Buffalo.jpg">{Swamp_Buffalo}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Water Rat.jpg">{Water_Rat}
+<description></description></term><term pictureURL="files/data/Species Photos/Mammals/Western Chestnut Mouse.jpg">{Western_Chestnut_Mouse}
+<description>Pale chestnut eye ring.
+
+Tail usually shorter than body and has scales on whitish underside.</description></term></term>
+        <term pictureURL="files/data/Species Photos/Shellfish/Crayfish.jpg">{Shellfish}
+<description></description><term pictureURL="files/data/Species Photos/Shellfish/Crayfish.jpg">{Crayfish}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Freshwater Crab.jpg">{Freshwater_Crab}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Freshwater Prawn.jpg">{Freshwater_Prawn}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Green Mudcrab.png">{Green_Mudcrab}
+<description></description></term><term pictureURL="files/data/Species Photos/Shellfish/Mussel.jpg">{Mussel}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Skinks/Bar-shouldered Ctenotus.jpg">{Skinks}
+<description></description><term pictureURL="files/data/Species Photos/Skinks/Bar-shouldered Ctenotus.jpg">{Bar_shouldered_Ctenotus}
+<description>Narrow blackish stripe with no pale edging down the back of juveniles. Stripe is usually is absent or incomplete in adults.</description></term><term pictureURL="files/data/Species Photos/Skinks/Bar-tailed Bar-lipped Skink.jpg">{Bar_tailed_Bar_lipped_Skink}
+<description>Distance between limbs when they are pressed against the body is no more than the length of the arm.</description></term><term pictureURL="files/data/Species Photos/Skinks/Bauxite Rainbow Skink.jpg">{Bauxite_Rainbow_Skink}
+<description>Two ridges on each scale in the middle of the back.</description></term><term pictureURL="files/data/Species Photos/Skinks/Common Dwarf Skink.png">{Common_Dwarf_Skink}
+<description>First scale above eye (supraciliary) much smaller than second and not touching first supraocular scale (see Guide to animals and plants in SE Arnhem Land). Similar to Northern Dwarf Skink.</description></term><term pictureURL="files/data/Species Photos/Skinks/Desert Rainbow Skink.jpg">{Desert_Rainbow_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Elegant Ctenotus.png">{Elegant_Ctenotus}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Leopard Ctenotus.jpg">{Leopard_Ctenotus}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Lined Fire-tail Skink.png">{Lined_Fire_tail_Skink}
+<description>Pale stripes on sides of the back end at the snout.
+
+Head scales: Supranasal distinct from nasal. Similar to Storr’s Snake-eyed Skink.</description></term><term pictureURL="files/data/Species Photos/Skinks/Metallic Snake-eyed Skink.jpg">{Metallic_Snake_eyed_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Bar-lipped Skink.jpg">{Northern_Bar_lipped_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Blue-tongued Lizard.jpg">{Northern_Blue_tongued_Lizard}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Dwarf Skink.jpg">{Northern_Dwarf_Skink}
+<description>First scale above eye (supraciliary) similar in size to the second and touching first supraocular scale (see Guide to animals and plants in SE Arnhem Land). Similar to Common Dwarf Skink.</description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Mulch Skink.jpg">{Northern_Mulch_Skink}
+<description>Limbs widely separated when pressed against the side of the body.</description></term><term pictureURL="files/data/Species Photos/Skinks/Northern Soil-crevice Skink.jpg">{Northern_Soil_crevice_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Ornate Soil-crevice Skink.jpg">{Ornate_Soil_crevice_Skink}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Port Essington Ctenotus.png">{Port_Essington_Ctenotus}
+<description></description></term><term pictureURL="files/data/Species Photos/Skinks/Robust Ctenotus.jpg">{Robust_Ctenotus}
+<description>Dark stripe down spine has a thin pale edge. Light stripe from above eye down side of back to halfway down tail. Dark streaks on back legs.</description></term><term pictureURL="files/data/Species Photos/Skinks/Shaded-litter Rainbow Skink.jpg">{Shaded_litter_Rainbow_Skink}
+<description>White stripe on upper lip running under eye and past the arm.</description></term><term pictureURL="files/data/Species Photos/Skinks/Slender Rainbow Skink.jpg">{Slender_Rainbow_Skink}
+<description>No prominent white stripe from under eye to ear.
+
+Three moderate sized ridges on each scale of the back.</description></term><term pictureURL="files/data/Species Photos/Skinks/Spalding_s Ctenotus.png">{Spalding_s_Ctenotus}
+<description>Three supraocular scales.</description></term><term pictureURL="files/data/Species Photos/Skinks/Storr_s Snake-eyed Skink.png">{Storr_s_Snake_eyed_Skink}
+<description>Pale stripes on sides of back end above eye.
+
+Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-tail Skink</description></term></term>
+        <term pictureURL="files/data/Species Photos/Snakes/Black-headed Python.jpg">{Snakes}
+<description></description><term pictureURL="files/data/Species Photos/Snakes/Black-headed Python.jpg">{Black_headed_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Brown Tree Snake (Venomous).jpg">{Brown_Tree_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Carpet Python.jpg">{Carpet_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Children_s Python.jpg">{Children_s_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Death Adder (Venomous).jpg">{Death_Adder__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Eastern Bandy-bandy (Venomous).jpg">{Eastern_Bandy_bandy__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/File Snake.jpg">{File_Snake}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Greater Black Whipsnake (Venomous).jpg">{Greater_Black_Whipsnake__Venomous_}
+<description>It is larger (1.6m) than the Lesser Black Whipsnake (1.2m). Black or dark brown body with not many facial markings.</description></term><term pictureURL="files/data/Species Photos/Snakes/Green Tree Snake.jpg">{Green_Tree_Snake}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Keelback.jpg">{Keelback}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/King Brown Snake (Venomous).jpg">{King_Brown_Snake__Venomous_}
+<description>Each scale has a dark back edge. Eye reddish-brown.</description></term><term pictureURL="files/data/Species Photos/Snakes/Lesser Black Whipsnake (Venomous).jpg">{Lesser_Black_Whipsnake__Venomous_}
+<description>It is smaller (1.2m) than the Greater Black Whipsnake (1.6m). Each scale has a dark edge creating a spotted pattern.</description></term><term pictureURL="files/data/Species Photos/Snakes/Little Spotted Snake (Venomous).jpg">{Little_Spotted_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Macleay_s Water Snake (Mildly Venomous).jpg">{Macleay_s_Water_Snake__Mildly_Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Northern Blind Snake.jpg">{Northern_Blind_Snake}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Northern Brown Snake (Venomous).jpg">{Northern_Brown_Snake__Venomous_}
+<description>Large rostral (snout) scale. Blackish mouth lining. Eye dark with orange ring around pupil.</description></term><term pictureURL="files/data/Species Photos/Snakes/Northern Small-eyed Snake (Venomous).jpg">{Northern_Small_eyed_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Olive Python.jpg">{Olive_Python}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Olive Whipsnake (Venomous).jpg">{Olive_Whipsnake__Venomous_}
+<description>Head has pale edged, dark blotches. Dark streak from corner of eye to back of mouth.</description></term><term pictureURL="files/data/Species Photos/Snakes/Orange-naped Snake (Venomous).jpg">{Orange_naped_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Roper Shovel-nosed Snake (Venomous).jpg">{Roper_Shovel_nosed_Snake__Venomous_}
+<description></description></term><term pictureURL="files/data/Species Photos/Snakes/Water Python.jpg">{Water_Python}
+<description></description></term></term>
+        <term pictureURL="files/data/Species Photos/Turtles/Cann_s Snake-necked Turtle.jpg">{Turtles}
+<description></description><term pictureURL="files/data/Species Photos/Turtles/Cann_s Snake-necked Turtle.jpg">{Cann_s_Snake_necked_Turtle}
+<description>Bottom of shell wide near head; middle scale twice as long as connection between pectoral scales (see Guide to animals and plants in SE Arnhem Land).</description></term><term pictureURL="files/data/Species Photos/Turtles/Flatback Sea Turtle.jpg">{Flatback_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Green Sea Turtle.jpg">{Green_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Hawksbill Sea Turtle.jpg">{Hawksbill_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Northern Snake-necked Turtle.jpg">{Northern_Snake_necked_Turtle}
+<description>Bottom of shell narrow near head; middle scale the same length as connection between pectoral scales (see Guide to animals and plants in SE Arnhem Land).</description></term><term pictureURL="files/data/Species Photos/Turtles/Olive Ridley Sea Turtle.png">{Olive_Ridley_Sea_Turtle}
+<description></description></term><term pictureURL="files/data/Species Photos/Turtles/Short-necked Snapping Turtle.jpg">{Short_necked_Snapping_Turtle}
+<description></description></term></term>
+        <term>{Something_Else___Describe_in_Notes}
 <description></description></term>
       </lookup>
     </property>

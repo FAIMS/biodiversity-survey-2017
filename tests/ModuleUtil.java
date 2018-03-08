@@ -564,24 +564,6 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: dropdown
-        Ref:  Animal_outside/Animal/Animal_outside_trap
-     */
-    public static View get_Animaloutside_Animal_Animaloutsidetrap(Solo solo) {
-        String ref = "Animal_outside/Animal/Animal_outside_trap";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: dropdown
-        Ref:  Check_Trap/Checking/What_did_you_find_in_trap
-     */
-    public static View get_CheckTrap_Checking_Whatdidyoufindintrap(Solo solo) {
-        String ref = "Check_Trap/Checking/What_did_you_find_in_trap";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: dropdown
         Ref:  Check_Trap/Checking/What_trap_are_you_checking
      */
     public static View get_CheckTrap_Checking_Whattrapareyouchecking(Solo solo) {
@@ -1243,6 +1225,24 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Start_Map_Map(Solo solo) {
         String ref = "Start/Map/Map";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: picture
+        Ref:  Animal_outside/Animal/Animal_outside_trap
+     */
+    public static View get_Animaloutside_Animal_Animaloutsidetrap(Solo solo) {
+        String ref = "Animal_outside/Animal/Animal_outside_trap";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: picture
+        Ref:  Check_Trap/Checking/What_did_you_find_in_trap
+     */
+    public static View get_CheckTrap_Checking_Whatdidyoufindintrap(Solo solo) {
+        String ref = "Check_Trap/Checking/What_did_you_find_in_trap";
         return (android.view.View) solo.getView((Object) ref);
     }
 
