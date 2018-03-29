@@ -29,6 +29,7 @@
   </Main>
   <Map f="noscroll">
     <Map t="map" f="nolabel"/>
+    <Load_Highlighted_Record t="button"/>
   </Map>
   <search/>
   <Tracklog>
@@ -100,9 +101,7 @@
     <Snout_to_vent_length_mm b="decimal" f="noannotation nocertainty">
       Snout to vent length (mm)
     </Snout_to_vent_length_mm>
-    <How_many_Cane_toads b="decimal" f="noannotation nocertainty">
-      How many Cane toads?
-    </How_many_Cane_toads>
+    <Count b="decimal" f="noannotation nocertainty"/>
     <gps/>
   </Checking>
 </Check_Trap>

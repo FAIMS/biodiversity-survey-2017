@@ -6,7 +6,6 @@ delOnEvent("Start/Search/Entity_Types"  , "click" , "search()");
 addOnEvent("module", "load", "clearSearchResults()");
 
 final String ATTRIBS_DATE = listToSqlString(getAttribsMatchingRef("*/*/*Date"));
-final String TRANSECT_TYPES = listToSqlString(getTransectArchEntTypes());
 
 void clearSearchResults() {
   populateCursorList(

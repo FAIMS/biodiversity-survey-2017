@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: 06ebd84465b5ab6baa5e8f30a6cbfb39718efb2f
+ * GENERATED WITH FAIMS-TOOLS, SHA1: da55a413b00df21caa7f0b4886d4302f82dd40f7
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -290,6 +290,7 @@ REF_TO_TYPE.put("Start/Main/Stop_Tracklog", "button");
 REF_TO_TYPE.put("Start/Map/Map", "map");
 REF_TO_TYPE.put("Start/Map/Center_Me_1", "button");
 REF_TO_TYPE.put("Start/Map/Save_Map_Settings_1", "button");
+REF_TO_TYPE.put("Start/Map/Load_Highlighted_Record", "button");
 REF_TO_TYPE.put("Start/Search/Search_Term", "input");
 REF_TO_TYPE.put("Start/Search/Search_Button", "button");
 REF_TO_TYPE.put("Start/Search/Entity_Types", "dropdown");
@@ -329,7 +330,7 @@ REF_TO_TYPE.put("Check_Trap/Checking/Talk_about_animal", "audio");
 REF_TO_TYPE.put("Check_Trap/Checking/Talk_about_animal_Button_1", "button");
 REF_TO_TYPE.put("Check_Trap/Checking/Tissue_number", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Snout_to_vent_length_mm", "input");
-REF_TO_TYPE.put("Check_Trap/Checking/How_many_Cane_toads", "input");
+REF_TO_TYPE.put("Check_Trap/Checking/Count", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Latitude", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Longitude", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Northing", "input");
@@ -451,7 +452,7 @@ DATA_REFS.add("Check_Trap/Checking/Take_Photo");
 DATA_REFS.add("Check_Trap/Checking/Talk_about_animal");
 DATA_REFS.add("Check_Trap/Checking/Tissue_number");
 DATA_REFS.add("Check_Trap/Checking/Snout_to_vent_length_mm");
-DATA_REFS.add("Check_Trap/Checking/How_many_Cane_toads");
+DATA_REFS.add("Check_Trap/Checking/Count");
 DATA_REFS.add("Check_Trap/Checking/Latitude");
 DATA_REFS.add("Check_Trap/Checking/Longitude");
 DATA_REFS.add("Check_Trap/Checking/Northing");
@@ -927,7 +928,8 @@ String getRefMatching(String pattern) {
 /*         events more consistent.                                            */
 /*   - "copy" --- Triggered as a record is duplicated, immediately before it  */
 /*         is first saved.                                                    */
-/*   - "create" --- Triggered after a record is first created.                */
+/*   - "create" --- Triggered after a savable, auto-generated tab group is    */
+/*         shown (but possibly before the "show" event is triggered).         */
 /*   - "delete" --- Triggered after a record is deleted.                      */
 /*   - "prefetch" --- Triggered before the "fetch" event. More specifically,  */
 /*         this event is triggered before a tab group is fetched and          */
@@ -942,6 +944,9 @@ String getRefMatching(String pattern) {
 /*   - "save" --- Triggered each time a tab group is saved. This includes the */
 /*         first time the tab group is saved as well as subsequent            */
 /*         onSave(String, Boolean) calls.                                     */
+/*   - "firstsave" --- Similar to "save", but only triggered upon the first   */
+/*         save (i.e. the save which creates the arch ent). When this event   */
+/*         is triggered, it occurs immediately before the "save" event.       */
 /*                                                                            */
 /* Additionally, the binding accumulator augments the "load" event so that    */
 /* the `statement` in addOnEvent("module", "load", statement) gets executed   */
@@ -978,6 +983,7 @@ CUSTOM_EVENTS.add("focus");
 CUSTOM_EVENTS.add("leave");
 CUSTOM_EVENTS.add("prefetch");
 CUSTOM_EVENTS.add("save");
+CUSTOM_EVENTS.add("firstsave");
 
 List getPrioritised(String statement, int priority) {
   List prioritised = new ArrayList();
@@ -1642,22 +1648,22 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
+  //  - DNA Sample
   //  - Setup Trap
-  //  - Animal outside
-  //  - Plant Survey
+  //  - Check Trap
   //  - Cultural Knowledge
   //  - Notes
-  //  - Check Trap
-  //  - DNA Sample
+  //  - Animal outside
+  //  - Plant Survey
 
   n0 = Tree("", 1);
-  n1 = Tree("Setup Trap", 1);
-  n2 = Tree("Animal outside", 1);
-  n3 = Tree("Plant Survey", 1);
+  n1 = Tree("DNA Sample", 1);
+  n2 = Tree("Setup Trap", 1);
+  n3 = Tree("Check Trap", 1);
   n4 = Tree("Cultural Knowledge", 1);
   n5 = Tree("Notes", 1);
-  n6 = Tree("Check Trap", 1);
-  n7 = Tree("DNA Sample", 1);
+  n6 = Tree("Animal outside", 1);
+  n7 = Tree("Plant Survey", 1);
 
   n0.addChild(n1);
   n0.addChild(n2);
@@ -3199,12 +3205,18 @@ void saveTabGroup(String tabgroup, String callback) {
   Boolean userWasSet          = !username.equals("");
 
   callback += "; " + fun2str("executeOnEvent", new Object[]{tabgroup, "save"});
+  callbackFirstSave =
+    fun2str("executeOnEvent", new Object[]{tabgroup, "firstsave"}) + "; " +
+    callback;
 
   parentTabgroup = null;
 
   SaveCallback saveCallback  = new SaveCallback() {
     onSave(uuid, newRecord) {
       setUuid(tabgroup, uuid);
+
+      String cb = newRecord ? callbackFirstSave : callback;
+
       // Make a child-parent relationship if need be.
       if (
           newRecord &&
@@ -3221,10 +3233,10 @@ void saveTabGroup(String tabgroup, String callback) {
           uuid,
           "Parent Of",
           "Child Of",
-          callback
+          cb
         );
       } else {
-        execute(callback);
+        execute(cb);
       }
 
       // This fixes an interesting bug. Without this, if a user was not set
@@ -3235,7 +3247,7 @@ void saveTabGroup(String tabgroup, String callback) {
       // Adding this allows subsequent saves to succeed. Presumably it plays
       // some role in helping FAIMS associate the correct user with a record.
       if (!userWasSet) {
-        saveTabGroup(tabgroup, callback);
+        saveTabGroup(tabgroup, cb);
       }
 
     }
@@ -4789,6 +4801,8 @@ List getTransectArchEntTypes() {
 
   return archEntTypes;
 }
+
+final String TRANSECT_TYPES = listToSqlString(getTransectArchEntTypes());
 /******************************** SYNC DISABLE ********************************/
 addOnEvent("Start/Tracklog/SyncOff", "click", "stopSync()");
 addOnEvent("Start/Tracklog/SyncOn", "click", "startSync()");
@@ -5176,16 +5190,79 @@ void setTime() {
 for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setDate()");
 for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setTime()");
 /************************************ MAP *************************************/
-// TODO: 
 DATA_ENTRY_LAYER = "Data Entry Layer";
 DATA_ENTRY_LAYER_ID = 0;
 
-initMap() {
+void loadHighlightedRecord() {
+  List highlights = getGeometryHighlights(MAP_REF);
+  boolean canLoadHighlightedRecord =
+    highlights != void &&
+    highlights != null &&
+    highlights.size() == 1;
+
+  if (!canLoadHighlightedRecord) {
+    String head = "Cannot Load Record";
+    String body = "You must highlight exactly one record to load.";
+
+    showWarning(head, body);
+    return;
+  }
+
+  List highlights = getGeometryHighlights(MAP_REF);
+  Geometry geo = highlights.get(0);
+  Point pt = (Point) geo;
+  MapPos pos = pt.getMapPos();
+
+  double longitude = pos.x;
+  double latitude  = pos.y;
+
+  String q = "";
+  q += " SELECT uuid,";
+  q += "        coalesce(";
+  q += "            Distance(";
+  q += "                 geospatialcolumn,";
+  q += "                 MakePoint({longitude}, {latitude}),";
+  q += "                 0";
+  q += "            ),";
+  q += "            0";
+  q += "        ) AS dist";
+  q += "     FROM latestnondeletedarchent";
+  q += "     JOIN aenttype USING (aenttypeid)";
+  q += "    WHERE dist < 1e-2 /* One centimetre */";
+  q += "      AND aenttypename IN " + TRANSECT_TYPES;
+  q += " ORDER BY dist";
+  q += "    LIMIT 1;";
+  q = replaceFirst(q, "{longitude}", "" + longitude);
+  q = replaceFirst(q, "{latitude}",  "" + latitude);
+
+  FetchCallback callback = new FetchCallback() {
+    onFetch(result) {
+      String head  = "{err_load_entity_head}";
+      String body  =
+        "The point you selected does not correspond to a viewable record.";
+
+      if (result        == null) { showWarning(head, body); return; }
+      if (result.size() == 0   ) { showWarning(head, body); return; }
+
+      loadEntityFrom(result.get(0).get(0));
+    }
+  };
+
+  fetchAll(q, callback);
+}
+
+addOnEvent(
+    "Start/Map/Load_Highlighted_Record",
+    "click",
+    "loadHighlightedRecord()"
+);
+
+void initMap() {
     setMapZoom(MAP_REF, 15.0f);
 
     DATA_ENTRY_LAYER_ID = createCanvasLayer(MAP_REF, DATA_ENTRY_LAYER);
 
-    //showBaseMap(MAP_REF, "Base Layer", "files/data/maps/RasterData.tif");
+    showBaseMap(MAP_REF, "Base Layer", "files/data/maps/Biodiversity_2018_large_area_geotiff.4326.tif");
 
     // Tracklog
     isEntity = true;
@@ -5194,7 +5271,7 @@ initMap() {
     ps = createPointStyle(10, Color.BLACK, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.BLACK, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.BLACK, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Tracklog Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
 
     // Transect Point
@@ -5204,7 +5281,7 @@ initMap() {
     ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Transect Point Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
 
     // Setup Trap
@@ -5214,7 +5291,7 @@ initMap() {
     ps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.YELLOW, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Setup Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
@@ -5225,7 +5302,7 @@ initMap() {
     ps = createPointStyle(10, Color.GREEN, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.GREEN, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Check Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
@@ -5236,7 +5313,7 @@ initMap() {
     ps = createPointStyle(10, Color.RED, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.RED, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Animal outside Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
@@ -5247,7 +5324,7 @@ initMap() {
     ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.BLUE, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.BLUE, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "DNA Sample Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
@@ -5291,7 +5368,6 @@ delOnEvent("Start/Search/Entity_Types"  , "click" , "search()");
 addOnEvent("module", "load", "clearSearchResults()");
 
 final String ATTRIBS_DATE = listToSqlString(getAttribsMatchingRef("*/*/*Date"));
-final String TRANSECT_TYPES = listToSqlString(getTransectArchEntTypes());
 
 void clearSearchResults() {
   populateCursorList(

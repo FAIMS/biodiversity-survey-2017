@@ -29,3 +29,5 @@ List getTransectArchEntTypes() {
 
   return archEntTypes;
 }
+
+final String TRANSECT_TYPES = listToSqlString(getTransectArchEntTypes());

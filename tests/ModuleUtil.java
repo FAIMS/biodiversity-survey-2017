@@ -438,6 +438,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  Start/Map/Load_Highlighted_Record
+     */
+    public static View get_Start_Map_LoadHighlightedRecord(Solo solo) {
+        String ref = "Start/Map/Load_Highlighted_Record";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Start/Map/Save_Map_Settings_1
      */
     public static View get_Start_Map_SaveMapSettings1(Solo solo) {
@@ -672,6 +681,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Check_Trap/Checking/Count
+     */
+    public static EditText get_CheckTrap_Checking_Count(Solo solo) {
+        String ref = "Check_Trap/Checking/Count";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Check_Trap/Checking/Date
      */
     public static EditText get_CheckTrap_Checking_Date(Solo solo) {
@@ -686,15 +704,6 @@ public class ModuleUtil extends ModuleHelper {
     public static View get_CheckTrap_Checking_Easting(Solo solo) {
         String ref = "Check_Trap/Checking/Easting";
         return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  Check_Trap/Checking/How_many_Cane_toads
-     */
-    public static EditText get_CheckTrap_Checking_HowmanyCanetoads(Solo solo) {
-        String ref = "Check_Trap/Checking/How_many_Cane_toads";
-        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*

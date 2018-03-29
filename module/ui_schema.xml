@@ -48,6 +48,7 @@
                   <Save_Map_Settings_1/>
                 </Col_2>
               </Colgroup_1>
+              <Load_Highlighted_Record/>
             </Map>
             <Search>
               <Colgroup_0>
@@ -148,7 +149,7 @@
               <Talk_about_animal_Button_1/>
               <Tissue_number/>
               <Snout_to_vent_length_mm/>
-              <How_many_Cane_toads/>
+              <Count/>
               <Colgroup_2>
                 <Col_1>
                   <Latitude/>
@@ -306,7 +307,7 @@
       <bind nodeset="/faims/Start/Tracklog/trackStatus" type="string"/>
       <bind nodeset="/faims/Check_Trap/Checking/Tissue_number" type="decimal"/>
       <bind nodeset="/faims/Check_Trap/Checking/Snout_to_vent_length_mm" type="decimal"/>
-      <bind nodeset="/faims/Check_Trap/Checking/How_many_Cane_toads" type="decimal"/>
+      <bind nodeset="/faims/Check_Trap/Checking/Count" type="decimal"/>
       <bind nodeset="/faims/DNA_Sample/DNA_Sample/Tissue_number" type="decimal"/>
       <bind nodeset="/faims/DNA_Sample/DNA_Sample/Snout_to_vent_length_mm" type="decimal"/>
     </model>
@@ -409,6 +410,9 @@
             </trigger>
           </group>
         </group>
+        <trigger ref="Load_Highlighted_Record">
+          <label>{Load_Highlighted_Record}</label>
+        </trigger>
       </group>
       <group ref="Search" faims_scrollable="false">
         <label>{Search}</label>
@@ -656,8 +660,8 @@
         <input faims_attribute_name="Snout to vent length mm" faims_attribute_type="measure" ref="Snout_to_vent_length_mm" faims_annotation="false" faims_certainty="false">
           <label>{Snout_to_vent_length__mm_}</label>
         </input>
-        <input faims_attribute_name="How many Cane toads" faims_attribute_type="measure" ref="How_many_Cane_toads" faims_annotation="false" faims_certainty="false">
-          <label>{How_many_Cane_toads_}</label>
+        <input faims_attribute_name="Count" faims_attribute_type="measure" ref="Count" faims_annotation="false" faims_certainty="false">
+          <label>{Count}</label>
         </input>
         <group ref="Colgroup_2" faims_style="orientation">
           <label/>

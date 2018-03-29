@@ -1,14 +1,77 @@
 /************************************ MAP *************************************/
-// TODO: 
 DATA_ENTRY_LAYER = "Data Entry Layer";
 DATA_ENTRY_LAYER_ID = 0;
 
-initMap() {
+void loadHighlightedRecord() {
+  List highlights = getGeometryHighlights(MAP_REF);
+  boolean canLoadHighlightedRecord =
+    highlights != void &&
+    highlights != null &&
+    highlights.size() == 1;
+
+  if (!canLoadHighlightedRecord) {
+    String head = "Cannot Load Record";
+    String body = "You must highlight exactly one record to load.";
+
+    showWarning(head, body);
+    return;
+  }
+
+  List highlights = getGeometryHighlights(MAP_REF);
+  Geometry geo = highlights.get(0);
+  Point pt = (Point) geo;
+  MapPos pos = pt.getMapPos();
+
+  double longitude = pos.x;
+  double latitude  = pos.y;
+
+  String q = "";
+  q += " SELECT uuid,";
+  q += "        coalesce(";
+  q += "            Distance(";
+  q += "                 geospatialcolumn,";
+  q += "                 MakePoint({longitude}, {latitude}),";
+  q += "                 0";
+  q += "            ),";
+  q += "            0";
+  q += "        ) AS dist";
+  q += "     FROM latestnondeletedarchent";
+  q += "     JOIN aenttype USING (aenttypeid)";
+  q += "    WHERE dist < 1e-2 /* One centimetre */";
+  q += "      AND aenttypename IN " + TRANSECT_TYPES;
+  q += " ORDER BY dist";
+  q += "    LIMIT 1;";
+  q = replaceFirst(q, "{longitude}", "" + longitude);
+  q = replaceFirst(q, "{latitude}",  "" + latitude);
+
+  FetchCallback callback = new FetchCallback() {
+    onFetch(result) {
+      String head  = "{err_load_entity_head}";
+      String body  =
+        "The point you selected does not correspond to a viewable record.";
+
+      if (result        == null) { showWarning(head, body); return; }
+      if (result.size() == 0   ) { showWarning(head, body); return; }
+
+      loadEntityFrom(result.get(0).get(0));
+    }
+  };
+
+  fetchAll(q, callback);
+}
+
+addOnEvent(
+    "Start/Map/Load_Highlighted_Record",
+    "click",
+    "loadHighlightedRecord()"
+);
+
+void initMap() {
     setMapZoom(MAP_REF, 15.0f);
 
     DATA_ENTRY_LAYER_ID = createCanvasLayer(MAP_REF, DATA_ENTRY_LAYER);
 
-    //showBaseMap(MAP_REF, "Base Layer", "files/data/maps/RasterData.tif");
+    showBaseMap(MAP_REF, "Base Layer", "files/data/maps/Biodiversity_2018_large_area_geotiff.4326.tif");
 
     // Tracklog
     isEntity = true;
@@ -17,7 +80,7 @@ initMap() {
     ps = createPointStyle(10, Color.BLACK, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.BLACK, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.BLACK, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Tracklog Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
 
     // Transect Point
@@ -27,7 +90,7 @@ initMap() {
     ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Transect Point Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
 
     // Setup Trap
@@ -37,7 +100,7 @@ initMap() {
     ps = createPointStyle(10, Color.YELLOW, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.YELLOW, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.YELLOW, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Setup Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
@@ -48,7 +111,7 @@ initMap() {
     ps = createPointStyle(10, Color.GREEN, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.GREEN, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.GREEN, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Check Trap Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
@@ -59,7 +122,7 @@ initMap() {
     ps = createPointStyle(10, Color.RED, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.RED, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.RED, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Animal outside Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
@@ -70,7 +133,7 @@ initMap() {
     ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
     ls = createLineStyle(10, Color.BLUE, 0.05f, 0.3f, null);
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(10, Color.BLUE, 30, Typeface.SANS_SERIF);
+    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "DNA Sample Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
     assert(getTransectArchEntTypes().contains(queryName));
 
