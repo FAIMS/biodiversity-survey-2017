@@ -37,7 +37,8 @@ void loadHighlightedRecord() {
   q += "        ) AS dist";
   q += "     FROM latestnondeletedarchent";
   q += "     JOIN aenttype USING (aenttypeid)";
-  q += "    WHERE dist < 1e-2 /* One centimetre */";
+  q += "    WHERE geospatialcolumn NOT NULL";
+  q += "      AND dist < 1e-2 /* One centimetre */";
   q += "      AND aenttypename IN " + TRANSECT_TYPES;
   q += " ORDER BY dist";
   q += "    LIMIT 1;";
