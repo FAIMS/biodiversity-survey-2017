@@ -41,8 +41,20 @@ If you have any questions about the module, please contact the FAIMS team at **e
 
 <p align="left">
   <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20171031-153745.png" width="250"/>
-  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20171031-153753.png" width="250"/>
+  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20180404-120517.png" width="250"/>
   <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20171031-153818.png" width="250"/>
+</p>
+
+<p align="left">
+  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20180404-120533.png" width="250"/>
+  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20180404-120545.png" width="250"/>
+  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20180404-120549.png" width="250"/>
+</p>
+
+<p align="left">
+  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20180404-120643.png" width="250"/>
+  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20180404-120710.png" width="250"/>
+  <img src="https://github.com/FAIMS/biodiversity-survey-2017/blob/master/screenshots/Screenshot_20180404-120737.png" width="250"/>
 </p>
 
 <p align="left">
