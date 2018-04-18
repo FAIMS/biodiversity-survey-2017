@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 cd data
-#TODO: Uncomment this l8rrrr
-#tar -hcvzf ../module/data.tar.gz * >/dev/null
+tar -hcvzf ../module/data.tar.gz * >/dev/null
 cd ..
 
 cd module
