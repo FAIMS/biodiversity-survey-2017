@@ -5,7 +5,7 @@ This module was created for the **Cross-cultural Biodiversity Surveys**, based a
 This module was co-developed by Dr Emilie Ens at the Department of Environmental Sciences, Macquarie University and Petra Janouchova at the FAIMS Project, Department of Ancient History, Macquarie University.
 
 ## Funding:
-**Research Attraction and Acceleration Program (RAAP) NSW Department of Industry 16805/00** aimed to support innovation and investment in the New South Wales in 2016 and 2017.
+Development of this module was funded by the **Research Attraction and Acceleration Program (RAAP) NSW Department of Industry 16805/00**, aimed to support innovation and investment in the New South Wales in 2016, 2017, and 2018.
 
 
 ## Date of release:
