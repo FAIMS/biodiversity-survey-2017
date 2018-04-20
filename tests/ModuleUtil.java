@@ -35,15 +35,6 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: tab group
-        Ref:  DNA_Sample
-     */
-    public static View get_DNASample(Solo solo) {
-        String ref = "DNA_Sample";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: tab group
         Ref:  Login
      */
     public static View get_Login(Solo solo) {
@@ -110,15 +101,6 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_CulturalKnowledge_CulturalKnowledge(Solo solo) {
         String ref = "Cultural_Knowledge/Cultural_Knowledge";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: tab
-        Ref:  DNA_Sample/DNA_Sample
-     */
-    public static View get_DNASample_DNASample(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -213,6 +195,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  Animal_outside/Animal/Submit
+     */
+    public static View get_Animaloutside_Animal_Submit(Solo solo) {
+        String ref = "Animal_outside/Animal/Submit";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Animal_outside/Animal/Take_From_GPS_1
      */
     public static View get_Animaloutside_Animal_TakeFromGPS1(Solo solo) {
@@ -235,6 +226,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Animaloutside_Animal_TalkaboutanimalButton1(Solo solo) {
         String ref = "Animal_outside/Animal/Talk_about_animal_Button_1";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Check_Trap/Checking/Submit
+     */
+    public static View get_CheckTrap_Checking_Submit(Solo solo) {
+        String ref = "Check_Trap/Checking/Submit";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -276,6 +276,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Submit
+     */
+    public static View get_CulturalKnowledge_CulturalKnowledge_Submit(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Submit";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Cultural_Knowledge/Cultural_Knowledge/Take_From_GPS_1
      */
     public static View get_CulturalKnowledge_CulturalKnowledge_TakeFromGPS1(Solo solo) {
@@ -285,19 +294,19 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  DNA_Sample/DNA_Sample/Take_From_GPS_1
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Video_recording_Button_1
      */
-    public static View get_DNASample_DNASample_TakeFromGPS1(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Take_From_GPS_1";
+    public static View get_CulturalKnowledge_CulturalKnowledge_VideorecordingButton1(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Video_recording_Button_1";
         return (android.view.View) solo.getView((Object) ref);
     }
 
     /*
         Type: button
-        Ref:  DNA_Sample/DNA_Sample/Take_Photo_Button_1
+        Ref:  Notes/Notes/Submit
      */
-    public static View get_DNASample_DNASample_TakePhotoButton1(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Take_Photo_Button_1";
+    public static View get_Notes_Notes_Submit(Solo solo) {
+        String ref = "Notes/Notes/Submit";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -321,6 +330,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  Plant_Survey/Plant/Submit
+     */
+    public static View get_PlantSurvey_Plant_Submit(Solo solo) {
+        String ref = "Plant_Survey/Plant/Submit";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Plant_Survey/Plant/Take_From_GPS_1
      */
     public static View get_PlantSurvey_Plant_TakeFromGPS1(Solo solo) {
@@ -334,6 +352,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_PlantSurvey_Plant_TakePhotoButton1(Solo solo) {
         String ref = "Plant_Survey/Plant/Take_Photo_Button_1";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Setup_Trap/Setting_up/Submit
+     */
+    public static View get_SetupTrap_Settingup_Submit(Solo solo) {
+        String ref = "Setup_Trap/Setting_up/Submit";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -370,15 +397,6 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Start_Main_CulturalKnowledge(Solo solo) {
         String ref = "Start/Main/Cultural_Knowledge";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: button
-        Ref:  Start/Main/DNA_Sample
-     */
-    public static View get_Start_Main_DNASample(Solo solo) {
-        String ref = "Start/Main/DNA_Sample";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -546,15 +564,6 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: camera
-        Ref:  DNA_Sample/DNA_Sample/Take_Photo
-     */
-    public static View get_DNASample_DNASample_TakePhoto(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Take_Photo";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: camera
         Ref:  Notes/Notes/Take_Photo
      */
     public static View get_Notes_Notes_TakePhoto(Solo solo) {
@@ -605,6 +614,15 @@ public class ModuleUtil extends ModuleHelper {
     public static View get_Animaloutside_Animal_Accuracy(Solo solo) {
         String ref = "Animal_outside/Animal/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Animal_outside/Animal/Count
+     */
+    public static EditText get_Animaloutside_Animal_Count(Solo solo) {
+        String ref = "Animal_outside/Animal/Count";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -663,10 +681,28 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Animal_outside/Animal/Snout_to_vent_length_mm
+     */
+    public static EditText get_Animaloutside_Animal_Snouttoventlengthmm(Solo solo) {
+        String ref = "Animal_outside/Animal/Snout_to_vent_length_mm";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Animal_outside/Animal/Time
      */
     public static EditText get_Animaloutside_Animal_Time(Solo solo) {
         String ref = "Animal_outside/Animal/Time";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Animal_outside/Animal/Tissue_number
+     */
+    public static EditText get_Animaloutside_Animal_Tissuenumber(Solo solo) {
+        String ref = "Animal_outside/Animal/Tissue_number";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 
@@ -856,96 +892,6 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static EditText get_CulturalKnowledge_CulturalKnowledge_Writedownnoteshere(Solo solo) {
         String ref = "Cultural_Knowledge/Cultural_Knowledge/Write_down_notes_here";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Accuracy
-     */
-    public static View get_DNASample_DNASample_Accuracy(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Accuracy";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Date
-     */
-    public static EditText get_DNASample_DNASample_Date(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Date";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Easting
-     */
-    public static View get_DNASample_DNASample_Easting(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Easting";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Latitude
-     */
-    public static View get_DNASample_DNASample_Latitude(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Latitude";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Longitude
-     */
-    public static View get_DNASample_DNASample_Longitude(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Longitude";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Northing
-     */
-    public static View get_DNASample_DNASample_Northing(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Northing";
-        return (android.view.View) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Snout_to_vent_length_mm
-     */
-    public static EditText get_DNASample_DNASample_Snouttoventlengthmm(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Snout_to_vent_length_mm";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Time
-     */
-    public static EditText get_DNASample_DNASample_Time(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Time";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Tissue_number
-     */
-    public static EditText get_DNASample_DNASample_Tissuenumber(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Tissue_number";
-        return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: input
-        Ref:  DNA_Sample/DNA_Sample/Type_Species_And_Notes
-     */
-    public static EditText get_DNASample_DNASample_TypeSpeciesAndNotes(Solo solo) {
-        String ref = "DNA_Sample/DNA_Sample/Type_Species_And_Notes";
         return (android.widget.EditText) solo.getView((Object) ref);
     }
 
@@ -1261,6 +1207,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Start_Tracklog_internalExternalGPS(Solo solo) {
         String ref = "Start/Tracklog/internalExternalGPS";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: video
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Video_recording
+     */
+    public static View get_CulturalKnowledge_CulturalKnowledge_Videorecording(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Video_recording";
         return (android.view.View) solo.getView((Object) ref);
     }
 

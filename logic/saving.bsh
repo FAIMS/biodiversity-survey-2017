@@ -1,0 +1,15 @@
+/*********************************** SAVING ***********************************/
+List SUBMIT_BUTTON_REFS = getRefsMatching("*/Submit");
+
+// Don't autosave transect tab groups
+for (String buttonRef : SUBMIT_BUTTON_REFS) {
+  String tabGroupRef = getTabGroupRef(buttonRef);
+
+  String funFmt = "onShow%s()";
+  String fun    = replaceFirst(funFmt, getArchEntTypePascalCased(tabGroupRef));
+
+  assert(hasOnEvent(tabGroupRef, "show", fun));
+  delOnEvent(tabGroupRef, "show",  fun);
+  addOnEvent(buttonRef,   "click", fun);
+  addOnEvent(buttonRef,   "click", "goBack()", PRECEDENCE_MID-1);
+}

@@ -3,7 +3,6 @@ import java.util.concurrent.Callable;
 
 String tracklogStatus = "Tracklog is Stopped";
 String tracklogState = "Stop";
-Boolean transectEnabled = false;
 
 numTracklogPoints = 0;
 tracklogCurrentStatus = "";
@@ -18,9 +17,6 @@ void startTrackLog() {
 void setGpsInternalExternal() {
   setFieldValue("Start/Tracklog/internalExternalGPS", "{Internal}");
 }
-
-void  enableTransect() { transectEnabled = true;  }
-void disableTransect() { transectEnabled = false; }
 
 saveEntitiesToRel(String type, String entity1, String entity2, Callable callback) {
     if (isNull(entity1) || isNull(entity2)) return;
@@ -47,19 +43,20 @@ List getTransectButtons() {
 }
 
 String getSurveyUnitId() {
-  Log.d("getSurveyUnitId()", "" + getUuid(getDisplayedTabGroup()));
-  return getUuid(getDisplayedTabGroup());
-}
+  List   transectTabGroups           = getTransectTabGroups();
+  String displayedTabGroup           = getDisplayedTabGroup();
+  String previouslyDisplayedTabGroup = getPreviouslyDisplayedTabGroup();
 
-boolean canMakeTransectPoint() {
-  if (!isTrackingGPS()) {
-    String head = "Cannot Continue";
-    String body = "You must enable the tracklog to continue.";
+  String thisUuid = getUuid(displayedTabGroup);
+  String prevUuid = getUuid(previouslyDisplayedTabGroup);
 
-    showWarning(head, body);
-  }
-
-  return isTrackingGPS();
+  if (transectTabGroups.contains(displayedTabGroup)
+      && thisUuid != null)
+    return thisUuid;
+  if (transectTabGroups.contains(previouslyDisplayedTabGroup)
+      && prevUuid != null)
+    return prevUuid;
+  return null;
 }
 
 startTimeTrack() {
@@ -134,6 +131,10 @@ isGPSOn() {
 }
 
 saveGPSTrack(String stateAppend) {
+  saveGPSTrack(stateAppend, false);
+}
+
+saveGPSTrack(String stateAppend, boolean doSaveRel) {
     if (isInUnitTestTime()) {
       // This function uses the Nutiteq `Point` class, which is difficult to
       // mock.
@@ -164,12 +165,11 @@ saveGPSTrack(String stateAppend) {
     
     saveArchEnt(null, "Tracklog", l, attributes, new SaveCallback() {
         onSave(uuid, newRecord) {
-            if (transectEnabled) {
+            if (doSaveRel) {
                 numTransectPoints++;
                 Boolean end = false;
                 if(stateAppend.equals("End")) {
                     end = true;
-                    transectEnabled = false;
                 }
                 if (!stateAppend.equals("")) {
                     attributes.add(createEntityAttribute("State", null, null, stateAppend, null));
@@ -185,7 +185,8 @@ saveGPSTrack(String stateAppend) {
                         transect_id = uuid;
                         Callable callback = new Callable() {
                             call() {
-                                if(end) updateCurrentTransect();
+                                return;
+                                //if(end) updateCurrentTransect();
                             }
                         };
                         saveEntitiesToRel("TransectSUI", transect_id, getSurveyUnitId(), callback);
@@ -248,7 +249,6 @@ reallyDeleteTransectUnit(String tabGroup) {
     deleteArchEnt(getUuid(tabGroup), new DeleteCallback() {
         onDelete(uuid) {
             cancelTabGroup(tabGroup, false);
-            transectEnabled = false;
             showTab("control/Start");        
         }
     });
@@ -292,15 +292,8 @@ persistOverSessions("Start/Tracklog/refreshText",   "10");
 persistOverSessions("Start/Tracklog/trackdistText", "20");
 persistOverSessions("Start/Tracklog/tracktimeText", "30");
 
-addOnEvent("Start/Tracklog/trackOffButton", "click", "disableTransect()");
 for (ref : getTransectTabGroups()) {
   addOnEvent(ref, "create", "triggerAutoSave()", PRECEDENCE_MID+1);
-  addOnEvent(ref, "create", "enableTransect()");
-  addOnEvent(ref, "create", "saveGPSTrack(\"\")");
-  addOnEvent(ref, "delete", "disableTransect()");
+  addOnEvent(ref, "firstsave", "saveGPSTrack(\"\", true)");
   addOnEvent(ref, "delete", "reallyDeleteTransectUnit", new Object[] {ref});
-}
-
-for (ref : getTransectButtons()) {
-  addOnEventCond(ref, "click", "canMakeTransectPoint()");
 }

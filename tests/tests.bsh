@@ -61,30 +61,6 @@ String getWebViewHtml(String ref) {
   time = getFieldValue(refTime);  assert(!isNull(time));
 }
 
-// WHEN `isTrackingGPS` IS FALSE, CLICKING 'Setting up Trap' SHOWS A WARNING
-// AND DOES NOT NAVIGATE TO NEXT TAB GROUP
-{
-  boolean isTrackingGPS() { return false; }
-  executeOnEvent("Start", "show");
-
-  Runnable() {
-    run() {
-      executeOnEvent("Start/Main/Setting_up_Trap", "click");
-    }
-    return this;
-  }
-
-  String tabGroupBefore = getDisplayedTabGroup();
-  String msgExpected    = "showWarning: Cannot Continue | You must enable the tracklog to continue.\n";
-  String msgActual      = getStdout(Runnable());
-  String tabGroupAfter  = getDisplayedTabGroup();
-
-  assert(msgExpected.equals(msgActual));
-
-  assert("Start".equals(tabGroupBefore));
-  assert("Start".equals(tabGroupAfter ));
-}
-
 // WHEN `isTrackingGPS` IS TRUE, CLICKING 'Setting up Trap' SHOWS NO WARNING
 // AND DOES NAVIGATE TO NEXT TAB GROUP
 {
@@ -110,7 +86,7 @@ String getWebViewHtml(String ref) {
 }
 
 {
-  assert(getAttribsMatchingRef("*/*/*Date").size() == 7);
+  assert(getAttribsMatchingRef("*/*/*Date").size() == 6);
 }
 
 // `listToSqlString`

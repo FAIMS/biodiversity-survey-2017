@@ -20,7 +20,6 @@
     <Setting_up_Trap     l="Setup_Trap"/>
     <Checking_Trap       l="Check_Trap"/>
     <Animal_outside_Trap l="Animal_outside"/>
-    <DNA_Sample          l="DNA_Sample"/>
     <Plant_Survey        l="Plant_Survey"/>
     <Cultural_Knowledge  l="Cultural_Knowledge"/>
     <Notes               l="Notes"/>
@@ -78,6 +77,7 @@
       <!--@SOURCE: vocab/trap-type.xml-->
     </What_type_of_trap>
     <gps/>
+    <Submit t="button"/>
   </Setting_up>
 </Setup_Trap>
 
@@ -103,6 +103,7 @@
     </Snout_to_vent_length_mm>
     <Count b="decimal" f="noannotation nocertainty"/>
     <gps/>
+    <Submit t="button"/>
   </Checking>
 </Check_Trap>
 
@@ -117,26 +118,15 @@
     <Notes f="noannotation nocertainty"/>
     <Take_Photo t="camera" f="noannotation nocertainty"/>
     <Talk_about_animal t="audio" f="noannotation nocertainty"/>
-    <gps/>
-  </Animal>
-</Animal_outside>
-
-<DNA_Sample>
-  <fmt>{{Tissue_number}} {{Type_Species_And_Notes}} {{Date}} {{Time}}</fmt>
-  <DNA_Sample>
-    <!--@SOURCE: xml/date-time.xml-->
-    <author f="noannotation nocertainty">Who is recording?</author>
     <Tissue_number b="decimal" f="noannotation nocertainty"/>
-    <Type_Species_And_Notes f="noannotation nocertainty">
-      Type Species &amp; Notes
-    </Type_Species_And_Notes>
     <Snout_to_vent_length_mm b="decimal" f="noannotation nocertainty">
       Snout to vent length (mm)
     </Snout_to_vent_length_mm>
-    <Take_Photo t="camera" f="noannotation nocertainty"/>
+    <Count b="decimal" f="noannotation nocertainty"/>
     <gps/>
-  </DNA_Sample>
-</DNA_Sample>
+    <Submit t="button"/>
+  </Animal>
+</Animal_outside>
 
 <Plant_Survey>
   <fmt>{{Type_plant_name}} {{Date}} {{Time}}</fmt>
@@ -146,6 +136,7 @@
     <Type_plant_name f="noannotation nocertainty"/>
     <Take_Photo t="camera" f="noannotation nocertainty"/>
     <gps/>
+    <Submit t="button"/>
   </Plant>
 </Plant_Survey>
 
@@ -157,8 +148,10 @@
     <Who_is_talking f="noannotation nocertainty">Who is talking?</Who_is_talking>
     <What_is_being_talked_about f="noannotation nocertainty">What is being talked about?</What_is_being_talked_about>
     <Record_knowledge_now t="audio" f="noannotation nocertainty"/>
+    <Video_recording t="video" f="noannotation nocertainty"/>
     <Write_down_notes_here f="noannotation nocertainty"/>
     <gps/>
+    <Submit t="button"/>
   </Cultural_Knowledge>
 </Cultural_Knowledge>
 
@@ -170,6 +163,7 @@
     <Notes f="noannotation nocertainty"/>
     <Take_Photo t="camera" f="noannotation nocertainty"/>
     <gps/>
+    <Submit t="button"/>
   </Notes>
 </Notes>
 
@@ -209,6 +203,7 @@
 <!--@SOURCE: logic/custom-search.bsh-->
 <!--@SOURCE: logic/enable-gps.bsh-->
 <!--@SOURCE: logic/custom-gps.bsh-->
+<!--@SOURCE: logic/saving.bsh-->
 ]]></logic>
 
 </module>

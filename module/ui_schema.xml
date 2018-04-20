@@ -31,7 +31,6 @@
               <Setting_up_Trap/>
               <Checking_Trap/>
               <Animal_outside_Trap/>
-              <DNA_Sample/>
               <Plant_Survey/>
               <Cultural_Knowledge/>
               <Notes/>
@@ -127,6 +126,7 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
+              <Submit/>
             </Setting_up>
           </Setup_Trap>
           <Check_Trap>
@@ -159,6 +159,7 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
+              <Submit/>
             </Checking>
           </Check_Trap>
           <Animal_outside>
@@ -178,6 +179,9 @@
               <Take_Photo_Button_1/>
               <Talk_about_animal/>
               <Talk_about_animal_Button_1/>
+              <Tissue_number/>
+              <Snout_to_vent_length_mm/>
+              <Count/>
               <Colgroup_2>
                 <Col_1>
                   <Latitude/>
@@ -187,35 +191,9 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
+              <Submit/>
             </Animal>
           </Animal_outside>
-          <DNA_Sample>
-            <DNA_Sample>
-              <Colgroup_1>
-                <Col_1>
-                  <Date/>
-                </Col_1>
-                <Col_2>
-                  <Time/>
-                </Col_2>
-              </Colgroup_1>
-              <DNA_Sample_author/>
-              <Tissue_number/>
-              <Type_Species_And_Notes/>
-              <Snout_to_vent_length_mm/>
-              <Take_Photo/>
-              <Take_Photo_Button_1/>
-              <Colgroup_2>
-                <Col_1>
-                  <Latitude/>
-                </Col_1>
-                <Col_2>
-                  <Longitude/>
-                </Col_2>
-              </Colgroup_2>
-              <Take_From_GPS_1/>
-            </DNA_Sample>
-          </DNA_Sample>
           <Plant_Survey>
             <Plant>
               <Colgroup_1>
@@ -239,6 +217,7 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
+              <Submit/>
             </Plant>
           </Plant_Survey>
           <Cultural_Knowledge>
@@ -256,6 +235,8 @@
               <What_is_being_talked_about/>
               <Record_knowledge_now/>
               <Record_knowledge_now_Button_1/>
+              <Video_recording/>
+              <Video_recording_Button_1/>
               <Write_down_notes_here/>
               <Colgroup_2>
                 <Col_1>
@@ -266,6 +247,7 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
+              <Submit/>
             </Cultural_Knowledge>
           </Cultural_Knowledge>
           <Notes>
@@ -291,6 +273,7 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
+              <Submit/>
             </Notes>
           </Notes>
           <Tracklog>
@@ -308,8 +291,9 @@
       <bind nodeset="/faims/Check_Trap/Checking/Tissue_number" type="decimal"/>
       <bind nodeset="/faims/Check_Trap/Checking/Snout_to_vent_length_mm" type="decimal"/>
       <bind nodeset="/faims/Check_Trap/Checking/Count" type="decimal"/>
-      <bind nodeset="/faims/DNA_Sample/DNA_Sample/Tissue_number" type="decimal"/>
-      <bind nodeset="/faims/DNA_Sample/DNA_Sample/Snout_to_vent_length_mm" type="decimal"/>
+      <bind nodeset="/faims/Animal_outside/Animal/Tissue_number" type="decimal"/>
+      <bind nodeset="/faims/Animal_outside/Animal/Snout_to_vent_length_mm" type="decimal"/>
+      <bind nodeset="/faims/Animal_outside/Animal/Count" type="decimal"/>
     </model>
   </h:head>
   <h:body>
@@ -370,9 +354,6 @@
         </trigger>
         <trigger ref="Animal_outside_Trap">
           <label>{Animal_outside_Trap}</label>
-        </trigger>
-        <trigger ref="DNA_Sample">
-          <label>{DNA_Sample}</label>
         </trigger>
         <trigger ref="Plant_Survey">
           <label>{Plant_Survey}</label>
@@ -593,6 +574,9 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
+        <trigger ref="Submit">
+          <label>{Submit}</label>
+        </trigger>
       </group>
     </group>
     <group ref="Check_Trap" faims_archent_type="Check Trap">
@@ -654,7 +638,7 @@
         <trigger ref="Talk_about_animal_Button_1">
           <label>{Talk_about_animal}</label>
         </trigger>
-        <input faims_attribute_name="Check Trap Tissue number" faims_attribute_type="measure" ref="Tissue_number" faims_annotation="false" faims_certainty="false">
+        <input faims_attribute_name="Tissue number" faims_attribute_type="measure" ref="Tissue_number" faims_annotation="false" faims_certainty="false">
           <label>{Tissue_number}</label>
         </input>
         <input faims_attribute_name="Snout to vent length mm" faims_attribute_type="measure" ref="Snout_to_vent_length_mm" faims_annotation="false" faims_certainty="false">
@@ -680,6 +664,9 @@
         </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
+        </trigger>
+        <trigger ref="Submit">
+          <label>{Submit}</label>
         </trigger>
       </group>
     </group>
@@ -735,67 +722,15 @@
         <trigger ref="Talk_about_animal_Button_1">
           <label>{Talk_about_animal}</label>
         </trigger>
-        <group ref="Colgroup_2" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_read_only="true">
-              <label>{Latitude}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
-              <label>{Longitude}</label>
-            </input>
-          </group>
-        </group>
-        <trigger ref="Take_From_GPS_1">
-          <label>{Take_From_GPS}</label>
-        </trigger>
-      </group>
-    </group>
-    <group ref="DNA_Sample" faims_archent_type="DNA Sample">
-      <label>{DNA_Sample}</label>
-      <group ref="DNA_Sample">
-        <label>{DNA_Sample}</label>
-        <group ref="Colgroup_1" faims_style="orientation">
-          <label/>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <input faims_attribute_name="DNA Sample Date" faims_attribute_type="measure" ref="Date" faims_annotation="false" faims_certainty="false">
-              <label>{Date}</label>
-            </input>
-          </group>
-          <group ref="Col_2" faims_style="even">
-            <label/>
-            <input faims_attribute_name="DNA Sample Time" faims_attribute_type="measure" ref="Time" faims_annotation="false" faims_certainty="false">
-              <label>{Time}</label>
-            </input>
-          </group>
-        </group>
-        <input faims_attribute_name="DNA Sample author" faims_attribute_type="measure" ref="DNA_Sample_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
-          <label>{Who_is_recording_}</label>
-        </input>
-        <input faims_attribute_name="DNA Sample Tissue number" faims_attribute_type="measure" ref="Tissue_number" faims_annotation="false" faims_certainty="false">
+        <input faims_attribute_name="Tissue number" faims_attribute_type="measure" ref="Tissue_number" faims_annotation="false" faims_certainty="false">
           <label>{Tissue_number}</label>
-        </input>
-        <input faims_attribute_name="Type Species And Notes" faims_attribute_type="measure" ref="Type_Species_And_Notes" faims_annotation="false" faims_certainty="false">
-          <label>{Type_Species___Notes}</label>
         </input>
         <input faims_attribute_name="Snout to vent length mm" faims_attribute_type="measure" ref="Snout_to_vent_length_mm" faims_annotation="false" faims_certainty="false">
           <label>{Snout_to_vent_length__mm_}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Take Photo" faims_attribute_type="measure" ref="Take_Photo" faims_annotation="false" faims_certainty="false">
-          <label>{Take_Photo}</label>
-          <item>
-            <label>Options not loaded</label>
-            <value>Options not loaded</value>
-          </item>
-        </select>
-        <trigger ref="Take_Photo_Button_1">
-          <label>{Take_Photo}</label>
-        </trigger>
+        <input faims_attribute_name="Count" faims_attribute_type="measure" ref="Count" faims_annotation="false" faims_certainty="false">
+          <label>{Count}</label>
+        </input>
         <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
@@ -813,6 +748,9 @@
         </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
+        </trigger>
+        <trigger ref="Submit">
+          <label>{Submit}</label>
         </trigger>
       </group>
     </group>
@@ -869,6 +807,9 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
+        <trigger ref="Submit">
+          <label>{Submit}</label>
+        </trigger>
       </group>
     </group>
     <group ref="Cultural_Knowledge" faims_archent_type="Cultural Knowledge">
@@ -909,6 +850,16 @@
         <trigger ref="Record_knowledge_now_Button_1">
           <label>{Record_knowledge_now}</label>
         </trigger>
+        <select faims_sync="true" type="video" faims_attribute_name="Video recording" faims_attribute_type="measure" ref="Video_recording" faims_annotation="false" faims_certainty="false">
+          <label>{Video_recording}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Video_recording_Button_1">
+          <label>{Video_recording}</label>
+        </trigger>
         <input faims_attribute_name="Write down notes here" faims_attribute_type="measure" ref="Write_down_notes_here" faims_annotation="false" faims_certainty="false">
           <label>{Write_down_notes_here}</label>
         </input>
@@ -929,6 +880,9 @@
         </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
+        </trigger>
+        <trigger ref="Submit">
+          <label>{Submit}</label>
         </trigger>
       </group>
     </group>
@@ -984,6 +938,9 @@
         </group>
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
+        </trigger>
+        <trigger ref="Submit">
+          <label>{Submit}</label>
         </trigger>
       </group>
     </group>

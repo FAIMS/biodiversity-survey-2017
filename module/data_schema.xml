@@ -421,7 +421,7 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Check Trap Tissue number" type="measure">
+    <property name="Tissue number" type="measure">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
@@ -798,45 +798,7 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Latitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Longitude" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Accuracy" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-  </ArchaeologicalElement>
-  <ArchaeologicalElement name="DNA Sample">
-    <description></description>
-    <property name="DNA Sample Tissue number" type="measure" isIdentifier="true">
-      <description></description>
-      <formatString>$2</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Type Species And Notes" type="measure" isIdentifier="true">
-      <description></description>
-      <formatString> $2</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="DNA Sample Date" type="measure" isIdentifier="true">
-      <description></description>
-      <formatString> $2</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="DNA Sample Time" type="measure" isIdentifier="true">
-      <description></description>
-      <formatString> $2</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="DNA Sample author" type="measure">
+    <property name="Tissue number" type="measure">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
@@ -846,7 +808,7 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Take Photo" type="file" file="true" thumbnail="true">
+    <property name="Count" type="measure">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
@@ -938,6 +900,11 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Record knowledge now" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Video recording" type="file" file="true" thumbnail="true">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
