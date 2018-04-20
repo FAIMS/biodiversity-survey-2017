@@ -1,0 +1,6 @@
+/*********************************** SUBMIT ***********************************/
+List SUBMIT_BUTTON_REFS = getRefsMatching("*/Submit_and_Return");
+assert(SUBMIT_BUTTON_REFS.size() != 0);
+
+for (String submitButtonRefs : SUBMIT_BUTTON_REFS)
+  addOnEvent(submitButtonRefs, "click", "goBack()");

@@ -1,9 +1,10 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: da55a413b00df21caa7f0b4886d4302f82dd40f7
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 6d4d1bb30259f66db12812981036503f52df9a4d
  */
 import android.util.Log;
 import android.os.Build.MODEL;
 import java.util.concurrent.atomic.AtomicInteger;
+import android.database.DatabaseUtils;
 
 // Beanshell won't let me write "\0".
 final String SEP = Character.toString ((char) 0);
@@ -74,6 +75,43 @@ String listToSqlString(List l){
   return sqlString;
 }
 
+// Run a list of queries one-after-the-other. The next query starts executing
+// once the previous finishes.
+//
+// `callbacks` is a list of `FetchCallback` objects corresponding to each query
+// in `queries`. Although `callbacks` cannot be null, any of it elements can.
+void sequentialFetchAll(List queries, List callbacks) {
+  if (queries == null || callbacks == null)
+    throw IllegalArgumentException("Arguments cannot be null");
+  if (queries.size() != callbacks.size())
+    throw IllegalArgumentException("Argument lists must have the same length");
+
+  if (queries.size() == 0)
+    return;
+
+  String        queriesHead   = queries  .get(0);
+  FetchCallback callbacksHead = callbacks.get(0);
+
+  List queriesTail   = queries  .subList(1, queries  .size());
+  List callbacksTail = callbacks.subList(1, callbacks.size());
+
+  FetchCallback executeTail = new FetchCallback() {
+    onFetch(result) {
+      if (callbacksHead != null)
+        callbacksHead.onFetch(result);
+
+      sequentialFetchAll(queriesTail, callbacksTail);
+    }
+
+    onError(String message) {
+      if (callbacksHead != null)
+        callbacksHead.onError(message);
+    }
+  };
+
+  fetchAll(queriesHead, executeTail);
+}
+
 /******************************************************************************/
 /*                                STRING UTILS                                */
 /******************************************************************************/
@@ -138,7 +176,7 @@ String escape(String s) {
   return translate(s, dict);
 }
 
-Map MEMOISED_FILTERED_BY_REGEX = new HashMap();
+Map MEMOISED_FILTERED_BY_REGEX = new LinkedHashMap();
 
 List filterListByRegex(List unfiltered, String regex, boolean forceUpdate) {
   // Return a copy of the memoised result if possible. It's important to return
@@ -154,7 +192,7 @@ List filterListByRegex(List unfiltered, String regex, boolean forceUpdate) {
 
   // Compute the filtered list
   List filteredList;
-  Set  filteredSet = new HashSet();
+  Set  filteredSet = new LinkedHashSet();
   for (element : unfiltered)
     if (element.matches(regex))
       filteredSet.add(element);
@@ -258,7 +296,7 @@ String  PREVIOUSLY_DISPLAYED_TAB_GROUP = "";
 String  CURRENTLY_DISPLAYED_TAB_GROUP  = "";
 String  PREVIOUSLY_DISPLAYED_TAB       = "";
 String  CURRENTLY_DISPLAYED_TAB        = "";
-Map     REF_TO_TYPE                    = new HashMap();
+Map     REF_TO_TYPE                    = new LinkedHashMap();
 HashSet DATA_REFS                      = new HashSet();
 HashSet NO_UI_REFS                     = new HashSet();
 HashSet HIER_REFS                      = new HashSet();
@@ -272,7 +310,7 @@ HashSet TABS_AS_HASH_SET               = null;
 HashMap ATTRIB_NAMES_NON_STANDARD      = new HashMap();
 List    NODATA_TAB_GROUPS              = new ArrayList();
 NODATA_TAB_GROUPS.add("Login");
-  NODATA_TAB_GROUPS.add("Start");
+NODATA_TAB_GROUPS.add("Start");
 
 REF_TO_TYPE.put("Login/Login/Login", "list");
 REF_TO_TYPE.put("Start/Main/Guide", "webview");
@@ -317,7 +355,8 @@ REF_TO_TYPE.put("Setup_Trap/Setting_up/Northing", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Easting", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Accuracy", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Setup_Trap/Setting_up/Submit", "button");
+REF_TO_TYPE.put("Setup_Trap/Setting_up/Submit_Spacer", "webview");
+REF_TO_TYPE.put("Setup_Trap/Setting_up/Submit_and_Return", "button");
 REF_TO_TYPE.put("Check_Trap/Checking/Date", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Time", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Check_Trap_author", "input");
@@ -337,7 +376,8 @@ REF_TO_TYPE.put("Check_Trap/Checking/Northing", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Easting", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Accuracy", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Check_Trap/Checking/Submit", "button");
+REF_TO_TYPE.put("Check_Trap/Checking/Submit_Spacer", "webview");
+REF_TO_TYPE.put("Check_Trap/Checking/Submit_and_Return", "button");
 REF_TO_TYPE.put("Animal_outside/Animal/Date", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Time", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Animal_outside_author", "input");
@@ -356,7 +396,8 @@ REF_TO_TYPE.put("Animal_outside/Animal/Northing", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Easting", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Accuracy", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Animal_outside/Animal/Submit", "button");
+REF_TO_TYPE.put("Animal_outside/Animal/Submit_Spacer", "webview");
+REF_TO_TYPE.put("Animal_outside/Animal/Submit_and_Return", "button");
 REF_TO_TYPE.put("Plant_Survey/Plant/Date", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Time", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Plant_Survey_author", "input");
@@ -369,7 +410,8 @@ REF_TO_TYPE.put("Plant_Survey/Plant/Northing", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Easting", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Accuracy", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Plant_Survey/Plant/Submit", "button");
+REF_TO_TYPE.put("Plant_Survey/Plant/Submit_Spacer", "webview");
+REF_TO_TYPE.put("Plant_Survey/Plant/Submit_and_Return", "button");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Date", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Time", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Cultural_Knowledge_author", "input");
@@ -386,7 +428,8 @@ REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Northing", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Easting", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Accuracy", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Submit", "button");
+REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Submit_Spacer", "webview");
+REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Submit_and_Return", "button");
 REF_TO_TYPE.put("Notes/Notes/Date", "input");
 REF_TO_TYPE.put("Notes/Notes/Time", "input");
 REF_TO_TYPE.put("Notes/Notes/Notes_author", "input");
@@ -399,20 +442,14 @@ REF_TO_TYPE.put("Notes/Notes/Northing", "input");
 REF_TO_TYPE.put("Notes/Notes/Easting", "input");
 REF_TO_TYPE.put("Notes/Notes/Accuracy", "input");
 REF_TO_TYPE.put("Notes/Notes/Take_From_GPS_1", "button");
-REF_TO_TYPE.put("Notes/Notes/Submit", "button");
+REF_TO_TYPE.put("Notes/Notes/Submit_Spacer", "webview");
+REF_TO_TYPE.put("Notes/Notes/Submit_and_Return", "button");
 REF_TO_TYPE.put("Tracklog/Tracklog/Timestamp", "");
 REF_TO_TYPE.put("Tracklog/Tracklog/TracklogTeam", "");
 REF_TO_TYPE.put("Tracklog/Tracklog/Latitude", "");
 REF_TO_TYPE.put("Tracklog/Tracklog/Longitude", "");
 REF_TO_TYPE.put("Tracklog/Tracklog/Heading", "");
 REF_TO_TYPE.put("Tracklog/Tracklog/Accuracy", "");
-REF_TO_TYPE.put("Transect_Point/Transect_Point/Timestamp", "");
-REF_TO_TYPE.put("Transect_Point/Transect_Point/TracklogTeam", "");
-REF_TO_TYPE.put("Transect_Point/Transect_Point/State", "");
-REF_TO_TYPE.put("Transect_Point/Transect_Point/Latitude", "");
-REF_TO_TYPE.put("Transect_Point/Transect_Point/Longitude", "");
-REF_TO_TYPE.put("Transect_Point/Transect_Point/Heading", "");
-REF_TO_TYPE.put("Transect_Point/Transect_Point/Accuracy", "");
 REF_TO_TYPE.put("Login/Login", "tab");
 REF_TO_TYPE.put("Start/Main", "tab");
 REF_TO_TYPE.put("Start/Map", "tab");
@@ -425,7 +462,6 @@ REF_TO_TYPE.put("Plant_Survey/Plant", "tab");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge", "tab");
 REF_TO_TYPE.put("Notes/Notes", "tab");
 REF_TO_TYPE.put("Tracklog/Tracklog", "tab");
-REF_TO_TYPE.put("Transect_Point/Transect_Point", "tab");
 
 DATA_REFS.add("Setup_Trap/Setting_up/Date");
 DATA_REFS.add("Setup_Trap/Setting_up/Time");
@@ -507,13 +543,6 @@ DATA_REFS.add("Tracklog/Tracklog/Latitude");
 DATA_REFS.add("Tracklog/Tracklog/Longitude");
 DATA_REFS.add("Tracklog/Tracklog/Heading");
 DATA_REFS.add("Tracklog/Tracklog/Accuracy");
-DATA_REFS.add("Transect_Point/Transect_Point/Timestamp");
-DATA_REFS.add("Transect_Point/Transect_Point/TracklogTeam");
-DATA_REFS.add("Transect_Point/Transect_Point/State");
-DATA_REFS.add("Transect_Point/Transect_Point/Latitude");
-DATA_REFS.add("Transect_Point/Transect_Point/Longitude");
-DATA_REFS.add("Transect_Point/Transect_Point/Heading");
-DATA_REFS.add("Transect_Point/Transect_Point/Accuracy");
 
 NO_UI_REFS.add("Tracklog/Tracklog/Timestamp");
 NO_UI_REFS.add("Tracklog/Tracklog/TracklogTeam");
@@ -521,15 +550,7 @@ NO_UI_REFS.add("Tracklog/Tracklog/Latitude");
 NO_UI_REFS.add("Tracklog/Tracklog/Longitude");
 NO_UI_REFS.add("Tracklog/Tracklog/Heading");
 NO_UI_REFS.add("Tracklog/Tracklog/Accuracy");
-NO_UI_REFS.add("Transect_Point/Transect_Point/Timestamp");
-NO_UI_REFS.add("Transect_Point/Transect_Point/TracklogTeam");
-NO_UI_REFS.add("Transect_Point/Transect_Point/State");
-NO_UI_REFS.add("Transect_Point/Transect_Point/Latitude");
-NO_UI_REFS.add("Transect_Point/Transect_Point/Longitude");
-NO_UI_REFS.add("Transect_Point/Transect_Point/Heading");
-NO_UI_REFS.add("Transect_Point/Transect_Point/Accuracy");
 NO_UI_REFS.add("Tracklog");
-NO_UI_REFS.add("Transect_Point");
 
 
 
@@ -545,7 +566,6 @@ TAB_GROUPS_AS_LIST.add("Plant_Survey");
 TAB_GROUPS_AS_LIST.add("Cultural_Knowledge");
 TAB_GROUPS_AS_LIST.add("Notes");
 TAB_GROUPS_AS_LIST.add("Tracklog");
-TAB_GROUPS_AS_LIST.add("Transect_Point");
 
 TABS_AS_LIST.add("Login/Login");
 TABS_AS_LIST.add("Start/Main");
@@ -559,7 +579,6 @@ TABS_AS_LIST.add("Plant_Survey/Plant");
 TABS_AS_LIST.add("Cultural_Knowledge/Cultural_Knowledge");
 TABS_AS_LIST.add("Notes/Notes");
 TABS_AS_LIST.add("Tracklog/Tracklog");
-TABS_AS_LIST.add("Transect_Point/Transect_Point");
 
 ATTRIB_NAMES_NON_STANDARD.put("Setup_Trap/Setting_up/Date", "Setup Trap Date");
 ATTRIB_NAMES_NON_STANDARD.put("Setup_Trap/Setting_up/Time", "Setup Trap Time");
@@ -1342,7 +1361,8 @@ makeLocalId();
 /* Code to a) time queries; and b) create dummy records. (The vast majority   */
 /* the code is for the latter.)                                               */
 /******************************************************************************/
-import android.database.DatabaseUtils;
+import android.os.StatFs;
+import android.os.Environment;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.nio.channels.Channels;
@@ -1364,23 +1384,23 @@ String                PERF_TEST_IMG          = "";
                       PERF_TYPE_TREE         = null;
 int                   PERF_PHOTOS_PER_FIELD  = 1;
 
-int getNumPhotos() {
-  return getNumPhotos(PERF_TYPE_TREE);
+int getNumDummyPhotos() {
+  return getNumDummyPhotos(PERF_TYPE_TREE);
 }
 
-int getNumPhotos(tree) {
+int getNumDummyPhotos(tree) {
   if (tree == null) return 0;
 
   int childSum = 0;
   for (child : tree.getChildren())
-    childSum += getNumPhotos(child);
+    childSum += getNumDummyPhotos(child);
 
   boolean isRoot = isNull(tree.label);
   if (isRoot) return childSum;
-  else        return childSum + getNumPhotosAtNode(tree);
+  else        return childSum + getNumDummyPhotosAtNode(tree);
 }
 
-int getNumPhotosAtNode(tree) {
+int getNumDummyPhotosAtNode(tree) {
   // Figure out how many camera refs there are at this node (i.e. in this arch
   // ent).
   List cameraRefs = getRefsByType("camera");
@@ -1416,6 +1436,34 @@ int getNumDummyRecordsAtNode(tree) {
     sum *= tree.data;
   }
   return sum;
+}
+
+float getFileSizeInMBytes(String path) {
+  File file = new File(path);
+  return file.length() / 1000.f / 1000.f;
+}
+
+float getSizeDummyPhotosInMBytes() {
+  return getNumDummyPhotos() * getFileSizeInMBytes(PERF_TEST_IMG);
+}
+
+String megabytesToString(float mb) {
+  DecimalFormat df = new DecimalFormat();
+  df.setMaximumFractionDigits(1);
+  return df.format(mb);
+}
+
+String getSizeDummyPhotosInMBytesAsString() {
+  return megabytesToString(getSizeDummyPhotosInMBytes());
+}
+
+float getFreeSpaceInMBytes() {
+  StatFs statFs = new StatFs(Environment.getRootDirectory().getAbsolutePath());
+  return statFs.getBlockCount() * statFs.getBlockSize() / 1000.f / 1000.f;
+}
+
+String getFreeSpaceInMBytesAsString() {
+  return megabytesToString(getFreeSpaceInMBytes());
 }
 
 Tree(String label, Object data) {
@@ -1629,20 +1677,20 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
+  //  - Notes
+  //  - Cultural Knowledge
+  //  - Setup Trap
+  //  - Check Trap
   //  - Animal outside
   //  - Plant Survey
-  //  - Notes
-  //  - Check Trap
-  //  - Setup Trap
-  //  - Cultural Knowledge
 
   n0 = Tree("", 1);
-  n1 = Tree("Animal outside", 1);
-  n2 = Tree("Plant Survey", 1);
-  n3 = Tree("Notes", 1);
+  n1 = Tree("Notes", 1);
+  n2 = Tree("Cultural Knowledge", 1);
+  n3 = Tree("Setup Trap", 1);
   n4 = Tree("Check Trap", 1);
-  n5 = Tree("Setup Trap", 1);
-  n6 = Tree("Cultural Knowledge", 1);
+  n5 = Tree("Animal outside", 1);
+  n6 = Tree("Plant Survey", 1);
 
   n0.addChild(n1);
   n0.addChild(n2);
@@ -1861,7 +1909,7 @@ void enqueueTestFiles(int numFiles, String cb) {
 
   // Set `PERF_NUM_CBS_TODO_FILE` and `PERF_NUM_CBS_DONE_FILE`
   int numPhotosToMake;
-  numPhotosToMake  = getNumPhotos();
+  numPhotosToMake  = getNumDummyPhotos();
   numPhotosToMake -= PERF_FILES.size();
   numPhotosToMake  = Math.max(0, numPhotosToMake);
   // We're going to count returns from attachFile too, hence multiplication by 2
@@ -2052,6 +2100,9 @@ void checkSetDummyRecordQuantityIsDone() {
   int cbsDone = PERF_NUM_CBS_DONE_SET.incrementAndGet();
   int cbsTodo = PERF_NUM_CBS_TODO_SET.get();
   if (cbsTodo == cbsDone) {
+    String totalImgs = getNumDummyPhotos() + "";
+    String totalSizs = getSizeDummyPhotosInMBytesAsString();
+    String totalFree = getFreeSpaceInMBytesAsString();
     String totalRecs = getNumDummyRecords() + "";
     String treeString = PERF_TYPE_TREE.toString();
     String treeStringNoRoot = treeString.substring(
@@ -2063,7 +2114,10 @@ void checkSetDummyRecordQuantityIsDone() {
     String body =
          "{perf_update_body_1} " + treeStringNoRoot +
         " {perf_update_body_2} " + totalRecs +
-        " {perf_update_body_3}";
+        " {perf_update_body_3} " + totalImgs +
+        " {perf_update_body_4} " + totalFree +
+        " {perf_update_body_5} " + totalSizs +
+        " {perf_update_body_6}";
 
     showAlert(head, body, "createDummyRecords()", "");
   }
@@ -2153,6 +2207,7 @@ if (!isNull(USER_MENU_PATH)) {
   addOnEvent(userMenuTabGroup, "show",  "setUpPerfActionBarItems()");
   addOnEvent(userMenuTabGroup, "leave", "setUpPerfActionBarItems()");
 }
+
 
 /******************************************************************************/
 /*                           LOCALSETTINGS UPDATES                            */
@@ -3157,10 +3212,11 @@ String validateFields(List fields, String format) {
 /******************************************************************************/
 /*                                 AUTOSAVING                                 */
 /******************************************************************************/
-Map tabgroupToUuid = Collections.synchronizedMap(new HashMap());
+Map TABGROUP_TO_UUID = Collections.synchronizedMap(new HashMap());
+Set SEEN_UUIDS       = Collections.synchronizedSet(new HashSet());
 
 String getUuid(String tabgroup) {
-  return tabgroupToUuid.get(tabgroup);
+  return TABGROUP_TO_UUID.get(tabgroup);
 }
 
 String getUuid() {
@@ -3168,7 +3224,7 @@ String getUuid() {
 }
 
 void setUuid(String tabgroup, String uuid) {
-  tabgroupToUuid.put(tabgroup, uuid);
+  TABGROUP_TO_UUID.put(tabgroup, uuid);
 }
 
 void saveTabGroup(String tabgroup) {
@@ -3192,6 +3248,13 @@ void saveTabGroup(String tabgroup, String callback) {
   SaveCallback saveCallback  = new SaveCallback() {
     onSave(uuid, newRecord) {
       setUuid(tabgroup, uuid);
+
+      // This is a workaround for a bug where `newRecord` can be `true` twice if
+      // a record was saved again shortly after it was created.
+      if (SEEN_UUIDS.contains(uuid))
+        newRecord = false;
+      if (uuid != null)
+        SEEN_UUIDS.add(uuid);
 
       String cb = newRecord ? callbackFirstSave : callback;
 
@@ -4322,6 +4385,7 @@ tabgroupToTabRef.put("Notes", "Notes/Notes");
 
 /* Takes the current point using gps. */
 void takePoint(String tabgroup) {
+  triggerAutoSave();
   Map tabgroupToTabRef = getTakeFromGpsMappings();
 
   String archEntType = tabgroup.replaceAll("_", " ");
@@ -4503,6 +4567,12 @@ void incAutoNum(String destPath) {
 /******************************************************************************/
 populateWebViewHtml("Start/Main/BR_1", "<br />\n\n");
 populateWebViewHtml("Start/Main/BR_2", "<br />\n\n");
+populateWebViewHtml("Setup_Trap/Setting_up/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Check_Trap/Checking/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Animal_outside/Animal/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Plant_Survey/Plant/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Cultural_Knowledge/Cultural_Knowledge/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Notes/Notes/Submit_Spacer", "<br />\n\n");
 
 /******************************************************************************/
 /*                POPULATION OF ENTITY AND CHILD ENTITY LISTS                 */
@@ -4855,10 +4925,6 @@ isGPSOn() {
 }
 
 saveGPSTrack(String stateAppend) {
-  saveGPSTrack(stateAppend, false);
-}
-
-saveGPSTrack(String stateAppend, boolean doSaveRel) {
     if (isInUnitTestTime()) {
       // This function uses the Nutiteq `Point` class, which is difficult to
       // mock.
@@ -4889,34 +4955,6 @@ saveGPSTrack(String stateAppend, boolean doSaveRel) {
     
     saveArchEnt(null, "Tracklog", l, attributes, new SaveCallback() {
         onSave(uuid, newRecord) {
-            if (doSaveRel) {
-                numTransectPoints++;
-                Boolean end = false;
-                if(stateAppend.equals("End")) {
-                    end = true;
-                }
-                if (!stateAppend.equals("")) {
-                    attributes.add(createEntityAttribute("State", null, null, stateAppend, null));
-                    stateAppend = "";
-                }
-
-                p = new Point(new MapPos(positionProj.getLongitude(), positionProj.getLatitude()), null, (PointStyle) null, null);
-                l = new ArrayList();
-                l.add(p);
-                
-                saveArchEnt(null, "Transect Point", l, attributes, new SaveCallback() {
-                    onSave(uuid, newRecord) {
-                        transect_id = uuid;
-                        Callable callback = new Callable() {
-                            call() {
-                                return;
-                                //if(end) updateCurrentTransect();
-                            }
-                        };
-                        saveEntitiesToRel("TransectSUI", transect_id, getSurveyUnitId(), callback);
-                    }
-                });
-            }
             updateTrackStatus();
         }
     });
@@ -5018,7 +5056,6 @@ persistOverSessions("Start/Tracklog/tracktimeText", "30");
 
 for (ref : getTransectTabGroups()) {
   addOnEvent(ref, "create", "triggerAutoSave()", PRECEDENCE_MID+1);
-  addOnEvent(ref, "firstsave", "saveGPSTrack(\"\", true)");
   addOnEvent(ref, "delete", "reallyDeleteTransectUnit", new Object[] {ref});
 }
 /**************************** DATE/TIME POPULATION ****************************/
@@ -5145,16 +5182,6 @@ void initMap() {
     pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
     ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
     showDatabaseLayer(MAP_REF, "Tracklog Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
-
-    // Transect Point
-    isEntity = true;
-    queryName = "Transect Point";
-    querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) where aenttypename = '" + queryName + "'";
-    ps = createPointStyle(10, Color.DKGRAY, 0.2f, 0.5f);
-    ls = createLineStyle(10, Color.DKGRAY, 0.05f, 0.3f, null);
-    pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
-    ts = createTextStyle(999, Color.TRANSPARENT, 30, Typeface.SANS_SERIF);
-    showDatabaseLayer(MAP_REF, "Transect Point Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
 
     // Setup Trap
     isEntity = true;
@@ -5417,21 +5444,12 @@ void removeNorthingAndEasting() {
 }
 
 removeNorthingAndEasting();
-/*********************************** SAVING ***********************************/
-List SUBMIT_BUTTON_REFS = getRefsMatching("*/Submit");
+/*********************************** SUBMIT ***********************************/
+List SUBMIT_BUTTON_REFS = getRefsMatching("*/Submit_and_Return");
+assert(SUBMIT_BUTTON_REFS.size() != 0);
 
-// Don't autosave transect tab groups
-for (String buttonRef : SUBMIT_BUTTON_REFS) {
-  String tabGroupRef = getTabGroupRef(buttonRef);
-
-  String funFmt = "onShow%s()";
-  String fun    = replaceFirst(funFmt, getArchEntTypePascalCased(tabGroupRef));
-
-  assert(hasOnEvent(tabGroupRef, "show", fun));
-  delOnEvent(tabGroupRef, "show",  fun);
-  addOnEvent(buttonRef,   "click", fun);
-  addOnEvent(buttonRef,   "click", "goBack()", PRECEDENCE_MID-1);
-}
+for (String submitButtonRefs : SUBMIT_BUTTON_REFS)
+  addOnEvent(submitButtonRefs, "click", "goBack()");
 
 
 /******************************************************************************/

@@ -131,10 +131,6 @@ isGPSOn() {
 }
 
 saveGPSTrack(String stateAppend) {
-  saveGPSTrack(stateAppend, false);
-}
-
-saveGPSTrack(String stateAppend, boolean doSaveRel) {
     if (isInUnitTestTime()) {
       // This function uses the Nutiteq `Point` class, which is difficult to
       // mock.
@@ -165,34 +161,6 @@ saveGPSTrack(String stateAppend, boolean doSaveRel) {
     
     saveArchEnt(null, "Tracklog", l, attributes, new SaveCallback() {
         onSave(uuid, newRecord) {
-            if (doSaveRel) {
-                numTransectPoints++;
-                Boolean end = false;
-                if(stateAppend.equals("End")) {
-                    end = true;
-                }
-                if (!stateAppend.equals("")) {
-                    attributes.add(createEntityAttribute("State", null, null, stateAppend, null));
-                    stateAppend = "";
-                }
-
-                p = new Point(new MapPos(positionProj.getLongitude(), positionProj.getLatitude()), null, (PointStyle) null, null);
-                l = new ArrayList();
-                l.add(p);
-                
-                saveArchEnt(null, "Transect Point", l, attributes, new SaveCallback() {
-                    onSave(uuid, newRecord) {
-                        transect_id = uuid;
-                        Callable callback = new Callable() {
-                            call() {
-                                return;
-                                //if(end) updateCurrentTransect();
-                            }
-                        };
-                        saveEntitiesToRel("TransectSUI", transect_id, getSurveyUnitId(), callback);
-                    }
-                });
-            }
             updateTrackStatus();
         }
     });
@@ -294,6 +262,5 @@ persistOverSessions("Start/Tracklog/tracktimeText", "30");
 
 for (ref : getTransectTabGroups()) {
   addOnEvent(ref, "create", "triggerAutoSave()", PRECEDENCE_MID+1);
-  addOnEvent(ref, "firstsave", "saveGPSTrack(\"\", true)");
   addOnEvent(ref, "delete", "reallyDeleteTransectUnit", new Object[] {ref});
 }

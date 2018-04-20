@@ -126,7 +126,8 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
-              <Submit/>
+              <Submit_Spacer/>
+              <Submit_and_Return/>
             </Setting_up>
           </Setup_Trap>
           <Check_Trap>
@@ -159,7 +160,8 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
-              <Submit/>
+              <Submit_Spacer/>
+              <Submit_and_Return/>
             </Checking>
           </Check_Trap>
           <Animal_outside>
@@ -191,7 +193,8 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
-              <Submit/>
+              <Submit_Spacer/>
+              <Submit_and_Return/>
             </Animal>
           </Animal_outside>
           <Plant_Survey>
@@ -217,7 +220,8 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
-              <Submit/>
+              <Submit_Spacer/>
+              <Submit_and_Return/>
             </Plant>
           </Plant_Survey>
           <Cultural_Knowledge>
@@ -247,7 +251,8 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
-              <Submit/>
+              <Submit_Spacer/>
+              <Submit_and_Return/>
             </Cultural_Knowledge>
           </Cultural_Knowledge>
           <Notes>
@@ -273,15 +278,13 @@
                 </Col_2>
               </Colgroup_2>
               <Take_From_GPS_1/>
-              <Submit/>
+              <Submit_Spacer/>
+              <Submit_and_Return/>
             </Notes>
           </Notes>
           <Tracklog>
             <Tracklog/>
           </Tracklog>
-          <Transect_Point>
-            <Transect_Point/>
-          </Transect_Point>
         </faims>
       </instance>
       <bind nodeset="/faims/Start/Tracklog/Colgroup_1/Col_1/refreshText" type="decimal"/>
@@ -574,8 +577,11 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <trigger ref="Submit">
-          <label>{Submit}</label>
+        <input faims_web="true" ref="Submit_Spacer">
+          <label/>
+        </input>
+        <trigger ref="Submit_and_Return" faims_style_class="submit">
+          <label>{Submit_and_Return}</label>
         </trigger>
       </group>
     </group>
@@ -665,8 +671,11 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <trigger ref="Submit">
-          <label>{Submit}</label>
+        <input faims_web="true" ref="Submit_Spacer">
+          <label/>
+        </input>
+        <trigger ref="Submit_and_Return" faims_style_class="submit">
+          <label>{Submit_and_Return}</label>
         </trigger>
       </group>
     </group>
@@ -749,8 +758,11 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <trigger ref="Submit">
-          <label>{Submit}</label>
+        <input faims_web="true" ref="Submit_Spacer">
+          <label/>
+        </input>
+        <trigger ref="Submit_and_Return" faims_style_class="submit">
+          <label>{Submit_and_Return}</label>
         </trigger>
       </group>
     </group>
@@ -807,8 +819,11 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <trigger ref="Submit">
-          <label>{Submit}</label>
+        <input faims_web="true" ref="Submit_Spacer">
+          <label/>
+        </input>
+        <trigger ref="Submit_and_Return" faims_style_class="submit">
+          <label>{Submit_and_Return}</label>
         </trigger>
       </group>
     </group>
@@ -881,8 +896,11 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <trigger ref="Submit">
-          <label>{Submit}</label>
+        <input faims_web="true" ref="Submit_Spacer">
+          <label/>
+        </input>
+        <trigger ref="Submit_and_Return" faims_style_class="submit">
+          <label>{Submit_and_Return}</label>
         </trigger>
       </group>
     </group>
@@ -939,8 +957,11 @@
         <trigger ref="Take_From_GPS_1">
           <label>{Take_From_GPS}</label>
         </trigger>
-        <trigger ref="Submit">
-          <label>{Submit}</label>
+        <input faims_web="true" ref="Submit_Spacer">
+          <label/>
+        </input>
+        <trigger ref="Submit_and_Return" faims_style_class="submit">
+          <label>{Submit_and_Return}</label>
         </trigger>
       </group>
     </group>
@@ -948,12 +969,6 @@
       <label>{Tracklog}</label>
       <group ref="Tracklog">
         <label>{Tracklog}</label>
-      </group>
-    </group>
-    <group ref="Transect_Point" faims_archent_type="Transect Point">
-      <label>{Transect_Point}</label>
-      <group ref="Transect_Point">
-        <label>{Transect_Point}</label>
       </group>
     </group>
   </h:body>

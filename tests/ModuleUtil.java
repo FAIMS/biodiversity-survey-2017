@@ -195,10 +195,10 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  Animal_outside/Animal/Submit
+        Ref:  Animal_outside/Animal/Submit_and_Return
      */
-    public static View get_Animaloutside_Animal_Submit(Solo solo) {
-        String ref = "Animal_outside/Animal/Submit";
+    public static View get_Animaloutside_Animal_SubmitandReturn(Solo solo) {
+        String ref = "Animal_outside/Animal/Submit_and_Return";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -231,10 +231,10 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  Check_Trap/Checking/Submit
+        Ref:  Check_Trap/Checking/Submit_and_Return
      */
-    public static View get_CheckTrap_Checking_Submit(Solo solo) {
-        String ref = "Check_Trap/Checking/Submit";
+    public static View get_CheckTrap_Checking_SubmitandReturn(Solo solo) {
+        String ref = "Check_Trap/Checking/Submit_and_Return";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -276,10 +276,10 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  Cultural_Knowledge/Cultural_Knowledge/Submit
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Submit_and_Return
      */
-    public static View get_CulturalKnowledge_CulturalKnowledge_Submit(Solo solo) {
-        String ref = "Cultural_Knowledge/Cultural_Knowledge/Submit";
+    public static View get_CulturalKnowledge_CulturalKnowledge_SubmitandReturn(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Submit_and_Return";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -303,10 +303,10 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  Notes/Notes/Submit
+        Ref:  Notes/Notes/Submit_and_Return
      */
-    public static View get_Notes_Notes_Submit(Solo solo) {
-        String ref = "Notes/Notes/Submit";
+    public static View get_Notes_Notes_SubmitandReturn(Solo solo) {
+        String ref = "Notes/Notes/Submit_and_Return";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -330,10 +330,10 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  Plant_Survey/Plant/Submit
+        Ref:  Plant_Survey/Plant/Submit_and_Return
      */
-    public static View get_PlantSurvey_Plant_Submit(Solo solo) {
-        String ref = "Plant_Survey/Plant/Submit";
+    public static View get_PlantSurvey_Plant_SubmitandReturn(Solo solo) {
+        String ref = "Plant_Survey/Plant/Submit_and_Return";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -357,10 +357,10 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
-        Ref:  Setup_Trap/Setting_up/Submit
+        Ref:  Setup_Trap/Setting_up/Submit_and_Return
      */
-    public static View get_SetupTrap_Settingup_Submit(Solo solo) {
-        String ref = "Setup_Trap/Setting_up/Submit";
+    public static View get_SetupTrap_Settingup_SubmitandReturn(Solo solo) {
+        String ref = "Setup_Trap/Setting_up/Submit_and_Return";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -1216,6 +1216,60 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_CulturalKnowledge_CulturalKnowledge_Videorecording(Solo solo) {
         String ref = "Cultural_Knowledge/Cultural_Knowledge/Video_recording";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Animal_outside/Animal/Submit_Spacer
+     */
+    public static View get_Animaloutside_Animal_SubmitSpacer(Solo solo) {
+        String ref = "Animal_outside/Animal/Submit_Spacer";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Check_Trap/Checking/Submit_Spacer
+     */
+    public static View get_CheckTrap_Checking_SubmitSpacer(Solo solo) {
+        String ref = "Check_Trap/Checking/Submit_Spacer";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Submit_Spacer
+     */
+    public static View get_CulturalKnowledge_CulturalKnowledge_SubmitSpacer(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Submit_Spacer";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Notes/Notes/Submit_Spacer
+     */
+    public static View get_Notes_Notes_SubmitSpacer(Solo solo) {
+        String ref = "Notes/Notes/Submit_Spacer";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Plant_Survey/Plant/Submit_Spacer
+     */
+    public static View get_PlantSurvey_Plant_SubmitSpacer(Solo solo) {
+        String ref = "Plant_Survey/Plant/Submit_Spacer";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Setup_Trap/Setting_up/Submit_Spacer
+     */
+    public static View get_SetupTrap_Settingup_SubmitSpacer(Solo solo) {
+        String ref = "Setup_Trap/Setting_up/Submit_Spacer";
         return (android.view.View) solo.getView((Object) ref);
     }
 

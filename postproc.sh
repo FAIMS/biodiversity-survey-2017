@@ -131,6 +131,7 @@ EOF
 cat << EOF >> ui_styling.css
 .tracklog-start { background-color: green;  }
 .tracklog-stop  { background-color: orange; }
+.submit         { background-color: green;  }
 EOF
 
 rm   ui_schema.xml.original
