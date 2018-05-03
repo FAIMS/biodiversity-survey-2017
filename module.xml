@@ -60,7 +60,7 @@
   </Tracklog>
 </Start>
 
-<Setup_Trap f="noautosave">
+<Setup_Trap>
   <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
     <!--@SOURCE: xml/date-time.xml-->
@@ -154,7 +154,7 @@
   </Cultural_Knowledge>
 </Cultural_Knowledge>
 
-<Notes> <!-- TODO: Autosave-->
+<Notes f="noautosave">
   <fmt>{{author}} {{Date}} {{Time}}</fmt>
   <Notes>
     <!--@SOURCE: xml/date-time.xml-->

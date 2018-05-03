@@ -5,11 +5,6 @@ void takePoint(String tabgroup) {
 
   String archEntType = getArchEntType(tabgroup);
   String currentUuid = getUuid(tabgroup);
-  if (isNull(currentUuid)){
-    showToast("{Please_enter_data_first}");
-    return;
-  }
-
 
   boolean isInternalGPSOff = !isInternalGPSOn();
   boolean isExternalGPSOff = !isExternalGPSOn();

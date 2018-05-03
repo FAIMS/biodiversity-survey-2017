@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: c20d0289cc121807c4b95c9e7fed2348ae204dff
+ * GENERATED WITH FAIMS-TOOLS, SHA1: df6bf8194aa111d6f6855b5bde541c48541fcc1d
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -546,11 +546,11 @@ DATA_REFS.add("Tracklog/Tracklog/Longitude");
 DATA_REFS.add("Tracklog/Tracklog/Heading");
 DATA_REFS.add("Tracklog/Tracklog/Accuracy");
 
-NOAUTOSAVE_TAB_GROUPS.add("Setup_Trap");
 NOAUTOSAVE_TAB_GROUPS.add("Check_Trap");
 NOAUTOSAVE_TAB_GROUPS.add("Animal_outside");
 NOAUTOSAVE_TAB_GROUPS.add("Plant_Survey");
 NOAUTOSAVE_TAB_GROUPS.add("Cultural_Knowledge");
+NOAUTOSAVE_TAB_GROUPS.add("Notes");
 
 NO_UI_REFS.add("Tracklog/Tracklog/Timestamp");
 NO_UI_REFS.add("Tracklog/Tracklog/TracklogTeam");
@@ -1705,17 +1705,17 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
-  //  - Plant Survey
   //  - Animal outside
   //  - Cultural Knowledge
+  //  - Plant Survey
   //  - Notes
   //  - Check Trap
   //  - Setup Trap
 
   n0 = Tree("", 1);
-  n1 = Tree("Plant Survey", 1);
-  n2 = Tree("Animal outside", 1);
-  n3 = Tree("Cultural Knowledge", 1);
+  n1 = Tree("Animal outside", 1);
+  n2 = Tree("Cultural Knowledge", 1);
+  n3 = Tree("Plant Survey", 1);
   n4 = Tree("Notes", 1);
   n5 = Tree("Check Trap", 1);
   n6 = Tree("Setup Trap", 1);
@@ -4401,11 +4401,6 @@ void takePoint(String tabgroup) {
 
   String archEntType = getArchEntType(tabgroup);
   String currentUuid = getUuid(tabgroup);
-  if (isNull(currentUuid)){
-    showToast("{Please_enter_data_first}");
-    return;
-  }
-
 
   boolean isInternalGPSOff = !isInternalGPSOn();
   boolean isExternalGPSOff = !isExternalGPSOn();
@@ -5345,11 +5340,6 @@ void takePoint(String tabgroup) {
 
   String archEntType = getArchEntType(tabgroup);
   String currentUuid = getUuid(tabgroup);
-  //if (isNull(currentUuid)){
-    //showToast("{Please_enter_data_first}");
-    //return;
-  //}
-
 
   boolean isInternalGPSOff = !isInternalGPSOn();
   boolean isExternalGPSOff = !isExternalGPSOn();
