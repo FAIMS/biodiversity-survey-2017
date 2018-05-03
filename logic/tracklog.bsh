@@ -214,12 +214,7 @@ reallyDeleteTransectUnit(String tabGroup) {
                     }
                 }
             });
-    deleteArchEnt(getUuid(tabGroup), new DeleteCallback() {
-        onDelete(uuid) {
-            cancelTabGroup(tabGroup, false);
-            showTab("control/Start");        
-        }
-    });
+    deleteArchEnt(getUuid(tabGroup));
 }
 
 removeActionBarItem("internal_gps");
@@ -261,6 +256,5 @@ persistOverSessions("Start/Tracklog/trackdistText", "20");
 persistOverSessions("Start/Tracklog/tracktimeText", "30");
 
 for (ref : getTransectTabGroups()) {
-  addOnEvent(ref, "create", "triggerAutoSave()", PRECEDENCE_MID+1);
   addOnEvent(ref, "delete", "reallyDeleteTransectUnit", new Object[] {ref});
 }

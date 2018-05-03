@@ -546,6 +546,7 @@ DATA_REFS.add("Tracklog/Tracklog/Longitude");
 DATA_REFS.add("Tracklog/Tracklog/Heading");
 DATA_REFS.add("Tracklog/Tracklog/Accuracy");
 
+NOAUTOSAVE_TAB_GROUPS.add("Setup_Trap");
 NOAUTOSAVE_TAB_GROUPS.add("Check_Trap");
 NOAUTOSAVE_TAB_GROUPS.add("Animal_outside");
 NOAUTOSAVE_TAB_GROUPS.add("Plant_Survey");
@@ -1705,18 +1706,18 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
-  //  - Animal outside
+  //  - Notes
   //  - Cultural Knowledge
   //  - Plant Survey
-  //  - Notes
+  //  - Animal outside
   //  - Check Trap
   //  - Setup Trap
 
   n0 = Tree("", 1);
-  n1 = Tree("Animal outside", 1);
+  n1 = Tree("Notes", 1);
   n2 = Tree("Cultural Knowledge", 1);
   n3 = Tree("Plant Survey", 1);
-  n4 = Tree("Notes", 1);
+  n4 = Tree("Animal outside", 1);
   n5 = Tree("Check Trap", 1);
   n6 = Tree("Setup Trap", 1);
 
@@ -4987,12 +4988,7 @@ reallyDeleteTransectUnit(String tabGroup) {
                     }
                 }
             });
-    deleteArchEnt(getUuid(tabGroup), new DeleteCallback() {
-        onDelete(uuid) {
-            cancelTabGroup(tabGroup, false);
-            showTab("control/Start");        
-        }
-    });
+    deleteArchEnt(getUuid(tabGroup));
 }
 
 removeActionBarItem("internal_gps");
@@ -5034,7 +5030,6 @@ persistOverSessions("Start/Tracklog/trackdistText", "20");
 persistOverSessions("Start/Tracklog/tracktimeText", "30");
 
 for (ref : getTransectTabGroups()) {
-  addOnEvent(ref, "create", "triggerAutoSave()", PRECEDENCE_MID+1);
   addOnEvent(ref, "delete", "reallyDeleteTransectUnit", new Object[] {ref});
 }
 /**************************** DATE/TIME POPULATION ****************************/

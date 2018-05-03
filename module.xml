@@ -60,7 +60,7 @@
   </Tracklog>
 </Start>
 
-<Setup_Trap>
+<Setup_Trap f="noautosave">
   <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
     <!--@SOURCE: xml/date-time.xml-->
