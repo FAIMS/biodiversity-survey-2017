@@ -2,5 +2,17 @@
 List SUBMIT_BUTTON_REFS = getRefsMatching("*/Submit_and_Return");
 assert(SUBMIT_BUTTON_REFS.size() != 0);
 
-for (String submitButtonRefs : SUBMIT_BUTTON_REFS)
-  addOnEvent(submitButtonRefs, "click", "goBack()");
+void submitAndReturn(String tabGroup) {
+  saveTabGroup(tabGroup);
+  goBack();
+}
+
+for (String submitButtonRefs : SUBMIT_BUTTON_REFS) {
+  String tabGroup = getTabGroupRef(submitButtonRefs);
+  addOnEvent(
+      submitButtonRefs,
+      "click",
+      "submitAndReturn",
+      new Object[]{tabGroup}
+  );
+}

@@ -3,12 +3,13 @@ void takePoint(String tabgroup) {
   triggerAutoSave();
   Map tabgroupToTabRef = getTakeFromGpsMappings();
 
-  String archEntType = tabgroup.replaceAll("_", " ");
+  String archEntType = getArchEntType(tabgroup);
   String currentUuid = getUuid(tabgroup);
   if (isNull(currentUuid)){
     showToast("{Please_enter_data_first}");
     return;
   }
+
 
   boolean isInternalGPSOff = !isInternalGPSOn();
   boolean isExternalGPSOff = !isExternalGPSOn();
@@ -24,42 +25,36 @@ void takePoint(String tabgroup) {
   Double northing     = projPosition.getLatitude();
   Double easting      = projPosition.getLongitude();
 
-  samplePoint = new Point(new MapPos(easting, northing), null, (PointStyle) null, null);
+  String sLatitude    = "" + latitude;
+  String sLongitude   = "" + longitude;
+  String sNorthing    = "" + northing;
+  String sEasting     = "" + easting;
+
+  MapPos mapPos = new MapPos(easting, northing);
+  Point samplePoint = new Point(mapPos, null, (PointStyle) null, null);
   ArrayList geolist = new ArrayList();
   geolist.add(samplePoint);
 
   String accuracy = "" + getGPSEstimatedAccuracy();
+  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Accuracy",  accuracy);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude", sLatitude);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude",  sLongitude);
+  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting",   sNorthing);
+  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing",  sEasting);
+
   List attribs = createAttributeList();
-  attribs.add(createEntityAttribute("Accuracy", "", "", accuracy, "1.0"));
+  attribs.add(createEntityAttribute("Accuracy",  "", "", accuracy,   "1.0"));
+  attribs.add(createEntityAttribute("Longitude", "", "", sLatitude,  "1.0"));
+  attribs.add(createEntityAttribute("Latitude",  "", "", sLongitude, "1.0"));
+  //attribs.add(createEntityAttribute("Northing",  "", "", sNorthing,  "1.0"));
+  //attribs.add(createEntityAttribute("Easting",   "", "", sEasting,   "1.0"));
 
-  saveArchEnt(currentUuid, archEntType, geolist, attribs, new SaveCallback() {
-    onSave(uuid, newRecord) {
-      print("[takePoint()] Added geometry: " + geolist);
-      fillInGPS(tabgroup);
-    }
-  });
-}
-
-/* Sets the value of GPS views for the given tab ref. */
-void fillInGPS(String tabgroup) {
-  Map tabgroupToTabRef = getTakeFromGpsMappings();
-  String currentUuid = getUuid(tabgroup);
-  if (isNull(currentUuid)) {
-    return;
-  }
-
-  String query = "SELECT x(transform(geospatialcolumn,                4326)) as longtiude, " +
-                 "       y(transform(geospatialcolumn,                4326)) as latitude " +
-                 "  FROM latestnondeletedarchent " +
-                 " WHERE uuid = '" + currentUuid + "';";
-
-  fetchOne(query, new FetchCallback() {
-    onFetch(result) {
-      print("[fillInGPS()] Fetched DB transformed geometry: " + result);
-      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude" , result.get(0));
-      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude"  , result.get(1));
-    }
-  });
+  String showToast = fun2str(
+      "showToast",
+      getArch16nKey(tabgroup) + " {toast_saved}"
+  );
+  SaveCallback saveCallback = getDefaultSaveCallback(tabgroup, showToast);
+  saveArchEnt(currentUuid, archEntType, geolist, attribs, saveCallback);
 }
 
 void clearGpsInTabGroup(String tabgroup) {

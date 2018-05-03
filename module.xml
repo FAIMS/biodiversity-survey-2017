@@ -60,7 +60,7 @@
   </Tracklog>
 </Start>
 
-<Setup_Trap>
+<Setup_Trap f="noautosave">
   <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
     <!--@SOURCE: xml/date-time.xml-->
@@ -76,7 +76,7 @@
   </Setting_up>
 </Setup_Trap>
 
-<Check_Trap>
+<Check_Trap f="noautosave">
   <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{Date}} {{Time}}</fmt>
   <Checking>
     <!--@SOURCE: xml/date-time.xml-->
@@ -103,7 +103,7 @@
   </Checking>
 </Check_Trap>
 
-<Animal_outside>
+<Animal_outside f="noautosave">
   <fmt>{{Animal_outside_trap}} {{Date}} {{Time}}</fmt>
   <Animal>
     <!--@SOURCE: xml/date-time.xml-->
@@ -125,7 +125,7 @@
   </Animal>
 </Animal_outside>
 
-<Plant_Survey>
+<Plant_Survey f="noautosave">
   <fmt>{{Type_plant_name}} {{Date}} {{Time}}</fmt>
   <Plant>
     <!--@SOURCE: xml/date-time.xml-->
@@ -138,7 +138,7 @@
   </Plant>
 </Plant_Survey>
 
-<Cultural_Knowledge>
+<Cultural_Knowledge f="noautosave">
   <fmt>{{Who_is_talking}} {{Date}} {{Time}}</fmt>
   <Cultural_Knowledge>
     <!--@SOURCE: xml/date-time.xml-->
@@ -154,7 +154,7 @@
   </Cultural_Knowledge>
 </Cultural_Knowledge>
 
-<Notes>
+<Notes> <!-- TODO: Autosave-->
   <fmt>{{author}} {{Date}} {{Time}}</fmt>
   <Notes>
     <!--@SOURCE: xml/date-time.xml-->
