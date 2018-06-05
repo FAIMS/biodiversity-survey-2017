@@ -1,8 +1,10 @@
 <module>
 <!--@POSTPROC: ./postproc.sh-->
 <Login f="nodata">
-  <Login f="noscroll">
-    <Login t="list" f="nolabel user" l="Start"/>
+  <Login>
+    <User t="dropdown" f="user"/>
+    <Location t="dropdown" f="persist" vp="Setup_Trap/Setting_up/Location"/>
+    <Start t="button" l="Start"/>
   </Login>
 </Login>
 
@@ -64,6 +66,10 @@
   <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
     <!--@SOURCE: xml/date-time.xml-->
+    <Location i="Login/Login/Location!">
+      <!--@SOURCE: vocab/location.xml-->
+    </Location>
+    <Site_Name/>
     <author f="noannotation nocertainty">Who is putting out traps?</author>
     <Place_name f="noannotation nocertainty"/>
     <What_type_of_trap f="noannotation nocertainty">
@@ -77,9 +83,13 @@
 </Setup_Trap>
 
 <Check_Trap f="noautosave">
-  <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{Date}} {{Time}}</fmt>
+  <fmt>{{What_trap_are_you_checking}} {{What_did_you_find_in_trap}} {{Date}} {{Time}} {{Bag_ID}}</fmt>
   <Checking>
     <!--@SOURCE: xml/date-time.xml-->
+    <Location i="Login/Login/Location!">
+      <!--@SOURCE: vocab/location.xml-->
+    </Location>
+    <!--@SOURCE: xml/bag-id.xml-->
     <author f="noannotation nocertainty">Who is checking?</author>
     <What_trap_are_you_checking f="noannotation nocertainty">
       What trap are you checking?
@@ -104,9 +114,13 @@
 </Check_Trap>
 
 <Animal_outside f="noautosave">
-  <fmt>{{Animal_outside_trap}} {{Date}} {{Time}}</fmt>
+  <fmt>{{Animal_outside_trap}} {{Date}} {{Time}} {{Bag_ID}}</fmt>
   <Animal>
     <!--@SOURCE: xml/date-time.xml-->
+    <Location i="Login/Login/Location!">
+      <!--@SOURCE: vocab/location.xml-->
+    </Location>
+    <!--@SOURCE: xml/bag-id.xml-->
     <author f="noannotation nocertainty">Who is recording?</author>
     <Animal_outside_trap f="noannotation nocertainty">
       <!--@SOURCE: vocab/animal-type.xml-->
@@ -129,6 +143,9 @@
   <fmt>{{Type_plant_name}} {{Date}} {{Time}}</fmt>
   <Plant>
     <!--@SOURCE: xml/date-time.xml-->
+    <Location i="Login/Login/Location!">
+      <!--@SOURCE: vocab/location.xml-->
+    </Location>
     <author f="noannotation nocertainty">Who is recording?</author>
     <Type_plant_name f="noannotation nocertainty"/>
     <Take_Photo t="camera" f="noannotation nocertainty"/>
@@ -142,6 +159,9 @@
   <fmt>{{Who_is_talking}} {{Date}} {{Time}}</fmt>
   <Cultural_Knowledge>
     <!--@SOURCE: xml/date-time.xml-->
+    <Location i="Login/Login/Location!">
+      <!--@SOURCE: vocab/location.xml-->
+    </Location>
     <author f="noannotation nocertainty">Who is recording?</author>
     <Who_is_talking f="noannotation nocertainty">Who is talking?</Who_is_talking>
     <What_is_being_talked_about f="noannotation nocertainty">What is being talked about?</What_is_being_talked_about>
@@ -158,6 +178,9 @@
   <fmt>{{author}} {{Date}} {{Time}}</fmt>
   <Notes>
     <!--@SOURCE: xml/date-time.xml-->
+    <Location i="Login/Login/Location!">
+      <!--@SOURCE: vocab/location.xml-->
+    </Location>
     <author f="noannotation nocertainty">Who is recording?</author>
     <Notes f="noannotation nocertainty"/>
     <Take_Photo t="camera" f="noannotation nocertainty"/>
@@ -191,6 +214,8 @@
 <!--@SOURCE: logic/enable-gps.bsh-->
 <!--@SOURCE: logic/custom-gps.bsh-->
 <!--@SOURCE: logic/submit.bsh-->
+<!--@SOURCE: logic/custom-navigation-bar.bsh-->
+<!--@SOURCE: logic/user-tab-validation.bsh-->
 ]]></logic>
 
 </module>

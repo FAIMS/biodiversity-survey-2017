@@ -45,15 +45,30 @@ String getWebViewHtml(String ref) {
   assert( l2.equals(l3));
 }
 
-// DATE AND TIME FIELDS GET SET FOR A TAB GROUP UPON CREATION
+// DATE AND TIME FIELDS GET SET FOR A TAB GROUP UPON CREATION AND DUPLICATION
 {
-  String date;  String refDate = "Setup_Trap/Setting_up/Date";
-  String time;  String refTime = "Setup_Trap/Setting_up/Time";
+  String tabGroup = "Setup_Trap";
+
+  String date;  String refDate = tabGroup + "/Setting_up/Date";
+  String time;  String refTime = tabGroup + "/Setting_up/Time";
 
   date = getFieldValue(refDate);  assert(isNull(date));
   time = getFieldValue(refTime);  assert(isNull(time));
 
-  String tabGroup = "Setup_Trap";
+  // Creation
+  updateDisplayedTabGroup(tabGroup);
+  executeOnEvent(tabGroup, "create");
+
+  date = getFieldValue(refDate);  assert(!isNull(date));
+  time = getFieldValue(refTime);  assert(!isNull(time));
+
+  // Duplication
+  setFieldValue(refDate, "");
+  setFieldValue(refTime, "");
+
+  date = getFieldValue(refDate);  assert(isNull(date));
+  time = getFieldValue(refTime);  assert(isNull(time));
+
   updateDisplayedTabGroup(tabGroup);
   executeOnEvent(tabGroup, "create");
 
@@ -112,7 +127,8 @@ String getWebViewHtml(String ref) {
 // CUSTOM SEARCH FUNCTIONS CAN BE CALLED WITHOUT ERROR
 {
   Search() {
-    // We'll run `search()` in `getStdout` to stop from `Log.d` cluttering test output
+    // We'll run `search()` in `getStdout` to stop from `Log.d` cluttering test
+    // output
     void run() { search(); }
     return this;
   }
@@ -121,4 +137,57 @@ String getWebViewHtml(String ref) {
   populateSelectUser();
   populateSelectDate();
   getStdout(Search());
+}
+
+// hasValidFieldsToSubmit
+{
+  String tabGroup = "Check_Trap";
+  assert(!hasValidFieldsToSubmit(tabGroup));
+
+  String lat = tabGroup + "/Checking/Latitude";
+  String lon = tabGroup + "/Checking/Longitude";
+  String bag = tabGroup + "/Checking/Bag_ID";
+
+  assert(isValidRef(lat));
+  assert(isValidRef(lon));
+  assert(isValidRef(bag));
+
+  setFieldValue(lat, "abc"); assert(!hasValidFieldsToSubmit(tabGroup));
+  setFieldValue(lon, "abc"); assert(!hasValidFieldsToSubmit(tabGroup));
+  setFieldValue(bag, "abc"); assert( hasValidFieldsToSubmit(tabGroup));
+}
+
+// submitAndReturn
+{
+  SubmitAndReturn(tabGroup) {
+    void run () { submitAndReturn(tabGroup); }
+    return this;
+  }
+
+  clearGpsInTabGroup("Setup_Trap");
+  assert(!isNull(getStdout(SubmitAndReturn("Setup_Trap"))));
+
+  String lat = "Setup_Trap/Setting_up/Latitude";
+  String lon = "Setup_Trap/Setting_up/Longitude";
+
+  setFieldValue(lat, "abc");
+  setFieldValue(lon, "abc");
+
+  assert(isNull(getStdout(SubmitAndReturn("Setup_Trap"))));
+}
+
+// validateUserTab
+{
+  ClickStart() {
+    void run() { executeOnEvent("Login/Login/Start", "click"); }
+    return this;
+  }
+
+  assert(!isNull(getStdout(ClickStart())));
+
+  setFieldValue(REF_LOGIN_LOCATION, "asdf");
+  assert(!isNull(getStdout(ClickStart())));
+
+  setFieldValue(REF_LOGIN_USER, "asdf");
+  assert( isNull(getStdout(ClickStart())));
 }

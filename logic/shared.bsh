@@ -30,4 +30,23 @@ List getTransectArchEntTypes() {
   return archEntTypes;
 }
 
+boolean all(List booleans) {
+  for (b : booleans)
+    if (!b) return false;
+  return true;
+}
+
+String funName(int ancestorIndex) {
+  namespace = this.callstack.get(ancestorIndex);
+  return namespace.getInvocationText();
+}
+
 final String TRANSECT_TYPES = listToSqlString(getTransectArchEntTypes());
+
+final List DELETED_REFS = getRefsMatching(
+    "*/(Northing)|(Easting)|(Accuracy)"
+);
+
+REF_TO_TYPE.keySet().removeAll(DELETED_REFS);
+DATA_REFS           .removeAll(DELETED_REFS);
+REFS_AS_HASH_SET = null;

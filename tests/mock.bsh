@@ -439,3 +439,5 @@ void scanCode(String callback) { execute(callback); }
 String getLastScanContents(){ return null; }
 void removeActionBarItem(String name) { return; }
 void removeActionBarItem(String name) { return; }
+void saveTabGroup(String s, Object o1, Object o2, Object o3, Object o4, boolean b) { return; }
+void goBack() { return; }

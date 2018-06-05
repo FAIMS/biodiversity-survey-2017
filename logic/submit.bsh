@@ -1,8 +1,67 @@
 /*********************************** SUBMIT ***********************************/
 List SUBMIT_BUTTON_REFS = getRefsMatching("*/Submit_and_Return");
+boolean IGNORE_GPS_VALIDATION = false;
+
 assert(SUBMIT_BUTTON_REFS.size() != 0);
 
+List getFieldsToSubmit(String tabGroup) {
+  return getRefsMatching(tabGroup + "/*/((Latitude)|(Longitude)|(Bag_ID))");
+}
+
+boolean hasValidFieldsToSubmit(String tabGroup) {
+  List refs = getFieldsToSubmit(tabGroup);
+
+  List notNull = new ArrayList();
+  for (String ref : refs)
+    notNull.add(!isNull(getFieldValue(ref)));
+
+  return all(notNull);
+}
+
+boolean validateFieldsToSubmit(String tabGroup) {
+  boolean isValid = hasValidFieldsToSubmit(tabGroup);
+
+  if (!isValid) {
+    String head;
+    String body;
+    String cbOk;
+    String cbBad;
+
+    head  = "Some Fields are Not Valid";
+    body  = "The following fields are not valid:\n";
+    for (String ref : getFieldsToSubmit(tabGroup))
+      if (isNull(getFieldValue(ref)))
+        body += "\t- " + guessArch16nVal(ref) + "\n";
+    body += "Would you like to submit this page anyway? Tap 'OK' to do so, ";
+    body += "or 'Cancel' to remain on this page.";
+
+    cbOk  = "IGNORE_GPS_VALIDATION = true; submitAndReturn(\"%s\")";
+    cbOk  = replaceFirst(cbOk, tabGroup);
+    cbBad = "";
+
+    if (isInUnitTestTime()) {
+      try {
+        execute(cbOk);
+      } catch (Exception e) {
+        print(e);
+        assert(false);
+      }
+    }
+
+    showAlert(head, body, cbOk, cbBad);
+  }
+
+  return isValid;
+}
+
 void submitAndReturn(String tabGroup) {
+  boolean ignoreGpsValidation = IGNORE_GPS_VALIDATION;
+  IGNORE_GPS_VALIDATION = false;
+
+  if (!ignoreGpsValidation && !validateFieldsToSubmit(tabGroup)) {
+    return;
+  }
+
   saveTabGroup(tabGroup);
   goBack();
 }

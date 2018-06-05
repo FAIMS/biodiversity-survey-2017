@@ -141,4 +141,6 @@ cd ../tests
 
 cat << EOF >> mock.bsh
 void removeActionBarItem(String name) { return; }
+void saveTabGroup(String s, Object o1, Object o2, Object o3, Object o4, boolean b) { return; }
+void goBack() { return; }
 EOF

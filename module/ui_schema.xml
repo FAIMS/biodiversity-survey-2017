@@ -20,7 +20,9 @@
           <!--END: Style-->
           <Login>
             <Login>
-              <Login/>
+              <User/>
+              <Location/>
+              <Start/>
             </Login>
           </Login>
           <Start>
@@ -114,6 +116,8 @@
                   <Time/>
                 </Col_2>
               </Colgroup_1>
+              <Location/>
+              <Site_Name/>
               <Setup_Trap_author/>
               <Place_name/>
               <What_type_of_trap/>
@@ -140,6 +144,9 @@
                   <Time/>
                 </Col_2>
               </Colgroup_1>
+              <Location/>
+              <Bag_ID/>
+              <Bag_ID_Guide/>
               <Check_Trap_author/>
               <What_trap_are_you_checking/>
               <What_did_you_find_in_trap/>
@@ -174,6 +181,9 @@
                   <Time/>
                 </Col_2>
               </Colgroup_1>
+              <Location/>
+              <Bag_ID/>
+              <Bag_ID_Guide/>
               <Animal_outside_author/>
               <Animal_outside_trap/>
               <Notes/>
@@ -207,6 +217,7 @@
                   <Time/>
                 </Col_2>
               </Colgroup_1>
+              <Location/>
               <Plant_Survey_author/>
               <Type_plant_name/>
               <Take_Photo/>
@@ -234,6 +245,7 @@
                   <Time/>
                 </Col_2>
               </Colgroup_1>
+              <Location/>
               <Cultural_Knowledge_author/>
               <Who_is_talking/>
               <What_is_being_talked_about/>
@@ -265,6 +277,7 @@
                   <Time/>
                 </Col_2>
               </Colgroup_1>
+              <Location/>
               <Notes_author/>
               <Notes/>
               <Take_Photo/>
@@ -325,15 +338,25 @@
     <!--END: Style-->
     <group ref="Login">
       <label>{Login}</label>
-      <group ref="Login" faims_scrollable="false">
+      <group ref="Login">
         <label>{Login}</label>
-        <select1 appearance="compact" ref="Login">
-          <label/>
+        <select1 ref="User">
+          <label>{User}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select1>
+        <select1 ref="Location">
+          <label>{Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <trigger ref="Start">
+          <label>{Start}</label>
+        </trigger>
       </group>
     </group>
     <group ref="Start">
@@ -546,6 +569,16 @@
             </input>
           </group>
         </group>
+        <select1 faims_attribute_name="Location" faims_attribute_type="vocab" ref="Location">
+          <label>{Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Site Name" faims_attribute_type="measure" ref="Site_Name">
+          <label>{Site_Name}</label>
+        </input>
         <input faims_attribute_name="Setup Trap author" faims_attribute_type="measure" ref="Setup_Trap_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_putting_out_traps_}</label>
         </input>
@@ -604,6 +637,19 @@
             </input>
           </group>
         </group>
+        <select1 faims_attribute_name="Location" faims_attribute_type="vocab" ref="Location">
+          <label>{Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Check Trap Bag ID" faims_attribute_type="measure" ref="Bag_ID">
+          <label>{Bag_ID}</label>
+        </input>
+        <input faims_web="true" ref="Bag_ID_Guide">
+          <label/>
+        </input>
         <input faims_attribute_name="Check Trap author" faims_attribute_type="measure" ref="Check_Trap_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_checking_}</label>
         </input>
@@ -698,6 +744,19 @@
             </input>
           </group>
         </group>
+        <select1 faims_attribute_name="Location" faims_attribute_type="vocab" ref="Location">
+          <label>{Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <input faims_attribute_name="Animal outside Bag ID" faims_attribute_type="measure" ref="Bag_ID">
+          <label>{Bag_ID}</label>
+        </input>
+        <input faims_web="true" ref="Bag_ID_Guide">
+          <label/>
+        </input>
         <input faims_attribute_name="Animal outside author" faims_attribute_type="measure" ref="Animal_outside_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
@@ -785,6 +844,13 @@
             </input>
           </group>
         </group>
+        <select1 faims_attribute_name="Location" faims_attribute_type="vocab" ref="Location">
+          <label>{Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
         <input faims_attribute_name="Plant Survey author" faims_attribute_type="measure" ref="Plant_Survey_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
@@ -846,6 +912,13 @@
             </input>
           </group>
         </group>
+        <select1 faims_attribute_name="Location" faims_attribute_type="vocab" ref="Location">
+          <label>{Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
         <input faims_attribute_name="Cultural Knowledge author" faims_attribute_type="measure" ref="Cultural_Knowledge_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>
@@ -923,6 +996,13 @@
             </input>
           </group>
         </group>
+        <select1 faims_attribute_name="Location" faims_attribute_type="vocab" ref="Location">
+          <label>{Location}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
         <input faims_attribute_name="Notes author" faims_attribute_type="measure" ref="Notes_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Who_is_recording_}</label>
         </input>

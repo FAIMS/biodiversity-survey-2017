@@ -1,0 +1,58 @@
+/*************************** CUSTOM NAVIGATION BAR ****************************/
+
+void addNavigationButtons(String tabgroup) {
+  removeNavigationButtons();
+  List tabgroupsToValidate = new ArrayList();
+  
+  addNavigationButton("new", new ActionButtonCallback() {
+    actionOnLabel() {
+      "{New}";
+    }
+    actionOn() {
+      if(isNull(getUuid(tabgroup))) {
+        showAlert(
+            "{Warning}",
+            "{The_current_record_has_not_been_saved_yet}",
+            fun2str("newRecord", new Object[]{tabgroup, true}),
+            ""
+        );
+      } else {
+        saveTabGroup(tabgroup);
+        newRecord(tabgroup, true);
+        showToast("{New_record_created}");
+      }
+    }
+  }, "success");
+  addNavigationButton("duplicate", new ActionButtonCallback() {
+    actionOnLabel() {
+      "{Duplicate}";
+    }
+    actionOn() {
+      if(!isNull(getUuid(tabgroup))) {
+        saveTabGroup(tabgroup);
+        duplicateRecord(tabgroup);
+      } else {
+        showWarning("{Warning}", "{This_record_is_unsaved_and_cannot_be_duplicated}");
+      }
+    }
+  }, "primary");
+  addNavigationButton("delete", new ActionButtonCallback() {
+    actionOnLabel() {
+      "{Delete}";
+    }
+    actionOn() {
+      deleteRecord(tabgroup);
+    }
+  }, "danger");
+  if (tabgroupsToValidate.contains(tabgroup)) {
+    addNavigationButton("validate", new ActionButtonCallback() {
+      actionOnLabel() {
+        "{Validate}";
+      }
+      actionOn() {
+        String validationFunction = "validate" + tabgroup.replaceAll("_", "") + "()";
+        eval(validationFunction);
+      }
+    }, "default");
+  }
+}

@@ -303,6 +303,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  Login/Login/Start
+     */
+    public static View get_Login_Login_Start(Solo solo) {
+        String ref = "Login/Login/Start";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Notes/Notes/Submit_and_Return
      */
     public static View get_Notes_Notes_SubmitandReturn(Solo solo) {
@@ -582,10 +591,82 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: dropdown
+        Ref:  Animal_outside/Animal/Location
+     */
+    public static View get_Animaloutside_Animal_Location(Solo solo) {
+        String ref = "Animal_outside/Animal/Location";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
+        Ref:  Check_Trap/Checking/Location
+     */
+    public static View get_CheckTrap_Checking_Location(Solo solo) {
+        String ref = "Check_Trap/Checking/Location";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
         Ref:  Check_Trap/Checking/What_trap_are_you_checking
      */
     public static View get_CheckTrap_Checking_Whattrapareyouchecking(Solo solo) {
         String ref = "Check_Trap/Checking/What_trap_are_you_checking";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
+        Ref:  Cultural_Knowledge/Cultural_Knowledge/Location
+     */
+    public static View get_CulturalKnowledge_CulturalKnowledge_Location(Solo solo) {
+        String ref = "Cultural_Knowledge/Cultural_Knowledge/Location";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
+        Ref:  Login/Login/Location
+     */
+    public static View get_Login_Login_Location(Solo solo) {
+        String ref = "Login/Login/Location";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
+        Ref:  Login/Login/User
+     */
+    public static View get_Login_Login_User(Solo solo) {
+        String ref = "Login/Login/User";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
+        Ref:  Notes/Notes/Location
+     */
+    public static View get_Notes_Notes_Location(Solo solo) {
+        String ref = "Notes/Notes/Location";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
+        Ref:  Plant_Survey/Plant/Location
+     */
+    public static View get_PlantSurvey_Plant_Location(Solo solo) {
+        String ref = "Plant_Survey/Plant/Location";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: dropdown
+        Ref:  Setup_Trap/Setting_up/Location
+     */
+    public static View get_SetupTrap_Settingup_Location(Solo solo) {
+        String ref = "Setup_Trap/Setting_up/Location";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -614,6 +695,15 @@ public class ModuleUtil extends ModuleHelper {
     public static View get_Animaloutside_Animal_Accuracy(Solo solo) {
         String ref = "Animal_outside/Animal/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Animal_outside/Animal/Bag_ID
+     */
+    public static EditText get_Animaloutside_Animal_BagID(Solo solo) {
+        String ref = "Animal_outside/Animal/Bag_ID";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -713,6 +803,15 @@ public class ModuleUtil extends ModuleHelper {
     public static View get_CheckTrap_Checking_Accuracy(Solo solo) {
         String ref = "Check_Trap/Checking/Accuracy";
         return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
+        Ref:  Check_Trap/Checking/Bag_ID
+     */
+    public static EditText get_CheckTrap_Checking_BagID(Solo solo) {
+        String ref = "Check_Trap/Checking/Bag_ID";
+        return (android.widget.EditText) solo.getView((Object) ref);
     }
 
     /*
@@ -1104,6 +1203,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: input
+        Ref:  Setup_Trap/Setting_up/Site_Name
+     */
+    public static EditText get_SetupTrap_Settingup_SiteName(Solo solo) {
+        String ref = "Setup_Trap/Setting_up/Site_Name";
+        return (android.widget.EditText) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: input
         Ref:  Setup_Trap/Setting_up/Time
      */
     public static EditText get_SetupTrap_Settingup_Time(Solo solo) {
@@ -1154,15 +1262,6 @@ public class ModuleUtil extends ModuleHelper {
     public static EditText get_Start_Tracklog_tracktimeText(Solo solo) {
         String ref = "Start/Tracklog/tracktimeText";
         return (android.widget.EditText) solo.getView((Object) ref);
-    }
-
-    /*
-        Type: list
-        Ref:  Login/Login/Login
-     */
-    public static View get_Login_Login_Login(Solo solo) {
-        String ref = "Login/Login/Login";
-        return (android.view.View) solo.getView((Object) ref);
     }
 
     /*
@@ -1221,10 +1320,28 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: webview
+        Ref:  Animal_outside/Animal/Bag_ID_Guide
+     */
+    public static View get_Animaloutside_Animal_BagIDGuide(Solo solo) {
+        String ref = "Animal_outside/Animal/Bag_ID_Guide";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
         Ref:  Animal_outside/Animal/Submit_Spacer
      */
     public static View get_Animaloutside_Animal_SubmitSpacer(Solo solo) {
         String ref = "Animal_outside/Animal/Submit_Spacer";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Check_Trap/Checking/Bag_ID_Guide
+     */
+    public static View get_CheckTrap_Checking_BagIDGuide(Solo solo) {
+        String ref = "Check_Trap/Checking/Bag_ID_Guide";
         return (android.view.View) solo.getView((Object) ref);
     }
 

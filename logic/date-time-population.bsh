@@ -37,3 +37,6 @@ void setTime() {
 
 for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setDate()");
 for (ref : getDateTimeTabGroups()) addOnEvent(ref, "create", "setTime()");
+
+for (ref : getDateTimeTabGroups()) addOnEvent(ref, "copy", "setDate()");
+for (ref : getDateTimeTabGroups()) addOnEvent(ref, "copy", "setTime()");
