@@ -46,6 +46,16 @@ replacement="
               <\/item>
             <\/select1>
           <\/group>
+          <group ref=\"Col_3\" faims_style=\"even\">
+            <label\/>
+            <select1 ref=\"Select_Location\">
+              <label>\{Select_Location\}<\/label>
+              <item>
+                <label>Options not loaded<\/label>
+                <value>Options not loaded<\/value>
+              <\/item>
+            <\/select1>
+          <\/group>
         <\/group>"
 perl -0777 -i.original -pe "s/$string/$replacement/igs" ui_schema.xml
 
@@ -62,6 +72,9 @@ replacement="
                 <Col_2>
                   <Select_Date\/>
                 <\/Col_2>
+                <Col_3>
+                  <Select_Location\/>
+                <\/Col_3>
               <\/Colgroup_1>"
 perl -0777 -i.original -pe "s/$string/$replacement/igs" ui_schema.xml
 
@@ -126,6 +139,7 @@ perl -0777 -i.original -pe "s/$string/$replacement/igs" data_schema.xml
 cat << EOF >> english.0.properties
 Select_User=Select User
 Select_Date=Select Date
+Select_Location=Select Location
 EOF
 
 cat << EOF >> ui_styling.css

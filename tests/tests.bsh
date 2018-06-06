@@ -191,3 +191,20 @@ String getWebViewHtml(String ref) {
   setFieldValue(REF_LOGIN_USER, "asdf");
   assert( isNull(getStdout(ClickStart())));
 }
+
+// BAG ID IS CLEARED UPON DUPLICATION
+{
+  String tabGroup = "Check_Trap";
+
+  String refBagId = tabGroup + "/Checking/Bag_ID";
+  assert(isValidRef(refBagId));
+
+  String valBagId() { return getFieldValue(refBagId); }
+
+  setFieldValue(refBagId, "foo");
+  assert(!isNull(valBagId()));
+
+  updateDisplayedTabGroup(tabGroup);
+  executeOnEvent(tabGroup, "copy");
+  assert(isNull(valBagId()));
+}

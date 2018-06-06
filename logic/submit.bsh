@@ -27,13 +27,15 @@ boolean validateFieldsToSubmit(String tabGroup) {
     String cbOk;
     String cbBad;
 
-    head  = "Some Fields are Not Valid";
-    body  = "The following fields are not valid:\n";
+    head  = "Some Fields are Missing";
+    body  = "The following fields are missing:\n";
     for (String ref : getFieldsToSubmit(tabGroup))
       if (isNull(getFieldValue(ref)))
         body += "\t- " + guessArch16nVal(ref) + "\n";
-    body += "Would you like to submit this page anyway? Tap 'OK' to do so, ";
-    body += "or 'Cancel' to remain on this page.";
+    body += "Would you like to save this record anyway? If yes, select 'OK' ";
+    body += "and this message will be dismissed and the record saved without ";
+    body += "the missing data. If you wish to fill in the missing data, ";
+    body += "select 'Cancel'.";
 
     cbOk  = "IGNORE_GPS_VALIDATION = true; submitAndReturn(\"%s\")";
     cbOk  = replaceFirst(cbOk, tabGroup);

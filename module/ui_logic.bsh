@@ -350,9 +350,9 @@ REF_TO_TYPE.put("Start/Tracklog/SyncOn", "button");
 REF_TO_TYPE.put("Start/Tracklog/SyncOff", "button");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Date", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Time", "input");
+REF_TO_TYPE.put("Setup_Trap/Setting_up/Setup_Trap_author", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Location", "dropdown");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Site_Name", "input");
-REF_TO_TYPE.put("Setup_Trap/Setting_up/Setup_Trap_author", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Place_name", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/What_type_of_trap", "dropdown");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Latitude", "input");
@@ -365,10 +365,10 @@ REF_TO_TYPE.put("Setup_Trap/Setting_up/Submit_Spacer", "webview");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Submit_and_Return", "button");
 REF_TO_TYPE.put("Check_Trap/Checking/Date", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Time", "input");
+REF_TO_TYPE.put("Check_Trap/Checking/Check_Trap_author", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Location", "dropdown");
 REF_TO_TYPE.put("Check_Trap/Checking/Bag_ID", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Bag_ID_Guide", "webview");
-REF_TO_TYPE.put("Check_Trap/Checking/Check_Trap_author", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/What_trap_are_you_checking", "dropdown");
 REF_TO_TYPE.put("Check_Trap/Checking/What_did_you_find_in_trap", "picture");
 REF_TO_TYPE.put("Check_Trap/Checking/Notes", "input");
@@ -389,10 +389,10 @@ REF_TO_TYPE.put("Check_Trap/Checking/Submit_Spacer", "webview");
 REF_TO_TYPE.put("Check_Trap/Checking/Submit_and_Return", "button");
 REF_TO_TYPE.put("Animal_outside/Animal/Date", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Time", "input");
+REF_TO_TYPE.put("Animal_outside/Animal/Animal_outside_author", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Location", "dropdown");
 REF_TO_TYPE.put("Animal_outside/Animal/Bag_ID", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Bag_ID_Guide", "webview");
-REF_TO_TYPE.put("Animal_outside/Animal/Animal_outside_author", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Animal_outside_trap", "picture");
 REF_TO_TYPE.put("Animal_outside/Animal/Notes", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Take_Photo", "camera");
@@ -412,8 +412,8 @@ REF_TO_TYPE.put("Animal_outside/Animal/Submit_Spacer", "webview");
 REF_TO_TYPE.put("Animal_outside/Animal/Submit_and_Return", "button");
 REF_TO_TYPE.put("Plant_Survey/Plant/Date", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Time", "input");
-REF_TO_TYPE.put("Plant_Survey/Plant/Location", "dropdown");
 REF_TO_TYPE.put("Plant_Survey/Plant/Plant_Survey_author", "input");
+REF_TO_TYPE.put("Plant_Survey/Plant/Location", "dropdown");
 REF_TO_TYPE.put("Plant_Survey/Plant/Type_plant_name", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Take_Photo", "camera");
 REF_TO_TYPE.put("Plant_Survey/Plant/Take_Photo_Button_1", "button");
@@ -427,8 +427,8 @@ REF_TO_TYPE.put("Plant_Survey/Plant/Submit_Spacer", "webview");
 REF_TO_TYPE.put("Plant_Survey/Plant/Submit_and_Return", "button");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Date", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Time", "input");
-REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Location", "dropdown");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Cultural_Knowledge_author", "input");
+REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Location", "dropdown");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Who_is_talking", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/What_is_being_talked_about", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Record_knowledge_now", "audio");
@@ -446,8 +446,8 @@ REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Submit_Spacer", "webview"
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Submit_and_Return", "button");
 REF_TO_TYPE.put("Notes/Notes/Date", "input");
 REF_TO_TYPE.put("Notes/Notes/Time", "input");
-REF_TO_TYPE.put("Notes/Notes/Location", "dropdown");
 REF_TO_TYPE.put("Notes/Notes/Notes_author", "input");
+REF_TO_TYPE.put("Notes/Notes/Location", "dropdown");
 REF_TO_TYPE.put("Notes/Notes/Notes", "input");
 REF_TO_TYPE.put("Notes/Notes/Take_Photo", "camera");
 REF_TO_TYPE.put("Notes/Notes/Take_Photo_Button_1", "button");
@@ -480,9 +480,9 @@ REF_TO_TYPE.put("Tracklog/Tracklog", "tab");
 
 DATA_REFS.add("Setup_Trap/Setting_up/Date");
 DATA_REFS.add("Setup_Trap/Setting_up/Time");
+DATA_REFS.add("Setup_Trap/Setting_up/Setup_Trap_author");
 DATA_REFS.add("Setup_Trap/Setting_up/Location");
 DATA_REFS.add("Setup_Trap/Setting_up/Site_Name");
-DATA_REFS.add("Setup_Trap/Setting_up/Setup_Trap_author");
 DATA_REFS.add("Setup_Trap/Setting_up/Place_name");
 DATA_REFS.add("Setup_Trap/Setting_up/What_type_of_trap");
 DATA_REFS.add("Setup_Trap/Setting_up/Latitude");
@@ -492,9 +492,9 @@ DATA_REFS.add("Setup_Trap/Setting_up/Easting");
 DATA_REFS.add("Setup_Trap/Setting_up/Accuracy");
 DATA_REFS.add("Check_Trap/Checking/Date");
 DATA_REFS.add("Check_Trap/Checking/Time");
+DATA_REFS.add("Check_Trap/Checking/Check_Trap_author");
 DATA_REFS.add("Check_Trap/Checking/Location");
 DATA_REFS.add("Check_Trap/Checking/Bag_ID");
-DATA_REFS.add("Check_Trap/Checking/Check_Trap_author");
 DATA_REFS.add("Check_Trap/Checking/What_trap_are_you_checking");
 DATA_REFS.add("Check_Trap/Checking/What_did_you_find_in_trap");
 DATA_REFS.add("Check_Trap/Checking/Notes");
@@ -510,9 +510,9 @@ DATA_REFS.add("Check_Trap/Checking/Easting");
 DATA_REFS.add("Check_Trap/Checking/Accuracy");
 DATA_REFS.add("Animal_outside/Animal/Date");
 DATA_REFS.add("Animal_outside/Animal/Time");
+DATA_REFS.add("Animal_outside/Animal/Animal_outside_author");
 DATA_REFS.add("Animal_outside/Animal/Location");
 DATA_REFS.add("Animal_outside/Animal/Bag_ID");
-DATA_REFS.add("Animal_outside/Animal/Animal_outside_author");
 DATA_REFS.add("Animal_outside/Animal/Animal_outside_trap");
 DATA_REFS.add("Animal_outside/Animal/Notes");
 DATA_REFS.add("Animal_outside/Animal/Take_Photo");
@@ -527,8 +527,8 @@ DATA_REFS.add("Animal_outside/Animal/Easting");
 DATA_REFS.add("Animal_outside/Animal/Accuracy");
 DATA_REFS.add("Plant_Survey/Plant/Date");
 DATA_REFS.add("Plant_Survey/Plant/Time");
-DATA_REFS.add("Plant_Survey/Plant/Location");
 DATA_REFS.add("Plant_Survey/Plant/Plant_Survey_author");
+DATA_REFS.add("Plant_Survey/Plant/Location");
 DATA_REFS.add("Plant_Survey/Plant/Type_plant_name");
 DATA_REFS.add("Plant_Survey/Plant/Take_Photo");
 DATA_REFS.add("Plant_Survey/Plant/Latitude");
@@ -538,8 +538,8 @@ DATA_REFS.add("Plant_Survey/Plant/Easting");
 DATA_REFS.add("Plant_Survey/Plant/Accuracy");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Date");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Time");
-DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Location");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Cultural_Knowledge_author");
+DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Location");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Who_is_talking");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/What_is_being_talked_about");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Record_knowledge_now");
@@ -552,8 +552,8 @@ DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Easting");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Accuracy");
 DATA_REFS.add("Notes/Notes/Date");
 DATA_REFS.add("Notes/Notes/Time");
-DATA_REFS.add("Notes/Notes/Location");
 DATA_REFS.add("Notes/Notes/Notes_author");
+DATA_REFS.add("Notes/Notes/Location");
 DATA_REFS.add("Notes/Notes/Notes");
 DATA_REFS.add("Notes/Notes/Take_Photo");
 DATA_REFS.add("Notes/Notes/Latitude");
@@ -1730,19 +1730,19 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
-  //  - Animal outside
   //  - Cultural Knowledge
+  //  - Animal outside
   //  - Notes
-  //  - Setup Trap
   //  - Check Trap
+  //  - Setup Trap
   //  - Plant Survey
 
   n0 = Tree("", 1);
-  n1 = Tree("Animal outside", 1);
-  n2 = Tree("Cultural Knowledge", 1);
+  n1 = Tree("Cultural Knowledge", 1);
+  n2 = Tree("Animal outside", 1);
   n3 = Tree("Notes", 1);
-  n4 = Tree("Setup Trap", 1);
-  n5 = Tree("Check Trap", 1);
+  n4 = Tree("Check Trap", 1);
+  n5 = Tree("Setup Trap", 1);
   n6 = Tree("Plant Survey", 1);
 
   n0.addChild(n1);
@@ -5278,8 +5278,27 @@ addOnEvent("Start/Search", "show", "populateSelectUser()");
 delOnEvent("Start/Search", "show", "search()");
 delOnEvent("Start/Search/Entity_Types"  , "click" , "search()");
 addOnEvent("module", "load", "clearSearchResults()");
+addOnEvent("module", "load", "populateSelectLocation()");
 
-final String ATTRIBS_DATE = listToSqlString(getAttribsMatchingRef("*/*/*Date"));
+void populateSelectLocation(){
+  String ref = "Start/Search/Select_Location";
+
+  List menuEntries = getMenuEntries("Location");
+  menuEntries = new ArrayList(menuEntries);
+
+  List all = new ArrayList();
+  all.add("\\0");
+  all.add("{All}");
+
+  menuEntries.add(0, all);
+
+  populateDropDown(ref, menuEntries, false);
+}
+
+final String ATTRIBS_DATE = listToSqlString(
+    getAttribsMatchingRef("*/*/*Date"));
+final String ATTRIBS_LOCATION = listToSqlString(
+    getAttribsMatchingRef("*/*/*Location"));
 
 void clearSearchResults() {
   populateCursorList(
@@ -5339,11 +5358,14 @@ void search(){
   String refEntityTypes = "Start/Search/Entity_Types";
   String refSelectUser  = "Start/Search/Select_User";
   String refSelectDate  = "Start/Search/Select_Date";
+  String refSelectLoc   = "Start/Search/Select_Location";
 
   String type = getFieldValue(refEntityTypes);
   String term = getFieldValue(refSearchTerm);
   String user = getFieldValue(refSelectUser);
   String date = getFieldValue(refSelectDate);
+  String loc  = getFieldValue(refSelectLoc);
+
   String searchQuery = "SELECT uuid, response "+
                        "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
                        " WHERE uuid in (SELECT uuid "+
@@ -5362,6 +5384,16 @@ void search(){
                        "               AND measure = {date}" +
                        "           )" +
                        "       )" +
+                       "  AND  ( " +
+                       "           {loc} = '\\0' OR" +
+                       "           uuid IN (" +
+                       "            SELECT uuid" +
+                       "              FROM latestnondeletedaentvalue" +
+                       "              JOIN attributekey USING (attributeid)" +
+                       "             WHERE attributename IN " + ATTRIBS_LOCATION +
+                       "               AND VocabID = {loc}" +
+                       "           )" +
+                       "       )" +
                        " ORDER BY response "+
                        " LIMIT ? "+
                        "OFFSET ? ";
@@ -5372,6 +5404,9 @@ void search(){
   searchQuery = dbReplaceFirst(searchQuery, "{user}", user);
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+  searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
+  searchQuery = dbReplaceFirst(searchQuery, "{loc}",  loc);
+  searchQuery = dbReplaceFirst(searchQuery, "{loc}",  loc);
 
   populateCursorList(refEntityList, searchQuery, 25);
   refreshTabgroupCSS("Start");
@@ -5477,13 +5512,15 @@ boolean validateFieldsToSubmit(String tabGroup) {
     String cbOk;
     String cbBad;
 
-    head  = "Some Fields are Not Valid";
-    body  = "The following fields are not valid:\n";
+    head  = "Some Fields are Missing";
+    body  = "The following fields are missing:\n";
     for (String ref : getFieldsToSubmit(tabGroup))
       if (isNull(getFieldValue(ref)))
         body += "\t- " + guessArch16nVal(ref) + "\n";
-    body += "Would you like to submit this page anyway? Tap 'OK' to do so, ";
-    body += "or 'Cancel' to remain on this page.";
+    body += "Would you like to save this record anyway? If yes, select 'OK' ";
+    body += "and this message will be dismissed and the record saved without ";
+    body += "the missing data. If you wish to fill in the missing data, ";
+    body += "select 'Cancel'.";
 
     cbOk  = "IGNORE_GPS_VALIDATION = true; submitAndReturn(\"%s\")";
     cbOk  = replaceFirst(cbOk, tabGroup);
@@ -5603,6 +5640,17 @@ boolean validateUserTab() {
 }
 
 addOnEventCond("Login/Login/Start", "click", "validateUserTab()");
+/******************************** DUPLICATION *********************************/
+void clearBagId() {
+  String ref = getRefMatching(getDisplayedTabGroup() + "/*/Bag_ID");
+  if (isNull(ref))
+    return;
+
+  clearField(ref);
+}
+
+for (String tabGroupRef : getTabGroups())
+  addOnEvent(tabGroupRef, "copy", "clearBagId()");
 
 
 /******************************************************************************/

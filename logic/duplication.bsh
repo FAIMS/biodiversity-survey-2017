@@ -1,0 +1,11 @@
+/******************************** DUPLICATION *********************************/
+void clearBagId() {
+  String ref = getRefMatching(getDisplayedTabGroup() + "/*/Bag_ID");
+  if (isNull(ref))
+    return;
+
+  clearField(ref);
+}
+
+for (String tabGroupRef : getTabGroups())
+  addOnEvent(tabGroupRef, "copy", "clearBagId()");
