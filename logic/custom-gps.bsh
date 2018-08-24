@@ -32,15 +32,15 @@ void takePoint(String tabgroup) {
 
   String accuracy = "" + getGPSEstimatedAccuracy();
   //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Accuracy",  accuracy);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude", sLatitude);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude",  sLongitude);
-  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting",   sNorthing);
-  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing",  sEasting);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude", sLongitude);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude",  sLatitude);
+  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting",   sEasting);
+  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing",  sNorthing);
 
   List attribs = createAttributeList();
   attribs.add(createEntityAttribute("Accuracy",  "", "", accuracy,   "1.0"));
-  attribs.add(createEntityAttribute("Longitude", "", "", sLatitude,  "1.0"));
-  attribs.add(createEntityAttribute("Latitude",  "", "", sLongitude, "1.0"));
+  attribs.add(createEntityAttribute("Longitude", "", "", sLongitude,  "1.0"));
+  attribs.add(createEntityAttribute("Latitude",  "", "", sLatitude, "1.0"));
   //attribs.add(createEntityAttribute("Northing",  "", "", sNorthing,  "1.0"));
   //attribs.add(createEntityAttribute("Easting",   "", "", sEasting,   "1.0"));
 

@@ -1731,18 +1731,18 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 void setUpTypeHierarchy() {
   //- 
   //  - Cultural Knowledge
-  //  - Animal outside
-  //  - Notes
-  //  - Check Trap
   //  - Setup Trap
+  //  - Check Trap
+  //  - Notes
+  //  - Animal outside
   //  - Plant Survey
 
   n0 = Tree("", 1);
   n1 = Tree("Cultural Knowledge", 1);
-  n2 = Tree("Animal outside", 1);
-  n3 = Tree("Notes", 1);
-  n4 = Tree("Check Trap", 1);
-  n5 = Tree("Setup Trap", 1);
+  n2 = Tree("Setup Trap", 1);
+  n3 = Tree("Check Trap", 1);
+  n4 = Tree("Notes", 1);
+  n5 = Tree("Animal outside", 1);
   n6 = Tree("Plant Survey", 1);
 
   n0.addChild(n1);
@@ -5450,15 +5450,15 @@ void takePoint(String tabgroup) {
 
   String accuracy = "" + getGPSEstimatedAccuracy();
   //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Accuracy",  accuracy);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude", sLatitude);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude",  sLongitude);
-  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting",   sNorthing);
-  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing",  sEasting);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude", sLongitude);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude",  sLatitude);
+  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting",   sEasting);
+  //setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing",  sNorthing);
 
   List attribs = createAttributeList();
   attribs.add(createEntityAttribute("Accuracy",  "", "", accuracy,   "1.0"));
-  attribs.add(createEntityAttribute("Longitude", "", "", sLatitude,  "1.0"));
-  attribs.add(createEntityAttribute("Latitude",  "", "", sLongitude, "1.0"));
+  attribs.add(createEntityAttribute("Longitude", "", "", sLongitude,  "1.0"));
+  attribs.add(createEntityAttribute("Latitude",  "", "", sLatitude, "1.0"));
   //attribs.add(createEntityAttribute("Northing",  "", "", sNorthing,  "1.0"));
   //attribs.add(createEntityAttribute("Easting",   "", "", sEasting,   "1.0"));
 
