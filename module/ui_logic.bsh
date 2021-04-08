@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: df6bf8194aa111d6f6855b5bde541c48541fcc1d
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 5df1c0c23cb4d2ea4c271a2a650454e84a06cda5
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -315,7 +315,6 @@ NODATA_TAB_GROUPS.add("Login");
 NODATA_TAB_GROUPS.add("Start");
 
 REF_TO_TYPE.put("Login/Login/User", "dropdown");
-REF_TO_TYPE.put("Login/Login/Location", "dropdown");
 REF_TO_TYPE.put("Login/Login/Start", "button");
 REF_TO_TYPE.put("Start/Main/Guide", "webview");
 REF_TO_TYPE.put("Start/Main/Start_Tracklog", "button");
@@ -351,10 +350,10 @@ REF_TO_TYPE.put("Start/Tracklog/SyncOff", "button");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Date", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Time", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Setup_Trap_author", "input");
-REF_TO_TYPE.put("Setup_Trap/Setting_up/Location", "dropdown");
-REF_TO_TYPE.put("Setup_Trap/Setting_up/Site_Name", "input");
-REF_TO_TYPE.put("Setup_Trap/Setting_up/Place_name", "input");
+REF_TO_TYPE.put("Setup_Trap/Setting_up/Site_Name", "dropdown");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/What_type_of_trap", "dropdown");
+REF_TO_TYPE.put("Setup_Trap/Setting_up/Trap_Number", "dropdown");
+REF_TO_TYPE.put("Setup_Trap/Setting_up/SD_Card", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Latitude", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Longitude", "input");
 REF_TO_TYPE.put("Setup_Trap/Setting_up/Northing", "input");
@@ -366,7 +365,7 @@ REF_TO_TYPE.put("Setup_Trap/Setting_up/Submit_and_Return", "button");
 REF_TO_TYPE.put("Check_Trap/Checking/Date", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Time", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Check_Trap_author", "input");
-REF_TO_TYPE.put("Check_Trap/Checking/Location", "dropdown");
+REF_TO_TYPE.put("Check_Trap/Checking/Site_Name", "dropdown");
 REF_TO_TYPE.put("Check_Trap/Checking/Bag_ID", "input");
 REF_TO_TYPE.put("Check_Trap/Checking/Bag_ID_Guide", "webview");
 REF_TO_TYPE.put("Check_Trap/Checking/What_trap_are_you_checking", "dropdown");
@@ -390,7 +389,7 @@ REF_TO_TYPE.put("Check_Trap/Checking/Submit_and_Return", "button");
 REF_TO_TYPE.put("Animal_outside/Animal/Date", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Time", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Animal_outside_author", "input");
-REF_TO_TYPE.put("Animal_outside/Animal/Location", "dropdown");
+REF_TO_TYPE.put("Animal_outside/Animal/Site_Name", "dropdown");
 REF_TO_TYPE.put("Animal_outside/Animal/Bag_ID", "input");
 REF_TO_TYPE.put("Animal_outside/Animal/Bag_ID_Guide", "webview");
 REF_TO_TYPE.put("Animal_outside/Animal/Animal_outside_trap", "picture");
@@ -413,7 +412,7 @@ REF_TO_TYPE.put("Animal_outside/Animal/Submit_and_Return", "button");
 REF_TO_TYPE.put("Plant_Survey/Plant/Date", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Time", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Plant_Survey_author", "input");
-REF_TO_TYPE.put("Plant_Survey/Plant/Location", "dropdown");
+REF_TO_TYPE.put("Plant_Survey/Plant/Site_Name", "dropdown");
 REF_TO_TYPE.put("Plant_Survey/Plant/Type_plant_name", "input");
 REF_TO_TYPE.put("Plant_Survey/Plant/Take_Photo", "camera");
 REF_TO_TYPE.put("Plant_Survey/Plant/Take_Photo_Button_1", "button");
@@ -428,7 +427,7 @@ REF_TO_TYPE.put("Plant_Survey/Plant/Submit_and_Return", "button");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Date", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Time", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Cultural_Knowledge_author", "input");
-REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Location", "dropdown");
+REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Site_Name", "dropdown");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Who_is_talking", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/What_is_being_talked_about", "input");
 REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Record_knowledge_now", "audio");
@@ -447,7 +446,7 @@ REF_TO_TYPE.put("Cultural_Knowledge/Cultural_Knowledge/Submit_and_Return", "butt
 REF_TO_TYPE.put("Notes/Notes/Date", "input");
 REF_TO_TYPE.put("Notes/Notes/Time", "input");
 REF_TO_TYPE.put("Notes/Notes/Notes_author", "input");
-REF_TO_TYPE.put("Notes/Notes/Location", "dropdown");
+REF_TO_TYPE.put("Notes/Notes/Site_Name", "dropdown");
 REF_TO_TYPE.put("Notes/Notes/Notes", "input");
 REF_TO_TYPE.put("Notes/Notes/Take_Photo", "camera");
 REF_TO_TYPE.put("Notes/Notes/Take_Photo_Button_1", "button");
@@ -481,10 +480,10 @@ REF_TO_TYPE.put("Tracklog/Tracklog", "tab");
 DATA_REFS.add("Setup_Trap/Setting_up/Date");
 DATA_REFS.add("Setup_Trap/Setting_up/Time");
 DATA_REFS.add("Setup_Trap/Setting_up/Setup_Trap_author");
-DATA_REFS.add("Setup_Trap/Setting_up/Location");
 DATA_REFS.add("Setup_Trap/Setting_up/Site_Name");
-DATA_REFS.add("Setup_Trap/Setting_up/Place_name");
 DATA_REFS.add("Setup_Trap/Setting_up/What_type_of_trap");
+DATA_REFS.add("Setup_Trap/Setting_up/Trap_Number");
+DATA_REFS.add("Setup_Trap/Setting_up/SD_Card");
 DATA_REFS.add("Setup_Trap/Setting_up/Latitude");
 DATA_REFS.add("Setup_Trap/Setting_up/Longitude");
 DATA_REFS.add("Setup_Trap/Setting_up/Northing");
@@ -493,7 +492,7 @@ DATA_REFS.add("Setup_Trap/Setting_up/Accuracy");
 DATA_REFS.add("Check_Trap/Checking/Date");
 DATA_REFS.add("Check_Trap/Checking/Time");
 DATA_REFS.add("Check_Trap/Checking/Check_Trap_author");
-DATA_REFS.add("Check_Trap/Checking/Location");
+DATA_REFS.add("Check_Trap/Checking/Site_Name");
 DATA_REFS.add("Check_Trap/Checking/Bag_ID");
 DATA_REFS.add("Check_Trap/Checking/What_trap_are_you_checking");
 DATA_REFS.add("Check_Trap/Checking/What_did_you_find_in_trap");
@@ -511,7 +510,7 @@ DATA_REFS.add("Check_Trap/Checking/Accuracy");
 DATA_REFS.add("Animal_outside/Animal/Date");
 DATA_REFS.add("Animal_outside/Animal/Time");
 DATA_REFS.add("Animal_outside/Animal/Animal_outside_author");
-DATA_REFS.add("Animal_outside/Animal/Location");
+DATA_REFS.add("Animal_outside/Animal/Site_Name");
 DATA_REFS.add("Animal_outside/Animal/Bag_ID");
 DATA_REFS.add("Animal_outside/Animal/Animal_outside_trap");
 DATA_REFS.add("Animal_outside/Animal/Notes");
@@ -528,7 +527,7 @@ DATA_REFS.add("Animal_outside/Animal/Accuracy");
 DATA_REFS.add("Plant_Survey/Plant/Date");
 DATA_REFS.add("Plant_Survey/Plant/Time");
 DATA_REFS.add("Plant_Survey/Plant/Plant_Survey_author");
-DATA_REFS.add("Plant_Survey/Plant/Location");
+DATA_REFS.add("Plant_Survey/Plant/Site_Name");
 DATA_REFS.add("Plant_Survey/Plant/Type_plant_name");
 DATA_REFS.add("Plant_Survey/Plant/Take_Photo");
 DATA_REFS.add("Plant_Survey/Plant/Latitude");
@@ -539,7 +538,7 @@ DATA_REFS.add("Plant_Survey/Plant/Accuracy");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Date");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Time");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Cultural_Knowledge_author");
-DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Location");
+DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Site_Name");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Who_is_talking");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/What_is_being_talked_about");
 DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Record_knowledge_now");
@@ -553,7 +552,7 @@ DATA_REFS.add("Cultural_Knowledge/Cultural_Knowledge/Accuracy");
 DATA_REFS.add("Notes/Notes/Date");
 DATA_REFS.add("Notes/Notes/Time");
 DATA_REFS.add("Notes/Notes/Notes_author");
-DATA_REFS.add("Notes/Notes/Location");
+DATA_REFS.add("Notes/Notes/Site_Name");
 DATA_REFS.add("Notes/Notes/Notes");
 DATA_REFS.add("Notes/Notes/Take_Photo");
 DATA_REFS.add("Notes/Notes/Latitude");
@@ -583,7 +582,7 @@ NO_UI_REFS.add("Tracklog/Tracklog/Heading");
 NO_UI_REFS.add("Tracklog/Tracklog/Accuracy");
 NO_UI_REFS.add("Tracklog");
 
-VP_REF_TO_REF.put("Login/Login/Location", "Setup_Trap/Setting_up/Location");
+
 
 HIER_REFS.add("Check_Trap/Checking/What_did_you_find_in_trap");
 HIER_REFS.add("Animal_outside/Animal/Animal_outside_trap");
@@ -613,18 +612,24 @@ TABS_AS_LIST.add("Tracklog/Tracklog");
 
 ATTRIB_NAMES_NON_STANDARD.put("Setup_Trap/Setting_up/Date", "Setup Trap Date");
 ATTRIB_NAMES_NON_STANDARD.put("Setup_Trap/Setting_up/Time", "Setup Trap Time");
+ATTRIB_NAMES_NON_STANDARD.put("Setup_Trap/Setting_up/Site_Name", "Setup Trap Site Name");
 ATTRIB_NAMES_NON_STANDARD.put("Check_Trap/Checking/Date", "Check Trap Date");
 ATTRIB_NAMES_NON_STANDARD.put("Check_Trap/Checking/Time", "Check Trap Time");
+ATTRIB_NAMES_NON_STANDARD.put("Check_Trap/Checking/Site_Name", "Check Trap Site Name");
 ATTRIB_NAMES_NON_STANDARD.put("Check_Trap/Checking/Bag_ID", "Check Trap Bag ID");
 ATTRIB_NAMES_NON_STANDARD.put("Animal_outside/Animal/Date", "Animal outside Date");
 ATTRIB_NAMES_NON_STANDARD.put("Animal_outside/Animal/Time", "Animal outside Time");
+ATTRIB_NAMES_NON_STANDARD.put("Animal_outside/Animal/Site_Name", "Animal outside Site Name");
 ATTRIB_NAMES_NON_STANDARD.put("Animal_outside/Animal/Bag_ID", "Animal outside Bag ID");
 ATTRIB_NAMES_NON_STANDARD.put("Plant_Survey/Plant/Date", "Plant Survey Date");
 ATTRIB_NAMES_NON_STANDARD.put("Plant_Survey/Plant/Time", "Plant Survey Time");
+ATTRIB_NAMES_NON_STANDARD.put("Plant_Survey/Plant/Site_Name", "Plant Survey Site Name");
 ATTRIB_NAMES_NON_STANDARD.put("Cultural_Knowledge/Cultural_Knowledge/Date", "Cultural Knowledge Date");
 ATTRIB_NAMES_NON_STANDARD.put("Cultural_Knowledge/Cultural_Knowledge/Time", "Cultural Knowledge Time");
+ATTRIB_NAMES_NON_STANDARD.put("Cultural_Knowledge/Cultural_Knowledge/Site_Name", "Cultural Knowledge Site Name");
 ATTRIB_NAMES_NON_STANDARD.put("Notes/Notes/Date", "Notes Date");
 ATTRIB_NAMES_NON_STANDARD.put("Notes/Notes/Time", "Notes Time");
+ATTRIB_NAMES_NON_STANDARD.put("Notes/Notes/Site_Name", "Notes Site Name");
 
 String getType(String ref) {
   String type = REF_TO_TYPE.get(ref);
@@ -686,6 +691,9 @@ boolean hasVpRef(String ref) {
   return getVpRef(ref) != null;
 }
 
+/* Returns `true` if `ref` refers to a hierarhical menu. (e.g. a hierarchical
+ * dropdown or hierarchical picture gallery.) Returns `false` otherwise.
+ */
 boolean isHier(String ref) {
   return HIER_REFS.contains(ref);
 }
@@ -893,6 +901,10 @@ String getArch16nKey(String ref) {
   else                     return "{" + lastRefPart + "}";
 }
 
+String getArch16nVal(String ref) {
+  return arch16nSubstituteValues(getArch16nKey(ref));
+}
+
 String guessArch16nVal(String ref) {
   return guessArch16nValFromRef(ref);
 }
@@ -908,6 +920,26 @@ String guessArch16nValFromKey(String key) {
   key = key.replaceAll("^\\{", "");
   key = key.replaceAll("\\}$", "");
   return key;
+}
+
+/* Example:
+ *   english.0.properties:
+ *       please=Please
+ *       enable_gps=enable GPS
+ *       ...
+ *
+ *   ui_logic.bsh:
+ *       arch16nSubstituteValues("{please} {enable_gps}.") ==
+ *           "Please enable GPS."
+ */
+String arch16nSubstituteValues(String unSubbed) {
+  if (isInUnitTestTime())
+    return unSubbed;
+
+  List entries = new ArrayList();
+  entries.add(new NameValuePair(unSubbed, ""));
+  entries = linker.convertToNameValuePairs(entries);
+  return entries.get(0).getName();
 }
 
 String getAttributeName(String ref) {
@@ -1208,6 +1240,21 @@ void addOnEvent(String ref, String event, String statement, int precedence) {
   addToOnEventPriorities(ref, event, statement, precedence, ON_EVT_STMTS);
 }
 
+/* Adds a condition to be checked before any expressions bound by `addOnEvent`
+ * are evaluated. `check` is `boolean` expression which must evaluate to `true`
+ * before the bound expressions evaluate. For instance, in the following logic,
+ * `onShowMyTabGroup()` will never be evaluated:
+ *
+ * ```
+ * boolean myChecker() {
+ *   showWarning("I'm Sorry, Dave", "I'm afraid I can't do that.");
+ *   return false;
+ * }
+ *
+ * addOnEvent    ("My_Tab_Group", "show", "onShowMyTabGroup()");
+ * addOnEventCond("My_Tab_Group", "show", "myChecker()");
+ * ```
+ */
 void addOnEventCond(String ref, String event, String check) {
   addToOnEventPriorities(ref, event, check, PRECEDENCE_MID, ON_EVT_CONDS);
 }
@@ -1467,6 +1514,28 @@ int getNumDummyPhotosAtNode(tree) {
     PERF_PHOTOS_PER_FIELD;
 }
 
+int getNumSavedPhotos() {
+  String dirStr = "/sdcard/faims/modules/" + getModuleId() + "/files/server/";
+  return getNumFilesInDir(dirStr);
+}
+
+int getNumFilesInDir(String path) {
+  File file = new File(path);
+  return getNumFilesInDir(file);
+}
+
+int getNumFilesInDir(File dir) {
+  int num = 0;
+
+  File[] files = dir.listFiles();
+  if (files == null) return num;
+
+  for (File file : dir.listFiles())
+    num += file.isFile() ? 1 : getNumFilesInDir(file);
+
+  return num;
+}
+
 int getNumDummyRecords() {
   getNumDummyRecords(PERF_TYPE_TREE);
 }
@@ -1496,8 +1565,32 @@ float getFileSizeInMBytes(String path) {
   return file.length() / 1000.f / 1000.f;
 }
 
+float getDirSizeInMBytes(String path) {
+  File file = new File(path);
+  return getDirSizeInMBytes(file);
+}
+
+float getDirSizeInMBytes(File dir) {
+  float length = 0;
+
+  File[] files = dir.listFiles();
+  if (files == null) return length;
+
+  for (File file : dir.listFiles())
+    length += file.isFile()
+      ? file.length() / 1000.f / 1000.f
+      : getDirSizeInMBytes(file);
+
+  return length;
+}
+
 float getSizeDummyPhotosInMBytes() {
   return getNumDummyPhotos() * getFileSizeInMBytes(PERF_TEST_IMG);
+}
+
+float getSizeSavedPhotosInMBytes() {
+  String dirStr = "/sdcard/faims/modules/" + getModuleId() + "/files/server/";
+  return getDirSizeInMBytes(dirStr);
 }
 
 String megabytesToString(float mb) {
@@ -1510,8 +1603,16 @@ String getSizeDummyPhotosInMBytesAsString() {
   return megabytesToString(getSizeDummyPhotosInMBytes());
 }
 
+String getSizeSavedPhotosInMBytesAsString() {
+  return megabytesToString(getSizeSavedPhotosInMBytes());
+}
+
 float getFreeSpaceInMBytes() {
-  StatFs statFs = new StatFs(Environment.getRootDirectory().getAbsolutePath());
+  return getFreeSpaceInMBytes(Environment.getRootDirectory().getAbsolutePath());
+}
+
+float getFreeSpaceInMBytes(String path) {
+  StatFs statFs = new StatFs(path);
   return statFs.getBlockCount() * statFs.getBlockSize() / 1000.f / 1000.f;
 }
 
@@ -1730,20 +1831,20 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 
 void setUpTypeHierarchy() {
   //- 
-  //  - Cultural Knowledge
-  //  - Setup Trap
-  //  - Check Trap
-  //  - Notes
   //  - Animal outside
+  //  - Check Trap
+  //  - Cultural Knowledge
+  //  - Notes
   //  - Plant Survey
+  //  - Setup Trap
 
   n0 = Tree("", 1);
-  n1 = Tree("Cultural Knowledge", 1);
-  n2 = Tree("Setup Trap", 1);
-  n3 = Tree("Check Trap", 1);
+  n1 = Tree("Animal outside", 1);
+  n2 = Tree("Check Trap", 1);
+  n3 = Tree("Cultural Knowledge", 1);
   n4 = Tree("Notes", 1);
-  n5 = Tree("Animal outside", 1);
-  n6 = Tree("Plant Survey", 1);
+  n5 = Tree("Plant Survey", 1);
+  n6 = Tree("Setup Trap", 1);
 
   n0.addChild(n1);
   n0.addChild(n2);
@@ -1837,6 +1938,23 @@ List getAttribsForArchEnt(String archEntType) {
   return attribs;
 }
 
+List getDummyGeometry(String archEntType) {
+  String tabGroupRef = archEntType.replaceAll(" ", "_");
+
+  if (getTakeFromGpsMappings().get(tabGroupRef) == null)
+    return null;
+
+  Double northing = 1.f;
+  Double easting  = 1.f;
+
+  MapPos mapPos = new MapPos(easting, northing);
+  Point samplePoint = new Point(mapPos, null, (PointStyle) null, null);
+  ArrayList geolist = new ArrayList();
+  geolist.add(samplePoint);
+
+  return geolist;
+}
+
 void displayRecordDigest(int numCreated) {
   String q = "";
   q += "   SELECT '{All}', count(*)";
@@ -1863,6 +1981,14 @@ void displayRecordDigest(int numCreated) {
 
         body += "\t- " + type + ": " + num + "\n";
       }
+
+      body += "\nThere are " +
+        getNumSavedPhotos() +
+        " saved files on this device. There is " +
+        getFreeSpaceInMBytesAsString() +
+        " MB of free space on this device, of which the saved files use " +
+        getSizeSavedPhotosInMBytesAsString() +
+        " MB.";
 
       if (dialog != null)
         dialog.dismiss();
@@ -1918,12 +2044,13 @@ PerfSaveCallback(tree, String parentUuid) {
 
 void saveArchEnts(tree, String parentUuid) {
   String archEntName = tree.label;
+  List   geometry    = getDummyGeometry(archEntName);
   int    numEnts     = tree.data;
   cb                 = PerfSaveCallback(tree, parentUuid);
 
   for (int i = 0; i < numEnts; i++) {
     List attribs = getAttribsForArchEnt(archEntName);
-    saveArchEnt(null, archEntName, (List) null, attribs, cb);
+    saveArchEnt(null, archEntName, geometry, attribs, cb);
   }
 }
 
@@ -1996,9 +2123,9 @@ PerfImageDownloader() {
       return;
 
     String filStr = "/sdcard/faims/modules/" + getModuleId() +
-        "/files/app/test.jpg";
-    String urlStr = "https://raw.githubusercontent.com/FAIMS/FAIMS-Tools/" +
-        "master/test-images/construction-2894x1924.jpg";
+        "/files/test.jpg";
+    String urlStr = "https://github.com/FAIMS/FAIMS-Tools/raw/master/" +
+        "generators/christian/tests/images/construction-2894x1924.jpg";
 
     if (detectFile(filStr))
       return;
@@ -2420,7 +2547,7 @@ void persistOverSessions(String ref) {
   persistOverSessions(ref, false, (String) null);
 }
 
-persistOverSessions("Login/Login/Location", false);
+
 
 /******************************************************************************/
 /*                           FIELD COPYING HELPERS                            */
@@ -2536,12 +2663,7 @@ void inheritFieldValue(String src, String dst) {
   inheritFieldValue(src, dst, true);
 }
 
-inheritFieldValue("Login/Login/Location", "Setup_Trap/Setting_up/Location", false);
-inheritFieldValue("Login/Login/Location", "Check_Trap/Checking/Location", false);
-inheritFieldValue("Login/Login/Location", "Animal_outside/Animal/Location", false);
-inheritFieldValue("Login/Login/Location", "Plant_Survey/Plant/Location", false);
-inheritFieldValue("Login/Login/Location", "Cultural_Knowledge/Cultural_Knowledge/Location", false);
-inheritFieldValue("Login/Login/Location", "Notes/Notes/Location", false);
+
 
 /******************************************************************************/
 /*                            NEW TAB REDIRECTION                             */
@@ -2808,7 +2930,8 @@ void addMenuEntry(
     String attrName,
     String vocabId,
     String vocabName,
-    String picUrl
+    String picUrl,
+    String parentVocabId
 ) {
   List menuEntries = ATTRIB_NAME_TO_MENU_ENTRIES.get(attrName);
   if (menuEntries == null) {
@@ -2820,6 +2943,7 @@ void addMenuEntry(
   menuEntry.add(vocabId);
   menuEntry.add(vocabName);
   menuEntry.add(picUrl);
+  menuEntry.add(parentVocabId);
 
   menuEntries.add(menuEntry);
 }
@@ -2827,13 +2951,17 @@ void addMenuEntry(
 List getMenuEntries(String attrName) {
   List menuEntries = ATTRIB_NAME_TO_MENU_ENTRIES.get(attrName);
   if (menuEntries == null) return new ArrayList();
-  else                     return menuEntries;
+  else                     return new ArrayList(menuEntries);
+}
+
+List getMenuEntriesFromRef(String ref) {
+  return getMenuEntries(getAttributeName(ref));
 }
 
 List getVocabIdsFromAttribName(String attribName) {
   List vocabIds = ATTRIB_NAME_TO_VOCABIDS.get(attribName);
   if (vocabIds == null) return new ArrayList();
-  else                  return vocabIds;
+  else                  return new ArrayList(vocabIds);
 }
 
 List getVocabIdsFromRef(String ref) {
@@ -2847,10 +2975,10 @@ List getVocabIdsFromRef(String ref) {
  */
 void fetchMenuValues() {
   String q = "";
-  q += "   SELECT vocabid, vocabname, attributename, pictureurl";
-  q += "     FROM vocabulary";
-  q += "     JOIN attributekey USING (attributeid)";
-  q += " ORDER BY vocabcountorder";
+  q += "   SELECT VocabID, VocabName, AttributeName, PictureURL, ParentVocabID";
+  q += "     FROM Vocabulary";
+  q += "     JOIN AttributeKey USING (AttributeID)";
+  q += " ORDER BY VocabCountOrder";
 
   FetchCallback populateHashMap = new FetchCallback() {
     onFetch(List result) {
@@ -2858,10 +2986,11 @@ void fetchMenuValues() {
         result = new ArrayList();
 
       for (List row : result) {
-        String vocabId   = row.get(0);
-        String vocabName = row.get(1);
-        String attrName  = row.get(2);
-        String picUrl    = row.get(3);
+        String vocabId       = row.get(0);
+        String vocabName     = row.get(1);
+        String attrName      = row.get(2);
+        String picUrl        = row.get(3);
+        String parentVocabId = row.get(4);
 
         // Populate VOCABID_TO_VOCABNAME
         VOCABID_TO_VOCABNAME.put(vocabId, vocabName);
@@ -2873,7 +3002,7 @@ void fetchMenuValues() {
         addVocabId(attrName, vocabId);
 
         // Populate ATTRIB_NAME_TO_MENU_ENTRIES
-        addMenuEntry(attrName, vocabId, vocabName, picUrl);
+        addMenuEntry(attrName, vocabId, vocabName, picUrl, parentVocabId);
       }
 
       decAndExecIfModuleLoaded();
@@ -3432,7 +3561,8 @@ for (String tabGroup : getTabGroups()) {
   if (isFlaggedNodata    (tabGroup)) continue;
   if (hasNoUi            (tabGroup)) continue;
   if (isFlaggedNoautosave(tabGroup)) continue;
-  addOnEvent(tabGroup, "show", "saveTabGroup", new Object[]{tabGroup});
+  String funStr = fun2str("saveTabGroup", new Object[]{tabGroup});
+  addOnEvent(tabGroup, "show", funStr);
 }
 
 void onClickLoginStart () {
@@ -4298,7 +4428,7 @@ void search(){
                        "                 WHERE measure LIKE {term}||'%'  "+
                        "                   AND ( aenttypename = {type} OR '' = {type} ) "+
                        "                )  "+
-                       " ORDER BY response "+
+                       " ORDER BY substr(uuid, 7, 13) desc, response " +
                        " LIMIT ? "+
                        "OFFSET ? ";
   searchQuery = dbReplaceFirst(searchQuery, "{term}", term);
@@ -4458,15 +4588,15 @@ void takePoint(String tabgroup) {
 
   String accuracy = "" + getGPSEstimatedAccuracy();
   setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Accuracy",  accuracy);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude", sLatitude);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude",  sLongitude);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting",   sNorthing);
-  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing",  sEasting);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude", sLongitude);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude",  sLatitude);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting",   sEasting);
+  setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing",  sNorthing);
 
   List attribs = createAttributeList();
   attribs.add(createEntityAttribute("Accuracy",  "", "", accuracy,   "1.0"));
-  attribs.add(createEntityAttribute("Longitude", "", "", sLatitude,  "1.0"));
-  attribs.add(createEntityAttribute("Latitude",  "", "", sLongitude, "1.0"));
+  attribs.add(createEntityAttribute("Longitude", "", "", sLongitude,  "1.0"));
+  attribs.add(createEntityAttribute("Latitude",  "", "", sLatitude, "1.0"));
   attribs.add(createEntityAttribute("Northing",  "", "", sNorthing,  "1.0"));
   attribs.add(createEntityAttribute("Easting",   "", "", sEasting,   "1.0"));
 
@@ -4476,6 +4606,32 @@ void takePoint(String tabgroup) {
   );
   SaveCallback saveCallback = getDefaultSaveCallback(tabgroup, showToast);
   saveArchEnt(currentUuid, archEntType, geolist, attribs, saveCallback);
+}
+
+/* Sets the value of GPS views for the given tab ref. */
+void fillInGPS(String tabgroup) {
+  Map tabgroupToTabRef = getTakeFromGpsMappings();
+  String currentUuid = getUuid(tabgroup);
+  if (isNull(currentUuid)) {
+    return;
+  }
+
+  String query = "SELECT x(transform(geospatialcolumn,                4326)) as longtiude, " +
+                 "       y(transform(geospatialcolumn,                4326)) as latitude, " +
+                 "       x(transform(geospatialcolumn, "+getModuleSrid()+")) as easting, " +
+                 "       y(transform(geospatialcolumn, "+getModuleSrid()+")) as northing " +
+                 "  FROM latestnondeletedarchent " +
+                 " WHERE uuid = '" + currentUuid + "';";
+
+  fetchOne(query, new FetchCallback() {
+    onFetch(result) {
+      print("[fillInGPS()] Fetched DB transformed geometry: " + result);
+      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Longitude" , result.get(0));
+      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Latitude"  , result.get(1));
+      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Easting"   , result.get(2));
+      setFieldValue(tabgroupToTabRef.get(tabgroup) + "/Northing"  , result.get(3));
+    }
+  });
 }
 
 void clearGpsInTabGroup(String tabgroup) {
@@ -4548,9 +4704,39 @@ Integer incField(String ref, Integer defaultVal) {
     return defaultVal;
   }
 
-  Integer inc = Integer.parseInt(val) + 1;
-  setFieldValue(ref, inc);
-  insertIntoLocalSettings(ref, inc.toString());
+  Integer inc = null;
+  try {
+    inc = Integer.parseInt(val) + 1;
+  } catch (Exception e) { ; }
+
+  if (inc == null) {
+    try {
+      Double dinc = Double.parseDouble(val) + 1;
+      inc = Math.round(dinc);
+
+      String head, body;
+      head  = "{inc_field_head}";
+      body  = "{inc_field_body_1}" + getArch16nKey(ref) + "{inc_field_body_2}";
+
+      showWarning(head, body);
+    } catch (Exception e) {
+      Log.d("incField", "" + e);
+      ;
+    }
+  }
+
+  if (inc == null) {
+    String head, body;
+    head  = "{inc_field_head}";
+    body  = "{inc_field_body_1}" + getArch16nKey(ref) + "{inc_field_body_3}";
+
+    showWarning(head, body);
+  }
+
+  if (inc != null) {
+    setFieldValue(ref, inc);
+    insertIntoLocalSettings(ref, inc.toString());
+  }
 
   return inc;
 }
@@ -4574,16 +4760,16 @@ void incAutoNum(String destPath) {
 /******************************************************************************/
 /*                         POPULATION VIA <MARKDOWN>                          */
 /******************************************************************************/
-populateWebViewHtml("Start/Main/BR_1", "<br />\n\n");
-populateWebViewHtml("Start/Main/BR_2", "<br />\n\n");
-populateWebViewHtml("Setup_Trap/Setting_up/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Start/Main/BR_1", "<p><br />\n</p>\n");
+populateWebViewHtml("Start/Main/BR_2", "<p><br />\n</p>\n");
+populateWebViewHtml("Setup_Trap/Setting_up/Submit_Spacer", "<p><br />\n</p>\n");
 populateWebViewHtml("Check_Trap/Checking/Bag_ID_Guide", "<p>Bag IDs can be (A, B, C, D, E…)</p>\n");
-populateWebViewHtml("Check_Trap/Checking/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Check_Trap/Checking/Submit_Spacer", "<p><br />\n</p>\n");
 populateWebViewHtml("Animal_outside/Animal/Bag_ID_Guide", "<p>Bag IDs can be (A, B, C, D, E…)</p>\n");
-populateWebViewHtml("Animal_outside/Animal/Submit_Spacer", "<br />\n\n");
-populateWebViewHtml("Plant_Survey/Plant/Submit_Spacer", "<br />\n\n");
-populateWebViewHtml("Cultural_Knowledge/Cultural_Knowledge/Submit_Spacer", "<br />\n\n");
-populateWebViewHtml("Notes/Notes/Submit_Spacer", "<br />\n\n");
+populateWebViewHtml("Animal_outside/Animal/Submit_Spacer", "<p><br />\n</p>\n");
+populateWebViewHtml("Plant_Survey/Plant/Submit_Spacer", "<p><br />\n</p>\n");
+populateWebViewHtml("Cultural_Knowledge/Cultural_Knowledge/Submit_Spacer", "<p><br />\n</p>\n");
+populateWebViewHtml("Notes/Notes/Submit_Spacer", "<p><br />\n</p>\n");
 
 /******************************************************************************/
 /*                POPULATION OF ENTITY AND CHILD ENTITY LISTS                 */
@@ -4625,7 +4811,7 @@ void populateMenuWithEntities (
     limit +
     "        )  " +
     "  JOIN latestNonDeletedArchEntFormattedIdentifiers ON (childuuid = uuid)   " +
-    "  order by createdat desc";
+    "  order by createdat desc, response";
 
   String getEntitiesQ = "" +
     "SELECT uuid, response "+
@@ -4634,7 +4820,7 @@ void populateMenuWithEntities (
     "                  FROM latestNonDeletedArchEntIdentifiers "+
     "                 WHERE aenttypename = '"+entType+"' OR '"+entType+"' = '' " +
     "               )  "+
-    " ORDER BY response " +
+    " ORDER BY substr(uuid, 7, 13) desc, response " +
     limit;
 
   FetchCallback cbPopulateDropDown = new FetchCallback() {
@@ -5278,27 +5464,11 @@ addOnEvent("Start/Search", "show", "populateSelectUser()");
 delOnEvent("Start/Search", "show", "search()");
 delOnEvent("Start/Search/Entity_Types"  , "click" , "search()");
 addOnEvent("module", "load", "clearSearchResults()");
-addOnEvent("module", "load", "populateSelectLocation()");
 
-void populateSelectLocation(){
-  String ref = "Start/Search/Select_Location";
-
-  List menuEntries = getMenuEntries("Location");
-  menuEntries = new ArrayList(menuEntries);
-
-  List all = new ArrayList();
-  all.add("\\0");
-  all.add("{All}");
-
-  menuEntries.add(0, all);
-
-  populateDropDown(ref, menuEntries, false);
-}
 
 final String ATTRIBS_DATE = listToSqlString(
     getAttribsMatchingRef("*/*/*Date"));
-final String ATTRIBS_LOCATION = listToSqlString(
-    getAttribsMatchingRef("*/*/*Location"));
+
 
 void clearSearchResults() {
   populateCursorList(
@@ -5358,13 +5528,11 @@ void search(){
   String refEntityTypes = "Start/Search/Entity_Types";
   String refSelectUser  = "Start/Search/Select_User";
   String refSelectDate  = "Start/Search/Select_Date";
-  String refSelectLoc   = "Start/Search/Select_Location";
 
   String type = getFieldValue(refEntityTypes);
   String term = getFieldValue(refSearchTerm);
   String user = getFieldValue(refSelectUser);
   String date = getFieldValue(refSelectDate);
-  String loc  = getFieldValue(refSelectLoc);
 
   String searchQuery = "SELECT uuid, response "+
                        "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
@@ -5384,16 +5552,6 @@ void search(){
                        "               AND measure = {date}" +
                        "           )" +
                        "       )" +
-                       "  AND  ( " +
-                       "           {loc} = '\\0' OR" +
-                       "           uuid IN (" +
-                       "            SELECT uuid" +
-                       "              FROM latestnondeletedaentvalue" +
-                       "              JOIN attributekey USING (attributeid)" +
-                       "             WHERE attributename IN " + ATTRIBS_LOCATION +
-                       "               AND VocabID = {loc}" +
-                       "           )" +
-                       "       )" +
                        " ORDER BY response "+
                        " LIMIT ? "+
                        "OFFSET ? ";
@@ -5405,8 +5563,6 @@ void search(){
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
-  searchQuery = dbReplaceFirst(searchQuery, "{loc}",  loc);
-  searchQuery = dbReplaceFirst(searchQuery, "{loc}",  loc);
 
   populateCursorList(refEntityList, searchQuery, 25);
   refreshTabgroupCSS("Start");
@@ -5621,18 +5777,16 @@ void addNavigationButtons(String tabgroup) {
   }
 }
 /**************************** USER TAB VALIDATION *****************************/
-final String REF_LOGIN_LOCATION = "Login/Login/Location";
 final String REF_LOGIN_USER     = "Login/Login/User";
 
 boolean validateUserTab() {
-  String valLocation = getFieldValue(REF_LOGIN_LOCATION);
   String valUser     = getFieldValue(REF_LOGIN_USER);
 
-  boolean isValid = !isNull(valLocation) && !isNull(valUser);
+  boolean isValid = !isNull(valUser);
 
   if (!isValid) {
     String head = "Invalid Inputs";
-    String body = "Please select a Location and User to proceed";
+    String body = "Please select a User to proceed";
     showWarning(head, body);
   }
 

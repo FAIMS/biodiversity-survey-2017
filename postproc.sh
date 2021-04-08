@@ -46,16 +46,6 @@ replacement="
               <\/item>
             <\/select1>
           <\/group>
-          <group ref=\"Col_3\" faims_style=\"even\">
-            <label\/>
-            <select1 ref=\"Select_Location\">
-              <label>\{Select_Location\}<\/label>
-              <item>
-                <label>Options not loaded<\/label>
-                <value>Options not loaded<\/value>
-              <\/item>
-            <\/select1>
-          <\/group>
         <\/group>"
 perl -0777 -i.original -pe "s/$string/$replacement/igs" ui_schema.xml
 

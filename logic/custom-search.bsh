@@ -4,27 +4,11 @@ addOnEvent("Start/Search", "show", "populateSelectUser()");
 delOnEvent("Start/Search", "show", "search()");
 delOnEvent("Start/Search/Entity_Types"  , "click" , "search()");
 addOnEvent("module", "load", "clearSearchResults()");
-addOnEvent("module", "load", "populateSelectLocation()");
 
-void populateSelectLocation(){
-  String ref = "Start/Search/Select_Location";
-
-  List menuEntries = getMenuEntries("Location");
-  menuEntries = new ArrayList(menuEntries);
-
-  List all = new ArrayList();
-  all.add("\\0");
-  all.add("{All}");
-
-  menuEntries.add(0, all);
-
-  populateDropDown(ref, menuEntries, false);
-}
 
 final String ATTRIBS_DATE = listToSqlString(
     getAttribsMatchingRef("*/*/*Date"));
-final String ATTRIBS_LOCATION = listToSqlString(
-    getAttribsMatchingRef("*/*/*Location"));
+
 
 void clearSearchResults() {
   populateCursorList(
@@ -84,13 +68,11 @@ void search(){
   String refEntityTypes = "Start/Search/Entity_Types";
   String refSelectUser  = "Start/Search/Select_User";
   String refSelectDate  = "Start/Search/Select_Date";
-  String refSelectLoc   = "Start/Search/Select_Location";
 
   String type = getFieldValue(refEntityTypes);
   String term = getFieldValue(refSearchTerm);
   String user = getFieldValue(refSelectUser);
   String date = getFieldValue(refSelectDate);
-  String loc  = getFieldValue(refSelectLoc);
 
   String searchQuery = "SELECT uuid, response "+
                        "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
@@ -110,16 +92,6 @@ void search(){
                        "               AND measure = {date}" +
                        "           )" +
                        "       )" +
-                       "  AND  ( " +
-                       "           {loc} = '\\0' OR" +
-                       "           uuid IN (" +
-                       "            SELECT uuid" +
-                       "              FROM latestnondeletedaentvalue" +
-                       "              JOIN attributekey USING (attributeid)" +
-                       "             WHERE attributename IN " + ATTRIBS_LOCATION +
-                       "               AND VocabID = {loc}" +
-                       "           )" +
-                       "       )" +
                        " ORDER BY response "+
                        " LIMIT ? "+
                        "OFFSET ? ";
@@ -131,8 +103,6 @@ void search(){
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
   searchQuery = dbReplaceFirst(searchQuery, "{date}", date);
-  searchQuery = dbReplaceFirst(searchQuery, "{loc}",  loc);
-  searchQuery = dbReplaceFirst(searchQuery, "{loc}",  loc);
 
   populateCursorList(refEntityList, searchQuery, 25);
   refreshTabgroupCSS("Start");

@@ -2,10 +2,22 @@
 <dataSchema>
   <ArchaeologicalElement name="Setup Trap">
     <description></description>
-    <property name="Place name" type="measure" isIdentifier="true">
+    <property name="Setup Trap Site Name" type="vocab" isIdentifier="true">
       <description></description>
-      <formatString>$2</formatString>
+      <formatString>$1</formatString>
       <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Woodland}
+<description> </description></term>
+        <term>{Rocky}
+<description> </description></term>
+        <term>{Freshwater}
+<description> </description></term>
+        <term>{Beach}
+<description> </description></term>
+        <term>{Other}
+<description> </description></term>
+      </lookup>
     </property>
     <property name="What type of trap" type="vocab" isIdentifier="true">
       <description></description>
@@ -39,42 +51,26 @@
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Location" type="vocab">
+    <property name="Trap Number" type="vocab">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{SE_Arnhem_1}
+        <term>{Camera_Trap_1}
 <description> </description></term>
-        <term>{SE_Arnhem_2}
+        <term>{Camera_Trap_2}
 <description> </description></term>
-        <term>{SE_Arnhem_3}
+        <term>{Camera_Trap_3}
 <description> </description></term>
-        <term>{SE_Arnhem_4}
+        <term>{Camera_Trap_4}
 <description> </description></term>
-        <term>{SE_Arnhem_5}
+        <term>{Camera_Trap_5}
 <description> </description></term>
-        <term>{SE_Arnhem_6}
-<description> </description></term>
-        <term>{SE_Arnhem_7}
-<description> </description></term>
-        <term>{Laynhapuy_1}
-<description> </description></term>
-        <term>{Laynhapuy_2}
-<description> </description></term>
-        <term>{Laynhapuy_3}
-<description> </description></term>
-        <term>{Laynhapuy_4}
-<description> </description></term>
-        <term>{Laynhapuy_5}
-<description> </description></term>
-        <term>{Laynhapuy_6}
-<description> </description></term>
-        <term>{Laynhapuy_7}
+        <term>{Middle_Trap_See_Annotation}
 <description> </description></term>
       </lookup>
     </property>
-    <property name="Site Name" type="measure">
+    <property name="SD Card" type="measure">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
@@ -448,38 +444,20 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Location" type="vocab">
+    <property name="Check Trap Site Name" type="vocab">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{SE_Arnhem_1}
+        <term>{Woodland}
 <description> </description></term>
-        <term>{SE_Arnhem_2}
+        <term>{Rocky}
 <description> </description></term>
-        <term>{SE_Arnhem_3}
+        <term>{Freshwater}
 <description> </description></term>
-        <term>{SE_Arnhem_4}
+        <term>{Beach}
 <description> </description></term>
-        <term>{SE_Arnhem_5}
-<description> </description></term>
-        <term>{SE_Arnhem_6}
-<description> </description></term>
-        <term>{SE_Arnhem_7}
-<description> </description></term>
-        <term>{Laynhapuy_1}
-<description> </description></term>
-        <term>{Laynhapuy_2}
-<description> </description></term>
-        <term>{Laynhapuy_3}
-<description> </description></term>
-        <term>{Laynhapuy_4}
-<description> </description></term>
-        <term>{Laynhapuy_5}
-<description> </description></term>
-        <term>{Laynhapuy_6}
-<description> </description></term>
-        <term>{Laynhapuy_7}
+        <term>{Other}
 <description> </description></term>
       </lookup>
     </property>
@@ -865,38 +843,20 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Location" type="vocab">
+    <property name="Animal outside Site Name" type="vocab">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{SE_Arnhem_1}
+        <term>{Woodland}
 <description> </description></term>
-        <term>{SE_Arnhem_2}
+        <term>{Rocky}
 <description> </description></term>
-        <term>{SE_Arnhem_3}
+        <term>{Freshwater}
 <description> </description></term>
-        <term>{SE_Arnhem_4}
+        <term>{Beach}
 <description> </description></term>
-        <term>{SE_Arnhem_5}
-<description> </description></term>
-        <term>{SE_Arnhem_6}
-<description> </description></term>
-        <term>{SE_Arnhem_7}
-<description> </description></term>
-        <term>{Laynhapuy_1}
-<description> </description></term>
-        <term>{Laynhapuy_2}
-<description> </description></term>
-        <term>{Laynhapuy_3}
-<description> </description></term>
-        <term>{Laynhapuy_4}
-<description> </description></term>
-        <term>{Laynhapuy_5}
-<description> </description></term>
-        <term>{Laynhapuy_6}
-<description> </description></term>
-        <term>{Laynhapuy_7}
+        <term>{Other}
 <description> </description></term>
       </lookup>
     </property>
@@ -968,38 +928,20 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Location" type="vocab">
+    <property name="Plant Survey Site Name" type="vocab">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{SE_Arnhem_1}
+        <term>{Woodland}
 <description> </description></term>
-        <term>{SE_Arnhem_2}
+        <term>{Rocky}
 <description> </description></term>
-        <term>{SE_Arnhem_3}
+        <term>{Freshwater}
 <description> </description></term>
-        <term>{SE_Arnhem_4}
+        <term>{Beach}
 <description> </description></term>
-        <term>{SE_Arnhem_5}
-<description> </description></term>
-        <term>{SE_Arnhem_6}
-<description> </description></term>
-        <term>{SE_Arnhem_7}
-<description> </description></term>
-        <term>{Laynhapuy_1}
-<description> </description></term>
-        <term>{Laynhapuy_2}
-<description> </description></term>
-        <term>{Laynhapuy_3}
-<description> </description></term>
-        <term>{Laynhapuy_4}
-<description> </description></term>
-        <term>{Laynhapuy_5}
-<description> </description></term>
-        <term>{Laynhapuy_6}
-<description> </description></term>
-        <term>{Laynhapuy_7}
+        <term>{Other}
 <description> </description></term>
       </lookup>
     </property>
@@ -1046,38 +988,20 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Location" type="vocab">
+    <property name="Cultural Knowledge Site Name" type="vocab">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{SE_Arnhem_1}
+        <term>{Woodland}
 <description> </description></term>
-        <term>{SE_Arnhem_2}
+        <term>{Rocky}
 <description> </description></term>
-        <term>{SE_Arnhem_3}
+        <term>{Freshwater}
 <description> </description></term>
-        <term>{SE_Arnhem_4}
+        <term>{Beach}
 <description> </description></term>
-        <term>{SE_Arnhem_5}
-<description> </description></term>
-        <term>{SE_Arnhem_6}
-<description> </description></term>
-        <term>{SE_Arnhem_7}
-<description> </description></term>
-        <term>{Laynhapuy_1}
-<description> </description></term>
-        <term>{Laynhapuy_2}
-<description> </description></term>
-        <term>{Laynhapuy_3}
-<description> </description></term>
-        <term>{Laynhapuy_4}
-<description> </description></term>
-        <term>{Laynhapuy_5}
-<description> </description></term>
-        <term>{Laynhapuy_6}
-<description> </description></term>
-        <term>{Laynhapuy_7}
+        <term>{Other}
 <description> </description></term>
       </lookup>
     </property>
@@ -1134,38 +1058,20 @@ Head scales: Anterior part of supranasal fused to nasal. Similar to Lined Fire-t
       <formatString> $2</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Location" type="vocab">
+    <property name="Notes Site Name" type="vocab">
       <description></description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{SE_Arnhem_1}
+        <term>{Woodland}
 <description> </description></term>
-        <term>{SE_Arnhem_2}
+        <term>{Rocky}
 <description> </description></term>
-        <term>{SE_Arnhem_3}
+        <term>{Freshwater}
 <description> </description></term>
-        <term>{SE_Arnhem_4}
+        <term>{Beach}
 <description> </description></term>
-        <term>{SE_Arnhem_5}
-<description> </description></term>
-        <term>{SE_Arnhem_6}
-<description> </description></term>
-        <term>{SE_Arnhem_7}
-<description> </description></term>
-        <term>{Laynhapuy_1}
-<description> </description></term>
-        <term>{Laynhapuy_2}
-<description> </description></term>
-        <term>{Laynhapuy_3}
-<description> </description></term>
-        <term>{Laynhapuy_4}
-<description> </description></term>
-        <term>{Laynhapuy_5}
-<description> </description></term>
-        <term>{Laynhapuy_6}
-<description> </description></term>
-        <term>{Laynhapuy_7}
+        <term>{Other}
 <description> </description></term>
       </lookup>
     </property>

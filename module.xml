@@ -3,7 +3,6 @@
 <Login f="nodata">
   <Login>
     <User t="dropdown" f="user"/>
-    <Location t="dropdown" f="persist" vp="Setup_Trap/Setting_up/Location"/>
     <Start t="button" l="Start"/>
   </Login>
 </Login>
@@ -63,19 +62,32 @@
 </Start>
 
 <Setup_Trap f="noautosave">
-  <fmt>{{Place_name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
+  <fmt>{{Site_Name}} {{What_type_of_trap}} {{Date}} {{Time}}</fmt>
   <Setting_up>
     <!--@SOURCE: xml/date-time.xml-->
     <author f="noannotation nocertainty">Who is putting out traps?</author>
-    <Location i="Login/Login/Location!">
-      <!--@SOURCE: vocab/location.xml-->
-    </Location>
-    <Site_Name/>
-    <Place_name f="noannotation nocertainty"/>
-    <What_type_of_trap f="noannotation nocertainty">
+    <Site_Name>
+      <!--@SOURCE: vocab/site-name.xml-->
+    </Site_Name>
+    <What_type_of_trap>
       What type of trap?
       <!--@SOURCE: vocab/trap-type.xml-->
     </What_type_of_trap>
+    <Trap_Number>
+      Camera Trap Number?
+      <opts>
+        <opt>Camera Trap 1</opt>
+        <opt>Camera Trap 2</opt>
+        <opt>Camera Trap 3</opt>
+        <opt>Camera Trap 4</opt>
+        <opt>Camera Trap 5</opt>
+        <opt>Middle Trap/See Annotation</opt>
+      </opts>
+
+    </Trap_Number>
+    <SD_Card>
+      SD Card Number?
+    </SD_Card>
     <gps/>
     <Submit_Spacer f="nolabel" t="webview"><markdown>\ </markdown></Submit_Spacer>
     <Submit_and_Return t="button" c="submit"/>
@@ -87,15 +99,15 @@
   <Checking>
     <!--@SOURCE: xml/date-time.xml-->
     <author f="noannotation nocertainty">Who is checking?</author>
-    <Location i="Login/Login/Location!">
-      <!--@SOURCE: vocab/location.xml-->
-    </Location>
+    <Site_Name>
+      <!--@SOURCE: vocab/site-name.xml-->
+    </Site_Name>
     <!--@SOURCE: xml/bag-id.xml-->
     <What_trap_are_you_checking f="noannotation nocertainty">
       What trap are you checking?
       <!--@SOURCE: vocab/trap-type.xml-->
     </What_trap_are_you_checking>
-    <What_did_you_find_in_trap f="noannotation nocertainty">
+    <What_did_you_find_in_trap>
       What did you find in trap?
       <!--@SOURCE: vocab/animal-type.xml-->
     </What_did_you_find_in_trap>
@@ -118,11 +130,11 @@
   <Animal>
     <!--@SOURCE: xml/date-time.xml-->
     <author f="noannotation nocertainty">Who is recording?</author>
-    <Location i="Login/Login/Location!">
-      <!--@SOURCE: vocab/location.xml-->
-    </Location>
+    <Site_Name>
+      <!--@SOURCE: vocab/site-name.xml-->
+    </Site_Name>
     <!--@SOURCE: xml/bag-id.xml-->
-    <Animal_outside_trap f="noannotation nocertainty">
+    <Animal_outside_trap>
       <!--@SOURCE: vocab/animal-type.xml-->
     </Animal_outside_trap>
     <Notes f="noannotation nocertainty"/>
@@ -144,9 +156,9 @@
   <Plant>
     <!--@SOURCE: xml/date-time.xml-->
     <author f="noannotation nocertainty">Who is recording?</author>
-    <Location i="Login/Login/Location!">
-      <!--@SOURCE: vocab/location.xml-->
-    </Location>
+    <Site_Name>
+      <!--@SOURCE: vocab/site-name.xml-->
+    </Site_Name>
     <Type_plant_name f="noannotation nocertainty"/>
     <Take_Photo t="camera" f="noannotation nocertainty"/>
     <gps/>
@@ -160,9 +172,9 @@
   <Cultural_Knowledge>
     <!--@SOURCE: xml/date-time.xml-->
     <author f="noannotation nocertainty">Who is recording?</author>
-    <Location i="Login/Login/Location!">
-      <!--@SOURCE: vocab/location.xml-->
-    </Location>
+    <Site_Name>
+      <!--@SOURCE: vocab/site-name.xml-->
+    </Site_Name>
     <Who_is_talking f="noannotation nocertainty">Who is talking?</Who_is_talking>
     <What_is_being_talked_about f="noannotation nocertainty">What is being talked about?</What_is_being_talked_about>
     <Record_knowledge_now t="audio" f="noannotation nocertainty"/>
@@ -179,9 +191,9 @@
   <Notes>
     <!--@SOURCE: xml/date-time.xml-->
     <author f="noannotation nocertainty">Who is recording?</author>
-    <Location i="Login/Login/Location!">
-      <!--@SOURCE: vocab/location.xml-->
-    </Location>
+    <Site_Name>
+      <!--@SOURCE: vocab/site-name.xml-->
+    </Site_Name>
     <Notes f="noannotation nocertainty"/>
     <Take_Photo t="camera" f="noannotation nocertainty"/>
     <gps/>

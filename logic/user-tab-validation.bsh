@@ -1,16 +1,14 @@
 /**************************** USER TAB VALIDATION *****************************/
-final String REF_LOGIN_LOCATION = "Login/Login/Location";
 final String REF_LOGIN_USER     = "Login/Login/User";
 
 boolean validateUserTab() {
-  String valLocation = getFieldValue(REF_LOGIN_LOCATION);
   String valUser     = getFieldValue(REF_LOGIN_USER);
 
-  boolean isValid = !isNull(valLocation) && !isNull(valUser);
+  boolean isValid = !isNull(valUser);
 
   if (!isValid) {
     String head = "Invalid Inputs";
-    String body = "Please select a Location and User to proceed";
+    String body = "Please select a User to proceed";
     showWarning(head, body);
   }
 
